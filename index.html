@@ -146,7 +146,6 @@
   .nav-link.active:not(.mobile) { color: #97FDFF; border-color: #97FDFF; }
   .nav-link.active.mobile { color: #97FDFF; }
   .nav-link:hover:not(.active) { color: #97FDFF; }
-  #mobile-menu.open { scale: 1; opacity: 1; pointer-events: auto; }
 </style>
 <script>
   (function() {
@@ -157,16 +156,24 @@
 
     // Toggle menu
     menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-        const icon = menuBtn.querySelector('span');
-        icon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+        const isClosed = mobileMenu.classList.contains('opacity-0');
+        if (isClosed) {
+            mobileMenu.classList.remove('opacity-0', 'scale-y-0', 'pointer-events-none');
+            mobileMenu.classList.add('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            menuBtn.querySelector('span').textContent = 'close';
+        } else {
+            mobileMenu.classList.add('opacity-0', 'scale-y-0', 'pointer-events-none');
+            mobileMenu.classList.remove('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            menuBtn.querySelector('span').textContent = 'menu';
+        }
     });
 
     // Close menu when link clicked
     links.forEach(l => {
         l.addEventListener('click', () => {
             if(window.innerWidth < 768) {
-                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('opacity-0', 'scale-y-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'scale-y-100', 'pointer-events-auto');
                 menuBtn.querySelector('span').textContent = 'menu';
             }
         });
