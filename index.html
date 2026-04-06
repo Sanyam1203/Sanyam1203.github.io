@@ -114,13 +114,47 @@
 <span class="text-[10px] font-label tracking-[0.25em] text-on-surface-variant leading-none ml-[2px] uppercase">BY KOYO GEARS INDIA</span>
 </div>
 </div>
-<div class="hidden md:flex gap-10 items-center">
-<a class="text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1 font-label text-sm uppercase tracking-wider" href="#home">Home</a>
-<a class="text-slate-400 font-medium font-label text-sm uppercase tracking-wider hover:text-[#97FDFF] transition-colors duration-300 pb-1 border-b-2 border-transparent" href="#about">About</a>
-<a class="text-slate-400 font-medium font-label text-sm uppercase tracking-wider hover:text-[#97FDFF] transition-colors duration-300 pb-1 border-b-2 border-transparent" href="#products">Products</a>
-<a class="text-slate-400 font-medium font-label text-sm uppercase tracking-wider hover:text-[#97FDFF] transition-colors duration-300 pb-1 border-b-2 border-transparent" href="#vision">Vision</a>
-<a class="text-slate-400 font-medium font-label text-sm uppercase tracking-wider hover:text-[#97FDFF] transition-colors duration-300 pb-1 border-b-2 border-transparent" href="#contact">Contact</a>
+<div class="hidden md:flex gap-10 items-center" id="nav-links">
+<a class="nav-link font-label text-sm uppercase tracking-wider pb-1 border-b-2 transition-colors duration-300" href="#home" data-section="home">Home</a>
+<a class="nav-link font-label text-sm uppercase tracking-wider pb-1 border-b-2 transition-colors duration-300" href="#about" data-section="about">About</a>
+<a class="nav-link font-label text-sm uppercase tracking-wider pb-1 border-b-2 transition-colors duration-300" href="#products" data-section="products">Products</a>
+<a class="nav-link font-label text-sm uppercase tracking-wider pb-1 border-b-2 transition-colors duration-300" href="#vision" data-section="vision">Vision</a>
+<a class="nav-link font-label text-sm uppercase tracking-wider pb-1 border-b-2 transition-colors duration-300" href="#contact" data-section="contact">Contact</a>
 </div>
+<style>
+  .nav-link { color: #94a3b8; border-color: transparent; }
+  .nav-link.active { color: #97FDFF; border-color: #97FDFF; }
+  .nav-link:hover:not(.active) { color: #97FDFF; }
+</style>
+<script>
+  (function() {
+    const sections = ['home','about','products','vision','contact'];
+    const links = document.querySelectorAll('.nav-link');
+
+    function setActive(id) {
+      links.forEach(l => {
+        if (l.dataset.section === id) l.classList.add('active');
+        else l.classList.remove('active');
+      });
+    }
+
+    // Set HOME active by default
+    setActive('home');
+
+    const observers = [];
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(id);
+        });
+      }, { threshold: 0.3 });
+      obs.observe(el);
+      observers.push(obs);
+    });
+  })();
+</script>
 <button class="kinetic-gradient text-on-primary px-8 py-2.5 text-sm font-label font-bold uppercase tracking-widest rounded-full shadow-[0_0_20px_rgba(151,253,255,0.2)] hover:shadow-[0_0_30px_rgba(151,253,255,0.4)] active:scale-95 transition-all">
                 Test Drive
             </button>
