@@ -243,25 +243,8 @@ body {
         </h1>
     </section>
 
-    <!-- Geographic Network Map -->
-    <section class="mb-12 md:mb-16">
-        <div class="w-full h-[400px] md:h-[500px] bg-surface-container-low rounded-xl border-t border-primary/10 overflow-hidden relative z-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" id="saffire-map">
-            <!-- Map injected by JS -->
-        </div>
-        <div class="flex items-center gap-6 mt-4 px-2">
-            <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_#97FDFF]"></span>
-                <span class="font-label tracking-widest uppercase text-[10px] text-on-surface-variant">Global HQ (Meerut)</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <span class="w-2h- h-2.5 rounded-full bg-[#f3bf26]"></span>
-                <span class="font-label tracking-widest uppercase text-[10px] text-on-surface-variant">Upcoming Sectors</span>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Content Bento Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12 md:mb-16">
         
         <!-- Contact Form Card -->
         <div class="lg:col-span-7 bg-surface-container-low rounded-xl p-6 md:p-12 border-t border-primary/10 relative overflow-hidden">
@@ -382,6 +365,24 @@ body {
 
         </div>
     </div>
+
+    <!-- Geographic Network Map -->
+    <section class="mt-12 md:mt-16">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 uppercase tracking-tight">Our Geographic Network</h2>
+        <div class="w-full h-[400px] md:h-[500px] bg-surface-container-low rounded-xl border-t border-primary/10 overflow-hidden relative z-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" id="saffire-map">
+            <!-- Map injected by JS -->
+        </div>
+        <div class="flex items-center gap-6 mt-4 px-2">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_#97FDFF]"></span>
+                <span class="font-label tracking-widest uppercase text-[10px] text-on-surface-variant">Global HQ (Meerut)</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#f3bf26]"></span>
+                <span class="font-label tracking-widest uppercase text-[10px] text-on-surface-variant">Upcoming Sectors</span>
+            </div>
+        </div>
+    </section>
 </main>
 
 <!-- Footer -->
@@ -432,7 +433,10 @@ body {
 
         // Initialize Saffire Network Map
         // Center somewhere focusing on India
-        const map = L.map('saffire-map', { zoomControl: false }).setView([23.5, 78.5], 5);
+        const map = L.map('saffire-map', { 
+            zoomControl: false,
+            scrollWheelZoom: false // Disable zooming on scroll to prevent cursor trapping
+        }).setView([23.5, 78.5], 5);
         
         // Add Dark Matter CartoDB Base Layer for premium obsidian aesthetic
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
