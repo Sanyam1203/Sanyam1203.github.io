@@ -323,6 +323,171 @@ body {
         </div>
     </section>
 
+    <!-- TCO Calculator Section -->
+    <section class="py-24 px-6 md:px-8 bg-[#0E0E10] border-t border-outline-variant/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-4 text-glow">Profitability Calculator</h2>
+                <p class="text-on-surface-variant font-light text-lg">Compare Saffire EV performance against traditional diesel/petrol alternatives.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Inputs -->
+                <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+                    <h3 class="font-headline text-xl font-bold mb-8 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">tune</span> Setup Parameters
+                    </h3>
+                    
+                    <div class="space-y-10">
+                        <!-- Daily Distance -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <label class="font-label text-xs tracking-widest uppercase text-on-surface-variant">Daily Run (km)</label>
+                                <span id="dist-val" class="font-headline text-primary font-bold">120 km</span>
+                            </div>
+                            <input type="range" min="20" max="300" value="120" step="10" class="w-full accent-primary h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer" id="dist-range">
+                            <div class="flex justify-between text-[10px] text-on-surface-variant font-label">
+                                <span>20 km</span>
+                                <span>300 km</span>
+                            </div>
+                        </div>
+
+                        <!-- Ownership Period -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <label class="font-label text-xs tracking-widest uppercase text-on-surface-variant">Ownership Period</label>
+                                <span id="year-val" class="font-headline text-primary font-bold">5 Years</span>
+                            </div>
+                            <input type="range" min="1" max="10" value="5" step="1" class="w-full accent-primary h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer" id="year-range">
+                            <div class="flex justify-between text-[10px] text-on-surface-variant font-label">
+                                <span>1 Year</span>
+                                <span>10 Years</span>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle Type -->
+                        <div class="space-y-4 pt-4 border-t border-outline-variant/5">
+                            <label class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2 block">Compare Against</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button onclick="setFuel('diesel')" id="btn-diesel" class="fuel-btn active py-3 px-4 rounded border border-outline-variant/20 font-label text-[10px] tracking-widest uppercase transition-all bg-surface-container-highest text-primary">Diesel Auto</button>
+                                <button onclick="setFuel('petrol')" id="btn-petrol" class="fuel-btn py-3 px-4 rounded border border-outline-variant/20 font-label text-[10px] tracking-widest uppercase transition-all opacity-50">Petrol Auto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outputs / Visuals -->
+                <div class="flex flex-col gap-6">
+                    <!-- Profit Card -->
+                    <div class="bg-primary/5 border border-primary/20 p-8 rounded-xl relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <p class="font-label text-[10px] tracking-widest uppercase text-primary/80 mb-2">Estimated Extra Profit with Saffire</p>
+                            <h4 id="calc-extra-profit" class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-primary">₹ 0</h4>
+                            <p id="calc-percent" class="text-xs text-on-surface-variant mt-2 font-light">+65% more profitable than diesel</p>
+                        </div>
+                        <span class="material-symbols-outlined absolute top-1/2 -right-4 -translate-y-1/2 text-9xl text-primary opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">trending_up</span>
+                    </div>
+
+                    <!-- Comparison Summary -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 text-center">
+                            <p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2">Saffire (EV)</p>
+                            <p id="ev-cost" class="font-headline text-xl font-bold text-on-surface">₹ 0</p>
+                            <p class="text-[9px] text-on-surface-variant mt-1 uppercase tracking-tighter">Total Operating Cost</p>
+                        </div>
+                        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 text-center">
+                            <p id="fuel-label" class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2">Diesel</p>
+                            <p id="fuel-cost" class="font-headline text-xl font-bold text-on-surface">₹ 0</p>
+                            <p class="text-[9px] text-on-surface-variant mt-1 uppercase tracking-tighter">Total Operating Cost</p>
+                        </div>
+                    </div>
+
+                    <!-- Lifetime Savings -->
+                    <div class="bg-surface-container-highest rounded-xl p-8 border-t border-primary/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">savings</span>
+                            </div>
+                            <div>
+                                <p class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Lifetime Net Savings</p>
+                                <p id="calc-lifetime" class="font-headline text-2xl font-bold">₹ 0</p>
+                            </div>
+                        </div>
+                        <div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+                            <div id="savings-bar" class="h-full bg-primary" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .fuel-btn.active {
+            border-color: #97FDFF;
+            box-shadow: 0 0 10px rgba(151, 253, 255, 0.2);
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        let currentFuel = 'diesel';
+        const rates = {
+            ev: 1.2, // INR per KM (electricity + maintenance)
+            diesel: 5.5, // INR per KM (fuel + heavy maintenance)
+            petrol: 6.8 // INR per KM (fuel + frequent maintenance)
+        };
+
+        const distRange = document.getElementById('dist-range');
+        const yearRange = document.getElementById('year-range');
+        const dVal = document.getElementById('dist-val');
+        const yVal = document.getElementById('year-val');
+
+        function setFuel(type) {
+            currentFuel = type;
+            document.querySelectorAll('.fuel-btn').forEach(b => {
+                b.classList.remove('active', 'bg-surface-container-highest', 'text-primary');
+                b.style.opacity = '0.5';
+            });
+            const activeBtn = document.getElementById('btn-' + type);
+            activeBtn.classList.add('active', 'bg-surface-container-highest', 'text-primary');
+            activeBtn.style.opacity = '1';
+            document.getElementById('fuel-label').textContent = type.charAt(0).toUpperCase() + type.slice(1);
+            calculateTCO();
+        }
+
+        function calculateTCO() {
+            const km = parseInt(distRange.value);
+            const years = parseInt(yearRange.value);
+            const totalDays = years * 365 * 0.9; // 90% utilization
+            const totalKm = totalDays * km;
+
+            const evTotal = totalKm * rates.ev;
+            const traditionalTotal = totalKm * rates[currentFuel];
+            const extraProfit = (traditionalTotal - evTotal) / (years * 12);
+            const lifetimeSavings = traditionalTotal - evTotal;
+            const pct = Math.round(((traditionalTotal / evTotal) - 1) * 100);
+
+            dVal.textContent = km + ' km';
+            yVal.textContent = years + (years === 1 ? ' Year' : ' Years');
+            
+            document.getElementById('calc-extra-profit').textContent = '₹ ' + Math.round(extraProfit).toLocaleString('en-IN');
+            document.getElementById('ev-cost').textContent = '₹ ' + Math.round(evTotal).toLocaleString('en-IN');
+            document.getElementById('fuel-cost').textContent = '₹ ' + Math.round(traditionalTotal).toLocaleString('en-IN');
+            document.getElementById('calc-lifetime').textContent = '₹ ' + Math.round(lifetimeSavings).toLocaleString('en-IN');
+            document.getElementById('calc-percent').textContent = `+${pct}% more profit per month than ${currentFuel}`;
+            
+            const barPct = Math.min(95, (evTotal / traditionalTotal) * 100);
+            document.getElementById('savings-bar').style.width = (100 - barPct) + '%';
+        }
+
+        distRange.addEventListener('input', calculateTCO);
+        yearRange.addEventListener('input', calculateTCO);
+        
+        // Initial calc
+        document.addEventListener('DOMContentLoaded', calculateTCO);
+    </script>
+
     <!-- Vision Statement -->
     <section class="py-20 md:py-24 border-y border-outline-variant/10 bg-surface-container-lowest">
         <div class="max-w-screen-xl mx-auto px-6 md:px-8 text-center">
