@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAFFIRE EV | Products</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+            "on-tertiary-fixed-variant": "#594400",
+            "on-primary-fixed": "#002020",
+            "on-tertiary": "#3e2e00",
+            "primary": "#97fdff",
+            "inverse-on-surface": "#303032",
+            "surface-container-lowest": "#0e0e10",
+            "surface-container-low": "#1b1b1d",
+            "secondary-container": "#47494e",
+            "tertiary-fixed-dim": "#f3bf26",
+            "tertiary-fixed": "#ffdf96",
+            "tertiary-container": "#fec931",
+            "on-tertiary-container": "#6f5500",
+            "surface-tint": "#2ddbde",
+            "outline-variant": "#3b494c",
+            "on-secondary": "#2e3035",
+            "on-primary": "#003738",
+            "inverse-surface": "#e5e1e4",
+            "on-secondary-fixed-variant": "#45474c",
+            "secondary-fixed-dim": "#c5c6cc",
+            "on-secondary-fixed": "#191c20",
+            "on-tertiary-fixed": "#251a00",
+            "on-surface-variant": "#bac9cc",
+            "secondary": "#c5c6cc",
+            "inverse-primary": "#00696b",
+            "surface-container-high": "#2a2a2c",
+            "primary-container": "#3fe6e8",
+            "primary-fixed": "#5af8fb",
+            "on-background": "#e5e1e4",
+            "surface-container": "#201f21",
+            "secondary-fixed": "#e2e2e8",
+            "on-surface": "#e5e1e4",
+            "error": "#ffb4ab",
+            "surface": "#131315",
+            "surface-variant": "#353437",
+            "error-container": "#93000a",
+            "surface-dim": "#131315",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#2ddbde",
+            "tertiary": "#ffeac0",
+            "on-primary-fixed-variant": "#004f51",
+            "on-error-container": "#ffdad6",
+            "on-secondary-container": "#b7b8be",
+            "surface-bright": "#39393b",
+            "on-primary-container": "#006365",
+            "background": "#131315",
+            "surface-container-highest": "#353437",
+            "outline": "#849396"
+        },
+        "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+        },
+        "fontFamily": {
+            "headline": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["Space Grotesk"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+        background: rgba(53, 52, 55, 0.6);
+        backdrop-filter: blur(20px);
+    }
+    .text-glow {
+        text-shadow: 0 0 15px rgba(151, 253, 255, 0.3);
+    }
+    .kinetic-gradient {
+        background: linear-gradient(45deg, #97FDFF 0%, #3FE6E8 100%);
+    }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary scroll-smooth">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
+    <div class="flex justify-between items-center px-6 md:px-8 h-20 w-full max-w-screen-2xl mx-auto">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative flex items-center justify-center w-9 h-9 shrink-0">
+                <img src="images/media__1775472759312.jpg" alt="Saffire Logo" class="absolute inset-0 w-full h-full object-contain" />
+            </div>
+            <div class="flex flex-col justify-center">
+                <span class="text-[18px] font-bold tracking-tighter text-[#97FDFF] uppercase font-headline leading-none">SAFFIRE</span>
+                <span class="text-[7px] font-label tracking-[0.2em] text-on-surface-variant leading-none mt-0.5 uppercase">BY KOYO GEARS INDIA</span>
+            </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-12">
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="index.html">Home</a>
+            <a class="text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1 font-label text-xs tracking-widest uppercase" href="products.html">Products</a>
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="vision.html">Vision</a>
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="contact.html">Contact</a>
+        </div>
+
+        <a href="contact.html" class="hidden md:flex bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm active:scale-[0.97] transition-transform duration-200">
+            PRE-ORDER
+        </a>
+
+        <!-- Mobile Menu Icon -->
+        <button id="mobile-menu-btn" class="md:hidden text-white flex items-center">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation Overlay (Hidden by Default) -->
+    <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#131315]/95 backdrop-blur-3xl border-b border-outline-variant/30 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)] origin-top transition-all duration-300 scale-y-0 opacity-0 pointer-events-none md:hidden p-6 z-40">
+        <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="index.html">Home</a>
+        <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#97FDFF]" href="products.html">Products</a>
+        <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="vision.html">Vision</a>
+        <a class="font-label text-lg uppercase tracking-wider pb-2 text-[#E5E1E4]/70" href="contact.html">Contact</a>
+        <a href="contact.html" class="kinetic-gradient text-on-primary px-8 py-4 w-full mt-2 text-sm font-label font-bold uppercase tracking-widest rounded-full text-center">Pre-Order</a>
+    </div>
+</nav>
+
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        const isClosed = mobileMenu.classList.contains('opacity-0');
+        if (isClosed) {
+            mobileMenu.classList.remove('opacity-0', 'scale-y-0', 'pointer-events-none');
+            mobileMenu.classList.add('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            menuBtn.querySelector('span').textContent = 'close';
+        } else {
+            mobileMenu.classList.add('opacity-0', 'scale-y-0', 'pointer-events-none');
+            mobileMenu.classList.remove('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            menuBtn.querySelector('span').textContent = 'menu';
+        }
+    });
+</script>
+
+<main class="pt-32 pb-24">
+    <!-- Hero Section -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-8 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+            <div class="md:col-span-8">
+                <span class="font-label text-primary text-sm tracking-[0.2em] uppercase mb-4 block">Product Direction</span>
+                <h1 class="font-headline text-5xl md:text-8xl font-bold leading-[0.9] tracking-tighter mb-8">
+                    THE NEXT <br/><span class="text-glow">EVOLUTION.</span>
+                </h1>
+            </div>
+            <div class="md:col-span-4 pb-4">
+                <p class="text-on-surface-variant text-lg max-w-sm leading-relaxed font-light">
+                    Architecting the future of 3-wheeler mobility through kinetic precision and sustainable dominance. Our fleet defines the boundary of what's possible for urban and commercial transport.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid (Asymmetric Bento) -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Passenger EV: Main Card -->
+            <div class="lg:col-span-2 group relative overflow-hidden bg-surface-container-low rounded-xl border-t border-primary/10">
+                <div class="absolute top-6 left-6 z-10 flex flex-col gap-2">
+                    <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">In Development</span>
+                </div>
+                <div class="h-[400px] md:h-[500px] w-full overflow-hidden">
+                    <img src="images/fleet_passenger_1775471977901.png" alt="Saffire Passenger 3-Wheeler" class="w-full h-full object-cover origin-center transition-transform duration-1000 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 md:via-transparent to-transparent opacity-90"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                        <div>
+                            <h3 class="font-headline text-3xl md:text-4xl font-bold mb-2">Saffire Passenger</h3>
+                            <p class="font-body text-on-surface-variant max-w-md font-light text-sm md:text-base">Designed for comfortable, efficient, and connected urban passenger mobility. Engineered with a precision 3-wheeler architecture for daily reliability.</p>
+                        </div>
+                        <div class="flex flex-col items-start md:items-end gap-1">
+                            <span class="font-label text-primary text-xl font-bold border-b border-primary/30 pb-1">COMFORT</span>
+                            <span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Urban Mobility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cargo EV Card -->
+            <div class="group relative overflow-hidden bg-surface-container-low rounded-xl border-t border-primary/10">
+                <div class="absolute top-6 left-6 z-10 flex flex-col gap-2">
+                    <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">In Development</span>
+                </div>
+                <div class="h-[400px] md:h-[500px] w-full overflow-hidden">
+                    <img src="images/fleet_cargo_1775471995223.png" alt="Saffire Cargo 3-Wheeler" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
+                    <h3 class="font-headline text-2xl md:text-3xl font-bold mb-2">Saffire Cargo</h3>
+                    <p class="font-body text-on-surface-variant text-sm mb-6 font-light">Built for smart last-mile logistics with dependable utility and strong operating efficiency.</p>
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        <div class="bg-surface-container-lowest/80 p-3 md:p-4 rounded-lg border border-outline-variant/10">
+                            <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Utility</span>
+                            <span class="font-headline text-base md:text-lg font-bold text-primary">Purpose-Built</span>
+                        </div>
+                        <div class="bg-surface-container-lowest/80 p-3 md:p-4 rounded-lg border border-outline-variant/10">
+                            <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Operation</span>
+                            <span class="font-headline text-base md:text-lg font-bold text-primary">Low Cost</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Mobility Platform -->
+            <div class="lg:col-span-3 group relative overflow-hidden bg-surface-container-low rounded-xl border-t border-primary/10 mt-2">
+                <div class="absolute top-6 left-6 md:top-8 md:left-8 z-10">
+                    <span class="inline-flex items-center px-4 py-1.5 bg-tertiary text-on-tertiary text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm">Vision Ahead</span>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
+                        <h3 class="font-headline text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-none">Next-Gen <br/>Architecture</h3>
+                        <p class="text-on-surface-variant text-base md:text-lg mb-10 leading-relaxed font-light">
+                            Our long-term vision is to expand the Saffire platform through advanced engineering, intelligent systems, and future-ready 3-wheeler mobility solutions.
+                        </p>
+
+                        <div class="flex flex-wrap gap-6 md:gap-8 border-t border-outline-variant/10 pt-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary text-xl">grid_view</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-sm md:text-base">Modular</div>
+                                    <div class="text-[10px] text-on-surface-variant uppercase tracking-widest font-label mt-0.5">Design</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-sm md:text-base">Integrated</div>
+                                    <div class="text-[10px] text-on-surface-variant uppercase tracking-widest font-label mt-0.5">Systems</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-primary text-xl">rocket_launch</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-sm md:text-base">Scalable</div>
+                                    <div class="text-[10px] text-on-surface-variant uppercase tracking-widest font-label mt-0.5">Mobility</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[300px] sm:h-[400px] lg:h-auto min-h-[300px] order-1 lg:order-2 overflow-hidden bg-background relative">
+                        <img src="images/fleet_future_1775472010707.png" alt="Future Platform" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1b1b1d] to-transparent lg:bg-gradient-to-l opacity-80"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Technical Readout Section -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-8 mt-24">
+        <div class="bg-surface-container-lowest rounded-xl p-8 md:p-12 relative overflow-hidden border border-outline-variant/5">
+            <!-- Decoration -->
+            <div class="absolute top-0 right-0 p-8 opacity-[0.03] hidden md:block pointer-events-none">
+                <span class="material-symbols-outlined text-9xl text-primary" style="font-size: 200px;">biotech</span>
+            </div>
+            
+            <div class="relative z-10 max-w-3xl">
+                <h2 class="font-headline text-3xl md:text-4xl font-bold mb-10 flex items-center gap-4">
+                    <span class="w-12 h-[2px] bg-primary rounded-full"></span>
+                    Engineering Precision
+                </h2>
+                
+                <div class="space-y-10 md:space-y-12">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 group">
+                        <span class="text-primary font-label text-sm mt-1 opacity-70 group-hover:opacity-100 transition-opacity">01</span>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2 text-glow group-hover:text-primary transition-colors">Powertrain Engineering</h4>
+                            <p class="text-on-surface-variant leading-relaxed font-light text-sm md:text-base">High-efficiency electric drive systems designed for smooth torque delivery, reliable performance, and energy-efficient operation specifically calibrated for 3-wheeler load dynamics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 group">
+                        <span class="text-primary font-label text-sm mt-1 opacity-70 group-hover:opacity-100 transition-opacity">02</span>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2 text-glow group-hover:text-primary transition-colors">Battery Intelligence</h4>
+                            <p class="text-on-surface-variant leading-relaxed font-light text-sm md:text-base">Advanced battery integration focused on thermal stability, safety, and charging efficiency. Ensuring practical daily operation and longevity for both commercial and passenger fleets.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 group">
+                        <span class="text-primary font-label text-sm mt-1 opacity-70 group-hover:opacity-100 transition-opacity">03</span>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2 text-glow group-hover:text-primary transition-colors">Vehicle Architecture</h4>
+                            <p class="text-on-surface-variant leading-relaxed font-light text-sm md:text-base">Purpose-built 3-wheeler chassis engineered for foundational strength, utility, stability under load, and aerodynamic efficiency in dense urban networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#0E0E10] border-t border-[#3B494C]/15">
+    <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center px-8 md:px-12 py-10 w-full gap-8">
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+            <span class="text-2xl font-bold tracking-tighter text-[#97FDFF] uppercase font-headline mb-1">SAFFIRE</span>
+            <span class="text-[8px] md:text-[9px] tracking-[0.3em] text-slate-500 font-label">BY KOYO GEARS INDIA PRIVATE LIMITED</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+            <a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="terms.html">Privacy</a>
+            <a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="terms.html">Terms</a>
+            <a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="#">Investor Relations</a>
+            <a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="#">Sustainability</a>
+        </div>
+        <div class="text-slate-500 font-label text-[9px] md:text-[10px] tracking-[0.05em] uppercase text-center md:text-right">
+            © 2026 KOYO GEARS INDIA PRIVATE LIMITED. ALL RIGHTS RESERVED.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
