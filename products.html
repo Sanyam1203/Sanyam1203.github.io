@@ -227,56 +227,66 @@ body {
     </section>
 
     <!-- Product Grid (Asymmetric Bento) -->
+    <!-- Product Grid (Symmetric 50/50 Split) -->
     <section class="max-w-screen-2xl mx-auto px-6 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
-            <!-- Passenger EV: Main Card -->
-            <div class="lg:col-span-2 group relative overflow-hidden bg-surface-container-low rounded-xl border-t border-primary/10">
-                <div class="absolute top-6 left-6 z-10 flex flex-col gap-2">
-                    <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">In Development</span>
+            <!-- Passenger EV Card -->
+            <div class="group relative overflow-hidden bg-[#131315]/50 rounded-xl border border-primary/5 flex flex-col justify-end min-h-[500px] md:min-h-[600px] fade-up">
+                <div class="absolute top-6 left-6 z-20 flex flex-col gap-2">
+                    <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm shadow-xl">In Development</span>
                 </div>
-                <div class="h-[400px] md:h-[500px] w-full overflow-hidden">
-                    <img src="images/fleet_passenger_1775471977901.png" alt="Saffire Passenger 3-Wheeler" class="w-full h-full object-cover origin-center transition-transform duration-1000 group-hover:scale-105" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 md:via-transparent to-transparent opacity-90"></div>
-                </div>
-                <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                
+                <img src="images/fleet_passenger_1775471977901.png" alt="Saffire Passenger 3-Wheeler" class="card-bg-img absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 to-transparent"></div>
+                
+                <div class="relative z-10 p-8 md:p-10">
+                    <div class="flex flex-col gap-6">
                         <div>
-                            <h3 class="font-headline text-3xl md:text-4xl font-bold mb-2">Saffire Passenger</h3>
-                            <p class="font-body text-on-surface-variant max-w-md font-light text-sm md:text-base">Designed for comfortable, efficient, and connected urban passenger mobility. Engineered with a precision 3-wheeler architecture for daily reliability.</p>
+                            <h3 class="font-headline text-3xl md:text-4xl font-bold mb-3 tracking-tight">Saffire Passenger</h3>
+                            <p class="font-body text-on-surface-variant max-w-sm font-light text-sm md:text-base leading-relaxed opacity-90">Designed for comfortable, efficient, and connected urban passenger mobility. Engineered with a precision 3-wheeler architecture for daily reliability.</p>
                         </div>
-                        <div class="flex flex-col items-start md:items-end gap-1">
-                            <span class="font-label text-primary text-xl font-bold border-b border-primary/30 pb-1">COMFORT</span>
-                            <span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Urban Mobility</span>
+                        
+                        <div class="flex items-center gap-4 border-t border-primary/10 pt-6">
+                            <div class="flex flex-col gap-1">
+                                <span class="font-label text-primary text-xl font-bold tracking-tighter uppercase leading-none">COMFORT</span>
+                                <span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest opacity-70">Urban Mobility</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Cargo EV Card -->
-            <div class="group relative overflow-hidden bg-surface-container-low rounded-xl border-t border-primary/10">
-                <div class="absolute top-6 left-6 z-10 flex flex-col gap-2">
-                    <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">In Development</span>
+            <div class="group relative overflow-hidden bg-[#131315]/50 rounded-xl border border-primary/5 flex flex-col justify-end min-h-[500px] md:min-h-[600px] fade-up delay-100">
+                <div class="absolute top-6 left-6 z-20 flex flex-col gap-2">
+                    <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm shadow-xl">In Development</span>
                 </div>
-                <div class="h-[400px] md:h-[500px] w-full overflow-hidden">
-                    <img src="images/fleet_cargo_1775471995223.png" alt="Saffire Cargo 3-Wheeler" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
-                    <h3 class="font-headline text-2xl md:text-3xl font-bold mb-2">Saffire Cargo</h3>
-                    <p class="font-body text-on-surface-variant text-sm mb-6 font-light">Built for smart last-mile logistics with dependable utility and strong operating efficiency.</p>
-                    <div class="grid grid-cols-2 gap-3 md:gap-4">
-                        <div class="bg-surface-container-lowest/80 p-3 md:p-4 rounded-lg border border-outline-variant/10">
-                            <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Utility</span>
-                            <span class="font-headline text-base md:text-lg font-bold text-primary">Purpose-Built</span>
+                
+                <img src="images/fleet_cargo_1775471995223.png" alt="Saffire Cargo 3-Wheeler" class="card-bg-img absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 to-transparent"></div>
+                
+                <div class="relative z-10 p-8 md:p-10">
+                    <div class="flex flex-col gap-6">
+                        <div>
+                            <h3 class="font-headline text-3xl md:text-4xl font-bold mb-3 tracking-tight">Saffire Cargo</h3>
+                            <p class="font-body text-on-surface-variant max-w-sm font-light text-sm md:text-base leading-relaxed opacity-90">Built for smart last-mile logistics with dependable utility and strong operating efficiency.</p>
                         </div>
-                        <div class="bg-surface-container-lowest/80 p-3 md:p-4 rounded-lg border border-outline-variant/10">
-                            <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Operation</span>
-                            <span class="font-headline text-base md:text-lg font-bold text-primary">Low Cost</span>
+                        
+                        <div class="grid grid-cols-2 gap-4 border-t border-primary/10 pt-6">
+                            <div>
+                                <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1 opacity-70">Utility</span>
+                                <span class="font-headline text-base md:text-lg font-bold text-primary tracking-tight">Purpose-Built</span>
+                            </div>
+                            <div>
+                                <span class="block font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1 opacity-70">Operation</span>
+                                <span class="font-headline text-base md:text-lg font-bold text-primary tracking-tight">Low Cost</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
             <!-- Future Mobility Platform -->
             <div class="lg:col-span-3 group relative overflow-hidden bg-surface-container-low rounded-xl border-t border-primary/10 mt-2">
