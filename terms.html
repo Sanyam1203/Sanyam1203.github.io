@@ -128,7 +128,18 @@
         background: rgba(151, 253, 255, 0.06);
     }
 </style>
+
+<style>
+@keyframes pageSwipeIn {
+    0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
+    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+body {
+    animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+</style>
 </head>
+
 <body class="selection:bg-primary selection:text-on-primary">
 
 <!-- Minimal Header -->

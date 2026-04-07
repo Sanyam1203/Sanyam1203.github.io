@@ -89,7 +89,18 @@
     .glass-panel { backdrop-filter: blur(20px); background: rgba(53, 52, 55, 0.6); }
     .kinetic-gradient { background: linear-gradient(45deg, #97FDFF 0%, #3FE6E8 100%); }
 </style>
+
+<style>
+@keyframes pageSwipeIn {
+    0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
+    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+body {
+    animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+</style>
 </head>
+
 <body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary scroll-smooth">
 
 <!-- Top NavBar -->
