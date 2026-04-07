@@ -81,13 +81,22 @@
       }
     }
 </script>
-<style>
     body { font-family: 'Manrope', sans-serif; background-color: #131315; color: #E5E1E4; }
     .font-headline { font-family: 'Space Grotesk', sans-serif; }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     .kinetic-glow { text-shadow: 0 0 20px rgba(151, 253, 255, 0.3); }
     .glass-panel { backdrop-filter: blur(20px); background: rgba(53, 52, 55, 0.6); }
     .kinetic-gradient { background: linear-gradient(45deg, #97FDFF 0%, #3FE6E8 100%); }
+    /* Page-specific brilliance sync for flow art */
+    .vision-card-img {
+        opacity: 0.5 !important;
+        filter: blur(3px) brightness(0.7);
+        transition: opacity 0.7s ease, filter 0.7s ease;
+    }
+    .group:hover .vision-card-img { 
+        opacity: 0.9 !important;
+        filter: blur(0px) brightness(1);
+    }
 </style>
 
 <style>
@@ -274,19 +283,20 @@ body {
             
             <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto] md:grid-rows-2 gap-4 h-auto md:h-[600px] lg:h-[700px]">
                 <!-- Bento Item 1 -->
-                <div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-xl overflow-hidden relative group min-h-[300px]">
-                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/kinetic_flow_art.png" alt="Saffire Kinetic Intelligence" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
+                <div class="md:col-span-2 md:row-span-2 bg-[#0E0E10] rounded-xl overflow-hidden relative group min-h-[300px] border border-outline-variant/10">
+                    <img class="vision-card-img absolute inset-0 w-full h-full object-cover" src="images/kinetic_flow_art.png" alt="Saffire Kinetic Intelligence" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10]/95 via-[#0E0E10]/40 to-transparent"></div>
                     <div class="relative z-10 p-8 md:p-10 flex flex-col h-full justify-end">
                         <span class="font-label text-primary text-[10px] md:text-xs tracking-widest uppercase mb-2">Pillar 01</span>
-                        <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4">Digital Intelligence</h4>
+                        <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4 kinetic-glow">Digital Intelligence</h4>
                         <p class="font-body text-on-surface-variant text-sm md:text-base max-w-sm font-light">Neural lighting and smart mobility systems that adapt to the environment and provide vital fleet insights in real-time.</p>
                     </div>
                 </div>
 
                 <!-- Bento Item 2 -->
-                <div class="md:col-span-2 bg-surface-container-highest rounded-xl p-8 md:p-10 flex flex-col justify-center border-t border-primary/10 relative overflow-hidden group">
-                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/flow_purity.png" alt="Saffire Structural Purity" />
+                <div class="md:col-span-2 bg-[#0E0E10] rounded-xl p-8 md:p-10 flex flex-col justify-center border border-outline-variant/10 relative overflow-hidden group">
+                    <img class="vision-card-img absolute inset-0 w-full h-full object-cover" src="images/flow_purity.png" alt="Saffire Structural Purity" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#0E0E10]/95 via-[#0E0E10]/40 to-transparent"></div>
                     <div class="relative z-10">
                         <span class="font-label text-primary text-[10px] md:text-xs tracking-widest uppercase mb-2 block">Pillar 02</span>
                         <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4">Structural Purity</h4>
@@ -299,8 +309,9 @@ body {
                 </div>
 
                 <!-- Bento Item 3 -->
-                <div class="bg-surface-container rounded-xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-end min-h-[250px] border-t border-primary/5 group">
-                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover opacity-20" src="images/flow_sustainable.png" alt="Sustainable Core" />
+                <div class="bg-[#0E0E10] rounded-xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-end min-h-[250px] border border-outline-variant/10 group">
+                    <img class="vision-card-img absolute inset-0 w-full h-full object-cover" src="images/flow_sustainable.png" alt="Sustainable Core" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10]/95 via-[#0E0E10]/40 to-transparent"></div>
                     <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
                     <span class="material-symbols-outlined text-primary mb-4 md:mb-6 scale-125 md:scale-150 origin-left">eco</span>
                     <h4 class="font-headline text-lg md:text-xl font-bold mb-2">Sustainable Core</h4>
@@ -308,8 +319,9 @@ body {
                 </div>
 
                 <!-- Bento Item 4 -->
-                <div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 border border-outline-variant/10 flex flex-col justify-end min-h-[250px] relative overflow-hidden group">
-                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/flow_powertrain.png" alt="Powertrain Energy" />
+                <div class="bg-[#0E0E10] rounded-xl p-6 md:p-8 border border-outline-variant/10 flex flex-col justify-end min-h-[250px] relative overflow-hidden group">
+                    <img class="vision-card-img absolute inset-0 w-full h-full object-cover" src="images/flow_powertrain.png" alt="Powertrain Energy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10]/95 via-[#0E0E10]/40 to-transparent"></div>
                     <span class="material-symbols-outlined text-primary mb-4 md:mb-6 scale-125 md:scale-150 origin-left relative z-10" style="font-variation-settings: 'FILL' 1;">bolt</span>
                     <h4 class="font-headline text-lg md:text-xl font-bold mb-2 relative z-10">Powertrain</h4>
                     <p class="font-body text-xs md:text-sm text-on-surface-variant leading-relaxed font-light relative z-10">High-torque electric drive systems ensuring smooth power delivery even under maximum commercial load capacity.</p>
