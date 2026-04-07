@@ -82,25 +82,19 @@
     }
 </script>
 <style>
-    body {
-        background-color: #131315;
-        color: #E5E1E4;
-        font-family: 'Manrope', sans-serif;
-    }
+    body { font-family: 'Manrope', sans-serif; background-color: #131315; color: #E5E1E4; }
     .font-headline { font-family: 'Space Grotesk', sans-serif; }
-    .glass-panel {
-        background: rgba(53, 52, 55, 0.6);
-        backdrop-filter: blur(20px);
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .kinetic-glow { text-shadow: 0 0 20px rgba(151, 253, 255, 0.3); }
+    .text-glow { text-shadow: 0 0 40px rgba(151, 253, 255, 0.15); }
+    .glass-panel { backdrop-filter: blur(20px); background: rgba(53, 52, 55, 0.6); }
+    .kinetic-gradient { background: linear-gradient(45deg, #97FDFF 0%, #3FE6E8 100%); }
+    /* Global card image brightness rule */
+    .card-bg-img {
+        opacity: 0.9;
+        transition: opacity 0.7s ease, transform 1s cubic-bezier(0.16,1,0.3,1);
     }
-    .kinetic-gradient {
-        background: linear-gradient(45deg, #97FDFF, #3FE6E8);
-    }
-    .text-glow {
-        text-shadow: 0 0 20px rgba(151, 253, 255, 0.3);
-    }
-    .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
+    .group:hover .card-bg-img { opacity: 1; }
     .fade-up {
         opacity: 0;
         transform: translateY(30px);
@@ -277,15 +271,15 @@ body {
                             Learn More About Us <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
-                    <div class="absolute top-0 right-0 w-full h-full opacity-20 group-hover:opacity-40 transition-opacity">
-                        <img class="w-full h-full object-cover grayscale" src="images/bg_reliability_1775471488093.png" alt="Engineering reliability" />
+                    <div class="absolute top-0 right-0 w-full h-full transition-opacity">
+                        <img class="card-bg-img w-full h-full object-cover grayscale" src="images/bg_reliability_1775471488093.png" alt="Engineering reliability" />
                         <div class="absolute inset-0 bg-gradient-to-r from-surface-container-low to-transparent"></div>
                     </div>
                 </div>
 
                 <!-- Saffire Fleet -->
                 <div class="md:col-span-6 bg-surface-container-highest rounded-xl border-t border-primary/10 flex flex-col justify-end min-h-[450px] relative overflow-hidden group fade-up delay-100">
-                    <img class="absolute inset-0 w-full h-full object-cover opacity-95 transition-opacity duration-700 group-hover:opacity-100" src="images/fleet_passenger_1775471977901.png" alt="Saffire Fleet" />
+                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/fleet_passenger_1775471977901.png" alt="Saffire Fleet" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent"></div>
                     <div class="relative z-10 p-8">
                         <span class="material-symbols-outlined text-primary text-3xl md:text-4xl mb-4">electric_car</span>
@@ -298,8 +292,8 @@ body {
                 <!-- Focus Row: Technology & Vision -->
                 <!-- Saffire Connect Block -->
                 <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up">
-                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-30" src="images/saffire_connect.png" alt="Saffire Connect Dashboard" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 to-transparent"></div>
+                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/saffire_connect.png" alt="Saffire Connect Dashboard" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
                     <div class="relative z-10 p-8 md:p-10">
                         <span class="font-label text-primary text-[10px] uppercase tracking-widest mb-2 block">Fleet Intelligence</span>
                         <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4 kinetic-glow">Saffire Connect™</h4>
@@ -312,8 +306,8 @@ body {
 
                 <!-- Kinetic Vision Block -->
                 <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-[#0E0E10] border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up delay-100">
-                    <img class="absolute inset-0 w-full h-full object-cover opacity-40 transition-opacity duration-700 group-hover:opacity-60" src="images/bg_vision_convoy_1775475125142.png" alt="Saffire Vision" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10] via-[#0E0E10]/80 to-transparent"></div>
+                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/bg_vision_convoy_1775475125142.png" alt="Saffire Vision" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10] via-transparent to-transparent"></div>
                     <div class="relative z-10 p-8 md:p-10">
                         <span class="material-symbols-outlined text-primary text-3xl mb-4">visibility</span>
                         <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4">Kinetic Vision</h4>
