@@ -12,6 +12,9 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Leaflet Map CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
     tailwind.config = {
         darkMode: "class",
@@ -103,6 +106,30 @@
 }
 body {
     animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* Map Popups Dark Theme Override */
+.leaflet-popup-content-wrapper {
+    background-color: #1b1b1d !important;
+    color: #e5e1e4 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(151, 253, 255, 0.2);
+}
+.leaflet-popup-tip {
+    background-color: #1b1b1d !important;
+}
+.leaflet-container a.leaflet-popup-close-button {
+    color: #bac9cc !important;
+}
+.pulse-marker {
+    background: #97FDFF;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #97FDFF;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(151, 253, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(151, 253, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(151, 253, 255, 0); }
 }
 </style>
 
@@ -209,11 +236,28 @@ body {
 
 <main class="pt-32 pb-24 px-6 md:px-8 max-w-screen-2xl mx-auto min-h-screen">
     <!-- Hero Section / Header -->
-    <section class="mb-16 md:mb-24">
+    <section class="mb-12 md:mb-16">
         <p class="font-label text-primary text-xs md:text-sm tracking-[0.3em] uppercase mb-4">Precision Connectivity</p>
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none text-on-surface uppercase max-w-4xl">
             Liaison for the <span class="text-primary italic">Electric Era.</span>
         </h1>
+    </section>
+
+    <!-- Geographic Network Map -->
+    <section class="mb-12 md:mb-16">
+        <div class="w-full h-[400px] md:h-[500px] bg-surface-container-low rounded-xl border-t border-primary/10 overflow-hidden relative z-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" id="saffire-map">
+            <!-- Map injected by JS -->
+        </div>
+        <div class="flex items-center gap-6 mt-4 px-2">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_#97FDFF]"></span>
+                <span class="font-label tracking-widest uppercase text-[10px] text-on-surface-variant">Global HQ (Meerut)</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="w-2h- h-2.5 rounded-full bg-[#f3bf26]"></span>
+                <span class="font-label tracking-widest uppercase text-[10px] text-on-surface-variant">Upcoming Sectors</span>
+            </div>
+        </div>
     </section>
 
     <!-- Main Content Bento Grid -->
@@ -371,6 +415,7 @@ body {
 </style>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -383,6 +428,50 @@ body {
         document.querySelectorAll('main section, main .grid > div, main p, main h1, main h2, main h3').forEach(el => {
             el.classList.add('fade-up');
             observer.observe(el);
+        });
+
+        // Initialize Saffire Network Map
+        // Center somewhere focusing on India
+        const map = L.map('saffire-map', { zoomControl: false }).setView([23.5, 78.5], 5);
+        
+        // Add Dark Matter CartoDB Base Layer for premium obsidian aesthetic
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Custom pulsing marker for Meerut HQ
+        const hqIcon = L.divIcon({
+            className: 'pulse-marker',
+            iconSize: [12, 12]
+        });
+
+        // Standard marker for upcoming locations
+        const upcomingIcon = L.divIcon({
+            className: '',
+            html: '<div style="background-color: #f3bf26; width: 8px; height: 8px; border-radius: 50%; box-shadow: 0 0 5px #f3bf26;"></div>',
+            iconSize: [8, 8]
+        });
+
+        // Headquarters: Meerut (XM2G+RP6 approx)
+        L.marker([28.9486, 77.6789], { icon: hqIcon }).addTo(map)
+            .bindPopup('<b>Saffire EV Global HQ</b><br>Om Tower, Phase I, Meerut<br>UP 250002')
+            .openPopup();
+
+        // Upcoming Launch Nodes
+        const futureNodes = [
+            { name: "Delhi Matrix", coords: [28.6139, 77.2090] },
+            { name: "Lucknow Sector", coords: [26.8467, 80.9462] },
+            { name: "Indore Sector", coords: [22.7196, 75.8577] },
+            { name: "Ujjain Sector", coords: [23.1765, 75.7885] },
+            { name: "Varanasi Sector", coords: [25.3176, 82.9739] },
+            { name: "Chennai Hub (Tamil Nadu)", coords: [13.0827, 80.2707] }
+        ];
+
+        futureNodes.forEach(node => {
+            L.marker(node.coords, { icon: upcomingIcon }).addTo(map)
+                .bindPopup(`<span style="color:#f3bf26; font-size:10px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">Upcoming Launch</span><br><b>${node.name}</b>`);
         });
     });
 </script>
