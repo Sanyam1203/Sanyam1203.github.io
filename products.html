@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="refresh" content="0; url=products/index.html"/>
+<meta http-equiv="refresh" content="0; url=products/"/>
 <link rel="canonical" href="https://saffireev.com/products"/>
 <title>Redirecting...</title>
-<script>window.location.replace("products/index.html" + window.location.search + window.location.hash);</script>
+<script>
+    var path = window.location.protocol === 'file:' ? 'products/index.html' : 'products/';
+    window.location.replace(path + window.location.search + window.location.hash);
+</script>
 </head>
 <body>
-<p>Redirecting to <a href="products/index.html">products/index.html</a>...</p>
+<p>Redirecting to <a href="products/">products/</a>...</p>
 </body>
 </html>

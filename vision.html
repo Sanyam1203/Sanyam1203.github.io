@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="refresh" content="0; url=vision/index.html"/>
+<meta http-equiv="refresh" content="0; url=vision/"/>
 <link rel="canonical" href="https://saffireev.com/vision"/>
 <title>Redirecting...</title>
-<script>window.location.replace("vision/index.html" + window.location.search + window.location.hash);</script>
+<script>
+    var path = window.location.protocol === 'file:' ? 'vision/index.html' : 'vision/';
+    window.location.replace(path + window.location.search + window.location.hash);
+</script>
 </head>
 <body>
-<p>Redirecting to <a href="vision/index.html">vision/index.html</a>...</p>
+<p>Redirecting to <a href="vision/">vision/</a>...</p>
 </body>
 </html>
