@@ -101,12 +101,12 @@
 </style>
 
 <style>
-@keyframes pageSwipeIn {
+@keyframes  {
     0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
     100% { opacity: 1; transform: translateX(0); filter: blur(0); }
 }
 body {
-    animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation:  0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 </style>
 
@@ -148,6 +148,7 @@ body {
   "knowsAbout": ["Electric Vehicles", "L5 Vehicles", "Commercial 3-Wheelers", "Electric Mobility", "EVs"]
 }
 </script>
+    <link href="../assets/css/motion.css" rel="stylesheet"/>
 </head>
 
 
@@ -174,7 +175,7 @@ body {
             <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/contact">Contact</a>
         </div>
 
-        <a href="/contact" class="hidden md:flex bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm active:scale-[0.97] transition-transform duration-200">
+        <a href="/contact" class="hidden md:flex bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm  duration-200">
             PRE-ORDER
         </a>
 
@@ -235,12 +236,12 @@ body {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
             <!-- Passenger EV Card -->
-            <div class="group relative overflow-hidden bg-[#131315]/50 rounded-xl border border-primary/5 flex flex-col justify-end min-h-[500px] md:min-h-[600px] fade-up">
+            <div class="group relative overflow-hidden bg-[#131315]/50 rounded-xl border border-primary/5 flex flex-col justify-end min-h-[500px] md:min-h-[600px] reveal-text">
                 <div class="absolute top-6 left-6 z-20 flex flex-col gap-2">
                     <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm shadow-xl">In Development</span>
                 </div>
                 
-                <img src="../images/SAFFIRE_PASSANGER.png" alt="Saffire Passenger 3-Wheeler" class="card-bg-img absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <img src="../images/SAFFIRE_PASSANGER.png" alt="Saffire Passenger 3-Wheeler" class="card-bg-img absolute inset-0 w-full h-full object-cover duration-1000 " />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 to-transparent"></div>
                 
                 <div class="relative z-10 p-8 md:p-10">
@@ -261,12 +262,12 @@ body {
             </div>
 
             <!-- Cargo EV Card -->
-            <div class="group relative overflow-hidden bg-[#131315]/50 rounded-xl border border-primary/5 flex flex-col justify-end min-h-[500px] md:min-h-[600px] fade-up delay-100">
+            <div class="group relative overflow-hidden bg-[#131315]/50 rounded-xl border border-primary/5 flex flex-col justify-end min-h-[500px] md:min-h-[600px] reveal-text delay-100">
                 <div class="absolute top-6 left-6 z-20 flex flex-col gap-2">
                     <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm shadow-xl">In Development</span>
                 </div>
                 
-                <img src="../images/saffire_loader.png" alt="Saffire Cargo Loader" class="card-bg-img absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <img src="../images/saffire_loader.png" alt="Saffire Cargo Loader" class="card-bg-img absolute inset-0 w-full h-full object-cover duration-1000 " />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 to-transparent"></div>
                 
                 <div class="relative z-10 p-8 md:p-10">
@@ -313,7 +314,7 @@ body {
                     <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm shadow-xl">In Development</span>
                 </div>
                 <div class="h-[350px] w-full overflow-hidden relative bg-black">
-                    <img src="../images/saffire.2wheeler.png" alt="Future 2 Wheeler EV" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80" />
+                    <img src="../images/saffire.2wheeler.png" alt="Future 2 Wheeler EV" class="absolute inset-0 w-full h-full object-cover  duration-1000 opacity-80" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
                 </div>
                 <div class="absolute bottom-0 left-0 p-6 w-full z-20">
@@ -328,7 +329,7 @@ body {
                     <span class="inline-flex items-center px-3 py-1 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase rounded-sm shadow-xl">In Development</span>
                 </div>
                 <div class="h-[350px] w-full overflow-hidden relative bg-black">
-                    <img src="../images/Saffire_4_wheeler.png" alt="Future 4 Wheeler Cargo EV" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80" />
+                    <img src="../images/Saffire_4_wheeler.png" alt="Future 4 Wheeler Cargo EV" class="absolute inset-0 w-full h-full object-cover  duration-1000 opacity-80" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
                 </div>
                 <div class="absolute bottom-0 left-0 p-6 w-full z-20">
@@ -402,32 +403,17 @@ body {
 
 
 <style>
-    .fade-up {
+    .reveal-text {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .fade-up.in-view {
+    .reveal-text.in-view {
         opacity: 1;
         transform: translateY(0);
     }
 </style>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('main section, main .grid > div, main p, main h1, main h2, main h3').forEach(el => {
-            el.classList.add('fade-up');
-            observer.observe(el);
-        });
-    });
-</script>
+
+    <script src="../assets/js/motion.js"></script>
 </body>
 </html>

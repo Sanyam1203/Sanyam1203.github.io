@@ -100,12 +100,12 @@
 </style>
 
 <style>
-@keyframes pageSwipeIn {
+@keyframes  {
     0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
     100% { opacity: 1; transform: translateX(0); filter: blur(0); }
 }
 body {
-    animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation:  0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 /* Map Popups Dark Theme Override */
 .leaflet-popup-content-wrapper {
@@ -171,6 +171,7 @@ body {
   "knowsAbout": ["Electric Vehicles", "L5 Vehicles", "Commercial 3-Wheelers", "Electric Mobility", "EVs"]
 }
 </script>
+    <link href="../assets/css/motion.css" rel="stylesheet"/>
 </head>
 
 
@@ -197,7 +198,7 @@ body {
             <a class="text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1 font-label text-xs tracking-widest uppercase" href="/contact">Contact</a>
         </div>
 
-        <button class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm active:scale-[0.97] transition-transform duration-200 uppercase" disabled>
+        <button class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm  duration-200 uppercase" disabled>
             CONTACT
         </button>
 
@@ -342,7 +343,7 @@ body {
                 <!-- Phone / Whatsapp -->
                 <a class="group bg-surface-container-low rounded-xl p-6 md:p-8 border-t border-primary/10 flex flex-col justify-between hover:bg-surface-container transition-colors min-h-[160px]" href="#">
                     <div class="flex justify-between items-start mb-8">
-                        <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform duration-300">support_agent</span>
+                        <span class="material-symbols-outlined text-primary text-3xl group--110 duration-300">support_agent</span>
                         <span class="material-symbols-outlined text-outline-variant">north_east</span>
                     </div>
                     <div>
@@ -354,7 +355,7 @@ body {
                 <!-- Email -->
                 <a class="group bg-surface-container-low rounded-xl p-6 md:p-8 border-t border-primary/10 flex flex-col justify-between hover:bg-surface-container transition-colors min-h-[160px]" href="mailto:inquiry@saffireev.com">
                     <div class="flex justify-between items-start mb-8">
-                        <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform duration-300">alternate_email</span>
+                        <span class="material-symbols-outlined text-primary text-3xl group--110 duration-300">alternate_email</span>
                         <span class="material-symbols-outlined text-outline-variant">north_east</span>
                     </div>
                     <div>
@@ -405,12 +406,12 @@ body {
 
 
 <style>
-    .fade-up {
+    .reveal-text {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .fade-up.in-view {
+    .reveal-text.in-view {
         opacity: 1;
         transform: translateY(0);
     }
@@ -428,7 +429,7 @@ body {
         }, { threshold: 0.1 });
         
         document.querySelectorAll('main section, main .grid > div, main p, main h1, main h2, main h3').forEach(el => {
-            el.classList.add('fade-up');
+            el.classList.add('reveal-text');
             observer.observe(el);
         });
 
@@ -480,5 +481,6 @@ body {
         });
     });
 </script>
+    <script src="../assets/js/motion.js"></script>
 </body>
 </html>

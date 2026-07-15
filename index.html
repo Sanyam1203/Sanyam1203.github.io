@@ -95,15 +95,15 @@
     /* Global card image brightness rule */
     .card-bg-img {
         opacity: 0.9;
-        transition: opacity 0.7s ease, transform 1s cubic-bezier(0.16,1,0.3,1);
+        transition: opacity 0.7s ease;
     }
     .group:hover .card-bg-img { opacity: 1; }
-    .fade-up {
+    .reveal-text {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .fade-up.in-view {
+    .reveal-text.in-view {
         opacity: 1;
         transform: translateY(0);
     }
@@ -112,12 +112,12 @@
 </style>
 
 <style>
-@keyframes pageSwipeIn {
+@keyframes  {
     0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
     100% { opacity: 1; transform: translateX(0); filter: blur(0); }
 }
 body {
-    animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation:  0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 </style>
 
@@ -159,6 +159,7 @@ body {
   "knowsAbout": ["Electric Vehicles", "L5 Vehicles", "Commercial 3-Wheelers", "Electric Mobility", "EVs"]
 }
 </script>
+    <link href="assets/css/motion.css" rel="stylesheet"/>
 </head>
 
 
@@ -185,7 +186,7 @@ body {
             <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="contact/">Contact</a>
         </div>
 
-        <a href="contact/" class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm active:scale-[0.97] transition-transform duration-200 uppercase">
+        <a href="contact/" class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm  duration-200 uppercase">
             PRE-ORDER
         </a>
 
@@ -232,17 +233,17 @@ body {
         <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-8 text-left">
             <div class="flex flex-col items-start text-left">
                 <div class="max-w-4xl">
-                    <h1 class="font-headline font-bold text-5xl md:text-7xl lg:text-[9rem] leading-[0.85] tracking-tighter mb-8 md:mb-10 text-glow fade-up uppercase">
+                    <h1 class="font-headline font-bold text-5xl md:text-7xl lg:text-[9rem] leading-[0.85] tracking-tighter mb-8 md:mb-10 text-glow reveal-text uppercase">
                         <span class="block mb-2">SAFFIRE:</span>
                         <span class="text-white font-light italic block text-3xl md:text-5xl lg:text-6xl opacity-90 mb-1">Built to Shine,</span>
                         <span class="text-primary font-bold italic block text-3xl md:text-5xl lg:text-6xl opacity-90">Driven to Last.</span>
                     </h1>
-                    <p class="max-w-xl text-on-surface-variant text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 md:mb-12 fade-up delay-100">
+                    <p class="max-w-xl text-on-surface-variant text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 md:mb-12 reveal-text delay-100">
                         Engineering India's most <span class="text-white font-bold italic">affordable and reliable</span> EV ecosystem. Where advanced high-tech precision meets sustainable power.
                     </p>
-                    <div class="flex flex-col sm:flex-row justify-start items-center gap-6 fade-up delay-200">
+                    <div class="flex flex-col sm:flex-row justify-start items-center gap-6 reveal-text delay-200">
                         <a href="contact/" class="kinetic-gradient text-on-primary font-headline font-bold py-5 md:py-6 px-10 md:px-14 rounded-sm tracking-widest uppercase text-sm md:text-base hover:brightness-110 transition-all shadow-[0_15px_40px_rgba(151,253,255,0.3)] group flex items-center gap-3">
-                            Pre-Order Now <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            Pre-Order Now <span class="material-symbols-outlined group-hover:translate-x-1">arrow_forward</span>
                         </a>
                         <div class="flex gap-4">
                             <a href="products/" class="glass-panel border border-outline-variant/30 text-on-surface font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-xs md:text-sm hover:bg-surface-container-highest transition-all">
@@ -265,7 +266,7 @@ body {
                 
                 <!-- Row 1: Identity + Fleet (50/50) -->
                 <!-- Row 1: Identity + Fleet (50/50) -->
-                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 flex flex-col justify-end min-h-[450px] fade-up">
+                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 flex flex-col justify-end min-h-[450px] premium-card reveal-fade">
                     <img class="card-bg-img absolute inset-0 w-full h-full object-cover grayscale" src="images/bg_reliability_1775471488093.png" alt="Engineering reliability" />
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/40 to-transparent"></div>
                     <div class="relative z-10 p-8 md:p-12">
@@ -280,7 +281,7 @@ body {
                 </div>
 
                 <!-- Saffire Fleet -->
-                <div class="md:col-span-6 bg-surface-container-highest rounded-xl border-t border-primary/10 flex flex-col justify-end min-h-[450px] relative overflow-hidden group fade-up delay-100">
+                <div class="md:col-span-6 bg-surface-container-highest rounded-xl border-t border-primary/10 flex flex-col justify-end min-h-[450px] relative overflow-hidden group premium-card reveal-fade delay-100">
                     <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/fleet_passenger_1775471977901.png" alt="Saffire Fleet" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent"></div>
                     <div class="relative z-10 p-8">
@@ -293,7 +294,7 @@ body {
 
                 <!-- Focus Row: Technology & Vision -->
                 <!-- Saffire Connect Block -->
-                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up">
+                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 min-h-[450px] flex flex-col justify-end reveal-text">
                     <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/saffire_connect.png" alt="Saffire Connect Dashboard" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
                     <div class="relative z-10 p-8 md:p-10">
@@ -307,7 +308,7 @@ body {
                 </div>
 
                 <!-- Kinetic Vision Block -->
-                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-[#0E0E10] border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up delay-100">
+                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-[#0E0E10] border border-primary/5 min-h-[450px] flex flex-col justify-end reveal-text delay-100">
                     <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/bg_vision_convoy_1775475125142.png" alt="Saffire Vision" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10] via-transparent to-transparent"></div>
                     <div class="relative z-10 p-8 md:p-10">
@@ -453,6 +454,15 @@ body {
         const yearRange = document.getElementById('year-range');
         const dVal = document.getElementById('dist-val');
         const yVal = document.getElementById('year-val');
+        
+        // Cache previous values for animation
+        const prevValues = {
+            extraProfit: 0,
+            evTotal: 0,
+            traditionalTotal: 0,
+            lifetimeSavings: 0,
+            pct: 0
+        };
 
         function setFuel(type) {
             currentFuel = type;
@@ -464,7 +474,40 @@ body {
             activeBtn.classList.add('active', 'bg-surface-container-highest', 'text-primary');
             activeBtn.style.opacity = '1';
             document.getElementById('fuel-label').textContent = type.charAt(0).toUpperCase() + type.slice(1);
+            
+            // Brief highlight on fuel change
+            const lifetimeEl = document.getElementById('calc-lifetime');
+            lifetimeEl.classList.add('calculator-highlight');
+            setTimeout(() => lifetimeEl.classList.remove('calculator-highlight'), 300);
+            
             calculateTCO();
+        }
+
+        function animateNumber(elementId, fromValue, toValue, formatter, duration = 600) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                el.textContent = formatter(toValue);
+                return;
+            }
+
+            const startTime = performance.now();
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const ease = 1 - Math.pow(1 - progress, 3);
+                
+                const currentVal = fromValue + (toValue - fromValue) * ease;
+                el.textContent = formatter(currentVal);
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            requestAnimationFrame(update);
         }
 
         function calculateTCO() {
@@ -482,14 +525,27 @@ body {
             dVal.textContent = km + ' km';
             yVal.textContent = years + (years === 1 ? ' Year' : ' Years');
             
-            document.getElementById('calc-extra-profit').textContent = '₹ ' + Math.round(extraProfit).toLocaleString('en-IN');
-            document.getElementById('ev-cost').textContent = '₹ ' + Math.round(evTotal).toLocaleString('en-IN');
-            document.getElementById('fuel-cost').textContent = '₹ ' + Math.round(traditionalTotal).toLocaleString('en-IN');
-            document.getElementById('calc-lifetime').textContent = '₹ ' + Math.round(lifetimeSavings).toLocaleString('en-IN');
-            document.getElementById('calc-percent').textContent = `+${pct}% more profit per month than ${currentFuel}`;
+            // Animate numeric values
+            const formatINR = val => '₹ ' + Math.round(val).toLocaleString('en-IN');
             
+            animateNumber('calc-extra-profit', prevValues.extraProfit, extraProfit, formatINR);
+            animateNumber('ev-cost', prevValues.evTotal, evTotal, formatINR);
+            animateNumber('fuel-cost', prevValues.traditionalTotal, traditionalTotal, formatINR);
+            animateNumber('calc-lifetime', prevValues.lifetimeSavings, lifetimeSavings, formatINR);
+            animateNumber('calc-percent', prevValues.pct, pct, val => `+${Math.round(val)}% more profit per month than ${currentFuel}`);
+            
+            // Update cache
+            prevValues.extraProfit = extraProfit;
+            prevValues.evTotal = evTotal;
+            prevValues.traditionalTotal = traditionalTotal;
+            prevValues.lifetimeSavings = lifetimeSavings;
+            prevValues.pct = pct;
+            
+            // Animate bar
             const barPct = Math.min(95, (evTotal / traditionalTotal) * 100);
-            document.getElementById('savings-bar').style.width = (100 - barPct) + '%';
+            const savingsBar = document.getElementById('savings-bar');
+            savingsBar.style.transition = 'width 600ms cubic-bezier(0.16, 1, 0.3, 1)';
+            savingsBar.style.width = (100 - barPct) + '%';
         }
 
         distRange.addEventListener('input', calculateTCO);
@@ -527,19 +583,7 @@ body {
     </div>
 </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    });
-</script>
+
+    <script src="assets/js/motion.js"></script>
 </body>
 </html>

@@ -1,0 +1,200 @@
+/* assets/css/motion.css */
+
+:root {
+  --motion-fast: 180ms;
+  --motion-medium: 320ms;
+  --motion-slow: 700ms;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-control: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 1. Opacity-only Page Reveal */
+@keyframes pageFadeIn {
+  0% { opacity: 0; filter: blur(2px); }
+  100% { opacity: 1; filter: blur(0); }
+}
+
+body {
+  animation: pageFadeIn var(--motion-slow) var(--ease-premium) forwards;
+}
+
+/* 2. Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #97FDFF, #3FE6E8);
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  z-index: 9999;
+  will-change: transform;
+}
+
+/* 3. Reveal System */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--motion-slow) var(--ease-premium), transform var(--motion-slow) var(--ease-premium);
+  will-change: opacity, transform;
+}
+.reveal-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity var(--motion-slow) var(--ease-premium);
+  will-change: opacity;
+}
+.reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* Delays */
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+
+/* 4. Navbar Scroll States */
+.navbar {
+  transition: background-color var(--motion-medium) var(--ease-premium), transform var(--motion-medium) var(--ease-premium), border-color var(--motion-medium) var(--ease-premium), backdrop-filter var(--motion-medium) var(--ease-premium);
+  background-color: rgba(19, 19, 21, 0.8);
+  backdrop-filter: blur(20px);
+}
+.nav-scrolled {
+  background-color: rgba(14, 14, 16, 0.95);
+  border-bottom-color: rgba(59, 73, 76, 0.3);
+}
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* 5. Link Polish */
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #97FDFF;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--motion-medium) var(--ease-premium);
+}
+.nav-link:hover::after, .nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 6. Card Polish */
+.premium-card {
+  transition: border-color var(--motion-medium) var(--ease-premium), background-color var(--motion-medium) var(--ease-premium), box-shadow var(--motion-medium) var(--ease-premium);
+  position: relative;
+}
+.premium-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(151, 253, 255, 0), transparent);
+  transition: background var(--motion-medium) var(--ease-premium);
+  opacity: 0.5;
+  z-index: 10;
+  pointer-events: none;
+}
+.group:hover .premium-card,
+.premium-card:hover {
+  border-color: rgba(151, 253, 255, 0.2);
+  background-color: #1b1b1d; /* Slightly lighter tone */
+  box-shadow: 0 10px 40px rgba(151, 253, 255, 0.05);
+}
+.group:hover .premium-card::before,
+.premium-card:hover::before {
+  background: linear-gradient(90deg, transparent, rgba(151, 253, 255, 0.4), transparent);
+}
+
+/* 7. Button Polish */
+.premium-cta {
+  transition: filter var(--motion-medium) var(--ease-premium), box-shadow var(--motion-medium) var(--ease-premium);
+}
+.premium-cta:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 10px 30px rgba(151, 253, 255, 0.25);
+}
+.link-arrow {
+  transition: transform var(--motion-medium) var(--ease-premium);
+}
+.group:hover .link-arrow, .premium-cta:hover .link-arrow {
+  transform: translateX(3px);
+}
+
+/* 8. Utility Classes */
+.status-pulse {
+  animation: slowPulse 3s infinite ease-in-out;
+}
+@keyframes slowPulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.calculator-highlight {
+  color: #97FDFF;
+  text-shadow: 0 0 10px rgba(151, 253, 255, 0.5);
+  transition: color var(--motion-fast), text-shadow var(--motion-fast);
+}
+
+/* 9. IMAGE NO-MOTION PROTECTION */
+.group:hover img,
+.group:hover .card-bg-img,
+.group:hover .vision-card-img,
+img.reveal-fade,
+img.reveal-text,
+.card-bg-img.reveal-fade,
+.card-bg-img.reveal-text,
+.vision-card-img.reveal-fade,
+.vision-card-img.reveal-text {
+  transform: none !important;
+}
+
+.card-bg-img,
+.vision-card-img {
+  transition-property: opacity, filter, border-color, box-shadow !important;
+}
+
+/* Ensure no Tailwind arbitrary transforms move elements incorrectly */
+/* We target standard hover translations applied to groups to ensure they don't move the card. */
+.group:hover\:-translate-y-1,
+.hover\:-translate-y-1,
+.hover\:-translate-y-0\.5,
+.group:hover\:-translate-y-0\.5 {
+  transform: none !important;
+}
+
+/* Protect cards from being translated */
+.premium-card.reveal-fade.is-visible {
+  transform: none !important;
+}
+
+/* 10. Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none !important; }
+  .reveal-text, .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .scroll-progress-bar { display: none !important; }
+  .status-pulse { animation: none !important; opacity: 1 !important; }
+  .nav-link::after { transition: none !important; }
+}
