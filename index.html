@@ -13,9 +13,6 @@
 <meta property="og:url" content="https://saffireev.com/index.html">
 <meta property="og:type" content="website">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
@@ -95,54 +92,33 @@
     .text-glow { text-shadow: 0 0 40px rgba(151, 253, 255, 0.15); }
     .glass-panel { backdrop-filter: blur(20px); background: rgba(53, 52, 55, 0.6); }
     .kinetic-gradient { background: linear-gradient(45deg, #97FDFF 0%, #3FE6E8 100%); }
-    
-    /* Navigation Hover Effects */
-    .nav-link { position: relative; }
-    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background: #97FDFF; transform: scaleX(0); transform-origin: right; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
-    .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); transform-origin: left; }
-    
     /* Global card image brightness rule */
     .card-bg-img {
         opacity: 0.9;
         transition: opacity 0.7s ease, transform 1s cubic-bezier(0.16,1,0.3,1);
     }
-    .group:hover .card-bg-img { opacity: 1; transform: scale(1.02); }
-    
-    /* Smooth CSS Fallback reveals for Reduced Motion / Mobile */
+    .group:hover .card-bg-img { opacity: 1; }
     .fade-up {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform;
     }
     .fade-up.in-view {
         opacity: 1;
         transform: translateY(0);
     }
-    
-    /* Lenis Smooth Scroll Recommended Base Styles */
-    html.lenis, html.lenis body { height: auto; width: 100vw; overflow-x: hidden; }
-    .lenis.lenis-smooth { scroll-behavior: auto !important; }
-    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-    .lenis.lenis-stopped { overflow: hidden; }
-    .lenis.lenis-smooth iframe { pointer-events: none; }
-    
-    /* Base Animation setup */
-    .hero-title-line { will-change: transform; }
-    
-    @keyframes pageSwipeIn {
-        0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
-        100% { opacity: 1; transform: translateX(0); filter: blur(0); }
-    }
-    body {
-        animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-        body { animation: none; }
-        .fade-up, .hero-title-line { opacity: 1; transform: none; transition: none; }
-        .group:hover .card-bg-img { transform: none; }
-    }
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+</style>
+
+<style>
+@keyframes pageSwipeIn {
+    0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
+    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+body {
+    animation: pageSwipeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -203,13 +179,13 @@
 
         <!-- Desktop Nav -->
         <div class="hidden md:flex items-center space-x-12">
-            <a class="nav-link text-[#97FDFF] pb-1 font-label text-xs tracking-widest uppercase active" href="/">Home</a>
-            <a class="nav-link text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors pb-1 font-label text-xs tracking-widest uppercase" href="products/">Products</a>
-            <a class="nav-link text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors pb-1 font-label text-xs tracking-widest uppercase" href="vision/">Vision</a>
-            <a class="nav-link text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors pb-1 font-label text-xs tracking-widest uppercase" href="contact/">Contact</a>
+            <a class="text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1 font-label text-xs tracking-widest uppercase" href="/">Home</a>
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="products/">Products</a>
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="vision/">Vision</a>
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="contact/">Contact</a>
         </div>
 
-        <a href="contact/" class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(151,253,255,0.4)] hover:-translate-y-0.5 active:scale-[0.97] uppercase">
+        <a href="contact/" class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm active:scale-[0.97] transition-transform duration-200 uppercase">
             PRE-ORDER
         </a>
 
@@ -247,66 +223,52 @@
 </script>
 
 <main>
-    <!-- High-Impact Cinematic Hero Section -->
-    <section id="hero-sequence" class="relative w-full h-[100svh] flex items-center justify-start overflow-hidden pt-20 bg-background">
-        <!-- Parallax Background Container -->
-        <div id="hero-bg-container" class="absolute inset-0 z-0 overflow-hidden bg-background">
-            <!-- Ground Reflection / Soft Shadow -->
-            <div id="hero-ground-glow" class="absolute bottom-[5%] left-[50%] w-[60%] h-[15%] bg-primary/20 blur-[80px] opacity-0 rounded-full mix-blend-screen transform -translate-x-1/2 will-change-opacity"></div>
-            
-            <!-- Main Vehicle Image (Starts in shadow, illuminates and moves) -->
-            <img id="hero-vehicle" class="absolute right-[-8%] top-[10%] w-[120%] md:w-[85%] lg:w-[75%] max-w-none h-auto object-contain opacity-0 brightness-[0.2] mix-blend-screen scale-[0.96] will-change-transform will-change-opacity" src="images/herobanner.png" alt="Saffire EV futuristic 3-wheeler" />
-            
-            <!-- Dark Gradient Overlay for text readability -->
-            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent pointer-events-none"></div>
+    <!-- High-Impact Hero Section -->
+    <section class="relative min-h-[100svh] flex items-center justify-start overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0 text-left">
+            <img class="w-full h-full object-cover opacity-90 brightness-110 fade-in duration-1000" src="images/herobanner.png" alt="Saffire EV futuristic 3-wheeler" />
+            <div class="absolute inset-0 bg-gradient-to-r from-surface/95 via-surface/30 to-transparent"></div>
         </div>
-
-        <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-8 text-left h-full flex flex-col justify-center">
-            <div id="hero-content" class="max-w-4xl opacity-0">
-                <h1 id="hero-headline" class="font-headline font-bold text-5xl md:text-7xl lg:text-[9rem] leading-[0.85] tracking-tighter mb-8 md:mb-10 text-glow uppercase">
-                    <span class="block mb-2 overflow-hidden"><span class="block hero-title-line translate-y-[100%]">SAFFIRE:</span></span>
-                    <span class="text-white font-light italic block text-3xl md:text-5xl lg:text-6xl opacity-90 mb-1 overflow-hidden"><span class="block hero-title-line translate-y-[100%]">Built to Shine,</span></span>
-                    <span class="text-primary font-bold italic block text-3xl md:text-5xl lg:text-6xl opacity-90 overflow-hidden"><span class="block hero-title-line translate-y-[100%]">Driven to Last.</span></span>
-                </h1>
-                <div id="hero-subtext" class="opacity-0 translate-y-[20px]">
-                    <p class="max-w-xl text-on-surface-variant text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 md:mb-12">
+        <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-8 text-left">
+            <div class="flex flex-col items-start text-left">
+                <div class="max-w-4xl">
+                    <h1 class="font-headline font-bold text-5xl md:text-7xl lg:text-[9rem] leading-[0.85] tracking-tighter mb-8 md:mb-10 text-glow fade-up uppercase">
+                        <span class="block mb-2">SAFFIRE:</span>
+                        <span class="text-white font-light italic block text-3xl md:text-5xl lg:text-6xl opacity-90 mb-1">Built to Shine,</span>
+                        <span class="text-primary font-bold italic block text-3xl md:text-5xl lg:text-6xl opacity-90">Driven to Last.</span>
+                    </h1>
+                    <p class="max-w-xl text-on-surface-variant text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 md:mb-12 fade-up delay-100">
                         Engineering India's most <span class="text-white font-bold italic">affordable and reliable</span> EV ecosystem. Where advanced high-tech precision meets sustainable power.
                     </p>
-                    <div class="flex flex-col sm:flex-row justify-start items-center gap-6">
-                        <a href="contact/" class="kinetic-gradient text-on-primary font-headline font-bold py-5 md:py-6 px-10 md:px-14 rounded-sm tracking-widest uppercase text-sm md:text-base hover:brightness-110 transition-all shadow-[0_15px_40px_rgba(151,253,255,0.3)] hover:-translate-y-0.5 group flex items-center gap-3 relative overflow-hidden">
+                    <div class="flex flex-col sm:flex-row justify-start items-center gap-6 fade-up delay-200">
+                        <a href="contact/" class="kinetic-gradient text-on-primary font-headline font-bold py-5 md:py-6 px-10 md:px-14 rounded-sm tracking-widest uppercase text-sm md:text-base hover:brightness-110 transition-all shadow-[0_15px_40px_rgba(151,253,255,0.3)] group flex items-center gap-3">
                             Pre-Order Now <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
                         </a>
                         <div class="flex gap-4">
-                            <a href="products/" class="glass-panel border border-outline-variant/30 text-on-surface font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-xs md:text-sm hover:bg-surface-container-highest transition-all hover:-translate-y-0.5 relative overflow-hidden group">
-                                <span class="relative z-10">Fleet</span>
-                                <div class="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            <a href="products/" class="glass-panel border border-outline-variant/30 text-on-surface font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-xs md:text-sm hover:bg-surface-container-highest transition-all">
+                                Fleet
                             </a>
-                            <a href="vision/" class="glass-panel border border-outline-variant/30 text-on-surface font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-xs md:text-sm hover:bg-surface-container-highest transition-all hover:-translate-y-0.5 relative overflow-hidden group">
-                                <span class="relative z-10">Vision</span>
-                                <div class="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            <a href="vision/" class="glass-panel border border-outline-variant/30 text-on-surface font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-xs md:text-sm hover:bg-surface-container-highest transition-all">
+                                Vision
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Light sweep for transition out -->
-        <div id="hero-light-sweep" class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 transform scale-x-0 origin-left z-20"></div>
     </section>
 
     <!-- About & Focus Grid (Bento Style) -->
-    <section id="bento-section" class="py-20 md:py-32 px-6 md:px-8 bg-surface">
+    <section class="py-20 md:py-32 px-6 md:px-8 bg-surface">
         <div class="max-w-screen-2xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
                 
                 <!-- Row 1: Identity + Fleet (50/50) -->
-                <div id="identity-card" class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 flex flex-col justify-end min-h-[450px] fade-up">
-                    <div class="absolute inset-0 w-full h-full overflow-hidden mask-reveal">
-                        <img class="card-bg-img w-full h-full object-cover grayscale parallax-img" src="images/bg_reliability_1775471488093.png" alt="Engineering reliability" />
-                    </div>
+                <!-- Row 1: Identity + Fleet (50/50) -->
+                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 flex flex-col justify-end min-h-[450px] fade-up">
+                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover grayscale" src="images/bg_reliability_1775471488093.png" alt="Engineering reliability" />
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/40 to-transparent"></div>
-                    <div class="relative z-10 p-8 md:p-12 identity-content">
+                    <div class="relative z-10 p-8 md:p-12">
                         <h2 class="font-headline text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight">Our Identity</h2>
                         <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-lg mb-6 md:mb-8 font-light">
                             Saffire EV was born at the intersection of aerospace precision and commercial logistics necessity. Focusing on delivering the most <span class="text-primary font-bold">affordable and reliable</span> fleet for India and beyond.
@@ -318,12 +280,10 @@
                 </div>
 
                 <!-- Saffire Fleet -->
-                <div id="fleet-card" class="md:col-span-6 bg-surface-container-highest rounded-xl border-t border-primary/10 flex flex-col justify-end min-h-[450px] relative overflow-hidden group fade-up delay-100">
-                    <div class="absolute inset-0 w-full h-full overflow-hidden mask-reveal">
-                        <img class="card-bg-img w-full h-full object-cover parallax-img" src="images/fleet_passenger_1775471977901.png" alt="Saffire Fleet" />
-                    </div>
+                <div class="md:col-span-6 bg-surface-container-highest rounded-xl border-t border-primary/10 flex flex-col justify-end min-h-[450px] relative overflow-hidden group fade-up delay-100">
+                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/fleet_passenger_1775471977901.png" alt="Saffire Fleet" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent"></div>
-                    <div class="relative z-10 p-8 fleet-content">
+                    <div class="relative z-10 p-8">
                         <span class="material-symbols-outlined text-primary text-3xl md:text-4xl mb-4">electric_car</span>
                         <h3 class="font-headline text-2xl md:text-3xl font-bold mb-2 md:mb-3">The Saffire Fleet</h3>
                         <p class="text-on-surface-variant mb-4 md:mb-6 text-sm md:text-base font-light">Discover our 3-wheeler lineup. Purpose-built passenger and cargo platforms engineered for maximum utility, low operational cost, and zero emissions.</p>
@@ -333,34 +293,24 @@
 
                 <!-- Focus Row: Technology & Vision -->
                 <!-- Saffire Connect Block -->
-                <div id="connect-card" class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up vision-tilt-card">
-                    <div class="absolute inset-0 w-full h-full overflow-hidden mask-reveal">
-                        <img class="card-bg-img w-full h-full object-cover parallax-img" src="images/saffire_connect.png" alt="Saffire Connect Dashboard" />
-                    </div>
-                    <!-- Simulate network connecting lines -->
-                    <div class="absolute inset-0 pointer-events-none opacity-30 mix-blend-screen" id="network-lines"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-[#0e0e10]/60 to-transparent"></div>
-                    <div class="relative z-10 p-8 md:p-10 connect-content">
+                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up">
+                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/saffire_connect.png" alt="Saffire Connect Dashboard" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
+                    <div class="relative z-10 p-8 md:p-10">
                         <span class="font-label text-primary text-[10px] uppercase tracking-widest mb-2 block">Fleet Intelligence</span>
-                        <h4 class="font-headline text-2xl md:text-3xl font-bold mb-2 kinetic-glow">Saffire Connect™</h4>
-                        <div class="mb-4">
-                            <div class="font-headline text-2xl md:text-3xl font-bold text-primary"><span id="connect-counter">0</span>+</div>
-                            <span class="text-[9px] text-on-surface-variant font-label tracking-widest uppercase block mt-1">Active Telemetry Nodes</span>
-                        </div>
-                        <p class="font-body text-on-surface-variant text-sm md:text-base font-light mb-6 opacity-80 max-w-sm">India's most advanced B2B fleet ecosystem. Monitor real-time telemetry from a single cockpit.</p>
+                        <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4 kinetic-glow">Saffire Connect™</h4>
+                        <p class="font-body text-on-surface-variant text-sm md:text-base font-light mb-6 opacity-80">India's most advanced B2B fleet ecosystem. Monitor real-time telemetry from a single cockpit.</p>
                         <div class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-widest">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary pulse-slow"></span> Network Active
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Network Active
                         </div>
                     </div>
                 </div>
 
                 <!-- Kinetic Vision Block -->
-                <div id="vision-card" class="md:col-span-6 group relative overflow-hidden rounded-xl bg-[#0E0E10] border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up delay-100 vision-tilt-card">
-                    <div class="absolute inset-0 w-full h-full overflow-hidden mask-reveal">
-                        <img class="card-bg-img w-full h-full object-cover parallax-img" src="images/bg_vision_convoy_1775475125142.png" alt="Saffire Vision" />
-                    </div>
+                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-[#0E0E10] border border-primary/5 min-h-[450px] flex flex-col justify-end fade-up delay-100">
+                    <img class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/bg_vision_convoy_1775475125142.png" alt="Saffire Vision" />
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10] via-transparent to-transparent"></div>
-                    <div class="relative z-10 p-8 md:p-10 vision-content">
+                    <div class="relative z-10 p-8 md:p-10">
                         <span class="material-symbols-outlined text-primary text-3xl mb-4">visibility</span>
                         <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4">Kinetic Vision</h4>
                         <p class="font-body text-on-surface-variant text-sm md:text-base font-light mb-6 opacity-80">Building the blueprint for tomorrow's sustainable commercial mobility infrastructure.</p>
@@ -373,16 +323,13 @@
     </section>
 
     <!-- Dealer Network CTA -->
-    <section class="py-24 bg-[#0E0E10] border-t border-outline-variant/10 relative overflow-hidden">
-        <!-- Subtle Grid Texture -->
-        <div class="absolute inset-0 z-0 opacity-[0.02]" style="background-image: linear-gradient(#97FDFF 1px, transparent 1px), linear-gradient(90deg, #97FDFF 1px, transparent 1px); background-size: 50px 50px;"></div>
-        
-        <div class="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-8 text-center">
-            <h2 class="font-headline text-3xl md:text-4xl font-bold mb-6 fade-up">Scale Your Enterprise With Us</h2>
-            <p class="text-on-surface-variant max-w-2xl mx-auto mb-10 font-light text-lg fade-up delay-100">We are expanding our national footprint. Partner with India's most affordable and advanced EV ecosystem as a distributor or technical partner.</p>
-            <div class="flex flex-wrap justify-center gap-6 fade-up delay-200">
-                <a href="contact/?type=dealer" class="kinetic-gradient text-on-primary px-10 py-5 font-label text-sm font-bold tracking-widest rounded-sm hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(151,253,255,0.2)] hover:brightness-110 transition-all duration-300">BECOME A DEALER</a>
-                <a href="vision/#tech" class="border border-outline-variant/40 bg-[#0E0E10] px-10 py-5 font-label text-sm font-bold tracking-widest rounded-sm hover:bg-surface-variant/20 hover:-translate-y-0.5 hover:border-outline-variant/60 transition-all duration-300">TECH PARTNERSHIPS</a>
+    <section class="py-24 bg-[#0E0E10] border-t border-outline-variant/10">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-8 text-center">
+            <h2 class="font-headline text-3xl md:text-4xl font-bold mb-6">Scale Your Enterprise With Us</h2>
+            <p class="text-on-surface-variant max-w-2xl mx-auto mb-10 font-light text-lg">We are expanding our national footprint. Partner with India's most affordable and advanced EV ecosystem as a distributor or technical partner.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="contact/?type=dealer" class="kinetic-gradient text-on-primary px-10 py-5 font-label text-sm font-bold tracking-widest rounded-sm">BECOME A DEALER</a>
+                <a href="vision/#tech" class="border border-outline-variant/40 px-10 py-5 font-label text-sm font-bold tracking-widest rounded-sm hover:bg-surface-variant/20 transition-all">TECH PARTNERSHIPS</a>
             </div>
         </div>
     </section>
@@ -506,15 +453,6 @@
         const yearRange = document.getElementById('year-range');
         const dVal = document.getElementById('dist-val');
         const yVal = document.getElementById('year-val');
-        
-        // State object for GSAP to animate
-        const calcState = {
-            extraProfit: 0,
-            evTotal: 0,
-            traditionalTotal: 0,
-            lifetimeSavings: 0,
-            pct: 0
-        };
 
         function setFuel(type) {
             currentFuel = type;
@@ -526,10 +464,6 @@
             activeBtn.classList.add('active', 'bg-surface-container-highest', 'text-primary');
             activeBtn.style.opacity = '1';
             document.getElementById('fuel-label').textContent = type.charAt(0).toUpperCase() + type.slice(1);
-            
-            // Brief highlight on fuel change
-            gsap.fromTo('#calc-lifetime', { color: '#97FDFF', scale: 1.05 }, { color: '#E5E1E4', scale: 1, duration: 0.5 });
-            
             calculateTCO();
         }
 
@@ -539,75 +473,38 @@
             const totalDays = years * 365 * 0.9; // 90% utilization
             const totalKm = totalDays * km;
 
-            const targetEvTotal = totalKm * rates.ev;
-            const targetTraditionalTotal = totalKm * rates[currentFuel];
-            const targetExtraProfit = (targetTraditionalTotal - targetEvTotal) / (years * 12);
-            const targetLifetimeSavings = targetTraditionalTotal - targetEvTotal;
-            const targetPct = Math.round(((targetTraditionalTotal / targetEvTotal) - 1) * 100);
+            const evTotal = totalKm * rates.ev;
+            const traditionalTotal = totalKm * rates[currentFuel];
+            const extraProfit = (traditionalTotal - evTotal) / (years * 12);
+            const lifetimeSavings = traditionalTotal - evTotal;
+            const pct = Math.round(((traditionalTotal / evTotal) - 1) * 100);
 
             dVal.textContent = km + ' km';
             yVal.textContent = years + (years === 1 ? ' Year' : ' Years');
             
-            // GSAP smooth value animation
-            if (window.gsap) {
-                gsap.to(calcState, {
-                    extraProfit: targetExtraProfit,
-                    evTotal: targetEvTotal,
-                    traditionalTotal: targetTraditionalTotal,
-                    lifetimeSavings: targetLifetimeSavings,
-                    pct: targetPct,
-                    duration: 0.6,
-                    ease: "power2.out",
-                    onUpdate: () => {
-                        document.getElementById('calc-extra-profit').textContent = '₹ ' + Math.round(calcState.extraProfit).toLocaleString('en-IN');
-                        document.getElementById('ev-cost').textContent = '₹ ' + Math.round(calcState.evTotal).toLocaleString('en-IN');
-                        document.getElementById('fuel-cost').textContent = '₹ ' + Math.round(calcState.traditionalTotal).toLocaleString('en-IN');
-                        document.getElementById('calc-lifetime').textContent = '₹ ' + Math.round(calcState.lifetimeSavings).toLocaleString('en-IN');
-                        document.getElementById('calc-percent').textContent = `+${Math.round(calcState.pct)}% more profit per month than ${currentFuel}`;
-                    }
-                });
-            } else {
-                // Fallback if GSAP fails
-                document.getElementById('calc-extra-profit').textContent = '₹ ' + Math.round(targetExtraProfit).toLocaleString('en-IN');
-                document.getElementById('ev-cost').textContent = '₹ ' + Math.round(targetEvTotal).toLocaleString('en-IN');
-                document.getElementById('fuel-cost').textContent = '₹ ' + Math.round(targetTraditionalTotal).toLocaleString('en-IN');
-                document.getElementById('calc-lifetime').textContent = '₹ ' + Math.round(targetLifetimeSavings).toLocaleString('en-IN');
-                document.getElementById('calc-percent').textContent = `+${targetPct}% more profit per month than ${currentFuel}`;
-            }
+            document.getElementById('calc-extra-profit').textContent = '₹ ' + Math.round(extraProfit).toLocaleString('en-IN');
+            document.getElementById('ev-cost').textContent = '₹ ' + Math.round(evTotal).toLocaleString('en-IN');
+            document.getElementById('fuel-cost').textContent = '₹ ' + Math.round(traditionalTotal).toLocaleString('en-IN');
+            document.getElementById('calc-lifetime').textContent = '₹ ' + Math.round(lifetimeSavings).toLocaleString('en-IN');
+            document.getElementById('calc-percent').textContent = `+${pct}% more profit per month than ${currentFuel}`;
             
-            const barPct = Math.min(95, (targetEvTotal / targetTraditionalTotal) * 100);
-            const barWidth = (100 - barPct) + '%';
-            
-            if (window.gsap) {
-                gsap.to('#savings-bar', { width: barWidth, duration: 0.6, ease: "power2.out" });
-            } else {
-                document.getElementById('savings-bar').style.width = barWidth;
-            }
+            const barPct = Math.min(95, (evTotal / traditionalTotal) * 100);
+            document.getElementById('savings-bar').style.width = (100 - barPct) + '%';
         }
 
         distRange.addEventListener('input', calculateTCO);
         yearRange.addEventListener('input', calculateTCO);
         
         // Initial calc
-        document.addEventListener('DOMContentLoaded', () => {
-            // Need slight delay to ensure GSAP is loaded if deferred
-            setTimeout(calculateTCO, 100);
-        });
+        document.addEventListener('DOMContentLoaded', calculateTCO);
     </script>
 
     <!-- Vision Statement -->
-    <section id="final-vision" class="relative py-32 md:py-48 border-y border-outline-variant/10 bg-surface-container-lowest overflow-hidden flex items-center justify-center">
-        <!-- Cinematic dark background -->
-        <div class="absolute inset-0 z-0 bg-[#0A0A0C]">
-            <!-- Very subtle road/horizon silhouette using existing asset, heavily darkened -->
-            <img class="w-full h-full object-cover opacity-10 mix-blend-lighten will-change-transform" id="vision-bg" src="images/bg_smart_1775471261569.png" alt="Saffire Future" />
-            <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0C] via-transparent to-[#0E0E10]"></div>
-        </div>
-        
-        <div class="relative z-10 max-w-screen-xl mx-auto px-6 md:px-8 text-center" id="vision-text-container">
-            <h2 class="font-headline text-[10px] md:text-xs tracking-[0.4em] uppercase text-primary/60 mb-6 md:mb-8 opacity-0 translate-y-4 will-change-opacity will-change-transform">Our Vision</h2>
-            <p class="font-headline text-2xl md:text-4xl lg:text-5xl font-medium leading-[1.3] tracking-tight text-on-surface max-w-4xl mx-auto opacity-0 translate-y-8 will-change-opacity will-change-transform" id="vision-quote">
-                "We are democratizing electric movement by building the most <span class="italic text-primary text-glow inline-block">affordable, reliable, and advanced</span> EV ecosystem on the planet."
+    <section class="py-20 md:py-24 border-y border-outline-variant/10 bg-surface-container-lowest">
+        <div class="max-w-screen-xl mx-auto px-6 md:px-8 text-center">
+            <h2 class="font-headline text-[10px] md:text-xs tracking-[0.4em] uppercase text-primary/60 mb-6 md:mb-8">Our Vision</h2>
+            <p class="font-headline text-2xl md:text-4xl lg:text-5xl font-medium leading-[1.2] tracking-tight text-on-surface max-w-4xl mx-auto">
+                "We are democratizing electric movement by building the most <span class="italic text-primary">affordable, reliable, and advanced</span> EV ecosystem on the planet."
             </p>
         </div>
     </section>
@@ -632,244 +529,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // 1. Check for reduced motion preference
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
-        // 2. Initialize Lenis Smooth Scrolling (if safe)
-        let lenis;
-        if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
-            lenis = new Lenis({
-                duration: 1.2,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                direction: 'vertical',
-                gestureDirection: 'vertical',
-                smooth: true,
-                mouseMultiplier: 1,
-                smoothTouch: false,
-                touchMultiplier: 2,
-                infinite: false,
-            });
-
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
-            requestAnimationFrame(raf);
-            
-            // Sync Lenis with GSAP
-            if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
-                lenis.on('scroll', ScrollTrigger.update);
-                gsap.ticker.add((time)=>{
-                  lenis.raf(time * 1000);
-                });
-                gsap.ticker.lagSmoothing(0);
-            }
-        }
-
-        // 3. Fallback for reduced motion
-        if (prefersReducedMotion) {
-            document.querySelectorAll('.opacity-0, .translate-y-[100%], .translate-y-4, .translate-y-8, .translate-y-[20px], .scale-x-0').forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'none';
-            });
-            const heroVeh = document.getElementById('hero-vehicle');
-            if (heroVeh) {
-                heroVeh.style.opacity = '1';
-                heroVeh.style.transform = 'scale(1)';
-                heroVeh.style.filter = 'brightness(1)';
-                heroVeh.style.right = '0%';
-            }
-        }
-
-        // 4. GSAP Animations
-        if (!prefersReducedMotion && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            gsap.registerPlugin(ScrollTrigger);
-            
-            let mm = gsap.matchMedia();
-
-            // Desktop Animations (Pinning)
-            mm.add("(min-width: 768px)", () => {
-                // Hero Intro
-                const heroTl = gsap.timeline();
-                
-                heroTl.to("#hero-vehicle", {
-                    opacity: 1,
-                    duration: 1.2,
-                    ease: "power2.out"
-                }, 0)
-                .to("#hero-content", {
-                    opacity: 1,
-                    duration: 0.5
-                }, 0.2)
-                .to(".hero-title-line", {
-                    y: "0%",
-                    duration: 1,
-                    stagger: 0.15,
-                    ease: "power3.out"
-                }, 0.2)
-                .to("#hero-subtext", {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power2.out"
-                }, 0.8);
-
-                // Hero Cinematic Scroll
-                const scrollTl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#hero-sequence",
-                        start: "top top",
-                        end: "+=150%",
-                        pin: true,
-                        scrub: 1,
-                        anticipatePin: 1
-                    }
-                });
-
-                scrollTl.to("#hero-vehicle", {
-                    right: "5%",
-                    filter: "brightness(1)",
-                    scale: 1.03,
-                    ease: "none"
-                }, 0)
-                .to("#hero-ground-glow", {
-                    opacity: 1,
-                    ease: "power1.inOut"
-                }, 0)
-                .to("#hero-bg-container", {
-                    yPercent: 10,
-                    ease: "none"
-                }, 0)
-                .to("#hero-content", {
-                    y: -50,
-                    opacity: 0,
-                    ease: "power1.in"
-                }, 0.3)
-                .to("#hero-light-sweep", {
-                    scaleX: 1,
-                    opacity: 1,
-                    ease: "power2.inOut"
-                }, 0.8);
-
-                // Parallax Images in Bento Grid
-                gsap.utils.toArray('.parallax-img').forEach(img => {
-                    gsap.to(img, {
-                        yPercent: 15,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: img.parentElement,
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: true
-                        }
-                    });
-                });
-
-                // Vision Card 3D Tilt
-                const tiltCards = document.querySelectorAll('.vision-tilt-card');
-                tiltCards.forEach(card => {
-                    card.addEventListener('mousemove', e => {
-                        const rect = card.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        const xPct = (x / rect.width) - 0.5;
-                        const yPct = (y / rect.height) - 0.5;
-                        
-                        gsap.to(card, {
-                            rotationY: xPct * 4,
-                            rotationX: -yPct * 4,
-                            x: xPct * 6,
-                            y: yPct * 6,
-                            ease: "power2.out",
-                            duration: 0.5,
-                            transformPerspective: 1000
-                        });
-                    });
-                    
-                    card.addEventListener('mouseleave', () => {
-                        gsap.to(card, {
-                            rotationY: 0,
-                            rotationX: 0,
-                            x: 0,
-                            y: 0,
-                            ease: "power2.out",
-                            duration: 0.8
-                        });
-                    });
-                });
-                
-                return () => {};
-            });
-
-            // Mobile Fallback Animations
-            mm.add("(max-width: 767px)", () => {
-                const heroTl = gsap.timeline();
-                heroTl.to("#hero-vehicle", {
-                    opacity: 1,
-                    filter: "brightness(0.8)",
-                    right: "0%",
-                    duration: 1.2,
-                    ease: "power2.out"
-                }, 0)
-                .to("#hero-content", { opacity: 1, duration: 0.5 }, 0.2)
-                .to(".hero-title-line", { y: "0%", duration: 1, stagger: 0.1, ease: "power3.out" }, 0.2)
-                .to("#hero-subtext", { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, 0.6);
-                
-                return () => {};
-            });
-
-            // Shared Animations
-            const connectCard = document.getElementById("connect-card");
-            if (connectCard) {
-                ScrollTrigger.create({
-                    trigger: "#connect-card",
-                    start: "top 75%",
-                    onEnter: () => {
-                        gsap.to({val: 0}, {
-                            val: 12400,
-                            duration: 2.5,
-                            ease: "power3.out",
-                            onUpdate: function() {
-                                document.getElementById("connect-counter").textContent = Math.round(this.targets()[0].val).toLocaleString();
-                            }
-                        });
-                    },
-                    once: true
-                });
-            }
-
-            // Final Vision Sequence
-            const finalVision = document.getElementById("final-vision");
-            if (finalVision) {
-                gsap.to("#vision-bg", {
-                    scale: 1.05,
-                    opacity: 0.4,
-                    scrollTrigger: {
-                        trigger: "#final-vision",
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                });
-                
-                gsap.to("#vision-text-container h2", {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    scrollTrigger: { trigger: "#final-vision", start: "top 60%" }
-                });
-                
-                gsap.to("#vision-quote", {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.5,
-                    ease: "power2.out",
-                    scrollTrigger: { trigger: "#final-vision", start: "top 50%" }
-                });
-            }
-        }
-
-        // 5. Basic IntersectionObserver for elements with .fade-up
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
