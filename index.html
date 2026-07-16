@@ -292,66 +292,115 @@ function trackEvent(eventName, params = {}) {
         </div>
     </section>
 
-    <!-- About & Focus Grid (Bento Style) -->
-    <section class="py-20 md:py-32 px-6 md:px-8 bg-surface">
+    <!-- Saffire Ecosystem Preview -->
+    <section class="py-20 md:py-32 px-6 md:px-8 bg-surface border-t border-outline-variant/10">
         <div class="max-w-screen-2xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+            <div class="mb-12 md:mb-16">
+                <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#E5E1E4]">Saffire Ecosystem Preview</h2>
+                <p class="text-on-surface-variant text-lg md:text-xl font-light max-w-2xl">
+                    One platform. Two vehicle categories. Connected intelligence. Built for India’s commercial EV future.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 
-                <!-- Row 1: Identity + Fleet (50/50) -->
-                <!-- Row 1: Identity + Fleet (50/50) -->
-                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 flex flex-col justify-end min-h-[450px] premium-card reveal-fade">
-                    <img loading="lazy" decoding="async" class="card-bg-img absolute inset-0 w-full h-full object-cover grayscale" src="images/bg_reliability_1775471488093.png" alt="Engineering reliability" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/40 to-transparent"></div>
-                    <div class="relative z-10 p-8 md:p-12">
-                        <h2 class="font-headline text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight">Our Identity</h2>
-                        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-lg mb-6 md:mb-8 font-light">
-                            Saffire EV was born at the intersection of aerospace precision and commercial logistics necessity. Focusing on delivering the most <span class="text-primary font-bold">affordable and reliable</span> fleet for India and beyond.
-                        </p>
-                        <a href="vision/" class="inline-flex items-center gap-2 text-primary font-label text-xs md:text-sm tracking-widest uppercase group-hover:gap-4 transition-all">
-                            Learn More About Us <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Saffire Fleet -->
-                <div class="md:col-span-6 bg-surface-container-highest rounded-xl border-t border-primary/10 flex flex-col justify-end min-h-[450px] relative overflow-hidden group premium-card reveal-fade delay-100">
-                    <img loading="lazy" decoding="async" class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/fleet_passenger_1775471977901.png" alt="Saffire Fleet" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent"></div>
-                    <div class="relative z-10 p-8">
-                        <span class="material-symbols-outlined text-primary text-3xl md:text-4xl mb-4">electric_car</span>
-                        <h3 class="font-headline text-2xl md:text-3xl font-bold mb-2 md:mb-3">The Saffire Fleet</h3>
-                        <p class="text-on-surface-variant mb-4 md:mb-6 text-sm md:text-base font-light">Discover our 3-wheeler lineup. Purpose-built passenger and cargo platforms engineered for maximum utility, low operational cost, and zero emissions.</p>
-                        <a href="products/" class="text-primary font-label text-xs tracking-widest uppercase hover:text-white transition-colors">View Products <span class="material-symbols-outlined text-[10px] ml-1">arrow_forward</span></a>
-                    </div>
-                </div>
-
-                <!-- Focus Row: Technology & Vision -->
-                <!-- Saffire Connect Block -->
-                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-primary/5 min-h-[450px] flex flex-col justify-end reveal-text">
-                    <img loading="lazy" decoding="async" class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/saffire_connect.png" alt="Saffire Connect Dashboard" />
+                <!-- Left: Large Static Image Panel -->
+                <div class="lg:col-span-5 xl:col-span-6 order-2 lg:order-1 h-full min-h-[400px] lg:min-h-0 relative rounded-2xl overflow-hidden border border-primary/20 glass-panel">
+                    <img src="images/loader-passenger-studio.png" alt="Saffire EV Vehicle Platforms" class="absolute inset-0 w-full h-full object-cover opacity-90" style="transform: none; transition: none;">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent"></div>
-                    <div class="relative z-10 p-8 md:p-10">
-                        <span class="font-label text-primary text-[10px] uppercase tracking-widest mb-2 block">Fleet Intelligence</span>
-                        <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4 kinetic-glow">Saffire Connect™</h4>
-                        <p class="font-body text-on-surface-variant text-sm md:text-base font-light mb-6 opacity-80">India's most advanced B2B fleet ecosystem. Monitor real-time telemetry from a single cockpit.</p>
-                        <div class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-widest">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Network Active
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/30 rounded-full mb-4">
+                            <span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#97fdff]"></span>
+                            <span class="text-primary font-label text-xs tracking-widest uppercase">Ecosystem Active</span>
+                        </div>
+                        <h3 class="font-headline text-3xl font-bold text-white mb-2">Automotive Excellence</h3>
+                        <p class="text-on-surface-variant font-light max-w-md">Precision engineering meets commercial utility across our entire product range.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Content Areas -->
+                <div class="lg:col-span-7 xl:col-span-6 order-1 lg:order-2 flex flex-col gap-6">
+                    
+                    <!-- 1. Vehicles -->
+                    <div class="group relative bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 rounded-xl p-6 md:p-8 transition-colors flex flex-col sm:flex-row gap-6 items-start overflow-hidden">
+                        <div class="w-full sm:w-1/3 aspect-[4/3] relative rounded-lg overflow-hidden shrink-0 border border-outline-variant/10">
+                            <img src="images/loader-passenger-studio.png" alt="Saffire Vehicles" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" style="transform: none; transition: none;">
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="font-headline font-bold text-primary opacity-60">01</span>
+                                <h4 class="font-headline text-xl font-bold text-[#E5E1E4] group-hover:text-primary transition-colors">Two Electric Three-Wheeler Platforms</h4>
+                            </div>
+                            <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
+                                Saffire EV begins with two practical vehicle categories — Saffire Smart Ride for D+3 passenger mobility and Saffire Swiss Cargo for commercial load movement. Both are designed for Indian road conditions, daily usage and business-focused mobility.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4 text-xs font-label tracking-widest uppercase">
+                                <a href="products/saffire-smart-ride/" onclick="trackEvent('homepage_ecosystem_click', {target: 'smart_ride'})" class="text-primary hover:text-white transition-colors flex items-center gap-1 group/link">View Smart Ride <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a>
+                                <a href="products/saffire-swiss-cargo/" onclick="trackEvent('homepage_ecosystem_click', {target: 'swiss_cargo'})" class="text-primary hover:text-white transition-colors flex items-center gap-1 group/link">View Swiss Cargo <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a>
+                                <a href="products/" onclick="trackEvent('homepage_ecosystem_click', {target: 'all_products'})" class="text-on-surface-variant hover:text-white transition-colors flex items-center gap-1 group/link">Explore Products <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Kinetic Vision Block -->
-                <div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-[#0E0E10] border border-primary/5 min-h-[450px] flex flex-col justify-end reveal-text delay-100">
-                    <img loading="lazy" decoding="async" class="card-bg-img absolute inset-0 w-full h-full object-cover" src="images/bg_vision_convoy_1775475125142.png" alt="Saffire Vision" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0E0E10] via-transparent to-transparent"></div>
-                    <div class="relative z-10 p-8 md:p-10">
-                        <span class="material-symbols-outlined text-primary text-3xl mb-4">visibility</span>
-                        <h4 class="font-headline text-2xl md:text-3xl font-bold mb-3 md:mb-4">Kinetic Vision</h4>
-                        <p class="font-body text-on-surface-variant text-sm md:text-base font-light mb-6 opacity-80">Building the blueprint for tomorrow's sustainable commercial mobility infrastructure.</p>
-                        <a href="vision/" class="text-primary font-label text-[10px] uppercase tracking-widest group-hover:gap-2 flex items-center transition-all">Read Manifesto <span class="material-symbols-outlined text-[10px] ml-1">arrow_forward</span></a>
+                    <!-- 2. Technology -->
+                    <div class="group relative bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 rounded-xl p-6 md:p-8 transition-colors flex flex-col sm:flex-row gap-6 items-start overflow-hidden">
+                        <div class="w-full sm:w-1/3 aspect-[4/3] relative rounded-lg overflow-hidden shrink-0 border border-outline-variant/10">
+                            <img src="images/saffire_connect.png" alt="Saffire Connect Technology" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" style="transform: none; transition: none;">
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="font-headline font-bold text-primary opacity-60">02</span>
+                                <h4 class="font-headline text-xl font-bold text-[#E5E1E4] group-hover:text-primary transition-colors">Connected Intelligence for Future Fleets</h4>
+                            </div>
+                            <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
+                                Saffire Connect represents the digital layer of the Saffire ecosystem — created to support future fleet visibility, battery health insights, operational tracking and connected EV management.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4 text-xs font-label tracking-widest uppercase">
+                                <a href="vision/" onclick="trackEvent('homepage_ecosystem_click', {target: 'vision'})" class="text-primary hover:text-white transition-colors flex items-center gap-1 group/link">Explore Vision <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
+                    <!-- 3. Business -->
+                    <div class="group relative bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 rounded-xl p-6 md:p-8 transition-colors flex flex-col sm:flex-row gap-6 items-start overflow-hidden">
+                        <div class="w-full sm:w-1/3 aspect-[4/3] relative rounded-lg overflow-hidden shrink-0 border border-outline-variant/10">
+                            <img src="images/showroomimage.JPEG" alt="Saffire Dealership" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" style="transform: none; transition: none;">
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="font-headline font-bold text-primary opacity-60">03</span>
+                                <h4 class="font-headline text-xl font-bold text-[#E5E1E4] group-hover:text-primary transition-colors">Built for Dealers, Fleets and Operators</h4>
+                            </div>
+                            <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
+                                Saffire EV is designed for businesses, regional dealers, passenger operators, cargo movement and commercial mobility partners looking for practical electric vehicle solutions.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4 text-xs font-label tracking-widest uppercase">
+                                <a href="contact/" onclick="trackEvent('homepage_ecosystem_click', {target: 'contact'})" class="text-primary hover:text-white transition-colors flex items-center gap-1 group/link">Contact Saffire EV <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a>
+                                <a href="ev-dealership-india/" onclick="trackEvent('homepage_ecosystem_click', {target: 'dealership'})" class="text-on-surface-variant hover:text-white transition-colors flex items-center gap-1 group/link">Dealer Opportunity <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Vision -->
+                    <div class="group relative bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 rounded-xl p-6 md:p-8 transition-colors flex flex-col sm:flex-row gap-6 items-start overflow-hidden">
+                        <div class="w-full sm:w-1/3 aspect-[4/3] relative rounded-lg overflow-hidden shrink-0 border border-outline-variant/10">
+                            <img src="images/loader-passenger-convoy.png" alt="Saffire Convoy" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" style="transform: none; transition: none;">
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="font-headline font-bold text-primary opacity-60">04</span>
+                                <h4 class="font-headline text-xl font-bold text-[#E5E1E4] group-hover:text-primary transition-colors">Strength That Delivers. Performance That Pays.</h4>
+                            </div>
+                            <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
+                                Saffire EV by Koyo Gears India Pvt. Ltd. is focused on building strong, practical and connected electric mobility platforms for India.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4 text-xs font-label tracking-widest uppercase">
+                                <a href="vision/" onclick="trackEvent('homepage_ecosystem_click', {target: 'vision_manifesto'})" class="text-primary hover:text-white transition-colors flex items-center gap-1 group/link">Read Our Vision <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
