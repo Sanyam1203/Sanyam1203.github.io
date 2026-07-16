@@ -165,7 +165,12 @@ body {
     "addressCountry": "IN"
   },
   "areaServed": "India",
-  "knowsAbout": ["Electric Vehicles", "L5 Vehicles", "Commercial 3-Wheelers", "Electric Mobility", "EVs"]
+  "knowsAbout": ["Electric Vehicles", "L5 Vehicles", "Commercial 3-Wheelers", "Electric Mobility", "EVs"],
+  "sameAs": [
+    "https://www.instagram.com/saffire.ev/",
+    "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
+    "https://www.linkedin.com/in/saffire-ev-822009402"
+  ]
 }
 </script>
     <link href="../assets/css/motion.css" rel="stylesheet"/>
@@ -365,6 +370,19 @@ function trackEvent(eventName, params = {}) {
                 </div>
             </div>
 
+            
+            <!-- Connect With Saffire EV -->
+            <div class="bg-surface-container-highest rounded-xl p-8 border-t border-primary/10 flex-1">
+                <h3 class="font-label text-xs tracking-[0.2em] uppercase text-primary mb-6">Connect With Saffire EV</h3>
+                <p class="text-on-surface-variant leading-relaxed font-light text-sm md:text-base mb-6">Follow Saffire EV for product updates, launch announcements, dealer information and electric mobility stories.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/saffire.ev/" target="_blank" rel="noopener noreferrer" aria-label="Follow Saffire EV on Instagram" onclick="trackEvent('social_link_click', {platform: 'instagram', location: 'contact_page'})" class="text-on-surface hover:text-primary transition-colors border border-outline-variant/30 hover:border-primary/50 rounded-full w-10 h-10 flex justify-center items-center text-xs font-bold font-label tracking-widest">IG</a>
+                    <a href="https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Follow Saffire EV on Facebook" onclick="trackEvent('social_link_click', {platform: 'facebook', location: 'contact_page'})" class="text-on-surface hover:text-primary transition-colors border border-outline-variant/30 hover:border-primary/50 rounded-full w-10 h-10 flex justify-center items-center text-xs font-bold font-label tracking-widest">FB</a>
+                    <a href="https://www.linkedin.com/in/saffire-ev-822009402" target="_blank" rel="noopener noreferrer" aria-label="Follow Saffire EV on LinkedIn" onclick="trackEvent('social_link_click', {platform: 'linkedin', location: 'contact_page'})" class="text-on-surface hover:text-primary transition-colors border border-outline-variant/30 hover:border-primary/50 rounded-full w-10 h-10 flex justify-center items-center text-xs font-bold font-label tracking-widest">IN</a>
+                    <a href="https://wa.me/919258172967?text=Hello%20Saffire%20EV%2C%20I%20want%20to%20know%20more%20about%20your%20vehicles." target="_blank" rel="noopener noreferrer" aria-label="Chat with Saffire EV on WhatsApp" onclick="trackEvent('social_link_click', {platform: 'whatsapp', location: 'contact_page'})" class="text-on-surface hover:text-primary transition-colors border border-outline-variant/30 hover:border-primary/50 rounded-full w-10 h-10 flex justify-center items-center text-xs font-bold font-label tracking-widest">WA</a>
+                </div>
+            </div>
+
             <!-- Direct Channels -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 h-auto">
                 <!-- Phone / Whatsapp -->
@@ -417,7 +435,7 @@ function trackEvent(eventName, params = {}) {
 <!-- Footer -->
 <footer class="bg-[#0E0E10] border-t border-[#3B494C]/15 mt-auto">
     <div class="max-w-screen-2xl mx-auto px-8 md:px-12 py-10 md:py-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 mb-10">
             <!-- Brand -->
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <span class="text-2xl font-bold tracking-tighter text-[#97FDFF] uppercase font-headline mb-1">SAFFIRE</span>
@@ -438,6 +456,14 @@ function trackEvent(eventName, params = {}) {
                 <a href="/l5-electric-vehicle/" class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors">L5 Electric Vehicle</a>
                 <a href="/ev-dealership-india/" class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors">EV Dealership in India</a>
                 <a href="/electric-three-wheeler-running-cost/" class="text-sm font-light text-slate-400 hover:text-white transition-colors">Running Cost</a>
+            </div>
+            <!-- Connect With Us -->
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Connect With Us</span>
+                <a href="https://www.instagram.com/saffire.ev/" target="_blank" rel="noopener noreferrer" aria-label="Follow Saffire EV on Instagram" onclick="trackEvent('social_link_click', {platform: 'instagram', location: 'footer'})" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors">Instagram</a>
+                <a href="https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Follow Saffire EV on Facebook" onclick="trackEvent('social_link_click', {platform: 'facebook', location: 'footer'})" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors">Facebook</a>
+                <a href="https://www.linkedin.com/in/saffire-ev-822009402" target="_blank" rel="noopener noreferrer" aria-label="Follow Saffire EV on LinkedIn" onclick="trackEvent('social_link_click', {platform: 'linkedin', location: 'footer'})" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors">LinkedIn</a>
+                <a href="https://wa.me/919258172967?text=Hello%20Saffire%20EV%2C%20I%20want%20to%20know%20more%20about%20your%20vehicles." target="_blank" rel="noopener noreferrer" aria-label="Chat with Saffire EV on WhatsApp" onclick="trackEvent('social_link_click', {platform: 'whatsapp', location: 'footer'})" class="text-sm font-light text-slate-400 hover:text-primary transition-colors">WhatsApp</a>
             </div>
         </div>
         
