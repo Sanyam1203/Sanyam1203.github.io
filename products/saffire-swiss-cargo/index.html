@@ -87,7 +87,16 @@
     "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
     "https://www.linkedin.com/in/saffire-ev-822009402"
   ]
-}</script></head>
+}</script>
+<script>
+    if (window.location.hostname.includes("github.io")) {
+        var meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+</script>
+</head>
 <body class="selection:bg-primary selection:text-[#003738] scroll-smooth flex flex-col min-h-screen" onload="trackEvent('product_detail_view', {page_name: 'Saffire Swiss Cargo'})">
 <!-- Top NavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
@@ -172,7 +181,7 @@
 </div>
 <div class="order-1 lg:order-2 bg-[#0E0E10] rounded-2xl overflow-hidden border border-outline-variant/20 relative min-h-[400px] md:min-h-[500px] flex justify-center items-center">
 <!-- Strict NO MOTION on image -->
-<img alt="Saffire Swiss Cargo loader vehicle" class="absolute inset-0 w-full h-full object-contain opacity-95" src="../../images/loader-warehouse.png" style="transform: none !important; transition: none !important; object-position: center;"/>
+<img alt="Saffire Swiss Cargo loader vehicle" class="absolute inset-0 w-full h-full object-contain opacity-95" loading="lazy" src="../../images/loader-warehouse.png" style="transform: none !important; transition: none !important; object-position: center;"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent pointer-events-none"></div>
 </div>
 </section>
@@ -185,37 +194,37 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group flex flex-col">
 <div class="w-full aspect-[4/3] relative rounded-lg overflow-hidden bg-[#0E0E10] mb-4">
-<img alt="Loader Studio Profile" class="absolute inset-0 w-full h-full object-contain" src="../../images/saffire_loader.png" style="transform: none; transition: none;"/>
+<img alt="Loader Studio Profile" class="absolute inset-0 w-full h-full object-contain" loading="lazy" src="../../images/saffire_loader.png" style="transform: none; transition: none;"/>
 </div>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors mt-auto">Loader Studio Profile</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group flex flex-col">
 <div class="w-full aspect-[4/3] relative rounded-lg overflow-hidden bg-[#0E0E10] mb-4">
-<img alt="Warehouse Logistics" class="absolute inset-0 w-full h-full object-contain" src="../../images/swiss-cargo-passanger-warehouse.png" style="transform: none; transition: none;"/>
+<img alt="Warehouse Logistics" class="absolute inset-0 w-full h-full object-contain" loading="lazy" src="../../images/swiss-cargo-passanger-warehouse.png" style="transform: none; transition: none;"/>
 </div>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors mt-auto">Warehouse Logistics</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group flex flex-col">
 <div class="w-full aspect-[4/3] relative rounded-lg overflow-hidden bg-[#0E0E10] mb-4">
-<img alt="City Delivery Route" class="absolute inset-0 w-full h-full object-contain" src="../../images/swiss-cargo-delivery-route.png" style="transform: none; transition: none;"/>
+<img alt="City Delivery Route" class="absolute inset-0 w-full h-full object-contain" loading="lazy" src="../../images/swiss-cargo-delivery-route.png" style="transform: none; transition: none;"/>
 </div>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors mt-auto">City Delivery Route</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group flex flex-col">
 <div class="w-full aspect-[4/3] relative rounded-lg overflow-hidden bg-[#0E0E10] mb-4">
-<img alt="Mountain Road Capability" class="absolute inset-0 w-full h-full object-contain" src="../../images/swiss-cargo-mountain-road.png" style="transform: none; transition: none;"/>
+<img alt="Mountain Road Capability" class="absolute inset-0 w-full h-full object-contain" loading="lazy" src="../../images/swiss-cargo-mountain-road.png" style="transform: none; transition: none;"/>
 </div>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors mt-auto">Mountain Road Capability</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group flex flex-col">
 <div class="w-full aspect-[4/3] relative rounded-lg overflow-hidden bg-[#0E0E10] mb-4">
-<img alt="Industrial Site Supply" class="absolute inset-0 w-full h-full object-contain" src="../../images/saffire_loader2.png" style="transform: none; transition: none;"/>
+<img alt="Industrial Site Supply" class="absolute inset-0 w-full h-full object-contain" loading="lazy" src="../../images/saffire_loader2.png" style="transform: none; transition: none;"/>
 </div>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors mt-auto">Industrial Site Supply</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group flex flex-col">
 <div class="w-full aspect-[4/3] relative rounded-lg overflow-hidden bg-[#0E0E10] mb-4">
-<img alt="Market Distribution" class="absolute inset-0 w-full h-full object-contain" src="../../images/saffire_loader3.png" style="transform: none; transition: none;"/>
+<img alt="Market Distribution" class="absolute inset-0 w-full h-full object-contain" loading="lazy" src="../../images/saffire_loader3.png" style="transform: none; transition: none;"/>
 </div>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors mt-auto">Market Distribution</p>
 </div>

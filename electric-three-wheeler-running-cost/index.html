@@ -85,7 +85,16 @@
     "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
     "https://www.linkedin.com/in/saffire-ev-822009402"
   ]
-}</script></head>
+}</script>
+<script>
+    if (window.location.hostname.includes("github.io")) {
+        var meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+</script>
+</head>
 <body class="selection:bg-primary selection:text-[#003738] scroll-smooth flex flex-col min-h-screen">
 <!-- Top NavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">

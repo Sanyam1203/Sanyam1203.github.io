@@ -87,7 +87,16 @@
     "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
     "https://www.linkedin.com/in/saffire-ev-822009402"
   ]
-}</script></head>
+}</script>
+<script>
+    if (window.location.hostname.includes("github.io")) {
+        var meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+</script>
+</head>
 <body class="selection:bg-primary selection:text-[#003738] scroll-smooth flex flex-col min-h-screen" onload="trackEvent('product_detail_view', {page_name: 'Saffire Smart Ride'})">
 <!-- Top NavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
@@ -172,7 +181,7 @@
 </div>
 <div class="order-1 lg:order-2 bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/10 flex justify-center items-center">
 <!-- Strict NO MOTION on image -->
-<img alt="Saffire Smart Ride D+3 passenger electric three-wheeler front view" class="w-full h-auto object-contain max-h-[500px]" src="../../images/SAFFIRE_PASSANGER.png" style="transform: none; transition: none;"/>
+<img alt="Saffire Smart Ride D+3 passenger electric three-wheeler front view" class="w-full h-auto object-contain max-h-[500px]" loading="lazy" src="../../images/SAFFIRE_PASSANGER.png" style="transform: none; transition: none;"/>
 </div>
 </section>
 <!-- Smart Ride Gallery -->
@@ -183,27 +192,27 @@
         </p>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group">
-<img alt="Studio View" class="w-full h-auto object-contain rounded-lg mb-4" src="../../images/SAFFIRE_PASSANGER.png" style="transform: none; transition: none;"/>
+<img alt="Studio View" class="w-full h-auto object-contain rounded-lg mb-4" loading="lazy" src="../../images/SAFFIRE_PASSANGER.png" style="transform: none; transition: none;"/>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors">Studio View</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group">
-<img alt="Passenger Mobility" class="w-full h-auto object-contain rounded-lg mb-4" src="../../images/saffire_passanger2.png" style="transform: none; transition: none;"/>
+<img alt="Passenger Mobility" class="w-full h-auto object-contain rounded-lg mb-4" loading="lazy" src="../../images/saffire_passanger2.png" style="transform: none; transition: none;"/>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors">Passenger Mobility</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group">
-<img alt="City Route Use" class="w-full h-auto object-contain rounded-lg mb-4" src="../../images/saffire_passanger3.png" style="transform: none; transition: none;"/>
+<img alt="City Route Use" class="w-full h-auto object-contain rounded-lg mb-4" loading="lazy" src="../../images/saffire_passanger3.png" style="transform: none; transition: none;"/>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors">City Route Use</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group">
-<img alt="Village Road Use" class="w-full h-auto object-contain rounded-lg mb-4" src="../../images/smart-ride-forest-route.png" style="transform: none; transition: none;"/>
+<img alt="Village Road Use" class="w-full h-auto object-contain rounded-lg mb-4" loading="lazy" src="../../images/smart-ride-forest-route.png" style="transform: none; transition: none;"/>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors">Village Road Use</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group">
-<img alt="Daily Urban Operation" class="w-full h-auto object-contain rounded-lg mb-4" src="../../images/smart-ride-village.png" style="transform: none; transition: none;"/>
+<img alt="Daily Urban Operation" class="w-full h-auto object-contain rounded-lg mb-4" loading="lazy" src="../../images/smart-ride-village.png" style="transform: none; transition: none;"/>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors">Daily Urban Operation</p>
 </div>
 <div class="glass-panel rounded-xl border border-primary/20 p-4 transition-colors hover:bg-surface-container-low hover:border-primary/50 group">
-<img alt="Driver-Focused Design" class="w-full h-auto object-contain rounded-lg mb-4" src="../../images/smart-ride-city.png" style="transform: none; transition: none;"/>
+<img alt="Driver-Focused Design" class="w-full h-auto object-contain rounded-lg mb-4" loading="lazy" src="../../images/smart-ride-city.png" style="transform: none; transition: none;"/>
 <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest text-center group-hover:text-primary transition-colors">Driver-Focused Design</p>
 </div>
 </div>

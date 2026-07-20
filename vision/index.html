@@ -122,7 +122,7 @@ body {
 <meta content="Koyo Gears India Private Limited" name="author"/>
 <meta content="index, follow" name="robots"/>
 <!-- Structured Schema Markup (JSON-LD) for Local Business & Manufacturer -->
-<link href="../assets/css/motion.css" rel="stylesheet">
+<link href="../assets/css/motion.css" rel="stylesheet"/>
 <meta content="Vision &amp; Mission | Saffire EV Electric Mobility Roadmap" property="og:title"/>
 <meta content="Explore Saffire EV’s vision for electric mobility, from L5 electric three-wheelers to future two-wheeler, compact commercial EV and connected mobility platforms." property="og:description"/>
 <meta content="https://saffireev.com/images/herobanner.png" property="og:image"/>
@@ -144,7 +144,7 @@ function trackEvent(eventName, params = {}) {
   }
 }
 </script>
-</link><script type="application/ld+json">{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Saffire EV",
@@ -163,7 +163,16 @@ function trackEvent(eventName, params = {}) {
     "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
     "https://www.linkedin.com/in/saffire-ev-822009402"
   ]
-}</script></head>
+}</script>
+<script>
+    if (window.location.hostname.includes("github.io")) {
+        var meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+</script>
+</head>
 <body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary scroll-smooth">
 <!-- Top NavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
@@ -271,13 +280,13 @@ function trackEvent(eventName, params = {}) {
 <!-- Focus Card 1 -->
 <div class="bg-surface-container-low rounded-xl border border-outline-variant/20 overflow-hidden flex flex-col md:flex-row group">
 <div class="md:w-1/2 relative min-h-[300px] bg-[#0E0E10] flex items-center justify-center">
-<img alt="Saffire Smart Ride passenger vehicle" class="absolute inset-0 w-full h-full object-contain p-4" src="../images/smart-ride-city.png" style="transform: none !important; transition: none !important;"/>
+<img alt="Saffire Smart Ride passenger vehicle" class="absolute inset-0 w-full h-full object-contain p-4" loading="lazy" src="../images/smart-ride-city.png" style="transform: none !important; transition: none !important;"/>
 </div>
 <div class="md:w-1/2 p-10 md:p-12 flex flex-col justify-center">
 <h3 class="font-headline text-2xl md:text-3xl font-bold mb-2">Saffire Smart Ride</h3>
 <p class="font-label text-xs tracking-widest text-primary uppercase mb-6">D+3 Passenger Electric Three-Wheeler</p>
 <p class="font-body text-on-surface-variant text-base font-light leading-relaxed mb-8">
-                            <a class="text-primary hover:underline transition-colors" href="/products/saffire-smart-ride/">Saffire Smart Ride</a> is designed for daily passenger mobility, urban routes and driver-focused operation. It represents our passenger mobility foundation for India’s growing electric three-wheeler market.
+<a class="text-primary hover:underline transition-colors" href="/products/saffire-smart-ride/">Saffire Smart Ride</a> is designed for daily passenger mobility, urban routes and driver-focused operation. It represents our passenger mobility foundation for India’s growing electric three-wheeler market.
                         </p>
 <div>
 <a class="inline-block border border-primary/50 text-primary hover:bg-primary hover:text-on-primary px-8 py-3 rounded-sm font-label text-xs font-bold tracking-widest uppercase transition-colors" href="/products/saffire-smart-ride/" onclick="trackEvent('vision_product_click', {product: 'smart_ride'})">
@@ -289,13 +298,13 @@ function trackEvent(eventName, params = {}) {
 <!-- Focus Card 2 -->
 <div class="bg-surface-container-low rounded-xl border border-outline-variant/20 overflow-hidden flex flex-col md:flex-row group">
 <div class="md:w-1/2 order-1 md:order-2 relative min-h-[300px] bg-[#0E0E10] flex items-center justify-center">
-<img alt="Saffire Swiss Cargo electric loader" class="absolute inset-0 w-full h-full object-contain p-4" src="../images/saffire_loader.png" style="transform: none !important; transition: none !important;"/>
+<img alt="Saffire Swiss Cargo electric loader" class="absolute inset-0 w-full h-full object-contain p-4" loading="lazy" src="../images/saffire_loader.png" style="transform: none !important; transition: none !important;"/>
 </div>
 <div class="md:w-1/2 order-2 md:order-1 p-10 md:p-12 flex flex-col justify-center">
 <h3 class="font-headline text-2xl md:text-3xl font-bold mb-2">Saffire Swiss Cargo</h3>
 <p class="font-label text-xs tracking-widest text-primary uppercase mb-6"><a class="text-primary hover:underline transition-colors" href="/electric-cargo-loader/">Electric Cargo Loader</a></p>
 <p class="font-body text-on-surface-variant text-base font-light leading-relaxed mb-8">
-                            <a class="text-primary hover:underline transition-colors" href="/products/saffire-swiss-cargo/">Saffire Swiss Cargo</a> is engineered for business delivery, last-mile logistics and commercial load movement. It represents our cargo mobility foundation for businesses, operators and fleet users.
+<a class="text-primary hover:underline transition-colors" href="/products/saffire-swiss-cargo/">Saffire Swiss Cargo</a> is engineered for business delivery, last-mile logistics and commercial load movement. It represents our cargo mobility foundation for businesses, operators and fleet users.
                         </p>
 <div>
 <a class="inline-block border border-primary/50 text-primary hover:bg-primary hover:text-on-primary px-8 py-3 rounded-sm font-label text-xs font-bold tracking-widest uppercase transition-colors" href="/products/saffire-swiss-cargo/" onclick="trackEvent('vision_product_click', {product: 'swiss_cargo'})">
@@ -334,7 +343,7 @@ function trackEvent(eventName, params = {}) {
 <p class="font-body text-sm text-on-surface-variant font-light relative z-10 mb-6">Saffire EV is exploring future two-wheeler mobility opportunities for personal use, urban commuting and practical electric transportation.</p>
 <div class="mt-auto relative z-10">
 <div class="bg-surface-container-low rounded-lg p-2 flex items-center justify-center mb-3">
-<img alt="Future Electric Two-Wheeler Concept" class="w-full h-32 object-contain" src="../images/saffire_2_wheelers.png" style="transform: none !important; transition: none !important;"/>
+<img alt="Future Electric Two-Wheeler Concept" class="w-full h-32 object-contain" loading="lazy" src="../images/saffire_2_wheelers.png" style="transform: none !important; transition: none !important;"/>
 </div>
 <span class="block text-center text-[9px] text-on-surface-variant uppercase tracking-widest font-label bg-surface-container-highest py-1 rounded">Future concept / upcoming platform</span>
 </div>
@@ -346,7 +355,7 @@ function trackEvent(eventName, params = {}) {
 <p class="font-body text-sm text-on-surface-variant font-light relative z-10 mb-6">Our long-term direction includes compact commercial electric mobility platforms designed for logistics, business use and future last-mile transport needs.</p>
 <div class="mt-auto relative z-10">
 <div class="bg-surface-container-low rounded-lg p-2 flex items-center justify-center mb-3">
-<img alt="Future Electric Four-Wheeler Concept" class="w-full h-32 object-contain" src="../images/Saffire_4_wheeler.png" style="transform: none !important; transition: none !important;"/>
+<img alt="Future Electric Four-Wheeler Concept" class="w-full h-32 object-contain" loading="lazy" src="../images/Saffire_4_wheeler.png" style="transform: none !important; transition: none !important;"/>
 </div>
 <span class="block text-center text-[9px] text-on-surface-variant uppercase tracking-widest font-label bg-surface-container-highest py-1 rounded">Future concept / upcoming platform</span>
 </div>

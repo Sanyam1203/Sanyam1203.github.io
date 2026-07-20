@@ -10,7 +10,7 @@
 <meta content="noindex" name="robots"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script>
     tailwind.config = {
         darkMode: "class",
@@ -49,7 +49,7 @@
   gtag('config', 'G-XV903N1WWH');
 </script>
 <meta content="D334E6EBCA70575B360E942A1A5E4D8E" name="msvalidate.01"/>
-</link><script type="application/ld+json">{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Saffire EV",
@@ -68,7 +68,16 @@
     "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
     "https://www.linkedin.com/in/saffire-ev-822009402"
   ]
-}</script></head>
+}</script>
+<script>
+    if (window.location.hostname.includes("github.io")) {
+        var meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+</script>
+</head>
 <body class="selection:bg-primary selection:text-[#003738] scroll-smooth flex flex-col min-h-screen">
 <!-- Top NavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
