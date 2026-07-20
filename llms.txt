@@ -1,0 +1,54 @@
+# Saffire EV
+
+> Saffire EV, by Koyo Gears India Private Limited, builds electric three-wheelers (L5 category) for the Indian market, focused on affordable and reliable commercial and passenger EV mobility.
+
+## Company
+- Brand: Saffire EV
+- Parent company: Koyo Gears India Private Limited
+- Location: Meerut, Uttar Pradesh, India
+- Category: Electric three-wheelers (L5 vehicles) — cargo and passenger
+
+## Products
+
+### Saffire Swiss Cargo
+- Type: Electric cargo three-wheeler (L5)
+- Use case: Last-mile logistics, business delivery, commercial load movement
+- Payload capacity: 600 kg
+- Range per charge: 200 km
+- Charging time: 5–6 hours (standard charger)
+- Battery: 14.61 kWh (63V 232Ah)
+- Motor peak power: 6.3 kW
+- Top speed: 50 km/hr
+
+### Saffire Smart Ride
+- Type: Electric passenger three-wheeler (L5, D+3 configuration)
+- Use case: Daily passenger mobility, urban routes, driver-operated transport
+- Passenger capacity: Driver + 3 passengers (D+3 layout)
+- Range per charge: 200 km
+- Charging time: 5–6 hours (standard charger)
+- Battery: 14.61 kWh (63V 232Ah)
+- Motor peak power: 6.3 kW
+- Top speed: 50 km/hr
+
+## Key Facts
+- Saffire EV positions itself as India's most affordable and reliable EV ecosystem for L5 vehicles.
+- Dealer and fleet partnerships are open — see /ev-dealership-india/
+- Cost comparison vs diesel/petrol autos is available via the on-site profitability calculator at saffireev.com
+
+## Pages
+- Homepage: https://saffireev.com/
+- Products overview: https://saffireev.com/products/
+- Saffire Swiss Cargo: https://saffireev.com/products/saffire-swiss-cargo/
+- Saffire Smart Ride: https://saffireev.com/products/saffire-smart-ride/
+- About: https://saffireev.com/about/
+- Vision: https://saffireev.com/vision/
+- Contact: https://saffireev.com/contact/
+- EV Dealership in India: https://saffireev.com/ev-dealership-india/
+- Electric Cargo Loader guide: https://saffireev.com/electric-cargo-loader/
+- Electric Passenger Auto guide: https://saffireev.com/electric-passenger-auto/
+- L5 Electric Vehicle guide: https://saffireev.com/l5-electric-vehicle/
+- Running cost comparison: https://saffireev.com/electric-three-wheeler-running-cost/
+
+## Contact
+- WhatsApp: https://wa.me/919258172967
+- Instagram: https://www.instagram.com/saffire.ev/
