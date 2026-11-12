@@ -2,10 +2,10 @@ import os
 
 pages_data = {
     'electric-cargo-loader': {
-        'title': 'Electric Cargo Loader | Saffire EV Commercial 3-Wheelers',
-        'desc': 'Discover the Saffire EV electric cargo loader. Built for Indian businesses, logistics, and last-mile delivery with a focus on payload and reliability.',
+        'title': 'KOYO Electric Cargo Loader (KOYO L5) | SAFFIRE EV Swiss Cargo by KOYO Gears India',
+        'desc': 'Discover the SAFFIRE Swiss Cargo (KOYO L5 Electric Cargo Loader) by KOYO Gears India Private Limited. Built for 600 kg payload, 200 km claimed range, and last-mile delivery across 100 Indian cities.',
         'canonical': 'https://saffireev.com/electric-cargo-loader/',
-        'h1': 'Electric Cargo Loader for Business Logistics',
+        'h1': 'KOYO Electric Cargo Loader — SAFFIRE EV Swiss Cargo (L5)',
         'content': """
             <p class="text-on-surface-variant text-lg font-light mb-8">
                 The modern logistics and delivery sector in India is rapidly evolving. For businesses looking to optimize their last-mile delivery operations, finding a reliable and efficient commercial vehicle is paramount. The <strong>electric cargo loader</strong> is emerging as the optimal solution for these challenges, and Saffire EV by Koyo Gears India Pvt. Ltd. is focused on providing vehicles designed specifically for this demand.
@@ -61,10 +61,10 @@ pages_data = {
         """
     },
     'electric-passenger-auto': {
-        'title': 'Electric Passenger Auto | Saffire EV 3-Wheelers',
-        'desc': 'Saffire EV passenger electric three-wheelers designed for comfort, driver earnings, and sustainable urban mobility across India.',
+        'title': 'KOYO Electric Passenger Auto (KOYO L5) | SAFFIRE EV Smart Ride by KOYO Gears India',
+        'desc': 'Explore the SAFFIRE Smart Ride (KOYO L5 Electric Passenger Auto) by KOYO Gears India Private Limited. D+3 passenger layout, 14.61 kWh battery, and 200 km claimed range across India.',
         'canonical': 'https://saffireev.com/electric-passenger-auto/',
-        'h1': 'Premium Electric Passenger Auto',
+        'h1': 'KOYO Electric Passenger Auto — SAFFIRE EV Smart Ride (L5)',
         'content': """
             <p class="text-on-surface-variant text-lg font-light mb-8">
                 The shift towards sustainable public transport has made the <strong>electric passenger auto</strong> a vital component of urban mobility. As cities prioritize clean air and reduced noise pollution, Saffire EV is dedicated to providing electric passenger three-wheeler solutions that benefit both the drivers and the commuters.
@@ -120,10 +120,10 @@ pages_data = {
         """
     },
     'l5-electric-vehicle': {
-        'title': 'L5 Electric Vehicle Guide | Saffire EV',
-        'desc': 'Learn about L5 electric vehicles in India. Understand how Saffire EV focuses on premium electric cargo and passenger three-wheelers in the L5 category.',
+        'title': 'KOYO L5 Electric Vehicle Guide | SAFFIRE EV by KOYO Gears India',
+        'desc': 'Complete guide to KOYO L5 electric three-wheelers in India by SAFFIRE EV (KOYO Gears India Private Limited). Compare L3 vs L5 EVs, Smart Ride passenger auto, and Swiss Cargo loader.',
         'canonical': 'https://saffireev.com/l5-electric-vehicle/',
-        'h1': 'Understanding the L5 Electric Vehicle Category',
+        'h1': 'KOYO L5 Electric Vehicle Guide — SAFFIRE EV by KOYO Gears India',
         'content': """
             <p class="text-on-surface-variant text-lg font-light mb-8">
                 As India accelerates its transition to electric mobility, understanding the different vehicle classifications is essential for businesses, dealers, and fleet operators. The <strong>L5 electric vehicle</strong> category is a crucial segment in this landscape, encompassing the heavy-duty three-wheelers that power urban logistics and passenger transport.
@@ -203,10 +203,10 @@ pages_data = {
         """
     },
     'ev-dealership-india': {
-        'title': 'EV Dealership in India | Partner with Saffire EV',
-        'desc': 'Explore EV dealership opportunities in India with Saffire EV. Partner with Koyo Gears India Pvt. Ltd. to provide premium commercial electric three-wheelers.',
+        'title': 'KOYO Auto & SAFFIRE EV Dealership in India | Partner with KOYO Gears India',
+        'desc': 'Apply for a KOYO Electric Auto / SAFFIRE EV L5 dealership in India. Partner with KOYO Gears India Private Limited to supply Smart Ride passenger autos and Swiss Cargo loaders in your city.',
         'canonical': 'https://saffireev.com/ev-dealership-india/',
-        'h1': 'EV Dealership Opportunities in India',
+        'h1': 'KOYO Auto & SAFFIRE EV Dealership Opportunities in India',
         'content': """
             <p class="text-on-surface-variant text-lg font-light mb-8">
                 The commercial transition to electric mobility is accelerating, creating substantial opportunities for local entrepreneurs and automotive businesses. Operating an <strong>EV dealership in India</strong> is a strategic move to capture the growing demand for sustainable last-mile logistics and passenger transport. Saffire EV invites driven partners to join our network.
@@ -249,10 +249,10 @@ pages_data = {
         'schema': ''
     },
     'electric-three-wheeler-running-cost': {
-        'title': 'Electric Three Wheeler Running Cost & Savings | Saffire EV',
-        'desc': 'Understand the electric three-wheeler running cost. Compare EV savings against traditional diesel and petrol autos for your business mobility needs.',
+        'title': 'KOYO Electric Auto Running Cost & Savings | SAFFIRE EV (KOYO L5) by KOYO Gears India',
+        'desc': 'Compare KOYO L5 / SAFFIRE EV electric three-wheeler running costs vs diesel and CNG autos in India. Calculate monthly driver and fleet savings with KOYO Gears India.',
         'canonical': 'https://saffireev.com/electric-three-wheeler-running-cost/',
-        'h1': 'Understanding Electric Three-Wheeler Running Costs',
+        'h1': 'KOYO Electric Auto & SAFFIRE EV L5 Running Cost Guide',
         'content': """
             <p class="text-on-surface-variant text-lg font-light mb-8">
                 When evaluating commercial vehicles, the initial purchase price is only one part of the equation. For fleet owners and drivers, the Total Cost of Ownership (TCO) is the ultimate metric. The <strong>electric three wheeler running cost</strong> is substantially lower than that of traditional internal combustion engine (ICE) vehicles, making EVs an increasingly logical choice for Indian business mobility.
@@ -308,9 +308,11 @@ template = """<!DOCTYPE html>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>{title}</title>
-<link rel="icon" type="image/jpeg" href="/images/logo_final.png">
-<meta name="description" content="{desc}">
-<link rel="canonical" href="{canonical}">
+<link rel="icon" type="image/jpeg" href="/images/logo_final.png"/>
+<meta name="description" content="{desc}"/>
+<meta name="keywords" content="KOYO, KOYO Auto, KOYO Electric Auto, KOYO L5, KOYO Gears India, KOYO Gears India Private Limited, SAFFIRE EV, Saffire Smart Ride, Saffire Swiss Cargo, L5 electric vehicle India"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="{canonical}"/>
 
 <!-- SEO Optimization & Verification -->
 <meta property="og:title" content="{title}">
@@ -377,11 +379,38 @@ template = """<!DOCTYPE html>
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://saffireev.com/#organization",
+  "name": "SAFFIRE EV",
+  "legalName": "KOYO GEARS INDIA PRIVATE LIMITED",
+  "alternateName": ["KOYO", "KOYO Auto", "KOYO Electric Auto", "KOYO L5", "KOYO Electric Rickshaw", "KOYO Gears India", "KOYO Gears India Private Limited", "Saffire EV by Koyo Gears India"],
+  "url": "https://saffireev.com/",
+  "logo": "https://saffireev.com/images/logo_final.png",
+  "email": "inquiry@saffireev.com",
+  "telephone": "+91-92581-72967",
+  "address": {{
+    "@type": "PostalAddress",
+    "streetAddress": "Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road",
+    "addressLocality": "Meerut",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "250002",
+    "addressCountry": "IN"
+  }},
+  "sameAs": [
+    "https://www.instagram.com/saffire.ev/",
+    "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
+    "https://www.linkedin.com/in/saffire-ev-822009402"
+  ]
+}}
+</script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [{{
     "@type": "ListItem",
     "position": 1,
-    "name": "Home",
+    "name": "SAFFIRE EV (KOYO Gears India)",
     "item": "https://saffireev.com/"
   }},{{
     "@type": "ListItem",
@@ -392,6 +421,14 @@ template = """<!DOCTYPE html>
 }}
 </script>
 {schema}
+<script>
+if (window.location.hostname.includes("github.io")) {{
+    var meta = document.createElement('meta');
+    meta.name = "robots";
+    meta.content = "noindex";
+    document.getElementsByTagName('head')[0].appendChild(meta);
+}}
+</script>
 </head>
 
 <body class="selection:bg-primary selection:text-[#003738] scroll-smooth flex flex-col min-h-screen">
@@ -401,7 +438,7 @@ template = """<!DOCTYPE html>
     <div class="flex justify-between items-center px-6 md:px-8 h-20 w-full max-w-screen-2xl mx-auto">
         <a href="/" class="flex items-center gap-3 group">
             <div class="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 shrink-0">
-                <img src="/images/logo_final.png" alt="Saffire Logo" class="absolute inset-0 w-full h-full object-contain" />
+                <img src="/images/logo_final.png" alt="SAFFIRE EV by KOYO Gears India Logo" class="absolute inset-0 w-full h-full object-contain" />
             </div>
             <div class="flex flex-col justify-center">
                 <span class="text-[20px] md:text-[22px] font-bold tracking-tighter text-[#97FDFF] uppercase font-headline leading-none hover:text-white transition-colors">SAFFIRE</span>
@@ -413,7 +450,9 @@ template = """<!DOCTYPE html>
         <div class="hidden md:flex items-center space-x-12">
             <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/">Home</a>
             <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/products/">Products</a>
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/about/">About</a>
             <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/vision/">Vision</a>
+            <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/locations/">Locations</a>
             <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
         </div>
 
@@ -431,7 +470,9 @@ template = """<!DOCTYPE html>
     <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#131315]/95 backdrop-blur-3xl border-b border-outline-variant/30 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)] origin-top transition-all duration-300 scale-y-0 opacity-0 pointer-events-none md:hidden p-6 z-40">
         <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/">Home</a>
         <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/products/">Products</a>
+        <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/about/">About</a>
         <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/vision/">Vision</a>
+        <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/locations/">Locations</a>
         <a class="font-label text-lg uppercase tracking-wider pb-2 text-[#E5E1E4]/70" href="/contact/">Contact</a>
         <a href="/contact/" class="kinetic-gradient text-[#003738] px-8 py-4 w-full mt-2 text-sm font-label font-bold uppercase tracking-widest rounded-full text-center">Pre-Order</a>
     </div>
@@ -464,6 +505,12 @@ template = """<!DOCTYPE html>
     <h1 class="font-headline font-bold text-4xl md:text-6xl tracking-tight mb-12 text-[#E5E1E4]">{h1}</h1>
     
     <div class="content-body">
+        <div class="mb-10 bg-surface-container-low border border-primary/20 rounded-xl p-6">
+            <span class="text-primary font-label text-[10px] font-bold tracking-widest uppercase block mb-2">Official Brand &amp; Manufacturer Reference</span>
+            <p class="text-on-surface-variant text-sm font-light leading-relaxed">
+                <strong>KOYO</strong>, <strong>KOYO Auto</strong>, <strong>KOYO Electric Auto</strong>, and <strong>KOYO L5</strong> are the commercial electric three-wheelers manufactured by <a href="/about/" class="text-primary hover:underline font-medium">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a> under the official brand <a href="/" class="text-primary hover:underline font-medium">SAFFIRE EV</a>. Explore the <a href="/products/saffire-smart-ride/" class="text-primary hover:underline">SAFFIRE Smart Ride (KOYO Passenger Auto)</a>, <a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">SAFFIRE Swiss Cargo (KOYO Cargo Loader)</a>, and our <a href="/locations/" class="text-primary hover:underline">100-City India Location Directory</a>.
+            </p>
+        </div>
         {content}
     </div>
 </main>
@@ -480,7 +527,9 @@ template = """<!DOCTYPE html>
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Company</span>
                 <a href="/products/" class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors">Products</a>
+                <a href="/about/" class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors">About</a>
                 <a href="/vision/" class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors">Vision</a>
+                <a href="/locations/" class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors">Locations</a>
                 <a href="/contact/" class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors">Contact</a>
             </div>
             <!-- EV Guides -->
