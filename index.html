@@ -99,7 +99,7 @@
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-text.in-view {
+    .reveal-text.in-view, .reveal-text.is-visible {
         opacity: 1;
         transform: translateY(0);
     }
@@ -261,7 +261,7 @@ function trackEvent(eventName, params = {}) {
       "name": "Who manufactures KOYO electric autos and SAFFIRE EV three-wheelers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "KOYO electric autos and L5 three-wheelers are manufactured by KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India), headquartered in Meerut, Uttar Pradesh, under the official brand name SAFFIRE EV."
+        "text": "KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India), headquartered in Meerut, Uttar Pradesh, manufactures all KOYO electric autos and L5 electric three-wheelers under the official SAFFIRE EV brand."
       }
     },
     {
@@ -269,7 +269,7 @@ function trackEvent(eventName, params = {}) {
       "name": "Are KOYO, KOYO Auto, KOYO L5, and SAFFIRE EV the same brand?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India) is the parent company and manufacturer behind SAFFIRE EV. Searches for KOYO, KOYO Auto, KOYO Electric Auto, and KOYO L5 refer to SAFFIRE EV's L5 electric three-wheeler lineup: the SAFFIRE Smart Ride passenger auto and SAFFIRE Swiss Cargo loader."
+        "text": "Yes. KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India) is the parent manufacturer behind SAFFIRE EV. Searches for KOYO, KOYO Auto, KOYO Electric Auto, and KOYO L5 refer to SAFFIRE EV's L5 electric three-wheeler lineup: the SAFFIRE Smart Ride passenger auto and SAFFIRE Swiss Cargo loader."
       }
     },
     {
@@ -277,11 +277,28 @@ function trackEvent(eventName, params = {}) {
       "name": "What are the specifications of the KOYO L5 / SAFFIRE EV Smart Ride and Swiss Cargo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both the SAFFIRE Smart Ride (D+3 passenger electric auto) and SAFFIRE Swiss Cargo (600 kg payload electric cargo loader) are L5 category electric three-wheelers powered by a 14.61 kWh (63V 232Ah) battery and a 6.3 kW peak motor, offering a claimed range of up to 200 km per charge, a 50 km/h top speed, and 5–6 hours standard charging time."
+        "text": "Both the SAFFIRE Smart Ride (D+3 passenger electric auto) and SAFFIRE Swiss Cargo (600 kg payload electric cargo loader) are L5 category electric three-wheelers powered by a 14.61 kWh (63V 232Ah) battery and a 6.3 kW peak motor, offering a manufacturer-stated claimed range of up to 200 km per charge, a 50 km/h top speed, and 5–6 hours standard charging time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between L3 e-rickshaws and KOYO L5 electric three-wheelers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under India's Central Motor Vehicles Rules (CMVR), L5 electric three-wheelers are heavier, higher-speed commercial vehicles (over 25 km/h and higher payload capacity) requiring a commercial driving license, whereas L3 e-rickshaws are low-speed, lighter passenger vehicles. Both SAFFIRE Smart Ride and SAFFIRE Swiss Cargo are L5 category vehicles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I enquire about buying a vehicle or applying for a SAFFIRE EV dealership?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Customers, fleet operators, and prospective dealers across 100 Indian cities can enquire online via saffireev.com/contact/, browse city pages at saffireev.com/locations/, email inquiry@saffireev.com, or message WhatsApp +91-92581-72967."
       }
     }
   ]
-}</script></head>
+}</script>
+<noscript><style>.reveal-text, .reveal-fade { opacity: 1 !important; transform: none !important; }</style></noscript></head>
 <body class="selection:bg-primary selection:text-on-primary scroll-smooth">
 <!-- Top NavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
@@ -308,7 +325,7 @@ function trackEvent(eventName, params = {}) {
             PRE-ORDER
         </a>
 <!-- Mobile Menu Icon -->
-<button class="md:hidden text-white flex items-center" id="mobile-menu-btn">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
 <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
@@ -349,15 +366,15 @@ function trackEvent(eventName, params = {}) {
 <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-8 text-left">
 <div class="flex flex-col items-start text-left">
 <div class="max-w-4xl">
-<h1 class="font-headline font-bold text-5xl md:text-7xl lg:text-[9rem] leading-[0.85] tracking-tighter mb-8 md:mb-10 text-glow reveal-text uppercase">
+<h1 class="font-headline font-bold text-5xl md:text-7xl lg:text-[9rem] leading-[0.85] tracking-tighter mb-8 md:mb-10 text-glow uppercase">
 <span class="block mb-2">SAFFIRE:</span>
 <span class="text-white font-light italic block text-3xl md:text-5xl lg:text-6xl opacity-90 mb-1">Built to Shine,</span>
 <span class="text-primary font-bold italic block text-3xl md:text-5xl lg:text-6xl opacity-90">Driven to Last.</span>
 </h1>
-<p class="max-w-xl text-on-surface-variant text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 md:mb-12 reveal-text delay-100">
+<p class="max-w-xl text-on-surface-variant text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 md:mb-12">
                         Engineering India's most <span class="text-white font-bold italic">affordable and reliable</span> EV ecosystem. Where advanced high-tech precision meets sustainable power.
                     </p>
-<div class="flex flex-col sm:flex-row justify-start items-center gap-6 reveal-text delay-200">
+<div class="flex flex-col sm:flex-row justify-start items-center gap-6">
 <a class="kinetic-gradient text-on-primary font-headline font-bold py-5 md:py-6 px-10 md:px-14 rounded-sm tracking-widest uppercase text-sm md:text-base hover:brightness-110 transition-all shadow-[0_15px_40px_rgba(151,253,255,0.3)] group flex items-center gap-3" href="contact/" onclick="trackEvent('preorder_click', {page_name: 'home'})">
                             Pre-Order Now <span class="material-symbols-outlined group-hover:translate-x-1">arrow_forward</span>
 </a>
@@ -390,7 +407,7 @@ function trackEvent(eventName, params = {}) {
 <a class="group relative overflow-hidden bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors flex flex-col focus:outline-none focus:ring-2 focus:ring-primary" href="products/saffire-smart-ride/" onclick="trackEvent('homepage_smart_ride_click', {page_name: 'home'})">
 <div class="home-product-card-media p-2">
 <div class="relative w-full h-full rounded-[14px] overflow-hidden bg-[#0E0E10]">
-<img alt="Saffire Smart Ride" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="images/smart-ride-city.png" style="transform: none !important; transition: none !important;"/>
+<img alt="SAFFIRE Smart Ride — KOYO L5 electric passenger auto three-wheeler" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="images/smart-ride-city.png" style="transform: none !important; transition: none !important;"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent pointer-events-none"></div>
 </div>
 </div>
@@ -411,7 +428,7 @@ function trackEvent(eventName, params = {}) {
 <a class="group relative overflow-hidden bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors flex flex-col focus:outline-none focus:ring-2 focus:ring-primary" href="products/saffire-swiss-cargo/" onclick="trackEvent('homepage_swiss_cargo_click', {page_name: 'home'})">
 <div class="home-product-card-media p-2">
 <div class="relative w-full h-full rounded-[14px] overflow-hidden bg-[#0E0E10]">
-<img alt="Saffire Swiss Cargo" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="images/saffire_loader.png" style="transform: none !important; transition: none !important;"/>
+<img alt="SAFFIRE Swiss Cargo — KOYO L5 electric cargo loader three-wheeler" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="images/saffire_loader.png" style="transform: none !important; transition: none !important;"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent pointer-events-none"></div>
 </div>
 </div>
@@ -504,7 +521,7 @@ function trackEvent(eventName, params = {}) {
 </div>
 </section>
 <!-- Call to Action -->
-<section class="py-20 md:py-32 bg-background border-t border-outline-variant/10">
+<section class="py-20 md:py-32 bg-background border-t border-outline-variant/10" id="calculator">
 <div class="max-w-6xl mx-auto">
 <div class="text-center mb-16">
 <h2 class="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-4 text-glow">Profitability Calculator</h2>
@@ -733,17 +750,35 @@ function trackEvent(eventName, params = {}) {
 <a class="text-primary hover:underline font-medium" href="/about/">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a> is an Indian electric vehicle manufacturer headquartered in <a class="text-primary hover:underline" href="/locations/meerut/">Meerut, Uttar Pradesh</a>, operating under the <a class="text-primary hover:underline font-medium" href="/">SAFFIRE EV</a> brand. When operators, fleet owners, and dealers search for <strong>KOYO</strong>, <strong>KOYO Auto</strong>, <strong>KOYO Electric Auto</strong>, or <a class="text-primary hover:underline" href="/l5-electric-vehicle/">KOYO L5</a>, they are referring to SAFFIRE EV's heavy-duty L5 electric three-wheelers: the <a class="text-primary hover:underline" href="/products/saffire-smart-ride/">SAFFIRE Smart Ride (KOYO Passenger Auto)</a> and the <a class="text-primary hover:underline" href="/products/saffire-swiss-cargo/">SAFFIRE Swiss Cargo (KOYO Cargo Loader)</a>.
 </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
 <div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6">
-<h3 class="font-headline font-bold text-lg text-[#E5E1E4] mb-2">Who manufactures KOYO electric autos?</h3>
+<h3 class="font-headline font-bold text-lg text-[#E5E1E4] mb-2">Who manufactures KOYO electric autos and SAFFIRE EV three-wheelers?</h3>
 <p class="text-on-surface-variant text-sm font-light leading-relaxed">
-<a class="text-primary hover:underline" href="/about/">KOYO GEARS INDIA PRIVATE LIMITED</a> manufactures all KOYO electric autos and L5 loaders under the <a class="text-primary hover:underline" href="/">SAFFIRE EV</a> brand. Learn more about our <a class="text-primary hover:underline" href="/vision/">engineering vision</a> and <a class="text-primary hover:underline" href="/ev-dealership-india/">EV dealership program</a>.
+<a class="text-primary hover:underline" href="/about/">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a>, headquartered in <a class="text-primary hover:underline" href="/locations/meerut/">Meerut, Uttar Pradesh</a>, manufactures all KOYO electric autos and L5 electric three-wheelers under the official <a class="text-primary hover:underline" href="/">SAFFIRE EV</a> brand.
 </p>
 </div>
 <div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6">
-<h3 class="font-headline font-bold text-lg text-[#E5E1E4] mb-2">KOYO L5 Passenger &amp; Cargo Models</h3>
+<h3 class="font-headline font-bold text-lg text-[#E5E1E4] mb-2">Are KOYO, KOYO Auto, KOYO L5, and SAFFIRE EV the same brand?</h3>
 <p class="text-on-surface-variant text-sm font-light leading-relaxed">
-Compare the <a class="text-primary hover:underline" href="/products/saffire-smart-ride/">SAFFIRE Smart Ride</a> (<a class="text-primary hover:underline" href="/electric-passenger-auto/">D+3 electric passenger auto</a>) and <a class="text-primary hover:underline" href="/products/saffire-swiss-cargo/">SAFFIRE Swiss Cargo</a> (<a class="text-primary hover:underline" href="/electric-cargo-loader/">600 kg electric cargo loader</a>), both built on a 14.61 kWh battery with up to 200 km claimed range.
+Yes. <a class="text-primary hover:underline" href="/about/">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a> is the parent manufacturer behind <a class="text-primary hover:underline" href="/">SAFFIRE EV</a>. Searches for KOYO, KOYO Auto, KOYO Electric Auto, and <a class="text-primary hover:underline" href="/l5-electric-vehicle/">KOYO L5</a> refer to SAFFIRE EV's L5 electric three-wheeler lineup: the <a class="text-primary hover:underline" href="/products/saffire-smart-ride/">SAFFIRE Smart Ride</a> passenger auto and <a class="text-primary hover:underline" href="/products/saffire-swiss-cargo/">SAFFIRE Swiss Cargo</a> loader.
+</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6">
+<h3 class="font-headline font-bold text-lg text-[#E5E1E4] mb-2">What are the specifications of the KOYO L5 / SAFFIRE EV Smart Ride and Swiss Cargo?</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">
+Both the <a class="text-primary hover:underline" href="/products/saffire-smart-ride/">SAFFIRE Smart Ride</a> (<a class="text-primary hover:underline" href="/electric-passenger-auto/">D+3 passenger electric auto</a>) and <a class="text-primary hover:underline" href="/products/saffire-swiss-cargo/">SAFFIRE Swiss Cargo</a> (<a class="text-primary hover:underline" href="/electric-cargo-loader/">600 kg payload electric cargo loader</a>) are L5 category electric three-wheelers powered by a 14.61 kWh (63V 232Ah) battery and a 6.3 kW peak motor, offering a manufacturer-stated claimed range of up to 200 km per charge, a 50 km/h top speed, and 5–6 hours standard charging time.
+</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6">
+<h3 class="font-headline font-bold text-lg text-[#E5E1E4] mb-2">What is the difference between L3 e-rickshaws and KOYO L5 electric three-wheelers?</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">
+Under India's Central Motor Vehicles Rules (CMVR), <a class="text-primary hover:underline" href="/l5-electric-vehicle/">L5 electric three-wheelers</a> are heavier, higher-speed commercial vehicles (over 25 km/h and higher payload capacity) requiring a commercial driving license, whereas L3 e-rickshaws are low-speed, lighter passenger vehicles. Both SAFFIRE Smart Ride and SAFFIRE Swiss Cargo are L5 category vehicles.
+</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6">
+<h3 class="font-headline font-bold text-lg text-[#E5E1E4] mb-2">How can I enquire about buying a vehicle or applying for a SAFFIRE EV dealership?</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">
+Customers, fleet operators, and prospective dealers across 100 Indian cities can enquire online via <a class="text-primary hover:underline" href="/contact/">saffireev.com/contact/</a>, browse city pages at <a class="text-primary hover:underline" href="/locations/">saffireev.com/locations/</a>, email <a class="text-primary hover:underline" href="mailto:inquiry@saffireev.com">inquiry@saffireev.com</a>, or message WhatsApp <a class="text-primary hover:underline" href="https://wa.me/919258172967" rel="noopener noreferrer" target="_blank">+91-92581-72967</a>.
 </p>
 </div>
 <div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6">

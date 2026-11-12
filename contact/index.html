@@ -237,6 +237,13 @@ function trackEvent(eventName, params = {}) {
     {"@type": "ListItem", "position": 2, "name": "Contact KOYO / SAFFIRE EV", "item": "https://saffireev.com/contact/"}
   ]
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact SAFFIRE EV / KOYO Gears India",
+  "url": "https://saffireev.com/contact/",
+  "mainEntity": {"@id": "https://saffireev.com/#organization"}
+}</script>
 <script>
     if (window.location.hostname.includes("github.io")) {
         var meta = document.createElement('meta');
@@ -245,6 +252,7 @@ function trackEvent(eventName, params = {}) {
         document.getElementsByTagName('head')[0].appendChild(meta);
     }
 </script>
+<noscript><style>.reveal-text, .reveal-fade { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary scroll-smooth">
 <!-- TopNavBar -->
@@ -272,7 +280,7 @@ function trackEvent(eventName, params = {}) {
             CONTACT
         </button>
 <!-- Mobile Menu Icon -->
-<button class="md:hidden text-white flex items-center" id="mobile-menu-btn">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
 <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
@@ -395,7 +403,7 @@ function trackEvent(eventName, params = {}) {
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary text-2xl mt-1">location_on</span>
 <div>
-<h4 class="font-headline text-lg font-bold mb-1">Head Office</h4>
+<h3 class="font-headline text-lg font-bold mb-1">Head Office</h3>
 <p class="font-body text-on-surface-variant font-light text-sm md:text-base leading-relaxed">
                                     Plot 5, Om Tower, Mohkampur Phase 1,<br/>Delhi Road, Meerut, Uttar Pradesh
                                 </p>
@@ -404,13 +412,13 @@ function trackEvent(eventName, params = {}) {
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary text-2xl mt-1">mail</span>
 <div>
-<h4 class="font-headline text-lg font-bold mb-1">Email</h4>
+<h3 class="font-headline text-lg font-bold mb-1">Email</h3>
 <a class="font-body text-on-surface-variant font-light text-sm md:text-base hover:text-primary transition-colors" href="mailto:inquiry@saffireev.com">inquiry@saffireev.com</a>
 </div>
 </div>
 </div>
 <div>
-<h4 class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Follow Saffire EV</h4>
+<h3 class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Follow Saffire EV</h3>
 <div class="flex gap-4">
 <a aria-label="Follow Saffire EV on Instagram" class="w-12 h-12 bg-surface-container-low border border-outline-variant/30 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-all" href="https://www.instagram.com/saffire.ev?igsh=bjMwejN2bno4Y2Qy&amp;utm_source=qr" onclick="trackEvent('contact_social_click', {platform: 'instagram'})" rel="noopener noreferrer" target="_blank">
 <!-- Minimal SVG icon or text fallback, text fallback used since no heavy icon library -->
@@ -710,14 +718,13 @@ document.addEventListener("DOMContentLoaded", function() {
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-text.in-view {
+    .reveal-text.in-view, .reveal-text.is-visible {
         opacity: 1;
         transform: translateY(0);
     }
 </style>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -727,7 +734,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }, { threshold: 0.1 });
         
-        document.querySelectorAll('main section, main .grid > div, main p, main h1, main h2, main h3').forEach(el => {
+        document.querySelectorAll('main section:not(:first-child)').forEach(el => {
             el.classList.add('reveal-text');
             observer.observe(el);
         });
