@@ -229,12 +229,18 @@ def city_intro(city):
         scale = f"{name} is an important city in {state}"
 
     return (
-        f"KOYO GEARS INDIA PRIVATE LIMITED — the manufacturer behind the SAFFIRE EV brand — "
-        f"builds L5 electric three-wheelers designed for India's passenger and commercial transport needs. "
+        f'<a href="/about/" class="text-primary hover:underline font-medium">KOYO GEARS INDIA PRIVATE LIMITED</a> '
+        f'(widely searched as <strong>KOYO</strong>, <strong>KOYO Gears India</strong>, <strong>KOYO Auto</strong>, and <strong>KOYO L5</strong>) '
+        f'is the official manufacturer behind the <a href="/" class="text-primary hover:underline font-medium">SAFFIRE EV</a> brand, '
+        f'building heavy-duty <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5 electric three-wheelers</a> '
+        f'for India\'s passenger and commercial transport needs. '
         f"{scale}, where the demand for affordable, reliable and low-emission commercial vehicles is growing steadily. "
-        f"The SAFFIRE EV range is well-suited for the {region} region, covering use cases such as {use}. "
-        f"This page provides verified information about SAFFIRE EV products that are relevant to operators, "
-        f"fleet buyers, and prospective dealers based in or near {name}."
+        f'The <a href="/products/" class="text-primary hover:underline">SAFFIRE EV (KOYO Auto)</a> range is engineered for the {region} region, '
+        f"covering use cases such as {use}. "
+        f'This page provides verified specifications for <a href="/" class="text-primary hover:underline">SAFFIRE EV</a> '
+        f'(<a href="/products/saffire-smart-ride/" class="text-primary hover:underline">Smart Ride KOYO Passenger Auto</a> &amp; '
+        f'<a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">Swiss Cargo KOYO Loader</a>) '
+        f"relevant to operators, fleet buyers, and prospective dealers based in or near {name}, {state}."
     )
 
 # ── City-specific FAQ (varies by region/use case) ──────────────────────────
@@ -246,48 +252,57 @@ def city_faqs(city):
 
     faqs = [
         {
-            "q": f"What SAFFIRE EV vehicles are suitable for operators in {name}?",
+            "q": f"Are KOYO Auto, KOYO L5, and SAFFIRE EV the same brand in {name}?",
             "a": (
-                f"SAFFIRE EV offers two L5 electric three-wheelers relevant to operators in {name}: "
-                f"the Smart Ride, a D+3 passenger electric auto; and the Swiss Cargo, an electric cargo loader. "
-                f"Both vehicles share the same 14.61 kWh (63V 232Ah) battery platform, a 6.3 kW peak motor, "
+                f"Yes. KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India) is the parent company and manufacturer "
+                f"that markets its L5 electric three-wheelers under the SAFFIRE EV brand. When customers in {name}, {state} "
+                f"search for KOYO, KOYO Auto, KOYO Electric Auto, or KOYO L5, the official vehicles are the SAFFIRE EV "
+                f"Smart Ride (passenger auto) and SAFFIRE EV Swiss Cargo (cargo loader)."
+            )
+        },
+        {
+            "q": f"What KOYO L5 / SAFFIRE EV vehicles are suitable for operators in {name}?",
+            "a": (
+                f"SAFFIRE EV by KOYO Gears India offers two KOYO L5 electric three-wheelers relevant to operators in {name}: "
+                f"the SAFFIRE Smart Ride (KOYO D+3 passenger electric auto) and the SAFFIRE Swiss Cargo (KOYO electric cargo loader). "
+                f"Both vehicles share a 14.61 kWh (63V 232Ah) battery platform, a 6.3 kW peak motor, "
                 f"a claimed range of up to 200 km per charge, and a top speed of 50 km/h."
             )
         },
         {
-            "q": f"Who manufactures KOYO electric autos sold in {state}?",
+            "q": f"Who manufactures KOYO electric autos sold in {name}, {state}?",
             "a": (
-                f"KOYO electric autos are manufactured by KOYO GEARS INDIA PRIVATE LIMITED, "
+                f"KOYO electric autos are manufactured by KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India), "
                 f"operating under the SAFFIRE EV brand. The company is headquartered in Meerut, Uttar Pradesh, India. "
-                f"For enquiries about products available for {name} and surrounding areas, "
+                f"For enquiries about KOYO Auto / SAFFIRE EV products available for {name} and surrounding areas, "
                 f"contact the company directly via the official website at saffireev.com or by WhatsApp."
             )
         },
         {
-            "q": f"What are the running cost advantages of SAFFIRE EV vehicles compared to diesel autos in {name}?",
+            "q": f"What are the running cost advantages of KOYO Auto (SAFFIRE EV) vehicles compared to diesel autos in {name}?",
             "a": (
-                f"Electric three-wheelers generally have significantly lower running costs per kilometre than "
-                f"diesel or CNG autos because electricity tariffs are lower than diesel fuel costs and "
+                f"KOYO L5 electric three-wheelers by SAFFIRE EV generally have significantly lower running costs per kilometre than "
+                f"diesel or CNG autos because electricity tariffs are lower than fossil fuel costs and "
                 f"EVs have fewer mechanical components requiring routine servicing. "
                 f"The exact savings depend on local electricity tariffs, usage patterns, and route conditions in {name}. "
                 f"SAFFIRE EV provides an illustrative profitability calculator at saffireev.com to help operators estimate savings."
             )
         },
         {
-            "q": f"How can I enquire about a SAFFIRE EV dealership opportunity in {name}, {state}?",
+            "q": f"How can I enquire about a KOYO Auto / SAFFIRE EV dealership opportunity in {name}, {state}?",
             "a": (
-                f"Businesses interested in becoming a SAFFIRE EV dealer in {name} or the surrounding {state} region "
+                f"Businesses interested in becoming an authorised SAFFIRE EV (KOYO Gears India) dealer in {name} or the surrounding {state} region "
                 f"can submit an enquiry through the official contact page at saffireev.com/contact/ or "
                 f"send a WhatsApp message to +91-92581-72967. "
-                f"The company evaluates dealer applications based on regional market potential and business capability."
+                f"KOYO GEARS INDIA PRIVATE LIMITED evaluates dealer applications based on regional market potential and business capability."
             )
         },
         {
-            "q": f"Does SAFFIRE EV have a service centre or showroom in {name}?",
+            "q": f"Does KOYO Gears India (SAFFIRE EV) have a service centre or showroom in {name}?",
             "a": (
-                f"At the time of this page's last update, SAFFIRE EV has not published a confirmed showroom or "
+                f"At the time of this page's last update, SAFFIRE EV by KOYO Gears India has not published a confirmed showroom or "
                 f"service centre address specifically in {name}. "
-                f"For the most current information on authorised service and sales points near {name}, "
+                f"For the most current information on authorised KOYO Auto / SAFFIRE EV service and sales points near {name}, "
                 f"please contact the company directly at inquiry@saffireev.com or via WhatsApp at +91-92581-72967."
             )
         }
@@ -316,28 +331,96 @@ def generate_city_page(city, all_cities_by_slug):
     robots_meta = '<meta content="index, follow" name="robots"/>' if index_page else '<meta content="noindex, follow" name="robots"/>'
     noindex_comment = "" if index_page else "<!-- noindex: insufficient city-specific data to index -->\n    "
 
-    seo_title = f"KOYO Electric Auto in {name} | SAFFIRE EV L5 Three-Wheelers"
+    seo_title = f"KOYO Electric Auto in {name} | SAFFIRE EV (KOYO L5) by KOYO Gears India"
     seo_desc = (
-        f"KOYO electric autos and cargo loaders in {name}, {state}. "
-        f"SAFFIRE EV by Koyo Gears India builds L5 electric passenger autos (Smart Ride) "
-        f"and electric cargo loaders (Swiss Cargo). Enquire now."
+        f"Searching for KOYO, KOYO Auto, or KOYO L5 in {name}, {state}? "
+        f"SAFFIRE EV by KOYO Gears India Private Limited manufactures KOYO L5 electric passenger autos (Smart Ride) "
+        f"and electric cargo loaders (Swiss Cargo) for {name}. Enquire now."
+    )
+    seo_keywords = (
+        f"KOYO, KOYO {name}, KOYO Auto {name}, KOYO Electric Auto {name}, KOYO L5 {name}, "
+        f"KOYO Gears India {name}, SAFFIRE EV {name}, KOYO Electric Rickshaw {name}, "
+        f"SAFFIRE Smart Ride {name}, SAFFIRE Swiss Cargo {name}, L5 Electric Three Wheeler {state}, "
+        f"Electric Passenger Auto {name}, Electric Cargo Loader {name}"
     )
     og_title = seo_title
     og_desc = seo_desc
+    state_slug = state.lower().replace(" ", "-")
 
     intro = city_intro(city)
     faqs = city_faqs(city)
     nearby = nearby_links(city, all_cities_by_slug)
     use_cases = city["use_cases"]
 
+    # Organization + Brand Entity JSON-LD
+    org_jsonld = f"""{{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://saffireev.com/#organization",
+  "name": "SAFFIRE EV",
+  "legalName": "KOYO GEARS INDIA PRIVATE LIMITED",
+  "alternateName": [
+    "KOYO",
+    "KOYO Auto",
+    "KOYO Electric Auto",
+    "KOYO L5",
+    "KOYO Electric Rickshaw",
+    "KOYO Three Wheeler",
+    "KOYO Gears India",
+    "KOYO Gears India Private Limited",
+    "Saffire EV by Koyo Gears India"
+  ],
+  "url": "https://saffireev.com",
+  "logo": "https://saffireev.com/images/logo_final.png",
+  "areaServed": {{
+    "@type": "City",
+    "name": "{name}",
+    "containedInPlace": {{
+      "@type": "AdministrativeArea",
+      "name": "{state}"
+    }}
+  }},
+  "brand": {{
+    "@type": "Brand",
+    "name": "SAFFIRE EV",
+    "alternateName": ["KOYO Auto", "KOYO L5", "KOYO Electric Auto", "KOYO Gears India"]
+  }},
+  "sameAs": [
+    "https://www.instagram.com/saffire.ev/",
+    "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
+    "https://www.linkedin.com/in/saffire-ev-822009402"
+  ]
+}}"""
+
+    # ItemList JSON-LD for Products in City
+    itemlist_jsonld = f"""{{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "KOYO L5 / SAFFIRE EV Electric Three-Wheelers for {name}, {state}",
+  "itemListElement": [
+    {{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "SAFFIRE Smart Ride — KOYO L5 Electric Passenger Auto",
+      "url": "https://saffireev.com/products/saffire-smart-ride/"
+    }},
+    {{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SAFFIRE Swiss Cargo — KOYO L5 Electric Cargo Loader",
+      "url": "https://saffireev.com/products/saffire-swiss-cargo/"
+    }}
+  ]
+}}"""
+
     # Breadcrumb JSON-LD
     breadcrumb_jsonld = f"""{{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://saffireev.com/"}},
-    {{"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://saffireev.com/locations/"}},
-    {{"@type": "ListItem", "position": 3, "name": "{name}", "item": "{canonical}"}}
+    {{"@type": "ListItem", "position": 1, "name": "SAFFIRE EV (KOYO Gears India)", "item": "https://saffireev.com/"}},
+    {{"@type": "ListItem", "position": 2, "name": "KOYO Auto Locations", "item": "https://saffireev.com/locations/"}},
+    {{"@type": "ListItem", "position": 3, "name": "KOYO Electric Auto in {name}", "item": "{canonical}"}}
   ]
 }}"""
 
@@ -377,6 +460,7 @@ def generate_city_page(city, all_cities_by_slug):
 <link href="{canonical}" rel="canonical"/>
 {robots_meta}
 <meta content="{seo_desc}" name="description"/>
+<meta content="{seo_keywords}" name="keywords"/>
 <meta content="{og_title}" property="og:title"/>
 <meta content="{og_desc}" property="og:description"/>
 <meta content="https://saffireev.com/images/herobanner.png" property="og:image"/>
@@ -386,6 +470,8 @@ def generate_city_page(city, all_cities_by_slug):
 <meta content="{og_title}" name="twitter:title"/>
 <meta content="{og_desc}" name="twitter:description"/>
 <meta content="https://saffireev.com/images/herobanner.png" name="twitter:image"/>
+<script type="application/ld+json">{org_jsonld}</script>
+<script type="application/ld+json">{itemlist_jsonld}</script>
 <script type="application/ld+json">{breadcrumb_jsonld}</script>
 <script type="application/ld+json">{faq_jsonld}</script>
 <script>{TAILWIND_CFG}</script>
@@ -399,16 +485,16 @@ def generate_city_page(city, all_cities_by_slug):
 
   <!-- Breadcrumb -->
   <nav aria-label="Breadcrumb" class="mb-8 flex flex-wrap items-center gap-2 text-[10px] md:text-xs font-label uppercase tracking-widest text-on-surface-variant">
-    <a class="hover:text-primary transition-colors" href="/">Home</a>
+    <a class="hover:text-primary transition-colors" href="/">SAFFIRE EV (KOYO)</a>
     <span class="material-symbols-outlined text-[14px]">chevron_right</span>
-    <a class="hover:text-primary transition-colors" href="/locations/">Locations</a>
+    <a class="hover:text-primary transition-colors" href="/locations/">KOYO Auto Locations</a>
     <span class="material-symbols-outlined text-[14px]">chevron_right</span>
-    <span class="text-primary">{name}</span>
+    <span class="text-primary">{name}, {state}</span>
   </nav>
 
   <!-- Hero -->
   <section class="mb-16">
-    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-3">L5 Electric Three-Wheeler — {region}</span>
+    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-3">KOYO L5 Electric Three-Wheeler · KOYO Gears India · {region}</span>
     <h1 class="font-headline font-bold text-4xl md:text-6xl tracking-tighter mb-4 text-[#E5E1E4]">
       KOYO Electric Auto in {name} &mdash; SAFFIRE EV
     </h1>
@@ -422,30 +508,46 @@ def generate_city_page(city, all_cities_by_slug):
         Enquire on WhatsApp
       </a>
       <a class="border border-outline-variant/30 text-on-surface font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-sm hover:bg-surface-container-highest transition-all text-center"
-         href="/contact/">Contact Saffire EV</a>
+         href="/contact/?city={slug}&amp;state={state_slug}&amp;type=vehicle">Enquire for {name}</a>
+    </div>
+  </section>
+
+  <!-- Brand Entity Interlinking Box: KOYO <-> SAFFIRE EV -->
+  <section class="mb-16 bg-surface-container-low rounded-2xl border border-primary/20 p-6 md:p-8">
+    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">Official Brand &amp; Manufacturer Reference</span>
+    <h2 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]">KOYO, KOYO Auto &amp; KOYO L5 in {name} — Powered by SAFFIRE EV &amp; KOYO Gears India</h2>
+    <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
+      When commercial drivers, fleet owners, and dealers in <strong>{name}, {state}</strong> search for <strong>KOYO</strong>, <strong>KOYO Auto</strong>, <strong>KOYO Electric Auto</strong>, or <strong>KOYO L5</strong>, they are looking for the electric three-wheelers manufactured by <a href="/about/" class="text-primary hover:underline font-medium">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a> under the official brand <a href="/" class="text-primary hover:underline font-medium">SAFFIRE EV</a>. Explore our complete <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5 Electric Vehicle</a> lineup below, including the <a href="/electric-passenger-auto/" class="text-primary hover:underline">KOYO Electric Passenger Auto</a> (<a href="/products/saffire-smart-ride/" class="text-primary hover:underline">SAFFIRE Smart Ride</a>) and the <a href="/electric-cargo-loader/" class="text-primary hover:underline">KOYO Electric Cargo Loader</a> (<a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">SAFFIRE Swiss Cargo</a>).
+    </p>
+    <div class="flex flex-wrap gap-3 text-xs font-label uppercase tracking-wider">
+      <a href="/" class="px-3 py-1.5 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors">SAFFIRE EV Home</a>
+      <a href="/about/" class="px-3 py-1.5 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors">KOYO Gears India Profile</a>
+      <a href="/l5-electric-vehicle/" class="px-3 py-1.5 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors">KOYO L5 Guide</a>
+      <a href="/products/saffire-smart-ride/" class="px-3 py-1.5 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors">KOYO Auto: Smart Ride</a>
+      <a href="/products/saffire-swiss-cargo/" class="px-3 py-1.5 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors">KOYO Loader: Swiss Cargo</a>
+      <a href="/ev-dealership-india/" class="px-3 py-1.5 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors">KOYO / SAFFIRE EV Dealership</a>
     </div>
   </section>
 
   <!-- Products -->
   <section class="mb-16">
-    <h2 class="font-headline text-3xl md:text-4xl font-bold mb-10 text-[#E5E1E4]">SAFFIRE EV Products for {name}</h2>
+    <h2 class="font-headline text-3xl md:text-4xl font-bold mb-10 text-[#E5E1E4]">SAFFIRE EV (KOYO L5) Products for {name}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
       <!-- Smart Ride -->
       <div class="bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors overflow-hidden flex flex-col">
         <div class="relative aspect-[16/10] overflow-hidden bg-[#0E0E10] p-2">
           <div class="relative w-full h-full rounded-[14px] overflow-hidden">
-            <img alt="SAFFIRE Smart Ride L5 electric passenger auto three-wheeler" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="/images/SAFFIRE_PASSANGER.png"/>
+            <img alt="SAFFIRE Smart Ride — KOYO L5 electric passenger auto three-wheeler in {name}" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="/images/SAFFIRE_PASSANGER.png"/>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>
         <div class="p-8 pt-4 flex flex-col flex-grow justify-between">
           <div>
-            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">D+3 Passenger Electric Three-Wheeler · L5</span>
-            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]">SAFFIRE Smart Ride</h3>
+            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">KOYO Auto · D+3 Passenger Electric Three-Wheeler · KOYO L5</span>
+            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]"><a href="/products/saffire-smart-ride/" class="hover:text-primary transition-colors">SAFFIRE Smart Ride (KOYO Passenger Auto)</a></h3>
             <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
-              The Smart Ride is SAFFIRE EV's L5 electric passenger auto, designed to carry a driver and three passengers (D+3 layout).
-              It is built for daily urban mobility, inter-city feeder routes, and commercial passenger transport operations in cities like {name}.
+              The <a href="/products/saffire-smart-ride/" class="text-primary hover:underline">SAFFIRE Smart Ride</a> is <a href="/" class="text-primary hover:underline">SAFFIRE EV</a>'s flagship <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5</a> <a href="/electric-passenger-auto/" class="text-primary hover:underline">electric passenger auto</a> by <a href="/about/" class="text-primary hover:underline">KOYO Gears India</a>, designed to carry a driver and three passengers (D+3 layout) in {name}.
             </p>
             <ul class="space-y-2 text-sm text-on-surface-variant mb-6">
               <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]">battery_charging_full</span> Battery: 14.61 kWh (63V 232Ah)</li>
@@ -458,7 +560,7 @@ def generate_city_page(city, all_cities_by_slug):
           </div>
           <div class="flex flex-col sm:flex-row gap-3">
             <a class="kinetic-gradient text-on-primary font-headline font-bold py-3 px-6 rounded-sm tracking-widest uppercase text-xs hover:brightness-110 transition-all text-center"
-               href="{wa_link(name, 'Smart Ride passenger auto')}" onclick="trackEvent('smart_ride_wa',{{city:'{name}'}})" rel="noopener noreferrer" target="_blank">
+               href="/contact/?city={slug}&amp;state={state_slug}&amp;product=smart-ride&amp;type=vehicle">
               Enquire: Smart Ride
             </a>
             <a class="border border-outline-variant/30 text-on-surface font-headline font-bold py-3 px-6 rounded-sm tracking-widest uppercase text-xs hover:bg-surface-container-highest transition-all text-center"
@@ -471,17 +573,16 @@ def generate_city_page(city, all_cities_by_slug):
       <div class="bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors overflow-hidden flex flex-col">
         <div class="relative aspect-[16/10] overflow-hidden bg-[#0E0E10] p-2">
           <div class="relative w-full h-full rounded-[14px] overflow-hidden">
-            <img alt="SAFFIRE Swiss Cargo L5 electric cargo loader three-wheeler" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="/images/saffire_loader.png"/>
+            <img alt="SAFFIRE Swiss Cargo — KOYO L5 electric cargo loader three-wheeler in {name}" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="/images/saffire_loader.png"/>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>
         <div class="p-8 pt-4 flex flex-col flex-grow justify-between">
           <div>
-            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">Electric Cargo Loader · L5</span>
-            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]">SAFFIRE Swiss Cargo</h3>
+            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">KOYO Loader · Electric Cargo Loader · KOYO L5</span>
+            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]"><a href="/products/saffire-swiss-cargo/" class="hover:text-primary transition-colors">SAFFIRE Swiss Cargo (KOYO Cargo Loader)</a></h3>
             <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
-              The Swiss Cargo is SAFFIRE EV's L5 electric cargo loader, engineered for last-mile business delivery,
-              commercial goods transport, and logistics operations. Its robust build is suited to the demands of {name}'s commercial activity.
+              The <a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">SAFFIRE Swiss Cargo</a> is <a href="/" class="text-primary hover:underline">SAFFIRE EV</a>'s heavy-duty <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5</a> <a href="/electric-cargo-loader/" class="text-primary hover:underline">electric cargo loader</a> by <a href="/about/" class="text-primary hover:underline">KOYO Gears India</a>, built for last-mile delivery and commercial goods transport in {name}.
             </p>
             <ul class="space-y-2 text-sm text-on-surface-variant mb-6">
               <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]">battery_charging_full</span> Battery: 14.61 kWh (63V 232Ah)</li>
@@ -494,7 +595,7 @@ def generate_city_page(city, all_cities_by_slug):
           </div>
           <div class="flex flex-col sm:flex-row gap-3">
             <a class="kinetic-gradient text-on-primary font-headline font-bold py-3 px-6 rounded-sm tracking-widest uppercase text-xs hover:brightness-110 transition-all text-center"
-               href="{wa_link(name, 'Swiss Cargo electric loader')}" onclick="trackEvent('swiss_cargo_wa',{{city:'{name}'}})" rel="noopener noreferrer" target="_blank">
+               href="/contact/?city={slug}&amp;state={state_slug}&amp;product=swiss-cargo&amp;type=vehicle">
               Enquire: Swiss Cargo
             </a>
             <a class="border border-outline-variant/30 text-on-surface font-headline font-bold py-3 px-6 rounded-sm tracking-widest uppercase text-xs hover:bg-surface-container-highest transition-all text-center"
@@ -564,10 +665,10 @@ def generate_city_page(city, all_cities_by_slug):
 
   <!-- Dealer / Enquiry CTA -->
   <section class="mb-16 bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 text-center">
-    <h2 class="font-headline text-2xl md:text-3xl font-bold mb-4 text-[#E5E1E4]">Interested in SAFFIRE EV in {name}?</h2>
+    <h2 class="font-headline text-2xl md:text-3xl font-bold mb-4 text-[#E5E1E4]">Interested in KOYO Auto / SAFFIRE EV in {name}?</h2>
     <p class="text-on-surface-variant text-base font-light mb-8 max-w-2xl mx-auto">
-      Whether you are looking to purchase a vehicle, explore fleet options, or enquire about dealership opportunities
-      in {name} or {state}, get in touch with the SAFFIRE EV team directly.
+      Whether you are looking to purchase a <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5</a> vehicle, explore fleet options, or apply for <a href="/ev-dealership-india/" class="text-primary hover:underline">SAFFIRE EV (KOYO Gears India) dealership opportunities</a>
+      in {name} or {state}, get in touch with our team directly.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a class="kinetic-gradient text-on-primary font-headline font-bold py-4 px-10 rounded-sm tracking-widest uppercase text-sm hover:brightness-110 transition-all"
@@ -575,12 +676,12 @@ def generate_city_page(city, all_cities_by_slug):
         WhatsApp Enquiry
       </a>
       <a class="border border-outline-variant/40 text-on-surface font-headline font-bold py-4 px-10 rounded-sm tracking-widest uppercase text-sm hover:bg-surface-container-highest transition-all"
-         href="/contact/?city={slug}">
-        Send a Message
+         href="/contact/?city={slug}&amp;state={state_slug}&amp;type=vehicle">
+        Vehicle Enquiry ({name})
       </a>
       <a class="border border-outline-variant/40 text-on-surface font-headline font-bold py-4 px-10 rounded-sm tracking-widest uppercase text-sm hover:bg-surface-container-highest transition-all"
-         href="/ev-dealership-india/">
-        Dealer Opportunities
+         href="/contact/?city={slug}&amp;state={state_slug}&amp;type=dealer">
+        Apply for Dealership ({name})
       </a>
     </div>
   </section>
@@ -678,25 +779,36 @@ def generate_directory_page(cities):
 <html class="dark" lang="en">
 <head>
 {HEAD_COMMON}
-<title>KOYO Electric Auto Locations Across India | SAFFIRE EV City Directory</title>
+<title>KOYO Electric Auto Locations Across India | SAFFIRE EV (KOYO L5) by KOYO Gears India</title>
 <link href="https://saffireev.com/locations/" rel="canonical"/>
 <meta content="index, follow" name="robots"/>
-<meta content="Find KOYO electric auto and SAFFIRE EV L5 three-wheelers across 100 Indian cities. Electric passenger autos and cargo loaders for urban and commercial mobility." name="description"/>
-<meta content="KOYO Electric Auto Locations Across India | SAFFIRE EV City Directory" property="og:title"/>
-<meta content="Find KOYO electric auto and SAFFIRE EV L5 three-wheelers across 100 Indian cities." property="og:description"/>
+<meta content="Find KOYO, KOYO Auto, KOYO L5, and SAFFIRE EV electric three-wheelers by KOYO Gears India Private Limited across 100 Indian cities. Electric passenger autos (Smart Ride) and cargo loaders (Swiss Cargo)." name="description"/>
+<meta content="KOYO, KOYO Auto, KOYO Electric Auto, KOYO L5, KOYO Gears India, SAFFIRE EV, KOYO Auto Locations India, SAFFIRE Smart Ride, SAFFIRE Swiss Cargo, L5 Electric Three Wheeler India" name="keywords"/>
+<meta content="KOYO Electric Auto Locations Across India | SAFFIRE EV (KOYO L5) by KOYO Gears India" property="og:title"/>
+<meta content="Find KOYO, KOYO Auto, KOYO L5, and SAFFIRE EV electric three-wheelers by KOYO Gears India across 100 Indian cities." property="og:description"/>
 <meta content="https://saffireev.com/images/herobanner.png" property="og:image"/>
 <meta content="https://saffireev.com/locations/" property="og:url"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="KOYO Electric Auto Locations Across India | SAFFIRE EV" name="twitter:title"/>
-<meta content="Find SAFFIRE EV L5 electric three-wheelers across 100 Indian cities." name="twitter:description"/>
+<meta content="KOYO Electric Auto Locations Across India | SAFFIRE EV (KOYO L5)" name="twitter:title"/>
+<meta content="Find SAFFIRE EV (KOYO Auto / KOYO L5) by KOYO Gears India across 100 Indian cities." name="twitter:description"/>
 <meta content="https://saffireev.com/images/herobanner.png" name="twitter:image"/>
+<script type="application/ld+json">{{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://saffireev.com/#organization",
+  "name": "SAFFIRE EV",
+  "legalName": "KOYO GEARS INDIA PRIVATE LIMITED",
+  "alternateName": ["KOYO", "KOYO Auto", "KOYO Electric Auto", "KOYO L5", "KOYO Electric Rickshaw", "KOYO Gears India", "KOYO Gears India Private Limited", "Saffire EV by Koyo Gears India"],
+  "url": "https://saffireev.com",
+  "logo": "https://saffireev.com/images/logo_final.png"
+}}</script>
 <script type="application/ld+json">{{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://saffireev.com/"}},
-    {{"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://saffireev.com/locations/"}}
+    {{"@type": "ListItem", "position": 1, "name": "SAFFIRE EV (KOYO Gears India)", "item": "https://saffireev.com/"}},
+    {{"@type": "ListItem", "position": 2, "name": "KOYO Auto Locations", "item": "https://saffireev.com/locations/"}}
   ]
 }}</script>
 <script>{TAILWIND_CFG}</script>
@@ -710,14 +822,14 @@ def generate_directory_page(cities):
 
   <!-- Hero -->
   <section class="mb-14 text-center md:text-left">
-    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-3">India-Wide Coverage</span>
+    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-3">India-Wide Coverage · KOYO Gears India · KOYO L5</span>
     <h1 class="font-headline font-bold text-4xl md:text-6xl tracking-tighter mb-4 text-[#E5E1E4]">
-      KOYO Electric Auto Locations Across India
+      KOYO Electric Auto &amp; SAFFIRE EV Locations Across India
     </h1>
     <p class="text-on-surface-variant text-base md:text-lg font-light leading-relaxed max-w-3xl mb-6">
-      KOYO GEARS INDIA PRIVATE LIMITED — the manufacturer behind the SAFFIRE EV brand — builds
-      L5 electric passenger autos (Smart Ride) and electric cargo loaders (Swiss Cargo) for operators,
-      fleet buyers, and dealers across India. Find city-specific information for {total_indexable} cities below.
+      <a href="/about/" class="text-primary hover:underline font-medium">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a> — the manufacturer behind the <a href="/" class="text-primary hover:underline font-medium">SAFFIRE EV</a> brand (widely known as <strong>KOYO</strong>, <strong>KOYO Auto</strong>, and <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5</a>) — builds heavy-duty
+      L5 <a href="/electric-passenger-auto/" class="text-primary hover:underline">electric passenger autos</a> (<a href="/products/saffire-smart-ride/" class="text-primary hover:underline">SAFFIRE Smart Ride</a>) and <a href="/electric-cargo-loader/" class="text-primary hover:underline">electric cargo loaders</a> (<a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">SAFFIRE Swiss Cargo</a>) for operators,
+      fleet buyers, and dealers across India. Find city-specific KOYO Auto &amp; SAFFIRE EV information across {len(cities)} target Indian cities ({total_indexable} live pages) below.
     </p>
     <div class="flex flex-col sm:flex-row gap-4">
       <a class="kinetic-gradient text-on-primary font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-sm hover:brightness-110 transition-all text-center"

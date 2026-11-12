@@ -69,6 +69,8 @@ for url in urls:
 draft_check = [
     f"{BASE_URL}/locations/araria/",
     f"{BASE_URL}/locations/forbesganj/",
+    f"{BASE_URL}/locations/aurangabad-bihar/",
+    f"{BASE_URL}/locations/baripada/",
 ]
 for u in draft_check:
     pages_to_check.append(u)
@@ -111,15 +113,20 @@ for url in pages_to_check:
         err(f"Missing canonical: {label}")
 
     # Robots meta (draft pages should have noindex)
-    robots_match = re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)["\']', content)
+    robots_match = re.search(
+        r'<meta[^>]+(?:name=["\']robots["\'][^>]+content=["\']([^"\']+)["\']'
+        r'|content=["\']([^"\']+)["\'][^>]+name=["\']robots["\'])',
+        content
+    )
+    robots_val = (robots_match.group(1) or robots_match.group(2)) if robots_match else ""
     if is_sitemap_url:
-        if robots_match and 'noindex' in robots_match.group(1):
+        if 'noindex' in robots_val:
             err(f"Sitemap page has noindex: {label}")
         else:
             ok()
     else:
         # Draft pages should have noindex
-        if robots_match and 'noindex' in robots_match.group(1):
+        if 'noindex' in robots_val:
             ok()
         else:
             warn(f"Non-sitemap page missing noindex: {label}")
