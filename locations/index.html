@@ -135,7 +135,7 @@ if (window.location.hostname.includes('github.io')) {
       <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
     </div>
     <a class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase" href="/contact/">PRE-ORDER</a>
-    <button class="md:hidden text-white flex items-center" id="mobile-menu-btn">
+    <button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
       <span class="material-symbols-outlined text-3xl">menu</span>
     </button>
   </div>
@@ -205,7 +205,9 @@ menuBtn.addEventListener('click', () => {
   </section>
 
   <!-- Products Quick Reference -->
-  <section class="mb-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <section class="mb-14">
+    <h2 class="sr-only">KOYO L5 Electric Three-Wheeler Lineup</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="bg-surface-container-low rounded-xl border border-outline-variant/10 p-6 flex gap-4 items-start">
       <div class="w-12 h-12 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
         <span class="material-symbols-outlined text-primary">electric_rickshaw</span>
@@ -231,6 +233,7 @@ menuBtn.addEventListener('click', () => {
           Full Specs <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
         </a>
       </div>
+    </div>
     </div>
   </section>
 
@@ -840,6 +843,16 @@ function filterCities() {
 
 searchInput.addEventListener('input', filterCities);
 stateFilter.addEventListener('change', filterCities);
+
+// Support SearchAction URL parameters (?city=...&state=...)
+(function initFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const qCity = params.get('city') || params.get('q') || '';
+  const qState = params.get('state') || '';
+  if (qCity) searchInput.value = qCity;
+  if (qState) stateFilter.value = qState.toLowerCase();
+  if (qCity || qState) filterCities();
+})();
 </script>
 
 </body>

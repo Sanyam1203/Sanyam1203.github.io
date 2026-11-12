@@ -116,17 +116,46 @@
   }]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "KOYO Electric Passenger Auto — SAFFIRE EV Smart Ride (L5)",
+  "description": "Explore the SAFFIRE Smart Ride (KOYO L5 Electric Passenger Auto) by KOYO Gears India Private Limited. D+3 passenger layout, 14.61 kWh battery, and 200 km claimed range across India.",
+  "url": "https://saffireev.com/electric-passenger-auto/",
+  "image": "https://saffireev.com/images/herobanner.png",
+  "dateModified": "2026-11-12",
+  "author": {"@id": "https://saffireev.com/#organization"},
+  "publisher": {"@id": "https://saffireev.com/#organization"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://saffireev.com/electric-passenger-auto/"}
+}
+</script>
 
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "Product",
-          "name": "Electric Passenger Auto",
+          "name": "SAFFIRE Smart Ride",
+          "alternateName": ["KOYO Smart Ride", "KOYO Electric Auto", "KOYO L5 Passenger Auto"],
+          "sku": "SAFFIRE-SMART-RIDE-L5",
+          "model": "Smart Ride (D+3 L5 Passenger)",
+          "url": "https://saffireev.com/products/saffire-smart-ride/",
+          "image": "https://saffireev.com/images/SAFFIRE_PASSANGER.png",
+          "category": "L5 Electric Three-Wheeler",
           "brand": {
             "@type": "Brand",
-            "name": "Saffire EV"
+            "name": "SAFFIRE EV",
+            "alternateName": ["KOYO", "KOYO Auto", "KOYO L5", "KOYO Gears India"]
           },
-          "description": "Electric passenger three-wheeler built for driver earnings, passenger comfort, and sustainable urban mobility in India."
+          "manufacturer": {"@id": "https://saffireev.com/#organization"},
+          "description": "D+3 electric passenger three-wheeler built by KOYO Gears India under SAFFIRE EV for driver earnings, passenger comfort, and sustainable urban mobility in India.",
+          "additionalProperty": [
+            {"@type": "PropertyValue", "name": "Vehicle Category", "value": "L5"},
+            {"@type": "PropertyValue", "name": "Passenger Configuration", "value": "D+3 (Driver + 3 Passengers)"},
+            {"@type": "PropertyValue", "name": "Battery Capacity", "value": "14.61 kWh (63V 232Ah)"},
+            {"@type": "PropertyValue", "name": "Motor Peak Power", "value": "6.3 kW"},
+            {"@type": "PropertyValue", "name": "Claimed Range", "value": "Up to 200 km per charge"}
+          ]
         }
         </script>
         
@@ -170,7 +199,7 @@ if (window.location.hostname.includes("github.io")) {
         </a>
 
         <!-- Mobile Menu Icon -->
-        <button id="mobile-menu-btn" class="md:hidden text-white flex items-center">
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center">
             <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
     </div>

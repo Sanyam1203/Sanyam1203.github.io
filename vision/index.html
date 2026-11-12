@@ -184,6 +184,7 @@ function trackEvent(eventName, params = {}) {
         document.getElementsByTagName('head')[0].appendChild(meta);
     }
 </script>
+<noscript><style>.reveal-text, .reveal-fade { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary scroll-smooth">
 <!-- Top NavBar -->
@@ -211,7 +212,7 @@ function trackEvent(eventName, params = {}) {
             PRE-ORDER
         </a>
 <!-- Mobile Menu Icon -->
-<button class="md:hidden text-white flex items-center" id="mobile-menu-btn">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
 <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
@@ -341,19 +342,19 @@ function trackEvent(eventName, params = {}) {
 <!-- Stage 1 -->
 <div class="bg-[#0E0E10] rounded-xl p-8 border border-primary/20 flex flex-col hover:border-primary/50 transition-colors">
 <span class="font-label text-[10px] text-primary tracking-widest uppercase mb-4 block">STAGE 1</span>
-<h4 class="font-headline text-xl font-bold mb-2">Today: Strong Three-Wheeler Foundations</h4>
+<h3 class="font-headline text-xl font-bold mb-2">Today: Strong Three-Wheeler Foundations</h3>
 <p class="font-body text-sm text-on-surface-variant font-light">Saffire Smart Ride and Saffire Swiss Cargo form the first practical EV foundation of Saffire EV — focused on passenger mobility, cargo movement and dependable commercial use.</p>
 </div>
 <!-- Stage 2 -->
 <div class="bg-[#0E0E10] rounded-xl p-8 border border-primary/20 flex flex-col hover:border-primary/50 transition-colors">
 <span class="font-label text-[10px] text-primary tracking-widest uppercase mb-4 block">STAGE 2</span>
-<h4 class="font-headline text-xl font-bold mb-2">Next: Expanding Reach and Partnerships</h4>
+<h3 class="font-headline text-xl font-bold mb-2">Next: Expanding Reach and Partnerships</h3>
 <p class="font-body text-sm text-on-surface-variant font-light">Our next step is to strengthen our presence through dealers, fleet operators, business users and commercial mobility partnerships across growing markets.</p>
 </div>
 <!-- Stage 3 -->
 <div class="bg-[#0E0E10] rounded-xl p-8 border border-primary/20 flex flex-col hover:border-primary/50 transition-colors relative overflow-hidden group">
 <span class="font-label text-[10px] text-primary tracking-widest uppercase mb-4 block relative z-10">STAGE 3</span>
-<h4 class="font-headline text-xl font-bold mb-2 relative z-10">Future: Electric Two-Wheeler Expansion</h4>
+<h3 class="font-headline text-xl font-bold mb-2 relative z-10">Future: Electric Two-Wheeler Expansion</h3>
 <p class="font-body text-sm text-on-surface-variant font-light relative z-10 mb-6">Saffire EV is exploring future two-wheeler mobility opportunities for personal use, urban commuting and practical electric transportation.</p>
 <div class="mt-auto relative z-10">
 <div class="bg-surface-container-low rounded-lg p-2 flex items-center justify-center mb-3">
@@ -365,7 +366,7 @@ function trackEvent(eventName, params = {}) {
 <!-- Stage 4 -->
 <div class="bg-[#0E0E10] rounded-xl p-8 border border-primary/20 flex flex-col hover:border-primary/50 transition-colors relative overflow-hidden group">
 <span class="font-label text-[10px] text-primary tracking-widest uppercase mb-4 block relative z-10">STAGE 4</span>
-<h4 class="font-headline text-xl font-bold mb-2 relative z-10">Future: Compact Commercial EV Platforms</h4>
+<h3 class="font-headline text-xl font-bold mb-2 relative z-10">Future: Compact Commercial EV Platforms</h3>
 <p class="font-body text-sm text-on-surface-variant font-light relative z-10 mb-6">Our long-term direction includes compact commercial electric mobility platforms designed for logistics, business use and future last-mile transport needs.</p>
 <div class="mt-auto relative z-10">
 <div class="bg-surface-container-low rounded-lg p-2 flex items-center justify-center mb-3">
@@ -391,25 +392,25 @@ function trackEvent(eventName, params = {}) {
 <!-- Card 1 -->
 <div class="bg-surface-container-low p-8 rounded-xl border-t-2 border-primary">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">shield</span>
-<h4 class="font-headline text-xl font-bold mb-3">Strength</h4>
+<h3 class="font-headline text-xl font-bold mb-3">Strength</h3>
 <p class="font-body text-sm text-on-surface-variant font-light">Built with a focus on structure, durability and daily road use.</p>
 </div>
 <!-- Card 2 -->
 <div class="bg-surface-container-low p-8 rounded-xl border-t-2 border-primary">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">bolt</span>
-<h4 class="font-headline text-xl font-bold mb-3">Efficiency</h4>
+<h3 class="font-headline text-xl font-bold mb-3">Efficiency</h3>
 <p class="font-body text-sm text-on-surface-variant font-light">Electric mobility designed to support lower operating cost and practical business usage.</p>
 </div>
 <!-- Card 3 -->
 <div class="bg-surface-container-low p-8 rounded-xl border-t-2 border-primary">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">handshake</span>
-<h4 class="font-headline text-xl font-bold mb-3">Trust</h4>
+<h3 class="font-headline text-xl font-bold mb-3">Trust</h3>
 <p class="font-body text-sm text-on-surface-variant font-light">Clear product information, dealer support and realistic communication with customers.</p>
 </div>
 <!-- Card 4 -->
 <div class="bg-surface-container-low p-8 rounded-xl border-t-2 border-primary">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">public</span>
-<h4 class="font-headline text-xl font-bold mb-3">Growth</h4>
+<h3 class="font-headline text-xl font-bold mb-3">Growth</h3>
 <p class="font-body text-sm text-on-surface-variant font-light">India-first development with future expansion into wider EV categories and global opportunities.</p>
 </div>
 </div>
@@ -491,7 +492,7 @@ function trackEvent(eventName, params = {}) {
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-text.in-view {
+    .reveal-text.in-view, .reveal-text.is-visible {
         opacity: 1;
         transform: translateY(0);
     }

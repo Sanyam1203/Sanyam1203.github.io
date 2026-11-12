@@ -140,49 +140,122 @@ for url in pages_to_check:
         except json.JSONDecodeError as e:
             err(f"Invalid JSON-LD block {i+1} on {label}: {e}")
 
-# ── 3. Internal link check (sample city pages) ────────────────────────────
-print("\n=== Spot-checking internal links on key pages ===")
-sample_pages = [
-    "/locations/meerut/",
-    "/locations/delhi/",
-    "/locations/index.html",
-    "/",
-]
+# ── 3. Comprehensive site-wide HTML, asset, link, heading & FAQ check ──────
+print("\n=== Checking all active HTML pages for links, assets, headings & FAQ sync ===")
 
-class LinkParser(HTMLParser):
+class FullPageParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.links = []
+        self.srcs = []
+        self.link_hrefs = []
+        self.h_levels = []
+        self.imgs = []
+        self.ids = set()
     def handle_starttag(self, tag, attrs):
-        if tag == 'a':
-            for name, val in attrs:
-                if name == 'href' and val:
-                    self.links.append(val)
+        d = dict(attrs)
+        if d.get("id"):
+            self.ids.add(d["id"])
+        if tag == 'a' and d.get("href"):
+            self.links.append(d["href"])
+        if tag in ("script", "img", "source", "video") and d.get("src"):
+            self.srcs.append((tag, d["src"]))
+        if tag == "link" and d.get("href") and d.get("rel") in ("icon", "stylesheet", "shortcut icon", "apple-touch-icon"):
+            self.link_hrefs.append(d["href"])
+        if tag == "img":
+            self.imgs.append((d.get("src", ""), d.get("alt")))
+        if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
+            self.h_levels.append(int(tag[1]))
 
-for page_url_path in sample_pages:
-    if page_url_path == "/locations/index.html":
-        path = os.path.join(ROOT, "locations", "index.html")
+def resolve_local(html_path, url):
+    if url.startswith(("http://", "https://", "mailto:", "tel:", "javascript:", "data:")):
+        return True
+    if url.startswith("#"):
+        return True
+    clean = url.split("?")[0].split("#")[0]
+    if not clean:
+        return True
+    if clean.startswith("/"):
+        target = os.path.join(ROOT, clean.lstrip("/"))
     else:
-        path = url_to_path(BASE_URL + page_url_path)
-    content = read_file(path)
+        target = os.path.normpath(os.path.join(os.path.dirname(html_path), clean))
+    if os.path.isdir(target):
+        return os.path.exists(os.path.join(target, "index.html"))
+    return os.path.exists(target) or os.path.exists(os.path.join(target, "index.html"))
+
+all_html = []
+for dirpath, dirnames, filenames in os.walk(ROOT):
+    dirnames[:] = [d for d in dirnames if not d.startswith(".") and d not in ("_geo_seo", "stitch_saffire_ev_pre_launch", "stitch_saffire_ev_pre_launch 2")]
+    for fn in filenames:
+        if fn.endswith(".html"):
+            all_html.append(os.path.join(dirpath, fn))
+
+import html as html_mod
+for fp in sorted(all_html):
+    rel = os.path.relpath(fp, ROOT)
+    content = read_file(fp)
     if not content:
         continue
-    parser = LinkParser()
+    is_refresh = bool(re.search(r'http-equiv=["\']refresh["\']', content, re.I))
+    parser = FullPageParser()
     parser.feed(content)
-    internal = [l for l in parser.links if l.startswith('/') and not l.startswith('//')]
-    broken = []
-    for link in internal:
-        link_clean = link.split('?')[0].split('#')[0]
-        if link_clean.endswith('/'):
-            fp = os.path.join(ROOT, link_clean.lstrip('/'), 'index.html')
-        else:
-            fp = os.path.join(ROOT, link_clean.lstrip('/'))
-        if not os.path.exists(fp):
-            broken.append(link)
-    if broken:
-        warn(f"Possibly broken internal links on {page_url_path}: {broken[:3]}")
-    else:
-        ok()
+
+    for l in parser.links:
+        if not resolve_local(fp, l):
+            err(f"Broken internal link on {rel}: {l}")
+    ok()
+
+    for tag, s in parser.srcs:
+        if not resolve_local(fp, s):
+            err(f"Broken local {tag} src on {rel}: {s}")
+    for lh in parser.link_hrefs:
+        if not resolve_local(fp, lh):
+            err(f"Broken local link href on {rel}: {lh}")
+    ok()
+
+    for src, alt in parser.imgs:
+        if alt is None or alt.strip() == "":
+            err(f"Missing/empty img alt on {rel}: {src}")
+
+    if not is_refresh and rel != "404.html":
+        h1_cnt = parser.h_levels.count(1)
+        if h1_cnt != 1:
+            err(f"Expected 1 <h1>, found {h1_cnt} on {rel}")
+        for a, b in zip(parser.h_levels, parser.h_levels[1:]):
+            if b > a + 1:
+                err(f"Heading hierarchy skip h{a}->h{b} on {rel}")
+        for og in ("og:title", "og:description", "og:url", "og:image", "twitter:card"):
+            if og not in content:
+                err(f"Missing {og} on {rel}")
+
+    if re.search(r'@keyframes\s*\{', content):
+        err(f"Empty CSS @keyframes name on {rel}")
+
+    descs = re.findall(r'<meta[^>]+name=["\']description["\']', content)
+    if len(descs) > 1:
+        err(f"Duplicate meta description ({len(descs)}) on {rel}")
+
+    # Verify FAQPage questions appear visibly in page text
+    unescaped_page = html_mod.unescape(re.sub(r'<script[^>]*>.*?</script>', '', content, flags=re.DOTALL))
+    unescaped_norm = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', unescaped_page))
+    for block in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', content, re.DOTALL):
+        try:
+            data = json.loads(block.strip())
+        except Exception:
+            continue
+        if data.get("@type") == "FAQPage":
+            for q in data.get("mainEntity", []):
+                q_name = re.sub(r'\s+', ' ', q.get("name", "")).strip()
+                if q_name and q_name not in unescaped_norm:
+                    err(f"FAQPage question not visible in HTML on {rel}: {q_name}")
+            ok()
+
+# Verify key fragment anchor (#calculator) exists on index.html
+idx_txt = read_file(os.path.join(ROOT, "index.html")) or ""
+if 'id="calculator"' in idx_txt or "id='calculator'" in idx_txt:
+    ok()
+else:
+    err("Missing id='calculator' target on index.html")
 
 # ── Report ─────────────────────────────────────────────────────────────────
 print(f"\n{'='*50}")

@@ -126,12 +126,12 @@
     }
 </style>
 <style>
-@keyframes  {
+@keyframes fadeInSlideRight {
     0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
     100% { opacity: 1; transform: translateX(0); filter: blur(0); }
 }
 body {
-    animation:  0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInSlideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -196,6 +196,14 @@ function trackEvent(eventName, params = {}) {
     "https://www.linkedin.com/in/saffire-ev-822009402"
   ]
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "SAFFIRE EV (KOYO Gears India)", "item": "https://saffireev.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://saffireev.com/terms/"}
+  ]
+}</script>
 <script>
     if (window.location.hostname.includes("github.io")) {
         var meta = document.createElement('meta');
@@ -204,6 +212,7 @@ function trackEvent(eventName, params = {}) {
         document.getElementsByTagName('head')[0].appendChild(meta);
     }
 </script>
+<noscript><style>.reveal-text, .reveal-fade { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body class="selection:bg-primary selection:text-on-primary">
 <!-- Minimal Header -->
@@ -482,15 +491,15 @@ function trackEvent(eventName, params = {}) {
           </p>
 <div class="grid md:grid-cols-3 gap-4 mt-4">
 <div class="bg-surface-container-lowest/50 rounded-lg p-5 border border-outline-variant/10">
-<h4 class="font-label text-xs tracking-widest text-primary uppercase mb-3">Essential</h4>
+<h3 class="font-label text-xs tracking-widest text-primary uppercase mb-3">Essential</h3>
 <p class="text-xs text-on-surface-variant/80 leading-relaxed">Required for basic site functionality, navigation, and security features.</p>
 </div>
 <div class="bg-surface-container-lowest/50 rounded-lg p-5 border border-outline-variant/10">
-<h4 class="font-label text-xs tracking-widest text-primary uppercase mb-3">Analytics</h4>
+<h3 class="font-label text-xs tracking-widest text-primary uppercase mb-3">Analytics</h3>
 <p class="text-xs text-on-surface-variant/80 leading-relaxed">Help us understand visitor behavior and improve site performance and content.</p>
 </div>
 <div class="bg-surface-container-lowest/50 rounded-lg p-5 border border-outline-variant/10">
-<h4 class="font-label text-xs tracking-widest text-primary uppercase mb-3">Preferences</h4>
+<h3 class="font-label text-xs tracking-widest text-primary uppercase mb-3">Preferences</h3>
 <p class="text-xs text-on-surface-variant/80 leading-relaxed">Remember your settings and preferences for a personalized experience.</p>
 </div>
 </div>

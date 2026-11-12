@@ -50,12 +50,27 @@ pages_data = {
         {
           "@context": "https://schema.org",
           "@type": "Product",
-          "name": "Electric Cargo Loader",
+          "name": "SAFFIRE Swiss Cargo",
+          "alternateName": ["KOYO Swiss Cargo", "KOYO Electric Loader", "KOYO L5 Cargo Loader"],
+          "sku": "SAFFIRE-SWISS-CARGO-L5",
+          "model": "Swiss Cargo (600 kg L5 Loader)",
+          "url": "https://saffireev.com/products/saffire-swiss-cargo/",
+          "image": "https://saffireev.com/images/saffire_loader.png",
+          "category": "L5 Electric Three-Wheeler",
           "brand": {
             "@type": "Brand",
-            "name": "Saffire EV"
+            "name": "SAFFIRE EV",
+            "alternateName": ["KOYO", "KOYO Auto", "KOYO L5", "KOYO Gears India"]
           },
-          "description": "Electric cargo three-wheeler designed for business logistics, last-mile delivery, and commercial payload operations in India."
+          "manufacturer": {"@id": "https://saffireev.com/#organization"},
+          "description": "Electric cargo three-wheeler designed for business logistics, last-mile delivery, and commercial payload operations in India with 600 kg payload and up to 200 km claimed range.",
+          "additionalProperty": [
+            {"@type": "PropertyValue", "name": "Vehicle Category", "value": "L5"},
+            {"@type": "PropertyValue", "name": "Payload Capacity", "value": "600 kg"},
+            {"@type": "PropertyValue", "name": "Battery Capacity", "value": "14.61 kWh (63V 232Ah)"},
+            {"@type": "PropertyValue", "name": "Motor Peak Power", "value": "6.3 kW"},
+            {"@type": "PropertyValue", "name": "Claimed Range", "value": "Up to 200 km per charge"}
+          ]
         }
         </script>
         """
@@ -109,12 +124,27 @@ pages_data = {
         {
           "@context": "https://schema.org",
           "@type": "Product",
-          "name": "Electric Passenger Auto",
+          "name": "SAFFIRE Smart Ride",
+          "alternateName": ["KOYO Smart Ride", "KOYO Electric Auto", "KOYO L5 Passenger Auto"],
+          "sku": "SAFFIRE-SMART-RIDE-L5",
+          "model": "Smart Ride (D+3 L5 Passenger)",
+          "url": "https://saffireev.com/products/saffire-smart-ride/",
+          "image": "https://saffireev.com/images/SAFFIRE_PASSANGER.png",
+          "category": "L5 Electric Three-Wheeler",
           "brand": {
             "@type": "Brand",
-            "name": "Saffire EV"
+            "name": "SAFFIRE EV",
+            "alternateName": ["KOYO", "KOYO Auto", "KOYO L5", "KOYO Gears India"]
           },
-          "description": "Electric passenger three-wheeler built for driver earnings, passenger comfort, and sustainable urban mobility in India."
+          "manufacturer": {"@id": "https://saffireev.com/#organization"},
+          "description": "D+3 electric passenger three-wheeler built by KOYO Gears India under SAFFIRE EV for driver earnings, passenger comfort, and sustainable urban mobility in India.",
+          "additionalProperty": [
+            {"@type": "PropertyValue", "name": "Vehicle Category", "value": "L5"},
+            {"@type": "PropertyValue", "name": "Passenger Configuration", "value": "D+3 (Driver + 3 Passengers)"},
+            {"@type": "PropertyValue", "name": "Battery Capacity", "value": "14.61 kWh (63V 232Ah)"},
+            {"@type": "PropertyValue", "name": "Motor Peak Power", "value": "6.3 kW"},
+            {"@type": "PropertyValue", "name": "Claimed Range", "value": "Up to 200 km per charge"}
+          ]
         }
         </script>
         """
@@ -165,14 +195,14 @@ pages_data = {
             
             <!-- Visible FAQ Section -->
             <div class="mt-16 pt-12 border-t border-outline-variant/20">
-                <h3 class="font-headline text-2xl font-bold mb-6">Frequently Asked Questions</h3>
+                <h2 class="font-headline text-2xl font-bold mb-6">Frequently Asked Questions</h2>
                 <div class="space-y-6">
                     <div>
-                        <h4 class="font-bold text-lg text-primary mb-2">What defines an L5 EV in India?</h4>
+                        <h3 class="font-bold text-lg text-primary mb-2">What defines an L5 EV in India?</h3>
                         <p class="text-on-surface-variant text-sm">L5 EVs are generally higher-speed, heavier electric three-wheelers designed for commercial passenger and cargo transport, governed by specific CMVR safety and performance standards.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg text-primary mb-2">Is a driving license required for L5 EVs?</h4>
+                        <h3 class="font-bold text-lg text-primary mb-2">Is a driving license required for L5 EVs?</h3>
                         <p class="text-on-surface-variant text-sm">Yes, because they are classified as commercial transport vehicles with higher performance thresholds, a valid commercial driving license is legally required to operate an L5 electric vehicle in India.</p>
                     </div>
                 </div>
@@ -420,6 +450,20 @@ template = """<!DOCTYPE html>
   }}]
 }}
 </script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{h1}",
+  "description": "{desc}",
+  "url": "{canonical}",
+  "image": "https://saffireev.com/images/herobanner.png",
+  "dateModified": "2026-11-12",
+  "author": {{"@id": "https://saffireev.com/#organization"}},
+  "publisher": {{"@id": "https://saffireev.com/#organization"}},
+  "mainEntityOfPage": {{"@type": "WebPage", "@id": "{canonical}"}}
+}}
+</script>
 {schema}
 <script>
 if (window.location.hostname.includes("github.io")) {{
@@ -461,7 +505,7 @@ if (window.location.hostname.includes("github.io")) {{
         </a>
 
         <!-- Mobile Menu Icon -->
-        <button id="mobile-menu-btn" class="md:hidden text-white flex items-center">
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center">
             <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
     </div>
