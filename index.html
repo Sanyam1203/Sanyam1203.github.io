@@ -167,22 +167,46 @@ function trackEvent(eventName, params = {}) {
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Saffire EV",
-  "legalName": "Koyo Gears India Pvt. Ltd.",
+  "@id": "https://saffireev.com/#organization",
+  "name": "SAFFIRE EV",
+  "legalName": "KOYO GEARS INDIA PRIVATE LIMITED",
   "url": "https://saffireev.com/",
+  "logo": "https://saffireev.com/images/logo_final.png",
   "email": "inquiry@saffireev.com",
+  "telephone": "+91-92581-72967",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road",
     "addressLocality": "Meerut",
     "addressRegion": "Uttar Pradesh",
+    "postalCode": "250002",
     "addressCountry": "IN"
   },
   "sameAs": [
-    "https://www.instagram.com/saffire.ev?igsh=bjMwejN2bno4Y2Qy&utm_source=qr",
+    "https://www.instagram.com/saffire.ev/",
     "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
     "https://www.linkedin.com/in/saffire-ev-822009402"
-  ]
+  ],
+  "description": "KOYO GEARS INDIA PRIVATE LIMITED manufactures L5 electric three-wheelers under the SAFFIRE EV brand, focused on electric passenger autos (Smart Ride) and electric cargo loaders (Swiss Cargo) for Indian commercial mobility.",
+  "foundingLocation": {
+    "@type": "Place",
+    "addressLocality": "Meerut",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://saffireev.com/#website",
+  "name": "SAFFIRE EV",
+  "url": "https://saffireev.com/",
+  "publisher": {"@id": "https://saffireev.com/#organization"},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://saffireev.com/locations/?city={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 }</script>
 <script>
     if (window.location.hostname.includes("github.io")) {
@@ -194,15 +218,23 @@ function trackEvent(eventName, params = {}) {
 </script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "AutomotiveBusiness",
-  "name": "Saffire EV by Koyo Gears India Pvt. Ltd.",
-  "url": "https://saffireev.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Meerut",
-    "addressRegion": "Uttar Pradesh",
-    "addressCountry": "IN"
-  }
+  "@type": "ItemList",
+  "name": "SAFFIRE EV Products",
+  "description": "L5 electric three-wheelers manufactured by KOYO GEARS INDIA PRIVATE LIMITED under the SAFFIRE EV brand.",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://saffireev.com/products/saffire-smart-ride/",
+      "name": "SAFFIRE Smart Ride — L5 Electric Passenger Auto"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://saffireev.com/products/saffire-swiss-cargo/",
+      "name": "SAFFIRE Swiss Cargo — L5 Electric Cargo Loader"
+    }
+  ]
 }</script></head>
 <body class="selection:bg-primary selection:text-on-primary scroll-smooth">
 <!-- Top NavBar -->
@@ -223,6 +255,7 @@ function trackEvent(eventName, params = {}) {
 <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="products/">Products</a>
 <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="about/">About</a>
 <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="vision/">Vision</a>
+<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="locations/">Locations</a>
 <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="contact/">Contact</a>
 </div>
 <a class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase" href="contact/">
@@ -239,6 +272,7 @@ function trackEvent(eventName, params = {}) {
 <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="products/">Products</a>
 <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="about/">About</a>
 <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="vision/">Vision</a>
+<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="locations/">Locations</a>
 <a class="font-label text-lg uppercase tracking-wider pb-2 text-[#E5E1E4]/70" href="contact/">Contact</a>
 <a class="kinetic-gradient text-on-primary px-8 py-4 w-full mt-2 text-sm font-label font-bold uppercase tracking-widest rounded-full text-center" href="contact/" onclick="trackEvent('preorder_click', {page_name: 'home'})">Pre-Order</a>
 </div>
@@ -659,6 +693,7 @@ function trackEvent(eventName, params = {}) {
 <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/assets/catalogs/saffire-ev-catalog.pdf" onclick="trackEvent('catalog_view_click', {location: 'footer', catalog_name: 'saffire_ev_catalog'})" rel="noopener noreferrer" target="_blank">Catalog</a>
 <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/about/">About</a>
 <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/vision/">Vision</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/locations/">Locations</a>
 <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/contact/">Contact</a>
 </div>
 <!-- EV Guides -->

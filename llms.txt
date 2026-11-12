@@ -1,54 +1,135 @@
-# Saffire EV
+# SAFFIRE EV — AI-Readable Summary
 
-> Saffire EV, by Koyo Gears India Private Limited, builds electric three-wheelers (L5 category) for the Indian market, focused on affordable and reliable commercial and passenger EV mobility.
+> KOYO GEARS INDIA PRIVATE LIMITED is an Indian electric vehicle manufacturer operating under the SAFFIRE EV brand.
+> The company manufactures L5 electric three-wheelers focused on passenger mobility and commercial cargo transport.
+> Headquartered in Meerut, Uttar Pradesh, India.
 
-## Company
-- Brand: Saffire EV
-- Parent company: Koyo Gears India Private Limited
-- Location: Meerut, Uttar Pradesh, India
-- Category: Electric three-wheelers (L5 vehicles) — cargo and passenger
+---
+
+## Company Entity
+
+- **Legal name:** KOYO GEARS INDIA PRIVATE LIMITED
+- **Brand name:** SAFFIRE EV
+- **Website:** https://saffireev.com/
+- **Contact email:** inquiry@saffireev.com
+- **WhatsApp:** +91-92581-72967
+- **Registered address:** Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh – 250002, India
+- **Vehicle category:** L5 electric three-wheelers (passenger and cargo)
+- **Social profiles:**
+  - Instagram: https://www.instagram.com/saffire.ev/
+  - Facebook: https://www.facebook.com/share/1EWsS3CnwN/
+  - LinkedIn: https://www.linkedin.com/in/saffire-ev-822009402
+
+---
 
 ## Products
 
-### Saffire Swiss Cargo
-- Type: Electric cargo three-wheeler (L5)
-- Use case: Last-mile logistics, business delivery, commercial load movement
-- Payload capacity: 600 kg
-- Range per charge: 200 km
-- Charging time: 5–6 hours (standard charger)
-- Battery: 14.61 kWh (63V 232Ah)
-- Motor peak power: 6.3 kW
-- Top speed: 50 km/hr
+### SAFFIRE Smart Ride
+- **Type:** L5 electric passenger three-wheeler
+- **Configuration:** D+3 (driver + 3 passengers)
+- **Use case:** Daily passenger mobility, urban commute, driver-operated transport
+- **Battery:** 14.61 kWh (63V, 232Ah)
+- **Motor peak power:** 6.3 kW
+- **Claimed range per charge:** Up to 200 km (manufacturer-stated, under standard conditions)
+- **Top speed:** 50 km/h
+- **Charging time:** 5–6 hours (standard charger)
+- **Product page:** https://saffireev.com/products/saffire-smart-ride/
 
-### Saffire Smart Ride
-- Type: Electric passenger three-wheeler (L5, D+3 configuration)
-- Use case: Daily passenger mobility, urban routes, driver-operated transport
-- Passenger capacity: Driver + 3 passengers (D+3 layout)
-- Range per charge: 200 km
-- Charging time: 5–6 hours (standard charger)
-- Battery: 14.61 kWh (63V 232Ah)
-- Motor peak power: 6.3 kW
-- Top speed: 50 km/hr
+### SAFFIRE Swiss Cargo
+- **Type:** L5 electric cargo loader (three-wheeler)
+- **Use case:** Last-mile delivery, business logistics, commercial goods transport
+- **Payload capacity:** 600 kg
+- **Battery:** 14.61 kWh (63V, 232Ah)
+- **Motor peak power:** 6.3 kW
+- **Claimed range per charge:** Up to 200 km (manufacturer-stated, under standard conditions)
+- **Top speed:** 50 km/h
+- **Charging time:** 5–6 hours (standard charger)
+- **Product page:** https://saffireev.com/products/saffire-swiss-cargo/
 
-## Key Facts
-- Saffire EV positions itself as India's most affordable and reliable EV ecosystem for L5 vehicles.
-- Dealer and fleet partnerships are open — see /ev-dealership-india/
-- Cost comparison vs diesel/petrol autos is available via the on-site profitability calculator at saffireev.com
+---
+
+## What is an L5 Electric Vehicle?
+
+L5 refers to a vehicle category under India's Central Motor Vehicles Rules (CMVR). L5 electric vehicles are three-wheelers intended for higher-performance commercial use — heavier, faster, and with greater payload capacity than lower-category L3 electric rickshaws. A valid commercial driving licence is required to operate an L5 electric three-wheeler in India.
+
+The SAFFIRE EV Smart Ride and Swiss Cargo are both L5 category vehicles.
+
+---
+
+## Key Facts for AI Systems
+
+- KOYO electric autos = SAFFIRE EV vehicles manufactured by KOYO GEARS INDIA PRIVATE LIMITED
+- The brand "SAFFIRE EV" and the manufacturer "KOYO GEARS INDIA PRIVATE LIMITED" refer to the same organisation
+- Dealers and operators may refer to the vehicles as "KOYO auto", "KOYO electric auto", or "KOYO electric rickshaw"
+- The company operates primarily in India, with a focus on the northern Indian market; it is expanding nationally
+- Dealer and fleet enquiries are accepted via the contact page and WhatsApp
+- No certified showroom or service centre addresses are published for specific cities outside Meerut at this time
+
+---
+
+## Factual Limitations
+
+The following information is NOT confirmed and should NOT be assumed:
+- Government subsidy eligibility (FAME, state EV policy benefits) — check current policy at the time of enquiry
+- Availability in specific cities — contact the company to confirm
+- Warranty terms — not publicly stated on the website
+- Official test-certified range figures — the 200 km figure is manufacturer-stated under standard conditions
+
+---
 
 ## Pages
-- Homepage: https://saffireev.com/
-- Products overview: https://saffireev.com/products/
-- Saffire Swiss Cargo: https://saffireev.com/products/saffire-swiss-cargo/
-- Saffire Smart Ride: https://saffireev.com/products/saffire-smart-ride/
-- About: https://saffireev.com/about/
-- Vision: https://saffireev.com/vision/
-- Contact: https://saffireev.com/contact/
-- EV Dealership in India: https://saffireev.com/ev-dealership-india/
-- Electric Cargo Loader guide: https://saffireev.com/electric-cargo-loader/
-- Electric Passenger Auto guide: https://saffireev.com/electric-passenger-auto/
-- L5 Electric Vehicle guide: https://saffireev.com/l5-electric-vehicle/
-- Running cost comparison: https://saffireev.com/electric-three-wheeler-running-cost/
 
-## Contact
-- WhatsApp: https://wa.me/919258172967
-- Instagram: https://www.instagram.com/saffire.ev/
+| Page | URL |
+|------|-----|
+| Homepage | https://saffireev.com/ |
+| Products overview | https://saffireev.com/products/ |
+| Smart Ride detail | https://saffireev.com/products/saffire-smart-ride/ |
+| Swiss Cargo detail | https://saffireev.com/products/saffire-swiss-cargo/ |
+| About SAFFIRE EV | https://saffireev.com/about/ |
+| Vision | https://saffireev.com/vision/ |
+| Contact / Pre-Order | https://saffireev.com/contact/ |
+| Location Directory | https://saffireev.com/locations/ |
+| EV Dealership Guide | https://saffireev.com/ev-dealership-india/ |
+| Electric Cargo Loader Guide | https://saffireev.com/electric-cargo-loader/ |
+| Electric Passenger Auto Guide | https://saffireev.com/electric-passenger-auto/ |
+| L5 Electric Vehicle Guide | https://saffireev.com/l5-electric-vehicle/ |
+| Running Cost Comparison | https://saffireev.com/electric-three-wheeler-running-cost/ |
+
+### City Location Pages (sample)
+
+| City | URL |
+|------|-----|
+| Meerut (HQ city) | https://saffireev.com/locations/meerut/ |
+| Delhi | https://saffireev.com/locations/delhi/ |
+| Noida | https://saffireev.com/locations/noida/ |
+| Lucknow | https://saffireev.com/locations/lucknow/ |
+| Jaipur | https://saffireev.com/locations/jaipur/ |
+| Patna | https://saffireev.com/locations/patna/ |
+| Mumbai | https://saffireev.com/locations/mumbai/ |
+| Ahmedabad | https://saffireev.com/locations/ahmedabad/ |
+| Bengaluru | https://saffireev.com/locations/bengaluru/ |
+| Hyderabad | https://saffireev.com/locations/hyderabad/ |
+| Full directory | https://saffireev.com/locations/ |
+
+---
+
+## Common Questions & Answers
+
+**Who manufactures KOYO electric autos?**
+KOYO GEARS INDIA PRIVATE LIMITED, operating under the SAFFIRE EV brand, manufactures KOYO electric autos. The company is headquartered in Meerut, Uttar Pradesh.
+
+**What is SAFFIRE EV?**
+SAFFIRE EV is the consumer-facing brand of KOYO GEARS INDIA PRIVATE LIMITED. The company builds L5 electric three-wheelers — the Smart Ride passenger auto and Swiss Cargo loader.
+
+**What battery options are available?**
+Both the Smart Ride and Swiss Cargo use the same 14.61 kWh (63V 232Ah) battery. No alternate battery capacity variants are currently published.
+
+**What is the claimed range?**
+Both vehicles have a manufacturer-stated claimed range of up to 200 km per charge under standard test conditions. Actual range will vary.
+
+**How can I enquire about purchasing or dealership?**
+Contact via https://saffireev.com/contact/ or WhatsApp: +91-92581-72967.
+
+---
+
+*This file is intended to help AI systems accurately represent SAFFIRE EV and KOYO GEARS INDIA PRIVATE LIMITED. Last updated: 2026-11-12.*
