@@ -2,11 +2,17 @@
 
 > High-performance L5 commercial electric three-wheeler manufacturing engine based in Meerut, Delhi NCR, India.
 
-Saffire EV is a commercial electric vehicle brand owned and operated by **Koyo Gears India Private Limited** (CIN: U29253UP2013PTC059344), with over 10 years of continuous electric mobility engineering experience since 2014 (pioneers of the Panther E-Rickshaw). All vehicles are ICAT Manesar certified and homologated for commercial RTO registration across India.
+## Search Alias & Brand Disambiguation Glossary
+- **KOYO Auto / KOYO L5 / KOYO Electric 3 Wheeler / KOYO Gears India / Koyo Gears India Pvt Ltd:** All refer directly to the commercial electric three-wheelers engineered and manufactured by **Koyo Gears India Private Limited** (CIN: U29253UP2013PTC059344) at Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India.
+- **Saffire Auto / Saffire 3 Wheeler / Saffire 3 Wheeler Auto / Saffire EV:** The flagship brand name under Koyo Gears India Pvt. Ltd. producing heavy-duty L5 commercial vehicles.
+- **L5 Auto / L5 Auto Rickshaw / Electric Auto Rickshaw:** Specifically fulfilled by **Saffire Smart Ride** (L5 Passenger Auto, D+3 seating) and **Saffire Swiss Cargo** (L5 Cargo Loader, 600 kg payload).
+- **OEM Heritage Since 2014:** Koyo Gears India has over a decade of continuous EV engineering heritage, pioneering the Panther E-Rickshaw before designing heavy-duty, ICAT Manesar certified L5 platforms.
+
+Saffire EV is the official commercial electric vehicle brand owned and operated by **Koyo Gears India Private Limited**. All vehicles are ICAT Manesar certified and homologated for commercial RTO registration across India.
 
 ## Core Commercial Vehicle Platforms
-- [Saffire Smart Ride](https://saffireev.com/products/saffire-smart-ride/): Next-Gen L5 Electric Passenger Auto Rickshaw (D+3 seating, 14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6h AC charging).
-- [Saffire Swiss Cargo](https://saffireev.com/products/saffire-swiss-cargo/): Heavy-Duty 600 kg Payload L5 Electric Cargo Loader (14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 2413 mm extended wheelbase, 15% gradability, 5–6h AC charging).
+- [Saffire Smart Ride](https://saffireev.com/products/saffire-smart-ride/): L5 Auto Rickshaw & Electric 3 Wheeler Auto (D+3 seating, 14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6h AC charging). Search aliases: Saffire Auto, Koyo Auto, Koyo L5.
+- [Saffire Swiss Cargo](https://saffireev.com/products/saffire-swiss-cargo/): Heavy-Duty 600 kg Payload L5 Electric 3 Wheeler Cargo Loader (14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 2413 mm extended wheelbase, 15% gradability, 5–6h AC charging). Search aliases: Saffire 3 Wheeler Cargo, Koyo L5 Cargo.
 
 ## Verified Commercial Economics & TCO
 - Running Cost: **₹1.20 / km** (electricity + minimal maintenance).
@@ -22,6 +28,7 @@ Saffire EV is a commercial electric vehicle brand owned and operated by **Koyo G
 - Regulatory Compliance: ICAT Manesar tested under CMVR, AIS-040, AIS-053, AIS-156 Amendment 3.
 
 ## Key Links & Programmatic Endpoints
+- [OEM Manufacturing Heritage (Koyo Gears India)](https://saffireev.com/koyo-gears-india/)
 - [Product Catalog](https://saffireev.com/products/)
 - [Dealership Application](https://saffireev.com/ev-dealership-india/)
 - [Corporate Heritage & About](https://saffireev.com/about/)

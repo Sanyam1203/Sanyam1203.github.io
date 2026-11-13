@@ -27,22 +27,39 @@ def build_organization_node() -> Dict[str, Any]:
     return {
         "@type": "Organization",
         "@id": f"{BASE_URL}/#organization",
-        "name": COMPANY_INFO["brand_name"],
+        "name": "Saffire EV by Koyo Gears India Pvt. Ltd.",
         "legalName": COMPANY_INFO["legal_name"],
-        "alternateName": [
-            "KOYO",
+        "alternateName": COMPANY_INFO.get("alternate_names", [
+            "Saffire EV",
+            "Saffire Auto",
+            "Saffire 3 Wheeler",
+            "Saffire 3 Wheeler Auto",
+            "Koyo Auto",
+            "Koyo L5",
+            "Koyo Gears India",
+            "Koyo Gears India Private Limited",
+            "Koyo Gears India Pvt Ltd",
+            "Koyo Electric 3 Wheeler",
+            "Saffire Electric Auto Rickshaw"
+        ]),
+        "knowsAbout": COMPANY_INFO.get("knows_about", [
+            "L5 Auto",
+            "L5 Auto Rickshaw",
+            "Electric Auto Rickshaw",
+            "Auto Rickshaw",
             "KOYO Auto",
-            "KOYO Electric Auto",
-            "KOYO L5",
-            "KOYO Electric Rickshaw",
+            "Koyo L5",
             "KOYO Gears India",
-            "KOYO Gears India Private Limited",
-            "Saffire EV by Koyo Gears India"
-        ],
+            "KOYO Electric 3 Wheeler",
+            "Saffire Auto",
+            "Saffire 3 Wheeler",
+            "Saffire 3 Wheeler Auto",
+            "Saffire EV"
+        ]),
         "url": BASE_URL,
         "logo": f"{BASE_URL}/images/logo_final.png",
         "image": f"{BASE_URL}/images/herobanner.png",
-        "description": "Commercial electric three-wheeler manufacturer producing high-performance L5 passenger and cargo EVs.",
+        "description": "Manufacturer of Koyo Auto, Koyo L5, and Saffire Electric 3 Wheelers (L5 passenger auto rickshaws and commercial cargo loaders) in Meerut, Delhi NCR.",
         "foundingDate": "2014",
         "email": COMPANY_INFO["email"],
         "telephone": COMPANY_INFO["phone"],
@@ -58,6 +75,7 @@ def build_organization_node() -> Dict[str, Any]:
             "@type": "Corporation",
             "name": COMPANY_INFO["parent_company"],
             "legalName": COMPANY_INFO["legal_name"],
+            "alternateName": ["Koyo Gears India", "Koyo Gears India Pvt Ltd", "Koyo Gears India Private Limited"],
             "url": BASE_URL,
             "address": {
                 "@type": "PostalAddress",
@@ -77,7 +95,10 @@ def build_local_business_node() -> Dict[str, Any]:
     return {
         "@type": ["AutoDealer", "LocalBusiness"],
         "@id": f"{BASE_URL}/#headquarters",
-        "name": f"{COMPANY_INFO['brand_name']} Headquarters & Factory",
+        "name": f"{COMPANY_INFO['brand_name']} Headquarters & Factory (Koyo Gears India)",
+        "legalName": COMPANY_INFO["legal_name"],
+        "alternateName": COMPANY_INFO.get("alternate_names", []),
+        "knowsAbout": COMPANY_INFO.get("knows_about", []),
         "url": BASE_URL,
         "telephone": COMPANY_INFO["phone"],
         "email": COMPANY_INFO["email"],
@@ -116,6 +137,8 @@ def build_vehicle_product_node(vehicle_id: str) -> Optional[Dict[str, Any]]:
         "@id": f"{BASE_URL}{v.url_path}#vehicle",
         "name": v.name,
         "model": v.name,
+        "alternateName": v.alternate_names,
+        "vehicleConfiguration": v.vehicle_configuration or v.segment,
         "vehicleModelDate": "2026",
         "brand": {
             "@id": f"{BASE_URL}/#organization"
@@ -243,16 +266,22 @@ def compile_page_jsonld(
 
 
 def compile_llms_txt() -> str:
-    """Generates llms.txt adhering strictly to llmstxt.org specification."""
+    """Generates llms.txt adhering strictly to llmstxt.org specification with brand disambiguation glossary."""
     content = f"""# Saffire EV by Koyo Gears India Pvt. Ltd.
 
 > High-performance L5 commercial electric three-wheeler manufacturing engine based in Meerut, Delhi NCR, India.
 
-Saffire EV is a commercial electric vehicle brand owned and operated by **Koyo Gears India Private Limited** (CIN: U29253UP2013PTC059344), with over 10 years of continuous electric mobility engineering experience since 2014 (pioneers of the Panther E-Rickshaw). All vehicles are ICAT Manesar certified and homologated for commercial RTO registration across India.
+## Search Alias & Brand Disambiguation Glossary
+- **KOYO Auto / KOYO L5 / KOYO Electric 3 Wheeler / KOYO Gears India / Koyo Gears India Pvt Ltd:** All refer directly to the commercial electric three-wheelers engineered and manufactured by **Koyo Gears India Private Limited** (CIN: U29253UP2013PTC059344) at Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India.
+- **Saffire Auto / Saffire 3 Wheeler / Saffire 3 Wheeler Auto / Saffire EV:** The flagship brand name under Koyo Gears India Pvt. Ltd. producing heavy-duty L5 commercial vehicles.
+- **L5 Auto / L5 Auto Rickshaw / Electric Auto Rickshaw:** Specifically fulfilled by **Saffire Smart Ride** (L5 Passenger Auto, D+3 seating) and **Saffire Swiss Cargo** (L5 Cargo Loader, 600 kg payload).
+- **OEM Heritage Since 2014:** Koyo Gears India has over a decade of continuous EV engineering heritage, pioneering the Panther E-Rickshaw before designing heavy-duty, ICAT Manesar certified L5 platforms.
+
+Saffire EV is the official commercial electric vehicle brand owned and operated by **Koyo Gears India Private Limited**. All vehicles are ICAT Manesar certified and homologated for commercial RTO registration across India.
 
 ## Core Commercial Vehicle Platforms
-- [Saffire Smart Ride]({BASE_URL}/products/saffire-smart-ride/): Next-Gen L5 Electric Passenger Auto Rickshaw (D+3 seating, 14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6h AC charging).
-- [Saffire Swiss Cargo]({BASE_URL}/products/saffire-swiss-cargo/): Heavy-Duty 600 kg Payload L5 Electric Cargo Loader (14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 2413 mm extended wheelbase, 15% gradability, 5–6h AC charging).
+- [Saffire Smart Ride]({BASE_URL}/products/saffire-smart-ride/): L5 Auto Rickshaw & Electric 3 Wheeler Auto (D+3 seating, 14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6h AC charging). Search aliases: Saffire Auto, Koyo Auto, Koyo L5.
+- [Saffire Swiss Cargo]({BASE_URL}/products/saffire-swiss-cargo/): Heavy-Duty 600 kg Payload L5 Electric 3 Wheeler Cargo Loader (14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 2413 mm extended wheelbase, 15% gradability, 5–6h AC charging). Search aliases: Saffire 3 Wheeler Cargo, Koyo L5 Cargo.
 
 ## Verified Commercial Economics & TCO
 - Running Cost: **₹1.20 / km** (electricity + minimal maintenance).
@@ -268,6 +297,7 @@ Saffire EV is a commercial electric vehicle brand owned and operated by **Koyo G
 - Regulatory Compliance: ICAT Manesar tested under CMVR, AIS-040, AIS-053, AIS-156 Amendment 3.
 
 ## Key Links & Programmatic Endpoints
+- [OEM Manufacturing Heritage (Koyo Gears India)]({BASE_URL}/koyo-gears-india/)
 - [Product Catalog]({BASE_URL}/products/)
 - [Dealership Application]({BASE_URL}/ev-dealership-india/)
 - [Corporate Heritage & About]({BASE_URL}/about/)
@@ -316,6 +346,9 @@ def compile_catalog_api() -> Dict[str, Any]:
         "generated_at": TODAY,
         "brand": COMPANY_INFO["brand_name"],
         "parent_company": COMPANY_INFO["legal_name"],
+        "alternate_names": COMPANY_INFO.get("alternate_names", []),
+        "knows_about": COMPANY_INFO.get("knows_about", []),
+        "brand_disambiguation": COMPANY_INFO.get("brand_disambiguation_statement", ""),
         "headquarters": {
             "address": COMPANY_INFO["hq_address"],
             "city": COMPANY_INFO["hq_city"],
@@ -434,3 +467,4 @@ Sitemap: {BASE_URL}/sitemap.xml
     written["robots.txt"] = robots_path
 
     return written
+

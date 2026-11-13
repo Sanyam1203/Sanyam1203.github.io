@@ -46,6 +46,8 @@ class VehiclePlatform(BaseModel):
     meta_title: str = Field(..., description="Page SEO meta title")
     meta_description: str = Field(..., description="Page SEO meta description")
     h1_title: str = Field(..., description="Page H1 title")
+    alternate_names: List[str] = Field(default_factory=list, description="Colloquial and commercial search aliases (e.g. Saffire Auto, Koyo L5)")
+    vehicle_configuration: Optional[str] = Field(None, description="Detailed schema configuration string")
 
 
 class TCOTier(BaseModel):

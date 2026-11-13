@@ -105,6 +105,11 @@ def serve_home():
 def serve_about():
     return FileResponse(os.path.join(BASE_DIR, "about", "index.html"))
 
+@app.get("/koyo-gears-india/")
+@app.get("/koyo-gears-india")
+def serve_koyo_gears():
+    return FileResponse(os.path.join(BASE_DIR, "koyo-gears-india", "index.html"))
+
 @app.get("/vision/")
 @app.get("/vision")
 def serve_vision():
@@ -147,3 +152,4 @@ if os.path.isdir(os.path.join(BASE_DIR, "assets")):
     app.mount("/assets", StaticFiles(directory=os.path.join(BASE_DIR, "assets")), name="assets")
 if os.path.isdir(os.path.join(BASE_DIR, "locations")):
     app.mount("/locations", StaticFiles(directory=os.path.join(BASE_DIR, "locations"), html=True), name="locations")
+

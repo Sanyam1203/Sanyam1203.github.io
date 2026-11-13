@@ -20,6 +20,7 @@ TODAY = date.today().isoformat()
 STATIC_PAGES = [
     {"url": "https://saffireev.com/", "freq": "weekly", "priority": "1.0"},
     {"url": "https://saffireev.com/products/", "freq": "weekly", "priority": "0.9"},
+    {"url": "https://saffireev.com/koyo-gears-india/", "freq": "weekly", "priority": "0.85"},
     {"url": "https://saffireev.com/about/", "freq": "monthly", "priority": "0.8"},
     {"url": "https://saffireev.com/vision/", "freq": "monthly", "priority": "0.7"},
     {"url": "https://saffireev.com/contact/", "freq": "monthly", "priority": "0.8"},

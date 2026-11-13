@@ -135,6 +135,7 @@ def test_html_pages_sanitization_and_metadata():
     """Verify all primary HTML pages have canonical, og metadata, valid JSON-LD, and sanitized icon spans."""
     core_pages = [
         "index.html",
+        "koyo-gears-india/index.html",
         "about/index.html",
         "vision/index.html",
         "products/index.html",
@@ -188,3 +189,60 @@ def test_html_pages_sanitization_and_metadata():
         for span in icon_spans:
             assert span.get("aria-hidden") == "true", f"Icon span in {rel_path} missing aria-hidden='true': {span}"
             assert span.has_attr("data-nosnippet"), f"Icon span in {rel_path} missing data-nosnippet: {span}"
+
+
+def test_exact_keyword_clusters_and_pillar_page():
+    """Verify that all target keyword clusters are hardwired into titles, headings, and JSON-LD."""
+    # 1. Homepage titles & keywords
+    with open(os.path.join(ROOT_DIR, "index.html"), "r", encoding="utf-8") as f:
+        home_html = f.read()
+    home_soup = BeautifulSoup(home_html, "html.parser")
+    assert "Saffire EV (Saffire Auto) | L5 Electric 3 Wheeler & Auto Rickshaw by Koyo Gears India" in home_soup.title.string
+    assert "Why Choose a Saffire L5 Auto Rickshaw" in home_html
+    assert "Saffire Auto" in home_html
+    assert "Koyo L5" in home_html
+
+    # 2. Smart Ride title & keywords
+    with open(os.path.join(ROOT_DIR, "products", "saffire-smart-ride", "index.html"), "r", encoding="utf-8") as f:
+        smart_html = f.read()
+    smart_soup = BeautifulSoup(smart_html, "html.parser")
+    assert "Saffire Smart Ride — L5 Auto Rickshaw & Electric 3 Wheeler Auto" in smart_soup.title.string
+    assert "Why Choose a Saffire L5 Auto Rickshaw" in smart_html
+
+    # 3. Swiss Cargo title & keywords
+    with open(os.path.join(ROOT_DIR, "products", "saffire-swiss-cargo", "index.html"), "r", encoding="utf-8") as f:
+        cargo_html = f.read()
+    cargo_soup = BeautifulSoup(cargo_html, "html.parser")
+    assert "Saffire Swiss Cargo — L5 Electric 3 Wheeler Cargo Loader" in cargo_soup.title.string
+    assert "Koyo L5" in cargo_html or "Koyo Gears India" in cargo_html
+
+    # 4. About title & keywords
+    with open(os.path.join(ROOT_DIR, "about", "index.html"), "r", encoding="utf-8") as f:
+        about_html = f.read()
+    about_soup = BeautifulSoup(about_html, "html.parser")
+    assert "Koyo Gears India Pvt. Ltd. | Manufacturer of Koyo Auto, Koyo L5 & Saffire Electric 3 Wheelers" in about_soup.title.string
+
+    # 5. OEM Pillar Page
+    koyo_page = os.path.join(ROOT_DIR, "koyo-gears-india", "index.html")
+    assert os.path.isfile(koyo_page), "Pillar page /koyo-gears-india/index.html is missing!"
+    with open(koyo_page, "r", encoding="utf-8") as f:
+        koyo_html = f.read()
+    koyo_soup = BeautifulSoup(koyo_html, "html.parser")
+    assert "Koyo Gears India Pvt. Ltd. | Manufacturer of Koyo Auto, Koyo L5 & Saffire Electric 3 Wheelers" in koyo_soup.title.string
+    assert "https://saffireev.com/koyo-gears-india/" in koyo_html
+
+    # 6. JSON-LD alternateName & knowsAbout in compiled catalog API
+    with open(os.path.join(ROOT_DIR, "api", "v1", "catalog.json"), "r", encoding="utf-8") as f:
+        cat_data = json.load(f)
+    assert "alternate_names" in cat_data
+    assert "Koyo Auto" in cat_data["alternate_names"]
+    assert "Saffire Auto" in cat_data["alternate_names"]
+    assert "knows_about" in cat_data
+    assert "L5 Auto" in cat_data["knows_about"]
+
+    # 7. State directory on dealership page
+    with open(os.path.join(ROOT_DIR, "ev-dealership-india", "index.html"), "r", encoding="utf-8") as f:
+        dealership_html = f.read()
+    assert 'id="city-directory"' in dealership_html
+    assert "/locations/meerut/" in dealership_html
+
