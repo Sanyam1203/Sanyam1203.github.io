@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact SAFFIRE EV (KOYO Auto / KOYO L5) | KOYO Gears India Dealer &amp; Vehicle Inquiry</title>
+<link href="../images/logo_final.png" rel="icon" type="image/jpeg"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Leaflet Map CSS -->
+<link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet"/>
+<script crossorigin="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "on-tertiary-fixed-variant": "#594400",
+                    "on-primary-fixed": "#002020",
+                    "on-tertiary": "#3e2e00",
+                    "primary": "#97fdff",
+                    "inverse-on-surface": "#303032",
+                    "surface-container-lowest": "#0e0e10",
+                    "surface-container-low": "#1b1b1d",
+                    "secondary-container": "#47494e",
+                    "tertiary-fixed-dim": "#f3bf26",
+                    "tertiary-fixed": "#ffdf96",
+                    "tertiary-container": "#fec931",
+                    "on-tertiary-container": "#6f5500",
+                    "surface-tint": "#2ddbde",
+                    "outline-variant": "#3b494c",
+                    "on-secondary": "#2e3035",
+                    "on-primary": "#003738",
+                    "inverse-surface": "#e5e1e4",
+                    "on-secondary-fixed-variant": "#45474c",
+                    "secondary-fixed-dim": "#c5c6cc",
+                    "on-secondary-fixed": "#191c20",
+                    "on-tertiary-fixed": "#251a00",
+                    "on-surface-variant": "#bac9cc",
+                    "secondary": "#c5c6cc",
+                    "inverse-primary": "#00696b",
+                    "surface-container-high": "#2a2a2c",
+                    "primary-container": "#3fe6e8",
+                    "primary-fixed": "#5af8fb",
+                    "on-background": "#e5e1e4",
+                    "surface-container": "#201f21",
+                    "secondary-fixed": "#e2e2e8",
+                    "on-surface": "#e5e1e4",
+                    "error": "#ffb4ab",
+                    "surface": "#131315",
+                    "surface-variant": "#353437",
+                    "error-container": "#93000a",
+                    "surface-dim": "#131315",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#2ddbde",
+                    "tertiary": "#ffeac0",
+                    "on-primary-fixed-variant": "#004f51",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#b7b8be",
+                    "surface-bright": "#39393b",
+                    "on-primary-container": "#006365",
+                    "background": "#131315",
+                    "surface-container-highest": "#353437",
+                    "outline": "#849396"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+                "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+                }
+            },
+        },
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body { font-family: 'Manrope', sans-serif; background-color: #131315; color: #E5E1E4; }
+    h1, h2, h3, .headline { font-family: 'Space Grotesk', sans-serif; }
+    .glass-panel {
+        background: rgba(53, 52, 55, 0.6);
+        backdrop-filter: blur(20px);
+    }
+    .kinetic-gradient {
+        background: linear-gradient(45deg, #97FDFF 0%, #3FE6E8 100%);
+    }
+
+</style>
+<style>
+/* Map Popups Dark Theme Override */
+.leaflet-popup-content-wrapper {
+    background-color: #1b1b1d !important;
+    color: #e5e1e4 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(151, 253, 255, 0.2);
+}
+.leaflet-popup-tip {
+    background-color: #1b1b1d !important;
+}
+.leaflet-container a.leaflet-popup-close-button {
+    color: #bac9cc !important;
+}
+.pulse-marker {
+    background: #97FDFF;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #97FDFF;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(151, 253, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(151, 253, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(151, 253, 255, 0); }
+}
+</style>
+<style>
+@keyframes fadeInSlide {
+    0% { opacity: 0; transform: translateX(20px); filter: blur(4px); }
+    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+body {
+    animation: fadeInSlide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* Map Popups Dark Theme Override */
+.leaflet-popup-content-wrapper {
+    background-color: #1b1b1d !important;
+    color: #e5e1e4 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(151, 253, 255, 0.2);
+}
+.leaflet-popup-tip {
+    background-color: #1b1b1d !important;
+}
+.leaflet-container a.leaflet-popup-close-button {
+    color: #bac9cc !important;
+}
+.pulse-marker {
+    background: #97FDFF;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #97FDFF;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(151, 253, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(151, 253, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(151, 253, 255, 0); }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XV903N1WWH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XV903N1WWH');
+</script>
+<!-- Comprehensive SEO & Indexing -->
+<meta content="Contact SAFFIRE EV, Contact KOYO Gears India, KOYO, KOYO Auto inquiry, KOYO Electric Auto dealer, KOYO L5 dealership, Saffire Smart Ride inquiry, Saffire Swiss Cargo inquiry, Meerut EV head office" name="keywords"/>
+<meta content="Contact SAFFIRE EV by KOYO Gears India Private Limited (KOYO / KOYO Auto / KOYO L5) for L5 electric passenger auto (Smart Ride) and cargo loader (Swiss Cargo) inquiries, dealership opportunities, and fleet requirements." name="description"/>
+<meta content="KOYO GEARS INDIA PRIVATE LIMITED" name="author"/>
+<meta content="index, follow" name="robots"/>
+<!-- Structured Schema Markup (JSON-LD) for Local Business & Manufacturer -->
+<link href="../assets/css/motion.css" rel="stylesheet"/>
+<link href="https://saffireev.com/contact/" rel="canonical"/>
+<meta content="Contact SAFFIRE EV (KOYO Auto / KOYO L5) | KOYO Gears India Dealer &amp; Vehicle Inquiry" property="og:title"/>
+<meta content="Contact SAFFIRE EV by KOYO Gears India Private Limited (KOYO / KOYO Auto / KOYO L5) for L5 electric auto inquiries, dealership opportunities, and fleet requirements." property="og:description"/>
+<meta content="https://saffireev.com/images/herobanner.png" property="og:image"/>
+<meta content="https://saffireev.com/contact/" property="og:url"/>
+<meta content="Contact SAFFIRE EV (KOYO Auto / KOYO L5) | KOYO Gears India Dealer &amp; Vehicle Inquiry" name="twitter:title"/>
+<meta content="Contact SAFFIRE EV by KOYO Gears India Private Limited (KOYO / KOYO Auto / KOYO L5) for L5 electric auto inquiries, dealership opportunities, and fleet requirements." name="twitter:description"/>
+<meta content="https://saffireev.com/images/herobanner.png" name="twitter:image"/>
+<!-- SEO Optimization & Verification -->
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="#131315" name="theme-color"/>
+<!-- Google Search Console verification meta tag goes here after token is provided -->
+<meta content="D334E6EBCA70575B360E942A1A5E4D8E" name="msvalidate.01"/>
+<!-- Microsoft Clarity project ID goes here after project is created -->
+<script>
+function trackEvent(eventName, params = {}) {
+  if (typeof gtag === "function") {
+    gtag("event", eventName, params);
+  }
+}
+</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://saffireev.com/#hq",
+  "name": "SAFFIRE EV — KOYO GEARS INDIA PRIVATE LIMITED (Head Office)",
+  "alternateName": ["KOYO", "KOYO Auto", "KOYO Electric Auto", "KOYO L5", "KOYO Gears India", "SAFFIRE EV"],
+  "url": "https://saffireev.com/contact/",
+  "logo": "https://saffireev.com/images/logo_final.png",
+  "image": "https://saffireev.com/images/showroomimage.JPEG",
+  "email": "inquiry@saffireev.com",
+  "telephone": "+91-92581-72967",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road",
+    "addressLocality": "Meerut",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "250002",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.952149,
+    "longitude": 77.676864
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "@id": "https://saffireev.com/#organization",
+    "name": "SAFFIRE EV",
+    "legalName": "KOYO GEARS INDIA PRIVATE LIMITED"
+  },
+  "sameAs": [
+    "https://www.instagram.com/saffire.ev/",
+    "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
+    "https://www.linkedin.com/in/saffire-ev-822009402"
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "SAFFIRE EV (KOYO Gears India)", "item": "https://saffireev.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Contact KOYO / SAFFIRE EV", "item": "https://saffireev.com/contact/"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact SAFFIRE EV / KOYO Gears India",
+  "url": "https://saffireev.com/contact/",
+  "mainEntity": {"@id": "https://saffireev.com/#organization"}
+}</script>
+<script>
+    if (window.location.hostname.includes("github.io")) {
+        var meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+</script>
+<noscript><style>.reveal-text, .reveal-fade { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary scroll-smooth">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
+<div class="flex justify-between items-center px-6 md:px-8 h-20 w-full max-w-screen-2xl mx-auto">
+<a class="flex items-center gap-3 group" href="/">
+<div class="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 shrink-0">
+<img alt="Saffire EV by Koyo Gears India Pvt. Ltd. Logo" class="absolute inset-0 w-full h-full object-contain" src="../images/logo_final.png"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-[20px] md:text-[22px] font-bold tracking-tighter text-[#97FDFF] uppercase font-headline leading-none hover:text-white transition-colors">SAFFIRE</span>
+<span class="text-[8px] md:text-[9px] font-label tracking-[0.2em] text-on-surface-variant leading-none mt-1 uppercase">BY KOYO GEARS INDIA</span>
+</div>
+</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/">Home</a>
+<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/products/">Products</a>
+<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/about/">About</a>
+<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/vision/">Vision</a>
+<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/locations/">Locations</a>
+<a class="text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1 font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
+</div>
+<button class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase" disabled="">
+            CONTACT
+        </button>
+<!-- Mobile Menu Icon -->
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl" data-nosnippet="">menu</span>
+</button>
+</div>
+<!-- Mobile Navigation Overlay -->
+<div class="absolute top-20 left-0 w-full bg-[#131315]/95 backdrop-blur-3xl border-b border-outline-variant/30 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)] origin-top transition-all duration-300 scale-y-0 opacity-0 pointer-events-none md:hidden p-6 z-40" id="mobile-menu">
+<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/">Home</a>
+<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/products/">Products</a>
+<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/about/">About</a>
+<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/vision/">Vision</a>
+<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/locations/">Locations</a>
+<a class="font-label text-lg uppercase tracking-wider pb-2 text-[#97FDFF]" href="/contact/">Contact</a>
+<a class="kinetic-gradient text-on-primary px-8 py-4 w-full mt-2 text-sm font-label font-bold uppercase tracking-widest rounded-full text-center" href="/contact/">Contact</a>
+</div>
+</nav>
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        const isClosed = mobileMenu.classList.contains('opacity-0');
+        if (isClosed) {
+            mobileMenu.classList.remove('opacity-0', 'scale-y-0', 'pointer-events-none');
+            mobileMenu.classList.add('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            menuBtn.querySelector('span').textContent = 'close';
+        } else {
+            mobileMenu.classList.add('opacity-0', 'scale-y-0', 'pointer-events-none');
+            mobileMenu.classList.remove('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            menuBtn.querySelector('span').textContent = 'menu';
+        }
+    });
+</script>
+<main class="pt-20">
+<!-- 1. Hero Section -->
+<section class="relative min-h-[60vh] flex items-center overflow-hidden border-b border-outline-variant/10">
+<div class="absolute inset-0 z-0 bg-[#0E0E10]">
+<img alt="Saffire EV Showroom" class="w-full h-full object-cover opacity-30" loading="lazy" src="../images/showroomimage.JPEG" style="transform: none !important; transition: none !important;"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30 pointer-events-none"></div>
+</div>
+<div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-8 py-20 text-center">
+<div class="max-w-4xl mx-auto">
+<h1 class="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-on-surface mb-6 leading-[1.1]">
+                    Contact Saffire EV
+                </h1>
+<h2 class="font-headline text-xl md:text-3xl text-primary font-bold mb-6">
+                    Let’s build the future of electric passenger and cargo mobility together.
+                </h2>
+<p class="font-body text-base md:text-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed font-light mb-10">
+                    Reach out to Saffire EV for vehicle inquiries, dealership opportunities, fleet requirements, business collaboration and product information.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="kinetic-gradient text-on-primary px-8 py-4 font-label text-sm font-bold tracking-widest rounded-sm uppercase hover:shadow-[0_0_20px_rgba(151,253,255,0.4)] transition-all" href="#contact-form">
+                        Send Inquiry
+                    </a>
+<a class="border border-outline-variant text-on-surface hover:bg-surface-variant px-8 py-4 font-label text-sm font-bold tracking-widest rounded-sm uppercase transition-all" href="/products/" onclick="trackEvent('contact_product_click', {button: 'view_products'})">
+                        View Products
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Quick Contact / Inquiry Cards -->
+<section class="py-16 md:py-24 bg-surface-container-lowest">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-[#0E0E10] border border-primary/20 rounded-xl p-8 flex flex-col hover:border-primary/50 hover:shadow-[0_0_15px_rgba(151,253,255,0.05)] transition-all group">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4" data-nosnippet="">directions_car</span>
+<h3 class="font-headline text-xl font-bold mb-3">Vehicle Inquiry</h3>
+<p class="font-body text-sm text-on-surface-variant font-light mb-6 flex-grow">Interested in <a class="text-primary hover:underline transition-colors" href="/products/saffire-smart-ride/">Saffire Smart Ride</a> or Saffire Swiss Cargo? Share your requirement and our team will get in touch.</p>
+<a class="text-primary font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all" href="#contact-form" onclick="trackEvent('contact_vehicle_inquiry_click')">
+                        Start Vehicle Inquiry <span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-[#0E0E10] border border-primary/20 rounded-xl p-8 flex flex-col hover:border-primary/50 hover:shadow-[0_0_15px_rgba(151,253,255,0.05)] transition-all group">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4" data-nosnippet="">storefront</span>
+<h3 class="font-headline text-xl font-bold mb-3">Dealer Opportunity</h3>
+<p class="font-body text-sm text-on-surface-variant font-light mb-6 flex-grow">For dealership, distribution and regional business opportunities, submit your details through the inquiry form.</p>
+<a class="text-primary font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all" href="/ev-dealership-india/" onclick="trackEvent('contact_dealer_inquiry_click')">
+                        Dealer Inquiry <span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-[#0E0E10] border border-primary/20 rounded-xl p-8 flex flex-col hover:border-primary/50 hover:shadow-[0_0_15px_rgba(151,253,255,0.05)] transition-all group">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4" data-nosnippet="">local_shipping</span>
+<h3 class="font-headline text-xl font-bold mb-3">Fleet / Business</h3>
+<p class="font-body text-sm text-on-surface-variant font-light mb-6 flex-grow">For fleet operators, cargo users and passenger mobility businesses looking at electric three-wheeler solutions.</p>
+<a class="text-primary font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all" href="#contact-form">
+                        Business Inquiry <span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="bg-[#0E0E10] border border-primary/20 rounded-xl p-8 flex flex-col hover:border-primary/50 hover:shadow-[0_0_15px_rgba(151,253,255,0.05)] transition-all group">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4" data-nosnippet="">auto_awesome</span>
+<h3 class="font-headline text-xl font-bold mb-3">Product Pages</h3>
+<p class="font-body text-sm text-on-surface-variant font-light mb-6 flex-grow">Explore our passenger and cargo EV platforms before contacting us.</p>
+<div class="flex flex-col gap-2">
+<a class="text-primary font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-80 transition-opacity" href="/products/saffire-smart-ride/" onclick="trackEvent('contact_product_click', {product: 'smart_ride'})">
+                            Smart Ride <span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">arrow_forward</span>
+</a>
+<a class="text-primary font-label text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-80 transition-opacity" href="/products/saffire-swiss-cargo/" onclick="trackEvent('contact_product_click', {product: 'swiss_cargo'})">
+                            Swiss Cargo <span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Main Contact Section -->
+<section class="py-20 md:py-32 bg-background border-t border-outline-variant/10" id="contact-form">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+<!-- Left Column: Company Info -->
+<div class="flex flex-col">
+<h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface mb-2">Saffire EV</h2>
+<p class="font-label text-xs md:text-sm tracking-[0.2em] uppercase text-primary mb-8">by Koyo Gears India Pvt. Ltd.</p>
+<p class="font-body text-base md:text-lg text-on-surface-variant font-light leading-relaxed mb-12 max-w-lg">
+                        Electric passenger and cargo mobility solutions designed for Indian roads, business operators and future-ready commercial transportation.
+                    </p>
+<div class="space-y-8 mb-12">
+<div class="flex items-start gap-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl mt-1" data-nosnippet="">location_on</span>
+<div>
+<h3 class="font-headline text-lg font-bold mb-1">Head Office</h3>
+<p class="font-body text-on-surface-variant font-light text-sm md:text-base leading-relaxed">
+                                    Plot 5, Om Tower, Mohkampur Phase 1,<br/>Delhi Road, Meerut, Uttar Pradesh
+                                </p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl mt-1" data-nosnippet="">mail</span>
+<div>
+<h3 class="font-headline text-lg font-bold mb-1">Email</h3>
+<a class="font-body text-on-surface-variant font-light text-sm md:text-base hover:text-primary transition-colors" href="mailto:inquiry@saffireev.com">inquiry@saffireev.com</a>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Follow Saffire EV</h3>
+<div class="flex gap-4">
+<a aria-label="Follow Saffire EV on Instagram" class="w-12 h-12 bg-surface-container-low border border-outline-variant/30 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-all" href="https://www.instagram.com/saffire.ev?igsh=bjMwejN2bno4Y2Qy&amp;utm_source=qr" onclick="trackEvent('contact_social_click', {platform: 'instagram'})" rel="noopener noreferrer" target="_blank">
+<!-- Minimal SVG icon or text fallback, text fallback used since no heavy icon library -->
+<span class="font-label text-xs font-bold uppercase">IG</span>
+</a>
+<a aria-label="Follow Saffire EV on Facebook" class="w-12 h-12 bg-surface-container-low border border-outline-variant/30 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-all" href="https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr" onclick="trackEvent('contact_social_click', {platform: 'facebook'})" rel="noopener noreferrer" target="_blank">
+<span class="font-label text-xs font-bold uppercase">FB</span>
+</a>
+<a aria-label="Follow Saffire EV on LinkedIn" class="w-12 h-12 bg-surface-container-low border border-outline-variant/30 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-all" href="https://www.linkedin.com/in/saffire-ev-822009402" onclick="trackEvent('contact_social_click', {platform: 'linkedin'})" rel="noopener noreferrer" target="_blank">
+<span class="font-label text-xs font-bold uppercase">IN</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Column: Form -->
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-8 md:p-12 shadow-2xl relative">
+<div class="mb-8">
+<h3 class="font-headline text-2xl md:text-3xl font-bold mb-3">Send an Inquiry</h3>
+<p class="font-body text-sm text-on-surface-variant font-light">Tell us your requirement and our team will respond with the right product or business information.</p>
+</div>
+<form action="https://formspree.io/f/xnjolggl" class="flex flex-col gap-6" id="inquiryForm" method="POST">
+<input name="_subject" type="hidden" value="New Saffire EV Website Inquiry"/>
+<input id="source_page" name="source_page" type="hidden" value="Contact Page"/>
+<input id="form_city" name="city" type="hidden" value=""/>
+<input id="form_state" name="state" type="hidden" value=""/>
+<input id="form_product" name="product_model" type="hidden" value=""/>
+<div class="bg-primary/10 border border-primary/30 rounded-md px-4 py-3 text-xs text-primary font-label tracking-wider uppercase hidden" id="prefill-banner"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs tracking-widest uppercase text-on-surface-variant" for="name">Full Name *</label>
+<input class="bg-background border border-outline-variant/30 rounded-md px-4 py-3 text-on-surface font-body text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="name" name="name" placeholder="Enter your full name" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs tracking-widest uppercase text-on-surface-variant" for="phone">Phone Number *</label>
+<input class="bg-background border border-outline-variant/30 rounded-md px-4 py-3 text-on-surface font-body text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="phone" name="phone" placeholder="Enter your phone number" required="" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs tracking-widest uppercase text-on-surface-variant" for="email">Email Address</label>
+<input class="bg-background border border-outline-variant/30 rounded-md px-4 py-3 text-on-surface font-body text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="email" name="email" placeholder="Enter your email address" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs tracking-widest uppercase text-on-surface-variant" for="inquiry_type">Inquiry Type *</label>
+<select class="bg-background border border-outline-variant/30 rounded-md px-4 py-3 text-on-surface font-body text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none" id="inquiry_type" name="inquiry_type" required="">
+<option disabled="" selected="" value="">Select an option</option>
+<option value="Vehicle Inquiry">Vehicle Inquiry</option>
+<option value="Dealer Opportunity">Dealer Opportunity</option>
+<option value="Fleet / Business Inquiry">Fleet / Business Inquiry</option>
+<option value="Smart Ride Inquiry">Smart Ride Inquiry</option>
+<option value="Swiss Cargo Inquiry">Swiss Cargo Inquiry</option>
+<option value="General Inquiry">General Inquiry</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs tracking-widest uppercase text-on-surface-variant" for="message">Message *</label>
+<textarea class="bg-background border border-outline-variant/30 rounded-md px-4 py-3 text-on-surface font-body text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-y" id="message" name="message" placeholder="How can we help you?" required="" rows="4"></textarea>
+</div>
+<!-- Trust Note -->
+<div class="bg-primary/5 border border-primary/20 rounded-md p-4 flex items-start gap-3">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-lg mt-0.5" data-nosnippet="">info</span>
+<p class="font-body text-xs text-on-surface-variant font-light leading-relaxed">
+                                Our team reviews every inquiry carefully. Please share accurate details so we can respond with the most relevant product or dealership information.
+                            </p>
+</div>
+<button class="kinetic-gradient text-on-primary w-full py-4 mt-2 rounded-sm font-label text-sm font-bold tracking-widest uppercase hover:shadow-[0_0_20px_rgba(151,253,255,0.4)] transition-all" type="submit">
+                            Send Inquiry
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Product Inquiry CTA Section -->
+<section class="py-16 bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-8 text-center">
+<h3 class="font-headline text-2xl md:text-3xl font-bold tracking-tight mb-3">Explore before you inquire</h3>
+<p class="font-body text-sm md:text-base text-on-surface-variant font-light mb-8 max-w-2xl mx-auto">
+                Learn more about our passenger and cargo platforms before submitting your requirement.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4 flex-wrap">
+<a class="border border-primary/50 text-primary hover:bg-primary hover:text-on-primary px-8 py-3 font-label text-xs font-bold tracking-widest rounded-sm uppercase transition-colors whitespace-nowrap" href="/products/saffire-smart-ride/" onclick="trackEvent('contact_product_click', {product: 'smart_ride'})">
+                    View Smart Ride
+                </a>
+<a class="border border-primary/50 text-primary hover:bg-primary hover:text-on-primary px-8 py-3 font-label text-xs font-bold tracking-widest rounded-sm uppercase transition-colors whitespace-nowrap" href="/products/saffire-swiss-cargo/" onclick="trackEvent('contact_product_click', {product: 'swiss_cargo'})">
+                    View Swiss Cargo
+                </a>
+<a class="bg-surface-container-highest border border-outline-variant/50 hover:border-primary/50 text-on-surface px-8 py-3 font-label text-xs font-bold tracking-widest rounded-sm uppercase transition-all whitespace-nowrap" href="/assets/catalogs/saffire-ev-catalog.pdf" onclick="trackEvent('catalog_download_click', {location: 'contact_page'})" rel="noopener noreferrer" target="_blank">
+                        Download Catalog
+                    </a>
+</div>
+</div>
+</section>
+<!-- 5. Geographic Network Map -->
+<section class="py-16 md:py-24 bg-background border-t border-outline-variant/10">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+<h2 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-tight text-on-surface mb-8">Our Geographic Network</h2>
+<div class="w-full h-[400px] md:h-[500px] bg-surface-container-low rounded-xl border border-primary/20 overflow-hidden relative z-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" id="saffire-map">
+<!-- Map injected by JS -->
+</div>
+<div class="flex items-center gap-6 mt-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_#97FDFF]"></span>
+<span class="font-label tracking-widest uppercase text-[10px] md:text-xs text-on-surface-variant">Global HQ (Meerut)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#f3bf26]"></span>
+<span class="font-label tracking-widest uppercase text-[10px] md:text-xs text-on-surface-variant">Upcoming Sectors</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("inquiryForm");
+    if(form) {
+        // Pre-populate form from URL query parameters (?city=, ?state=, ?product=, ?type=)
+        const params = new URLSearchParams(window.location.search);
+        const rawCity = params.get("city") || "";
+        const rawState = params.get("state") || "";
+        const rawProduct = params.get("product") || "";
+        const rawType = params.get("type") || "";
+
+        const formatSlug = (s) => s ? s.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ") : "";
+        const cityLabel = formatSlug(rawCity);
+        const stateLabel = formatSlug(rawState);
+
+        const selectEl = document.getElementById("inquiry_type");
+        const msgEl = document.getElementById("message");
+        const srcEl = document.getElementById("source_page");
+        const cityEl = document.getElementById("form_city");
+        const stateEl = document.getElementById("form_state");
+        const prodEl = document.getElementById("form_product");
+        const bannerEl = document.getElementById("prefill-banner");
+
+        if (cityEl && cityLabel) cityEl.value = cityLabel;
+        if (stateEl && stateLabel) stateEl.value = stateLabel;
+        if (prodEl && rawProduct) prodEl.value = rawProduct;
+        if (srcEl && (cityLabel || rawProduct || rawType)) {
+            srcEl.value = `Contact Page (city=${cityLabel || 'N/A'}, state=${stateLabel || 'N/A'}, product=${rawProduct || 'N/A'}, type=${rawType || 'N/A'})`;
+        }
+
+        if (selectEl) {
+            if (rawType === "dealer") {
+                selectEl.value = "Dealer Opportunity";
+            } else if (rawProduct === "smart-ride") {
+                selectEl.value = "Smart Ride Inquiry";
+            } else if (rawProduct === "swiss-cargo") {
+                selectEl.value = "Swiss Cargo Inquiry";
+            } else if (rawType === "vehicle" || cityLabel) {
+                selectEl.value = "Vehicle Inquiry";
+            }
+        }
+
+        if (msgEl && !msgEl.value && (cityLabel || rawProduct || rawType)) {
+            let prodName = "SAFFIRE EV (KOYO L5) vehicles";
+            if (rawProduct === "smart-ride") prodName = "SAFFIRE Smart Ride (KOYO L5 Passenger Auto)";
+            if (rawProduct === "swiss-cargo") prodName = "SAFFIRE Swiss Cargo (KOYO L5 Cargo Loader)";
+            const locText = cityLabel ? (stateLabel ? ` in ${cityLabel}, ${stateLabel}` : ` in ${cityLabel}`) : "";
+            if (rawType === "dealer") {
+                msgEl.value = `Hello SAFFIRE EV / KOYO Gears India team, I am interested in applying for a dealership opportunity${locText}. Please share dealer requirements and next steps.`;
+            } else {
+                msgEl.value = `Hello SAFFIRE EV / KOYO Gears India team, I would like to enquire about ${prodName}${locText}. Please share specifications and availability details.`;
+            }
+        }
+
+        
+        // Sync with Quick Query modal sessionStorage and URL parameters
+        try {
+            const storedLead = sessionStorage.getItem('saffire_lead_query');
+            if (storedLead) {
+                const leadData = JSON.parse(storedLead);
+                if (nameEl && !nameEl.value && leadData.name) nameEl.value = leadData.name;
+                if (phoneEl && !phoneEl.value && leadData.phone) phoneEl.value = leadData.phone;
+                if (cityEl && !cityEl.value && leadData.city) cityEl.value = leadData.city;
+                if (msgEl && (!msgEl.value || msgEl.value.startsWith('Hello')) && leadData.notes) {
+                    msgEl.value = leadData.notes;
+                }
+                if (leadData.intent === 'dealer' && selectEl) selectEl.value = 'Dealer Opportunity';
+                else if (leadData.intent === 'fleet' && selectEl) selectEl.value = 'Fleet / Business Inquiry';
+                if (bannerEl) {
+                    bannerEl.textContent = `Enquiry Sync: ${leadData.name} (${leadData.city}) — ${leadData.platform || 'Saffire EV'}`;
+                    bannerEl.classList.remove('hidden');
+                }
+            }
+        } catch(e) {}
+
+        const urlName = urlParams.get('name');
+        const urlPhone = urlParams.get('phone');
+        const urlNotes = urlParams.get('notes');
+        if (nameEl && !nameEl.value && urlName) nameEl.value = decodeURIComponent(urlName);
+        if (phoneEl && !phoneEl.value && urlPhone) phoneEl.value = decodeURIComponent(urlPhone);
+        if (msgEl && (!msgEl.value || msgEl.value.startsWith('Hello')) && urlNotes) msgEl.value = decodeURIComponent(urlNotes);
+    
+        if (bannerEl && (cityLabel || rawProduct || rawType)) {
+            const parts = [];
+            if (rawType === "dealer") parts.push("Dealership Application");
+            else if (rawProduct === "smart-ride") parts.push("SAFFIRE Smart Ride (KOYO Auto)");
+            else if (rawProduct === "swiss-cargo") parts.push("SAFFIRE Swiss Cargo (KOYO Loader)");
+            else parts.push("KOYO L5 / SAFFIRE EV Inquiry");
+            if (cityLabel) parts.push(stateLabel ? `${cityLabel}, ${stateLabel}` : cityLabel);
+            bannerEl.textContent = "Enquiry Pre-selected: " + parts.join(" — ");
+            bannerEl.classList.remove("hidden");
+        }
+
+        // Track when users start filling the form
+        const formInputs = form.querySelectorAll("input, textarea, select");
+        let started = false;
+        formInputs.forEach(input => {
+            input.addEventListener("input", () => {
+                if(!started) {
+                    trackEvent('contact_form_start');
+                    started = true;
+                }
+            });
+        });
+
+        form.addEventListener("submit", function(e) {
+            trackEvent('contact_form_submit', {city: cityLabel, product: rawProduct, inquiry_type: selectEl ? selectEl.value : ''});
+        });
+    }
+
+    // Initialize Saffire Network Map
+    const mapContainer = document.getElementById('saffire-map');
+    if (mapContainer && typeof L !== 'undefined') {
+        const map = L.map('saffire-map', { 
+            zoomControl: false,
+            scrollWheelZoom: false // Disable zooming on scroll
+        }).setView([23.5, 78.5], 5);
+        
+        // Add Dark Matter CartoDB Base Layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Custom pulsing marker for Meerut HQ
+        const hqIcon = L.divIcon({
+            className: 'pulse-marker',
+            iconSize: [12, 12]
+        });
+
+        // Standard marker for upcoming locations
+        const upcomingIcon = L.divIcon({
+            className: '',
+            html: '<div style="background-color: #f3bf26; width: 8px; height: 8px; border-radius: 50%; box-shadow: 0 0 5px #f3bf26;"></div>',
+            iconSize: [8, 8]
+        });
+
+        // Headquarters: Meerut (Exact GPS)
+        L.marker([28.952149, 77.676864], { icon: hqIcon }).addTo(map)
+            .bindPopup('<b>Saffire EV Global HQ</b><br>Om Tower, Phase I, Meerut<br>UP 250002')
+            .openPopup();
+
+        // Upcoming Launch Nodes
+        const futureNodes = [
+            { name: "Delhi Matrix", coords: [28.6139, 77.2090] },
+            { name: "Lucknow Sector", coords: [26.8467, 80.9462] },
+            { name: "Indore Sector", coords: [22.7196, 75.8577] },
+            { name: "Ujjain Sector", coords: [23.1765, 75.7885] },
+            { name: "Varanasi Sector", coords: [25.3176, 82.9739] },
+            { name: "Chennai Hub (Tamil Nadu)", coords: [13.0827, 80.2707] }
+        ];
+
+        futureNodes.forEach(node => {
+            L.marker(node.coords, { icon: upcomingIcon }).addTo(map)
+                .bindPopup(`<span style="color:#f3bf26; font-size:10px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">Upcoming Launch</span><br><b>${node.name}</b>`);
+        });
+    }
+});
+
+</script>
+<!-- Footer -->
+<footer class="bg-[#0E0E10] border-t border-[#3B494C]/15 mt-auto">
+<div class="max-w-screen-2xl mx-auto px-8 md:px-12 py-10 md:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 mb-10">
+<!-- Brand -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<span class="text-2xl font-bold tracking-tighter text-[#97FDFF] uppercase font-headline mb-1">SAFFIRE</span>
+<span class="text-[8px] md:text-[9px] tracking-[0.3em] text-slate-500 font-label">BY KOYO GEARS INDIA PRIVATE LIMITED</span>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Company</span>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/products/">Products</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/assets/catalogs/saffire-ev-catalog.pdf" onclick="trackEvent('catalog_view_click', {location: 'footer', catalog_name: 'saffire_ev_catalog'})" rel="noopener noreferrer" target="_blank">Catalog</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/about/">About</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/vision/">Vision</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/locations/">Locations</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/contact/">Contact</a>
+</div>
+<!-- EV Guides -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">EV Guides</span>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/electric-cargo-loader/">Electric Cargo Loader</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/electric-passenger-auto/">Electric Passenger Auto</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/l5-electric-vehicle/">L5 Electric Vehicle</a>
+<a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/ev-dealership-india/">EV Dealership in India</a>
+<a class="text-sm font-light text-slate-400 hover:text-white transition-colors" href="/electric-three-wheeler-running-cost/">Running Cost</a>
+</div>
+<!-- Connect With Us -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Connect With Us</span>
+<a aria-label="Follow Saffire EV on Instagram" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors" href="https://www.instagram.com/saffire.ev/" onclick="trackEvent('social_link_click', {platform: 'instagram', location: 'footer'})" rel="noopener noreferrer" target="_blank">Instagram</a>
+<a aria-label="Follow Saffire EV on Facebook" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors" href="https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr" onclick="trackEvent('social_link_click', {platform: 'facebook', location: 'footer'})" rel="noopener noreferrer" target="_blank">Facebook</a>
+<a aria-label="Follow Saffire EV on LinkedIn" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors" href="https://www.linkedin.com/in/saffire-ev-822009402" onclick="trackEvent('social_link_click', {platform: 'linkedin', location: 'footer'})" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a aria-label="Chat with Saffire EV on WhatsApp" class="text-sm font-light text-slate-400 hover:text-primary transition-colors" href="https://wa.me/919258172967?text=Hello%20Saffire%20EV%2C%20I%20want%20to%20know%20more%20about%20your%20vehicles." onclick="trackEvent('social_link_click', {platform: 'whatsapp', location: 'footer'})" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+</div>
+</div>
+<div class="border-t border-[#3B494C]/15 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-slate-500 font-label text-[9px] md:text-[10px] tracking-[0.05em] uppercase text-center md:text-left">
+                © 2026 KOYO GEARS INDIA PRIVATE LIMITED. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="/terms/">Privacy</a>
+<a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="/terms/">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+<style>
+    .reveal-text {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-text.in-view, .reveal-text.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('main section:not(:first-child)').forEach(el => {
+            el.classList.add('reveal-text');
+            observer.observe(el);
+        });
+    });
+</script>
+<script src="../assets/js/motion.js"></script>
+<!-- Saffire EV - Global Quick Query & Lead Popup Modal -->
+<div aria-labelledby="query-modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" id="saffire-query-overlay" role="dialog">
+<div class="relative w-full max-w-lg bg-surface-container-low border border-outline-variant/30 rounded-2xl shadow-2xl p-6 md:p-8 max-h-[92vh] overflow-y-auto transform scale-95 transition-all duration-300" id="query-modal-card">
+<!-- Close Button -->
+<button aria-label="Close query modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high" id="close-query-modal" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-xl" data-nosnippet="">close</span>
+</button>
+<!-- Modal Header -->
+<div class="mb-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-3">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        Fast-Track Commercial Inquiry
+      </div>
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface" id="query-modal-title">
+        Get On-Road Price &amp; Commercial Quote
+      </h3>
+<p class="font-body text-xs md:text-sm text-on-surface-variant mt-1">
+        Official Saffire EV inquiry engine by Koyo Gears India Pvt. Ltd. Verified dealer quotes within 2 hours.
+      </p>
+</div>
+<!-- Main Inquiry Form -->
+<form class="space-y-4" id="saffire-query-form">
+<!-- 1-Tap Intent Selector -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-2">I am interested in</label>
+<div class="grid grid-cols-3 gap-2" id="intent-pills">
+<button class="intent-pill active py-2 px-2 text-center text-xs font-semibold rounded-lg border border-primary bg-primary text-background transition-all" data-intent="preorder" type="button">
+            Vehicle Price
+          </button>
+<button class="intent-pill py-2 px-2 text-center text-xs font-semibold rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface hover:border-primary/50 transition-all" data-intent="dealer" type="button">
+            Dealership
+          </button>
+<button class="intent-pill py-2 px-2 text-center text-xs font-semibold rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface hover:border-primary/50 transition-all" data-intent="fleet" type="button">
+            Fleet Order
+          </button>
+</div>
+<input id="inquiry_intent" name="inquiry_intent" type="hidden" value="preorder"/>
+</div>
+<!-- Full Name -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_name">Your Full Name *</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_name" name="name" placeholder="e.g. Ramesh Kumar" required="" type="text"/>
+</div>
+<!-- Phone / WhatsApp Number -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_phone">Phone / WhatsApp Number *</label>
+<div class="flex items-center">
+<span class="px-3 py-2.5 bg-surface-container-high border border-r-0 border-outline-variant/30 rounded-l-lg text-xs font-semibold text-on-surface-variant">+91</span>
+<input class="w-full px-4 py-2.5 rounded-r-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_phone" name="phone" pattern="^[6-9]\d{9}$" placeholder="9876543210" required="" type="tel"/>
+</div>
+<p class="text-[11px] text-on-surface-variant/60 mt-1">10-digit Indian mobile number for instant quote &amp; WhatsApp delivery.</p>
+</div>
+<!-- City & State -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_city">City *</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_city" name="city" placeholder="e.g. Meerut, Delhi, Lucknow" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_platform">Vehicle Platform</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface text-sm focus:outline-none focus:border-primary transition-colors" id="lead_platform" name="platform">
+<option value="Saffire Smart Ride (Passenger)">Saffire Smart Ride (Passenger Auto)</option>
+<option value="Saffire Swiss Cargo (Commercial Loader)">Saffire Swiss Cargo (Cargo Loader)</option>
+<option value="Both Platforms">Both Platforms (Fleet / Dealer)</option>
+</select>
+</div>
+</div>
+<!-- Requirement / Message -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_message">Requirements / Notes (Optional)</label>
+<textarea class="w-full px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-xs md:text-sm focus:outline-none focus:border-primary transition-colors" id="lead_message" name="message" placeholder="Tell us your daily run, delivery requirements, or dealership location..." rows="2"></textarea>
+</div>
+<!-- Hidden Context Fields -->
+<input id="lead_source_page" name="source_page" type="hidden" value=""/>
+<input id="lead_calc_km" name="calculator_km" type="hidden" value=""/>
+<input id="lead_calc_years" name="calculator_years" type="hidden" value=""/>
+<input id="lead_calc_profit" name="calculator_profit" type="hidden" value=""/>
+<!-- Submit & Action Buttons -->
+<div class="pt-2 space-y-3">
+<button class="w-full py-3 px-6 bg-primary text-background font-headline font-bold text-sm rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 cursor-pointer" id="submit-query-btn" type="submit">
+<span aria-hidden="true" class="material-symbols-outlined text-lg" data-nosnippet="">send</span>
+          Get Instant Quotation &amp; Savings Sheet
+        </button>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1 px-1">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="/contact/" id="open-detailed-contact">
+<span>Detailed Contact Page</span>
+<span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">arrow_forward</span>
+</a>
+<span class="flex items-center gap-1 text-[11px] text-emerald-400">
+<span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">lock</span>
+            100% Privacy Protected
+          </span>
+</div>
+</div>
+</form>
+<!-- Success Confirmation State (Hidden by default) -->
+<div class="hidden text-center py-6 space-y-4" id="query-success-card">
+<div class="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl" data-nosnippet="">check_circle</span>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface">Thank You! Inquiry Received</h4>
+<p class="font-body text-xs md:text-sm text-on-surface-variant max-w-sm mx-auto">
+        Our commercial EV sales team has received your details. For immediate assistance and live vehicle brochure sharing, connect on WhatsApp directly:
+      </p>
+<div class="pt-3 space-y-2">
+<a class="inline-flex items-center justify-center gap-2 w-full py-3 px-6 bg-[#25D366] text-white font-headline font-bold text-sm rounded-xl hover:bg-[#22bf5b] transition-all shadow-lg" href="https://wa.me/919258172967" id="query-whatsapp-direct" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="material-symbols-outlined text-lg" data-nosnippet="">chat</span>
+          Chat on WhatsApp Now (+91-92581-72967)
+        </a>
+<button class="w-full py-2.5 text-xs text-on-surface-variant hover:text-on-surface transition-colors" id="close-success-btn" type="button">
+          Close Window
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Bottom-Right Re-Open Pill -->
+<aside aria-label="Quick Query Floating Trigger" class="fixed bottom-6 right-6 z-40">
+<button aria-label="Open Quick Query and On-Road Price Form" class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-surface-container-high border border-primary/40 text-primary shadow-2xl hover:bg-primary hover:text-background hover:scale-105 transition-all duration-300 font-headline font-bold text-xs md:text-sm cursor-pointer" data-open-query-popup="" data-query-intent="preorder" id="floating-query-btn" type="button">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span aria-hidden="true" class="material-symbols-outlined text-base" data-nosnippet="">request_quote</span>
+<span>Quick Query / Price Quote</span>
+</button>
+</aside>
+<!-- Script Engine for Quick Query Modal -->
+<script>
+(function() {
+  const overlay = document.getElementById('saffire-query-overlay');
+  const card = document.getElementById('query-modal-card');
+  const closeBtn = document.getElementById('close-query-modal');
+  const form = document.getElementById('saffire-query-form');
+  const successCard = document.getElementById('query-success-card');
+  const closeSuccessBtn = document.getElementById('close-success-btn');
+  const floatingBtn = document.getElementById('floating-query-btn');
+  const intentPills = document.querySelectorAll('.intent-pill');
+  const intentInput = document.getElementById('inquiry_intent');
+  const platformSelect = document.getElementById('lead_platform');
+  const sourcePageInput = document.getElementById('lead_source_page');
+  const messageArea = document.getElementById('lead_message');
+  const detailedContactLink = document.getElementById('open-detailed-contact');
+  const whatsappDirectBtn = document.getElementById('query-whatsapp-direct');
+
+  const STORAGE_KEY = 'saffire_query_popup_closed_at';
+  const COOLDOWN_HOURS = 24;
+
+  // Track current page
+  if (sourcePageInput) {
+    sourcePageInput.value = window.location.href;
+  }
+
+  // Context auto-detection based on current route
+  function applyRouteContext() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('smart-ride') || path.includes('passenger')) {
+      if (platformSelect) platformSelect.value = 'Saffire Smart Ride (Passenger)';
+    } else if (path.includes('swiss-cargo') || path.includes('cargo') || path.includes('loader')) {
+      if (platformSelect) platformSelect.value = 'Saffire Swiss Cargo (Commercial Loader)';
+    } else if (path.includes('dealership')) {
+      setIntent('dealer');
+      if (platformSelect) platformSelect.value = 'Both Platforms';
+    }
+  }
+
+  function setIntent(intent) {
+    if (!intentInput) return;
+    intentInput.value = intent;
+    intentPills.forEach(pill => {
+      if (pill.dataset.intent === intent) {
+        pill.classList.add('active', 'border-primary', 'bg-primary', 'text-background');
+        pill.classList.remove('border-outline-variant/30', 'bg-surface-container', 'text-on-surface');
+      } else {
+        pill.classList.remove('active', 'border-primary', 'bg-primary', 'text-background');
+        pill.classList.add('border-outline-variant/30', 'bg-surface-container', 'text-on-surface');
+      }
+    });
+  }
+
+  intentPills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setIntent(btn.dataset.intent);
+    });
+  });
+
+  function openModal(intent = null, calcData = null) {
+    if (!overlay) return;
+    if (intent) setIntent(intent);
+
+    if (calcData) {
+      if (document.getElementById('lead_calc_km')) document.getElementById('lead_calc_km').value = calcData.km || '';
+      if (document.getElementById('lead_calc_years')) document.getElementById('lead_calc_years').value = calcData.years || '';
+      if (document.getElementById('lead_calc_profit')) document.getElementById('lead_calc_profit').value = calcData.profit || '';
+      
+      if (messageArea && calcData.km) {
+        messageArea.value = `Inquiring for fleet savings. Daily run: ${calcData.km} km/day over ${calcData.years || 5} years. Estimated extra profit: ${calcData.profit || ''}. Please send full price quotation.`;
+      }
+    }
+
+    applyRouteContext();
+
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    if (card) {
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!overlay) return;
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+    overlay.classList.remove('opacity-100');
+    if (card) {
+      card.classList.add('scale-95');
+      card.classList.remove('scale-100');
+    }
+    document.body.style.overflow = '';
+    // Record cooldown timestamp
+    try {
+      localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    } catch(e) {}
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
+
+  // Close upon backdrop click
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+  }
+
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('opacity-100')) {
+      closeModal();
+    }
+  });
+
+  // Bind all trigger buttons with [data-open-query-popup]
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-query-popup]');
+    if (trigger) {
+      e.preventDefault();
+      const intent = trigger.dataset.queryIntent || 'preorder';
+      let calcData = null;
+      if (trigger.dataset.calculator === 'true' || window.currentCalcSettings) {
+        calcData = window.currentCalcSettings || {
+          km: document.getElementById('dist-val') ? document.getElementById('dist-val').textContent : '',
+          years: document.getElementById('year-val') ? document.getElementById('year-val').textContent : '',
+          profit: document.getElementById('calc-extra-profit') ? document.getElementById('calc-extra-profit').textContent : ''
+        };
+      }
+      openModal(intent, calcData);
+    }
+  });
+
+  // Connect "Open Detailed Contact Page" link to pre-fill URL parameters
+  if (detailedContactLink) {
+    detailedContactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('lead_name').value || '');
+      const phone = encodeURIComponent(document.getElementById('lead_phone').value || '');
+      const city = encodeURIComponent(document.getElementById('lead_city').value || '');
+      const platform = encodeURIComponent(platformSelect ? platformSelect.value : '');
+      const intent = encodeURIComponent(intentInput ? intentInput.value : '');
+      const msg = encodeURIComponent(messageArea ? messageArea.value : '');
+      
+      const targetUrl = `/contact/?inquiry_type=${intent}&name=${name}&phone=${phone}&city=${city}&model=${platform}&notes=${msg}`;
+      window.location.href = targetUrl;
+    });
+  }
+
+  // Form submission handler
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('lead_name').value.trim();
+      const phone = document.getElementById('lead_phone').value.trim();
+      const city = document.getElementById('lead_city').value.trim();
+      const platform = platformSelect ? platformSelect.value : '';
+      const intent = intentInput ? intentInput.value : 'preorder';
+      const notes = messageArea ? messageArea.value.trim() : '';
+
+      const payload = {
+        name: name,
+        phone: phone,
+        city: city,
+        platform: platform,
+        intent: intent,
+        notes: notes,
+        source: window.location.href,
+        timestamp: new Date().toISOString()
+      };
+
+      // Store in sessionStorage for /contact/ sync
+      try {
+        sessionStorage.setItem('saffire_lead_query', JSON.stringify(payload));
+      } catch(err) {}
+
+      // If local FastAPI server is running, attempt submission
+      fetch('/api/v1/submit-query', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(() => {});
+
+      // Prepare WhatsApp message
+      const waMsg = encodeURIComponent(
+        `Hello Saffire EV Team,\n\nI would like an on-road price quotation and commercial details:\n- Name: ${name}\n- Phone: ${phone}\n- City: ${city}\n- Platform: ${platform}\n- Interest: ${intent}\n${notes ? '- Note: ' + notes : ''}`
+      );
+      if (whatsappDirectBtn) {
+        whatsappDirectBtn.href = `https://wa.me/919258172967?text=${waMsg}`;
+      }
+
+      // Show success card
+      form.classList.add('hidden');
+      if (successCard) successCard.classList.remove('hidden');
+    });
+  }
+
+  // Smart delayed auto-open (3.5 seconds)
+  function evaluateAutoOpen() {
+    const path = window.location.pathname.toLowerCase();
+    // Never auto-open on contact page
+    if (path.includes('/contact')) return;
+
+    try {
+      const closedAt = localStorage.getItem(STORAGE_KEY);
+      if (closedAt) {
+        const elapsedHours = (Date.now() - parseInt(closedAt, 10)) / (1000 * 60 * 60);
+        if (elapsedHours < COOLDOWN_HOURS) {
+          return; // Still in cooldown
+        }
+      }
+    } catch(e) {}
+
+    setTimeout(() => {
+      openModal();
+    }, 3500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', evaluateAutoOpen);
+  } else {
+    evaluateAutoOpen();
+  }
+})();
+</script>
+</body>
+</html>

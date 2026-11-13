@@ -1,0 +1,30 @@
+# Saffire EV by Koyo Gears India Pvt. Ltd.
+
+> High-performance L5 commercial electric three-wheeler manufacturing engine based in Meerut, Delhi NCR, India.
+
+Saffire EV is a commercial electric vehicle brand owned and operated by **Koyo Gears India Private Limited** (CIN: U29253UP2013PTC059344), with over 10 years of continuous electric mobility engineering experience since 2014 (pioneers of the Panther E-Rickshaw). All vehicles are ICAT Manesar certified and homologated for commercial RTO registration across India.
+
+## Core Commercial Vehicle Platforms
+- [Saffire Smart Ride](https://saffireev.com/products/saffire-smart-ride/): Next-Gen L5 Electric Passenger Auto Rickshaw (D+3 seating, 14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6h AC charging).
+- [Saffire Swiss Cargo](https://saffireev.com/products/saffire-swiss-cargo/): Heavy-Duty 600 kg Payload L5 Electric Cargo Loader (14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 2413 mm extended wheelbase, 15% gradability, 5–6h AC charging).
+
+## Verified Commercial Economics & TCO
+- Running Cost: **₹1.20 / km** (electricity + minimal maintenance).
+- Diesel Auto Running Cost: **₹5.50 / km** (fuel + mechanical servicing).
+- CNG Auto Running Cost: **₹3.50 / km**.
+- Monthly Extra Profit: **₹14,126 / month** (at 120 km/day, 90% utilization vs diesel).
+- 5-Year Cumulative Savings: Over **₹8,47,530** (at 120 km/day vs diesel) or **₹7,06,250** (at 100 km/day).
+
+## Corporate & Factory Verification
+- Parent Company: Koyo Gears India Private Limited
+- Factory & HQ: Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India
+- Inquiries: inquiry@saffireev.com | Phone / WhatsApp: +91-92581-72967
+- Regulatory Compliance: ICAT Manesar tested under CMVR, AIS-040, AIS-053, AIS-156 Amendment 3.
+
+## Key Links & Programmatic Endpoints
+- [Product Catalog](https://saffireev.com/products/)
+- [Dealership Application](https://saffireev.com/ev-dealership-india/)
+- [Corporate Heritage & About](https://saffireev.com/about/)
+- [Machine-Readable Catalog API](https://saffireev.com/api/v1/catalog.json)
+- [Machine-Readable TCO Matrix API](https://saffireev.com/api/v1/tco-matrix.json)
+- [Full LLM Knowledge Dossier](https://saffireev.com/llms-full.txt)

@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+Disallow: /_geo_seo/
+Disallow: /stitch_saffire_ev_pre_launch/
+Disallow: /stitch_saffire_ev_pre_launch 2/
+
+# Search Engine & AI crawlers explicitly permitted for GEO & Search Indexing
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://saffireev.com/sitemap.xml
