@@ -24,11 +24,37 @@ TODAY = date.today().isoformat()
 
 def build_organization_node() -> Dict[str, Any]:
     """Builds the canonical Organization JSON-LD node for Saffire EV & Koyo Gears India."""
+    dual_addresses = [
+        {
+            "@type": "PostalAddress",
+            "name": "Corporate HQ & Showroom",
+            "streetAddress": COMPANY_INFO["hq_address"],
+            "addressLocality": COMPANY_INFO["hq_city"],
+            "addressRegion": COMPANY_INFO["hq_state"],
+            "postalCode": COMPANY_INFO["hq_pincode"],
+            "addressCountry": "IN"
+        },
+        {
+            "@type": "PostalAddress",
+            "name": "Registered Office (MCA)",
+            "streetAddress": COMPANY_INFO["registered_address"],
+            "addressLocality": COMPANY_INFO["hq_city"],
+            "addressRegion": COMPANY_INFO["hq_state"],
+            "postalCode": COMPANY_INFO["hq_pincode"],
+            "addressCountry": "IN"
+        }
+    ]
     return {
         "@type": "Organization",
         "@id": f"{BASE_URL}/#organization",
         "name": "Saffire EV by Koyo Gears India Pvt. Ltd.",
         "legalName": COMPANY_INFO["legal_name"],
+        "brand": {
+            "@type": "Brand",
+            "name": COMPANY_INFO["brand_name"]
+        },
+        "taxID": COMPANY_INFO["cin"],
+        "identifier": COMPANY_INFO["cin"],
         "alternateName": COMPANY_INFO.get("alternate_names", [
             "Saffire EV",
             "Saffire Auto",
@@ -56,61 +82,68 @@ def build_organization_node() -> Dict[str, Any]:
             "Saffire 3 Wheeler Auto",
             "Saffire EV"
         ]),
-        "url": BASE_URL,
+        "url": f"{BASE_URL}/",
         "logo": f"{BASE_URL}/images/logo_final.png",
-        "image": f"{BASE_URL}/images/herobanner.png",
+        "image": f"{BASE_URL}/images/saffire-ev-meerut-showroom.jpg",
         "description": "Manufacturer of Koyo Auto, Koyo L5, and Saffire Electric 3 Wheelers (L5 passenger auto rickshaws and commercial cargo loaders) in Meerut, Delhi NCR.",
         "foundingDate": "2014",
         "email": COMPANY_INFO["email"],
         "telephone": COMPANY_INFO["phone"],
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": COMPANY_INFO["hq_address"],
-            "addressLocality": COMPANY_INFO["hq_city"],
-            "addressRegion": COMPANY_INFO["hq_state"],
-            "postalCode": COMPANY_INFO["hq_pincode"],
-            "addressCountry": "IN"
-        },
+        "address": dual_addresses,
         "parentOrganization": {
             "@type": "Corporation",
             "name": COMPANY_INFO["parent_company"],
             "legalName": COMPANY_INFO["legal_name"],
+            "taxID": COMPANY_INFO["cin"],
+            "identifier": COMPANY_INFO["cin"],
             "alternateName": ["Koyo Gears India", "Koyo Gears India Pvt Ltd", "Koyo Gears India Private Limited"],
-            "url": BASE_URL,
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": COMPANY_INFO["hq_address"],
-                "addressLocality": COMPANY_INFO["hq_city"],
-                "addressRegion": COMPANY_INFO["hq_state"],
-                "postalCode": COMPANY_INFO["hq_pincode"],
-                "addressCountry": "IN"
-            }
+            "url": f"{BASE_URL}/",
+            "address": dual_addresses
         },
         "sameAs": list(COMPANY_INFO["social_links"].values())
     }
 
 
 def build_local_business_node() -> Dict[str, Any]:
-    """Builds AutoDealer / LocalBusiness node for Meerut headquarters."""
+    """Builds AutoDealer / AutomotiveBusiness / LocalBusiness node for Meerut headquarters."""
     return {
-        "@type": ["AutoDealer", "LocalBusiness"],
+        "@type": ["AutomotiveBusiness", "AutoDealer", "LocalBusiness"],
         "@id": f"{BASE_URL}/#headquarters",
-        "name": f"{COMPANY_INFO['brand_name']} Headquarters & Factory (Koyo Gears India)",
+        "name": f"{COMPANY_INFO['brand_name']} Headquarters & Showroom (Koyo Gears India)",
         "legalName": COMPANY_INFO["legal_name"],
+        "brand": {
+            "@type": "Brand",
+            "name": COMPANY_INFO["brand_name"]
+        },
+        "taxID": COMPANY_INFO["cin"],
+        "identifier": COMPANY_INFO["cin"],
         "alternateName": COMPANY_INFO.get("alternate_names", []),
         "knowsAbout": COMPANY_INFO.get("knows_about", []),
-        "url": BASE_URL,
+        "url": f"{BASE_URL}/",
+        "image": f"{BASE_URL}/images/saffire-ev-meerut-showroom.jpg",
         "telephone": COMPANY_INFO["phone"],
         "email": COMPANY_INFO["email"],
         "priceRange": "₹₹",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": COMPANY_INFO["hq_address"],
-            "addressLocality": COMPANY_INFO["hq_city"],
-            "addressRegion": COMPANY_INFO["hq_state"],
-            "postalCode": COMPANY_INFO["hq_pincode"],
-            "addressCountry": "IN"
-        },
+        "address": [
+            {
+                "@type": "PostalAddress",
+                "name": "Corporate HQ & Showroom",
+                "streetAddress": COMPANY_INFO["hq_address"],
+                "addressLocality": COMPANY_INFO["hq_city"],
+                "addressRegion": COMPANY_INFO["hq_state"],
+                "postalCode": COMPANY_INFO["hq_pincode"],
+                "addressCountry": "IN"
+            },
+            {
+                "@type": "PostalAddress",
+                "name": "Registered Office (MCA)",
+                "streetAddress": COMPANY_INFO["registered_address"],
+                "addressLocality": COMPANY_INFO["hq_city"],
+                "addressRegion": COMPANY_INFO["hq_state"],
+                "postalCode": COMPANY_INFO["hq_pincode"],
+                "addressCountry": "IN"
+            }
+        ],
         "geo": {
             "@type": "GeoCoordinates",
             "latitude": COMPANY_INFO["latitude"],
@@ -123,7 +156,8 @@ def build_local_business_node() -> Dict[str, Any]:
                 "opens": "09:00",
                 "closes": "19:00"
             }
-        ]
+        ],
+        "sameAs": list(COMPANY_INFO["social_links"].values())
     }
 
 
@@ -272,7 +306,7 @@ def compile_llms_txt() -> str:
 > High-performance L5 commercial electric three-wheeler manufacturing engine based in Meerut, Delhi NCR, India.
 
 ## Search Alias & Brand Disambiguation Glossary
-- **KOYO Auto / KOYO L5 / KOYO Electric 3 Wheeler / KOYO Gears India / Koyo Gears India Pvt Ltd:** All refer directly to the commercial electric three-wheelers engineered and manufactured by **Koyo Gears India Private Limited** (CIN: U29253UP2013PTC059344) at Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India.
+- **KOYO Auto / KOYO L5 / KOYO Electric 3 Wheeler / KOYO Gears India / Koyo Gears India Pvt Ltd:** All refer directly to the commercial electric three-wheelers engineered and manufactured by **Koyo Gears India Private Limited** (CIN: U28140UP2025PTC216042). Corporate HQ & Showroom: Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India. Registered Office: 173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road), Meerut, Uttar Pradesh 250002, India.
 - **Saffire Auto / Saffire 3 Wheeler / Saffire 3 Wheeler Auto / Saffire EV:** The flagship brand name under Koyo Gears India Pvt. Ltd. producing heavy-duty L5 commercial vehicles.
 - **L5 Auto / L5 Auto Rickshaw / Electric Auto Rickshaw:** Specifically fulfilled by **Saffire Smart Ride** (L5 Passenger Auto, D+3 seating) and **Saffire Swiss Cargo** (L5 Cargo Loader, 600 kg payload).
 - **OEM Heritage Since 2014:** Koyo Gears India has over a decade of continuous EV engineering heritage, pioneering the Panther E-Rickshaw before designing heavy-duty, ICAT Manesar certified L5 platforms.
@@ -291,8 +325,9 @@ Saffire EV is the official commercial electric vehicle brand owned and operated 
 - 5-Year Cumulative Savings: Over **₹8,47,530** (at 120 km/day vs diesel) or **₹7,06,250** (at 100 km/day).
 
 ## Corporate & Factory Verification
-- Parent Company: Koyo Gears India Private Limited
-- Factory & HQ: Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India
+- Parent Company: Koyo Gears India Private Limited (CIN: U28140UP2025PTC216042)
+- Corporate HQ & Showroom: Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India
+- Registered Office: 173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road), Meerut, Uttar Pradesh 250002, India
 - Inquiries: inquiry@saffireev.com | Phone / WhatsApp: +91-92581-72967
 - Regulatory Compliance: ICAT Manesar tested under CMVR, AIS-040, AIS-053, AIS-156 Amendment 3.
 

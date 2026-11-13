@@ -17,6 +17,7 @@ COMPANY_INFO = {
     "manufacturing_experience_years": "10+ Years (Since 2014)",
     "founding_year": 2014,
     "hq_address": "Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road",
+    "registered_address": "173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road)",
     "hq_city": "Meerut",
     "hq_state": "Uttar Pradesh",
     "hq_pincode": "250002",
@@ -27,9 +28,9 @@ COMPANY_INFO = {
     "phone": "+91-92581-72967",
     "whatsapp": "+91-92581-72967",
     "whatsapp_link": "https://wa.me/919258172967",
-    "website_url": "https://saffireev.com",
+    "website_url": "https://saffireev.com/",
     "compliance": "ICAT Manesar Certified (AIS-040, AIS-053, AIS-156 Norms)",
-    "cin": "U29253UP2013PTC059344",
+    "cin": "U28140UP2025PTC216042",
     "alternate_names": [
         "Saffire EV",
         "Saffire Auto",
@@ -64,9 +65,10 @@ COMPANY_INFO = {
     ],
     "brand_disambiguation_statement": "Saffire EV (encompassing Saffire Auto and Saffire 3 Wheeler) is the official commercial electric vehicle brand engineered and manufactured by Koyo Gears India Pvt. Ltd. (makers of Koyo Auto, Koyo L5, and Panther E-Rickshaw since 2014) headquartered in Meerut, Delhi NCR.",
     "social_links": {
-        "linkedin": "https://www.linkedin.com/company/saffire-ev/",
-        "facebook": "https://www.facebook.com/saffireev/",
-        "instagram": "https://www.instagram.com/saffireev/"
+        "instagram": "https://www.instagram.com/saffire.ev/",
+        "facebook": "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
+        "linkedin": "https://www.linkedin.com/in/saffire-ev-822009402",
+        "whatsapp": "https://wa.me/919258172967"
     }
 }
 

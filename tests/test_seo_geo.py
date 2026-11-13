@@ -246,3 +246,128 @@ def test_exact_keyword_clusters_and_pillar_page():
     assert 'id="city-directory"' in dealership_html
     assert "/locations/meerut/" in dealership_html
 
+
+def test_zero_unhidden_icon_ligatures_all_pages():
+    """Verify every icon tag across all generated HTML pages has aria-hidden, translate='no', data-nosnippet, and notranslate."""
+    exclude_dirs = {".git", ".venv", "venv", "__pycache__", "templates", "stitch_saffire_ev_pre_launch", "stitch_saffire_ev_pre_launch 2"}
+    checked_files = 0
+    for root, dirs, files in os.walk(ROOT_DIR):
+        dirs[:] = [d for d in dirs if d not in exclude_dirs]
+        for fname in files:
+            if not fname.endswith(".html"):
+                continue
+            fpath = os.path.join(root, fname)
+            with open(fpath, "r", encoding="utf-8") as f:
+                soup = BeautifulSoup(f.read(), "html.parser")
+            checked_files += 1
+            icons = soup.find_all(["i", "span"], class_=lambda c: c and (
+                "material-symbols-outlined" in c or "material-icons" in c or "material-symbols" in c
+            ))
+            for icon in icons:
+                classes = icon.get("class") or []
+                assert icon.get("aria-hidden") == "true", f"Missing aria-hidden in {fpath}"
+                assert icon.get("translate") == "no", f"Missing translate='no' in {fpath}"
+                assert icon.has_attr("data-nosnippet"), f"Missing data-nosnippet in {fpath}"
+                assert "notranslate" in classes, f"Missing notranslate class in {fpath}"
+    assert checked_files >= 110
+
+
+def test_zero_orphaned_sitemap_urls():
+    """Verify all 111 sitemap URLs exist on disk and are reachable via HTML crawl from index.html."""
+    import xml.etree.ElementTree as ET
+    from collections import deque
+
+    sitemap_path = os.path.join(ROOT_DIR, "sitemap.xml")
+    tree = ET.parse(sitemap_path)
+    ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    urls = [el.text.strip() for el in tree.getroot().findall("sm:url/sm:loc", ns)]
+    assert len(urls) == 111, f"Expected 111 sitemap URLs, found {len(urls)}"
+
+    def url_to_rel_path(url: str) -> str:
+        path = url.replace("https://saffireev.com", "").split("#")[0].split("?")[0]
+        if not path or path == "/":
+            return "index.html"
+        path = path.strip("/")
+        if os.path.isfile(os.path.join(ROOT_DIR, path)):
+            return path
+        return os.path.join(path, "index.html")
+
+    # 1. Verify every URL exists on disk
+    expected_rel_paths = set()
+    for u in urls:
+        rel = url_to_rel_path(u)
+        assert os.path.isfile(os.path.join(ROOT_DIR, rel)), f"Missing file on disk for sitemap URL {u}: {rel}"
+        expected_rel_paths.add(rel)
+
+    # 2. BFS crawl from index.html
+    visited = set()
+    queue = deque(["index.html"])
+    while queue:
+        curr = queue.popleft()
+        if curr in visited:
+            continue
+        visited.add(curr)
+        full = os.path.join(ROOT_DIR, curr)
+        if not os.path.isfile(full):
+            continue
+        with open(full, "r", encoding="utf-8") as f:
+            soup = BeautifulSoup(f.read(), "html.parser")
+        for a in soup.find_all("a", href=True):
+            href = a["href"].strip()
+            if href.startswith(("http://", "https://")) and not href.startswith("https://saffireev.com"):
+                continue
+            if href.startswith(("mailto:", "tel:", "javascript:", "#")):
+                continue
+            if href.startswith("https://saffireev.com"):
+                href = href.replace("https://saffireev.com", "")
+            href = href.split("#")[0].split("?")[0]
+            if not href:
+                continue
+            target = "index.html" if href == "/" else (href.strip("/") if href.endswith(".html") else os.path.join(href.strip("/"), "index.html"))
+            if target not in visited and os.path.isfile(os.path.join(ROOT_DIR, target)):
+                queue.append(target)
+
+    orphaned = expected_rel_paths - visited
+    assert not orphaned, f"Orphaned sitemap URLs unreachable from index.html: {sorted(orphaned)}"
+
+
+def test_nap_and_cin_consistency():
+    """Verify dual Meerut NAP, phone, and CIN U28140UP2025PTC216042 across HTML and JSON-LD."""
+    for rel in ["contact/index.html", "about/index.html", "koyo-gears-india/index.html"]:
+        with open(os.path.join(ROOT_DIR, rel), "r", encoding="utf-8") as f:
+            html = f.read()
+        assert "Plot 5, Om Tower, Mohkampur Phase 1" in html, f"Missing HQ address in {rel}"
+        assert "173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road)" in html, f"Missing Registered Office in {rel}"
+        assert "U28140UP2025PTC216042" in html, f"Missing CIN U28140UP2025PTC216042 in {rel}"
+        assert "+91-92581-72967" in html, f"Missing phone in {rel}"
+        assert "U29253UP2013PTC059344" not in html, f"Stale CIN found in {rel}"
+
+
+def test_guide_tco_tables_and_cro_ctas():
+    """Verify static TCO & spec tables in guides, single calculator CTA, and page-specific og:image."""
+    for rel in [
+        "electric-three-wheeler-running-cost/index.html",
+        "ev-dealership-india/index.html",
+        "electric-cargo-loader/index.html",
+        "electric-passenger-auto/index.html",
+    ]:
+        with open(os.path.join(ROOT_DIR, rel), "r", encoding="utf-8") as f:
+            html = f.read()
+        assert 'id="verified-tco-specs"' in html, f"Missing TCO spec table in {rel}"
+        assert "₹ 2,36,520" in html
+        assert "₹ 10,84,050" in html
+        assert "₹ 8,47,530" in html
+
+    with open(os.path.join(ROOT_DIR, "index.html"), "r", encoding="utf-8") as f:
+        home = f.read()
+    assert home.count('id="calc-lock-savings-btn"') == 1
+    assert "Lock In Your" in home and "Savings — Request Dealer / Fleet Quote" in home
+
+    with open(os.path.join(ROOT_DIR, "products", "saffire-smart-ride", "index.html"), "r", encoding="utf-8") as f:
+        assert "saffire-smart-ride-l5-passenger-auto.jpg" in f.read()
+    with open(os.path.join(ROOT_DIR, "products", "saffire-swiss-cargo", "index.html"), "r", encoding="utf-8") as f:
+        assert "saffire-swiss-cargo-l5-loader.jpg" in f.read()
+    with open(os.path.join(ROOT_DIR, "contact", "index.html"), "r", encoding="utf-8") as f:
+        assert "saffire-ev-meerut-showroom.jpg" in f.read()
+
+

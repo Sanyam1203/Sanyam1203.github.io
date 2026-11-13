@@ -17,12 +17,15 @@ from src.catalog_data import COMPANY_INFO, VEHICLE_PLATFORMS, REGIONAL_HUBS, COM
 from src.seo_geo_compiler import (
     write_all_seo_geo_assets,
     compile_page_jsonld,
+    build_organization_node,
+    build_local_business_node,
     BASE_URL,
     TODAY
 )
 from src.tco_engine import (
     render_crawlable_tco_html,
     render_l5_vs_l3_vs_diesel_html,
+    render_guide_tco_spec_table_html,
     calculate_tco
 )
 from src.html_sanitizer import sanitize_all_html_files, process_html_file
@@ -56,12 +59,12 @@ def build_homepage():
         content = f.read()
 
     # 1. Inject Calculator CTA button inside the Profit card if missing
-    if "Lock In Your Savings — Get Custom Price & EMI Quote" not in content:
+    if 'id="calc-lock-savings-btn"' not in content:
         cta_button = """
 <div class="mt-4 pt-4 border-t border-primary/20">
-  <button type="button" data-open-query-popup data-query-intent="preorder" data-calculator="true" class="w-full py-2.5 px-4 bg-primary text-background font-headline font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer">
-    <span class="material-symbols-outlined text-sm" aria-hidden="true" data-nosnippet>savings</span>
-    Lock In Your Savings — Get Custom Price &amp; EMI Quote
+  <button id="calc-lock-savings-btn" type="button" data-open-query-popup data-query-intent="preorder" data-calculator="true" class="w-full py-3 px-4 bg-primary text-background font-headline font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer">
+    <span class="material-symbols-outlined notranslate text-sm" translate="no" aria-hidden="true" data-nosnippet>savings</span>
+    <span>Lock In Your <span id="calc-lock-savings-amount">₹ 8,47,530</span> Savings — Request Dealer / Fleet Quote</span>
   </button>
 </div>
 """
@@ -250,9 +253,124 @@ def enhance_smart_ride_page():
         print("✓ Injected L5 comparison table into products/saffire-smart-ride/index.html")
 
 
+def sync_global_footer_and_schema(html_str: str) -> str:
+    """Replaces <footer> with templates/components/footer.html and updates CIN/NAP in JSON-LD."""
+    footer_path = os.path.join(ROOT_DIR, "templates", "components", "footer.html")
+    with open(footer_path, "r", encoding="utf-8") as f:
+        global_footer = f.read().strip()
+
+    # Replace stale CIN anywhere in text/schema
+    html_str = html_str.replace("U29253UP2013PTC059344", "U28140UP2025PTC216042")
+
+    soup = BeautifulSoup(html_str, "html.parser")
+    old_footer = soup.find("footer")
+    if old_footer:
+        new_footer = BeautifulSoup(global_footer, "html.parser").find("footer")
+        if new_footer:
+            old_footer.replace_with(new_footer)
+
+    # Sync Organization / LocalBusiness JSON-LD nodes
+    org_node = build_organization_node()
+    lb_node = build_local_business_node()
+    for script in soup.find_all("script", type="application/ld+json"):
+        raw = script.string or script.get_text() or ""
+        if not raw.strip():
+            continue
+        try:
+            data = json.loads(raw)
+        except Exception:
+            continue
+        changed = False
+        if isinstance(data, dict) and "@graph" in data and isinstance(data["@graph"], list):
+            for idx, node in enumerate(data["@graph"]):
+                if not isinstance(node, dict):
+                    continue
+                t = node.get("@type")
+                if t == "Organization":
+                    data["@graph"][idx] = org_node
+                    changed = True
+                elif t in ("LocalBusiness", "AutoDealer", "AutomotiveBusiness") or (
+                    isinstance(t, list) and any(x in t for x in ("LocalBusiness", "AutoDealer", "AutomotiveBusiness"))
+                ):
+                    data["@graph"][idx] = lb_node
+                    changed = True
+        elif isinstance(data, dict) and data.get("@type") == "Organization":
+            merged = {"@context": data.get("@context", "https://schema.org")}
+            merged.update(org_node)
+            if "areaServed" in data:
+                merged["areaServed"] = data["areaServed"]
+            data = merged
+            changed = True
+        elif isinstance(data, dict) and (
+            data.get("@type") in ("LocalBusiness", "AutoDealer", "AutomotiveBusiness")
+            or (isinstance(data.get("@type"), list) and any(x in data.get("@type") for x in ("LocalBusiness", "AutoDealer", "AutomotiveBusiness")))
+        ):
+            merged = {"@context": data.get("@context", "https://schema.org")}
+            merged.update(lb_node)
+            data = merged
+            changed = True
+        if changed:
+            script.string = json.dumps(data, indent=2, ensure_ascii=False)
+
+    return str(soup)
+
+
+def set_page_og_image(html_str: str, image_url: str) -> str:
+    """Sets page-specific og:image and twitter:image meta tags."""
+    soup = BeautifulSoup(html_str, "html.parser")
+    og_img = soup.find("meta", property="og:image")
+    if og_img:
+        og_img["content"] = image_url
+    tw_img = soup.find("meta", attrs={"name": "twitter:image"})
+    if tw_img:
+        tw_img["content"] = image_url
+    return str(soup)
+
+
+def enhance_guide_pages():
+    """Embeds static HTML TCO & Spec comparison table into commercial guide pages."""
+    guide_pages = [
+        os.path.join(ROOT_DIR, "electric-three-wheeler-running-cost", "index.html"),
+        os.path.join(ROOT_DIR, "ev-dealership-india", "index.html"),
+        os.path.join(ROOT_DIR, "electric-cargo-loader", "index.html"),
+        os.path.join(ROOT_DIR, "electric-passenger-auto", "index.html"),
+    ]
+    table_html = render_guide_tco_spec_table_html()
+    for p in guide_pages:
+        if not os.path.isfile(p):
+            continue
+        with open(p, "r", encoding="utf-8") as f:
+            content = f.read()
+        if 'id="verified-tco-specs"' not in content:
+            anchor = content.find('id="city-directory"')
+            if anchor != -1:
+                div_start = content.rfind("<div", 0, anchor)
+                if div_start != -1:
+                    content = content[:div_start] + "\n" + table_html + "\n" + content[div_start:]
+            else:
+                idx = content.rfind("</main>")
+                if idx != -1:
+                    content = content[:idx] + "\n" + table_html + "\n" + content[idx:]
+            with open(p, "w", encoding="utf-8") as f:
+                f.write(content)
+            print(f"✓ Embedded static TCO & Spec table into {os.path.relpath(p, ROOT_DIR)}")
+
+
 def enhance_core_pages():
-    """Injects popup and verifies canonicals across all core static pages."""
+    """Injects popup, syncs global footer/JSON-LD, and sets page-specific og:image."""
+    og_map = {
+        os.path.join(ROOT_DIR, "products", "saffire-smart-ride", "index.html"): f"{BASE_URL}/images/saffire-smart-ride-l5-passenger-auto.jpg",
+        os.path.join(ROOT_DIR, "electric-passenger-auto", "index.html"): f"{BASE_URL}/images/saffire-smart-ride-l5-passenger-auto.jpg",
+        os.path.join(ROOT_DIR, "products", "saffire-swiss-cargo", "index.html"): f"{BASE_URL}/images/saffire-swiss-cargo-l5-loader.jpg",
+        os.path.join(ROOT_DIR, "electric-cargo-loader", "index.html"): f"{BASE_URL}/images/saffire-swiss-cargo-l5-loader.jpg",
+        os.path.join(ROOT_DIR, "contact", "index.html"): f"{BASE_URL}/images/saffire-ev-meerut-showroom.jpg",
+        os.path.join(ROOT_DIR, "about", "index.html"): f"{BASE_URL}/images/saffire-ev-meerut-showroom.jpg",
+        os.path.join(ROOT_DIR, "koyo-gears-india", "index.html"): f"{BASE_URL}/images/saffire-ev-meerut-showroom.jpg",
+        os.path.join(ROOT_DIR, "ev-dealership-india", "index.html"): f"{BASE_URL}/images/saffire-ev-meerut-showroom.jpg",
+    }
     core_pages = [
+        os.path.join(ROOT_DIR, "index.html"),
+        os.path.join(ROOT_DIR, "contact", "index.html"),
         os.path.join(ROOT_DIR, "koyo-gears-india", "index.html"),
         os.path.join(ROOT_DIR, "about", "index.html"),
         os.path.join(ROOT_DIR, "vision", "index.html"),
@@ -264,17 +382,22 @@ def enhance_core_pages():
         os.path.join(ROOT_DIR, "electric-cargo-loader", "index.html"),
         os.path.join(ROOT_DIR, "electric-passenger-auto", "index.html"),
         os.path.join(ROOT_DIR, "electric-three-wheeler-running-cost", "index.html"),
-        os.path.join(ROOT_DIR, "l5-electric-vehicle", "index.html")
+        os.path.join(ROOT_DIR, "l5-electric-vehicle", "index.html"),
+        os.path.join(ROOT_DIR, "404.html"),
     ]
 
     for p in core_pages:
         if os.path.isfile(p):
             with open(p, "r", encoding="utf-8") as f:
                 c = f.read()
-            c = inject_popup_into_html(c)
+            if os.path.basename(p) != "404.html":
+                c = inject_popup_into_html(c)
+            c = sync_global_footer_and_schema(c)
+            if p in og_map:
+                c = set_page_og_image(c, og_map[p])
             with open(p, "w", encoding="utf-8") as f:
                 f.write(c)
-            print(f"✓ Injected query popup into {os.path.relpath(p, ROOT_DIR)}")
+            print(f"✓ Enhanced & synced footer/schema for {os.path.relpath(p, ROOT_DIR)}")
 
 
 def regenerate_sitemap():
@@ -298,11 +421,12 @@ def main():
     for name, path in assets.items():
         print(f"  + Generated {name} ({os.path.getsize(path)} bytes)")
 
-    # 2. Build homepage, Smart Ride page, and Dealership page with comparison blocks
-    print("\n[Step 2/6] Building Homepage, Product & Dealership Enhancements...")
+    # 2. Build homepage, Smart Ride page, Dealership page, and commercial guide pages
+    print("\n[Step 2/6] Building Homepage, Product, Dealership & Guide Enhancements...")
     build_homepage()
     enhance_smart_ride_page()
     enhance_dealership_page()
+    enhance_guide_pages()
 
     # 3. Generate 96 localized regional city pages with keyword clusters
     print("\n[Step 3/6] Compiling 96 Regional City Pages with Exact Keyword Clusters...")
