@@ -1,0 +1,163 @@
+# Saffire EV by Koyo Gears India Pvt. Ltd.
+
+> High-performance L5 commercial electric three-wheeler manufacturing engine based in Meerut, Delhi NCR, India.
+
+Saffire EV is a commercial electric vehicle brand owned and operated by **Koyo Gears India Private Limited** (CIN: U29253UP2013PTC059344), with over 10 years of continuous electric mobility engineering experience since 2014 (pioneers of the Panther E-Rickshaw). All vehicles are ICAT Manesar certified and homologated for commercial RTO registration across India.
+
+## Core Commercial Vehicle Platforms
+- [Saffire Smart Ride](https://saffireev.com/products/saffire-smart-ride/): Next-Gen L5 Electric Passenger Auto Rickshaw (D+3 seating, 14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6h AC charging).
+- [Saffire Swiss Cargo](https://saffireev.com/products/saffire-swiss-cargo/): Heavy-Duty 600 kg Payload L5 Electric Cargo Loader (14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 2413 mm extended wheelbase, 15% gradability, 5–6h AC charging).
+
+## Verified Commercial Economics & TCO
+- Running Cost: **₹1.20 / km** (electricity + minimal maintenance).
+- Diesel Auto Running Cost: **₹5.50 / km** (fuel + mechanical servicing).
+- CNG Auto Running Cost: **₹3.50 / km**.
+- Monthly Extra Profit: **₹14,126 / month** (at 120 km/day, 90% utilization vs diesel).
+- 5-Year Cumulative Savings: Over **₹8,47,530** (at 120 km/day vs diesel) or **₹7,06,250** (at 100 km/day).
+
+## Corporate & Factory Verification
+- Parent Company: Koyo Gears India Private Limited
+- Factory & HQ: Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India
+- Inquiries: inquiry@saffireev.com | Phone / WhatsApp: +91-92581-72967
+- Regulatory Compliance: ICAT Manesar tested under CMVR, AIS-040, AIS-053, AIS-156 Amendment 3.
+
+## Key Links & Programmatic Endpoints
+- [Product Catalog](https://saffireev.com/products/)
+- [Dealership Application](https://saffireev.com/ev-dealership-india/)
+- [Corporate Heritage & About](https://saffireev.com/about/)
+- [Machine-Readable Catalog API](https://saffireev.com/api/v1/catalog.json)
+- [Machine-Readable TCO Matrix API](https://saffireev.com/api/v1/tco-matrix.json)
+- [Full LLM Knowledge Dossier](https://saffireev.com/llms-full.txt)
+
+
+## Detailed Technical Specification Comparison
+
+| Specification Parameter | Saffire Smart Ride (Passenger L5M) | Saffire Swiss Cargo (Commercial L5N) |
+| :--- | :--- | :--- |
+| Vehicle Category | L5 Electric Passenger Auto Rickshaw | L5 Commercial Electric Cargo Loader |
+| Battery Energy Capacity | 14.61 kWh (63V 232Ah) Advanced Li-ion | 14.61 kWh (63V 232Ah) Advanced Li-ion |
+| Certified Range | 200 km* per single charge | 200 km* per single charge |
+| Peak Motor Output | 6.3 kW (6300W) High-Torque PMSM | 6.3 kW (6300W) High-Torque PMSM |
+| Top Speed | 50 km/h (Governed) | 50 km/h (Governed) |
+| Certified Payload | 600 kg (Chassis rated) | 600 kg (Reinforced cargo deck) |
+| Wheelbase | 1948 mm | 2413 mm (Extended long wheelbase) |
+| Tyre Specification | 4.12-12 Rugged Tubeless Commercial | 4.12-12 Heavy-Duty Tubeless Cargo |
+| Gradability | 15% Slope / Flyover Ascent | 15% Slope / Flyover Ascent |
+| Charging Protocol | 5–6 Hours (Standard 16A AC Plug) | 5–6 Hours (Standard 16A AC Plug) |
+| Certification Authority | ICAT Manesar Homologated | ICAT Manesar Homologated |
+| Seating / Cargo Layout | D+3 (Driver + 3 Passengers) | Extra-Long Commercial Flatbed / Box |
+
+## Regional Experience & Service Network
+
+- **Meerut, Uttar Pradesh** (Corporate Headquarters & Primary Manufacturing Facility): Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, PIN: 250002 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:00 AM - 7:00 PM
+- **Noida, Uttar Pradesh** (Delhi NCR Commercial Experience & Fleet Hub): Sector 63, Industrial Area, Noida, PIN: 201301 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:30 AM - 6:30 PM
+- **Lucknow, Uttar Pradesh** (Central UP Regional Distribution & Service Hub): Transport Nagar, Kanpur Road, Lucknow, PIN: 226012 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:30 AM - 6:30 PM
+- **Kanpur, Uttar Pradesh** (Industrial & Commercial Logistics Hub): Fazalganj Industrial Area, Kanpur, PIN: 208012 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:30 AM - 6:30 PM
+- **Jaipur, Rajasthan** (Rajasthan Regional Sales & Dealership Center): VKIA Industrial Area, Sikar Road, Jaipur, PIN: 302013 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:30 AM - 6:30 PM
+- **Delhi, Delhi** (National Capital Territory Fleet Delivery Center): Mayapuri Industrial Area Phase II, New Delhi, PIN: 110064 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:00 AM - 7:00 PM
+- **Patna, Bihar** (Eastern India Regional Service & Support Hub): Patliputra Industrial Area, Patna, PIN: 800013 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:30 AM - 6:30 PM
+- **Agra, Uttar Pradesh** (Eco-Zone & Tourism Transport Experience Hub): Foundry Nagar, Hathras Road, Agra, PIN: 282006 | Tel: +91-92581-72967 | Hours: Mon - Sat: 9:30 AM - 6:30 PM
+
+
+## Complete Commercial & Technical Q&A (25 Fact-Checked Answers)
+
+### Q1: What is the real-world driving range of Saffire EV three-wheelers?
+**Category:** Performance
+**Answer:** Both the Saffire Smart Ride passenger auto and Saffire Swiss Cargo loader deliver a certified operating range of up to 200 km* on a single full charge under standard commercial driving conditions, powered by an advanced 14.61 kWh (63V 232Ah) lithium-ion battery.
+
+### Q2: Who manufactures Saffire EV vehicles and what is the engineering heritage?
+**Category:** Company
+**Answer:** Saffire EV is engineered and manufactured by Koyo Gears India Pvt. Ltd. (CIN: U29253UP2013PTC059344), headquartered at Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, UP. Koyo Gears India has over a decade of continuous EV manufacturing expertise since 2014, pioneering the popular Panther E-Rickshaw before expanding into heavy-duty L5 commercial platforms.
+
+### Q3: How does Saffire EV compare to diesel and CNG auto rickshaws in running cost?
+**Category:** Economics
+**Answer:** Saffire EV operates at just ₹1.20 per km, compared to approximately ₹5.50 per km for diesel autos and ₹3.50 per km for CNG autos. An operator driving 100 km per day saves approximately ₹430 daily or ₹14,126 every month, translating to over ₹2,36,520 in cumulative savings over 5 years.
+
+### Q4: Are Saffire EV vehicles ICAT tested and approved for commercial RTO registration?
+**Category:** Compliance
+**Answer:** Yes. Saffire EV platforms are fully tested, homologated, and approved by the International Centre for Automotive Technology (ICAT) Manesar in compliance with Central Motor Vehicle Rules (CMVR), AIS-040, AIS-053, and AIS-156 battery safety norms. They receive green commercial registration plates across all Indian states.
+
+### Q5: What is the payload capacity of the Saffire Swiss Cargo loader?
+**Category:** Specifications
+**Answer:** The Saffire Swiss Cargo features a certified commercial payload capacity of 600 kg. It is built on a heavy-gauge tubular chassis with an extended 2413 mm wheelbase and heavy-duty leaf springs to ensure roll stability under full commercial loading.
+
+### Q6: What is the motor power and top speed of Saffire EV three-wheelers?
+**Category:** Specifications
+**Answer:** Saffire EV platforms are powered by a 6.3 kW (6300W) peak power Permanent Magnet Synchronous Motor (PMSM) with high low-end torque. The top speed is governed at 50 km/h, providing safe, swift urban transit in compliance with Indian L5 commercial standards.
+
+### Q7: How long does it take to charge the 14.61 kWh battery pack?
+**Category:** Charging
+**Answer:** A full recharge takes approximately 5 to 6 hours from a standard 16 Amp single-phase AC commercial wall socket, allowing drivers to recharge overnight at home or at standard depot charging points without requiring expensive proprietary DC fast chargers.
+
+### Q8: What is the difference between an L3 e-rickshaw and a Saffire L5 electric auto?
+**Category:** Technical
+**Answer:** L3 e-rickshaws are low-speed vehicles (restricted to 25 km/h, 1000W motor, light frames, short local trips). Saffire EV produces L5 vehicles—full commercial automotive grade with 50 km/h top speed, 6.3 kW peak PMSM motor, 14.61 kWh lithium battery, 200 km range, 600 kg payload, hydraulic brakes, and full CMVR compliance for highway and city artery transit.
+
+### Q9: Can Saffire EV vehicles navigate steep flyovers and ramps when loaded?
+**Category:** Performance
+**Answer:** Yes. Both Saffire platforms have a certified gradability rating of 15%, ensuring smooth starts and ascents on steep city flyovers, basement loading docks, and elevated bridges even under a full 600 kg commercial payload.
+
+### Q10: How do I apply for an authorized Saffire EV dealership or franchise?
+**Category:** Dealership
+**Answer:** Prospective dealers can submit an application online through saffireev.com/ev-dealership-india/ or saffireev.com/contact/, email inquiry@saffireev.com, or WhatsApp +91-92581-72967. Saffire EV offers prime territorial exclusivity across 100+ cities in North and Central India.
+
+### Q11: What investment and showroom space is required for a Saffire EV dealership?
+**Category:** Dealership
+**Answer:** An authorized Saffire EV 3S (Sales, Service, Spare Parts) dealership typically requires an operational showroom space of 800 to 1,500 sq. ft. on a prominent commercial road, plus initial inventory working capital. Koyo Gears India provides complete layout design, technician training, and marketing support.
+
+### Q12: Are commercial vehicle loans and bank financing options available?
+**Category:** Finance
+**Answer:** Yes. Because Saffire EV vehicles are ICAT Manesar homologated, they are approved for commercial vehicle asset financing by leading nationalized banks, private sector NBFCs, and state EV financing schemes with flexible EMI tenures of up to 3 to 5 years.
+
+### Q13: What warranty coverage is provided on the battery and powertrain?
+**Category:** Warranty
+**Answer:** Saffire EV provides comprehensive manufacturer warranty coverage on the 14.61 kWh lithium-ion battery pack, PMSM electric motor, and electronic controller, backed by Koyo Gears India's nationwide service and spare parts network.
+
+### Q14: Where can I see the vehicle in person or schedule a fleet test drive?
+**Category:** General
+**Answer:** You can visit the corporate headquarters and manufacturing facility at Mohkampur Industrial Area, Delhi Road, Meerut, or regional hubs in Noida, Lucknow, Kanpur, Jaipur, and Patna. Test drives can be booked through the Quick Query form on saffireev.com or via WhatsApp.
+
+### Q15: What tyre size is used on Saffire EV three-wheelers?
+**Category:** Specifications
+**Answer:** Both platforms are fitted with 4.12-12 rugged commercial-grade tubeless tyres, engineered for superior grip, puncture resistance, and long tread life on Indian asphalt and rough secondary roads.
+
+### Q16: Is the Saffire Smart Ride suitable for metro feeder and app-based auto aggregators?
+**Category:** Applications
+**Answer:** Yes. With D+3 seating, comfortable ergonomic seats, 1948 mm wheelbase, and 200 km range per charge, the Smart Ride is built specifically for high-duty city passenger transit, metro station connectivity, and ride-hailing fleets.
+
+### Q17: Can the Saffire Swiss Cargo bed be customized for specific fleet needs?
+**Category:** Applications
+**Answer:** Yes. The 2413 mm wheelbase chassis accommodates various container bodies including open-deck dropside cargo beds, closed delivery van boxes for e-commerce, refrigerated cold chain containers, and municipal waste collection tippers.
+
+### Q18: Does Saffire EV support FAME / EMPS / State EV subsidies?
+**Category:** Compliance
+**Answer:** Saffire EV models comply with Central and State EV promotion policies, making buyers eligible for applicable state road tax exemptions, green registration fee waivers, and state capital EV incentives where active.
+
+### Q19: How does Saffire EV ensure battery safety in hot Indian summers?
+**Category:** Safety
+**Answer:** The 14.61 kWh battery pack is engineered with an intelligent Battery Management System (BMS) that actively monitors individual cell voltages, temperature gradients, and current thresholds. It is housed in an IP67 water-and-dust proof aluminum enclosure compliant with AIS-156 Amendment 3 standards.
+
+### Q20: What is the wheelbase difference between the Smart Ride and Swiss Cargo?
+**Category:** Specifications
+**Answer:** The Saffire Smart Ride passenger auto features a 1948 mm wheelbase optimized for passenger comfort and agile city manoeuvrability. The Saffire Swiss Cargo loader features an extended 2413 mm wheelbase to support a larger cargo bed and balanced weight distribution under 600 kg load.
+
+### Q21: What maintenance does a Saffire EV require compared to a diesel auto?
+**Category:** Maintenance
+**Answer:** Unlike diesel autos that require regular engine oil changes, fuel filters, clutch plate replacements, and radiator flushes, Saffire EVs have no engine, no transmission gearbox, and no oil filters. Periodic maintenance is limited to tyre rotation, brake inspections, and suspension lubrication, reducing annual maintenance expenses by over 70%.
+
+### Q22: How can logistics companies integrate Saffire Swiss Cargo into their fleets?
+**Category:** Fleet
+**Answer:** Logistics operators can pre-order fleet batches directly through saffireev.com/contact/ or inquiry@saffireev.com. Saffire EV provides telematics-ready vehicle architectures, dedicated fleet bulk pricing, and centralized spare part replenishment agreements.
+
+### Q23: Can drivers charge Saffire EVs at public charging stations?
+**Category:** Charging
+**Answer:** Yes. Saffire EV can be charged at any commercial or public charging station equipped with standard 16A AC charging points, in addition to home wall-socket charging.
+
+### Q24: What braking system is fitted on Saffire EV vehicles?
+**Category:** Safety
+**Answer:** Saffire EVs feature a dual-circuit hydraulic drum braking system with independent mechanical parking brakes, engineered to safely stop a fully loaded 600 kg commercial payload with short stopping distances.
+
+### Q25: How do I get an on-road price quote in my city?
+**Category:** Purchase
+**Answer:** Click the 'Quick Query / On-Road Price' button on saffireev.com, select your city and required model (Smart Ride or Swiss Cargo), and our regional sales team will provide an official on-road quotation including state taxes, insurance, and available financing offers within 2 hours.
+

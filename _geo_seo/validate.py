@@ -185,7 +185,7 @@ def resolve_local(html_path, url):
 
 all_html = []
 for dirpath, dirnames, filenames in os.walk(ROOT):
-    dirnames[:] = [d for d in dirnames if not d.startswith(".") and d not in ("_geo_seo", "stitch_saffire_ev_pre_launch", "stitch_saffire_ev_pre_launch 2")]
+    dirnames[:] = [d for d in dirnames if not d.startswith(".") and d not in ("_geo_seo", "templates", "stitch_saffire_ev_pre_launch", "stitch_saffire_ev_pre_launch 2")]
     for fn in filenames:
         if fn.endswith(".html"):
             all_html.append(os.path.join(dirpath, fn))

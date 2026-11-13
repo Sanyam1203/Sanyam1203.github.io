@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{ meta_title }}</title>
+<meta content="{{ meta_description }}" name="description"/>
+<meta content="{{ meta_robots or 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }}" name="robots"/>
+<link href="{{ canonical_url }}" rel="canonical"/>
+<!-- OpenGraph Metadata -->
+<meta content="{{ meta_title }}" property="og:title"/>
+<meta content="{{ meta_description }}" property="og:description"/>
+<meta content="{{ canonical_url }}" property="og:url"/>
+<meta content="{{ og_image or 'https://saffireev.com/images/herobanner.png' }}" property="og:image"/>
+<meta content="{{ og_type or 'website' }}" property="og:type"/>
+<meta content="Saffire EV by Koyo Gears India" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<!-- Twitter Card Metadata -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="{{ meta_title }}" name="twitter:title"/>
+<meta content="{{ meta_description }}" name="twitter:description"/>
+<meta content="{{ og_image or 'https://saffireev.com/images/herobanner.png' }}" name="twitter:image"/>
+<meta content="#131315" name="theme-color"/>
+<!-- Preconnect and Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<!-- Tailwind CSS CDN & Config -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#97fdff",
+            "primary-container": "#3fe6e8",
+            "primary-fixed": "#5af8fb",
+            "primary-fixed-dim": "#2ddbde",
+            "on-primary": "#003738",
+            "on-primary-fixed": "#002020",
+            "secondary": "#c5c6cc",
+            "secondary-container": "#47494e",
+            "on-secondary": "#2e3035",
+            "surface": "#131315",
+            "surface-dim": "#131315",
+            "surface-container-lowest": "#0e0e10",
+            "surface-container-low": "#1b1b1d",
+            "surface-container": "#201f21",
+            "surface-container-high": "#2a2a2c",
+            "surface-container-highest": "#353437",
+            "on-surface": "#e5e1e4",
+            "on-surface-variant": "#bac9cc",
+            "outline-variant": "#3b494c",
+            "background": "#131315",
+            "on-background": "#e5e1e4"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            body: ["Manrope", "sans-serif"],
+            label: ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    .kinetic-gradient {
+      background: linear-gradient(135deg, #97fdff 0%, #2ddbde 100%);
+      color: #003738;
+      font-weight: 700;
+    }
+    .text-glow {
+      text-shadow: 0 0 30px rgba(151, 253, 255, 0.25);
+    }
+    .calculator-highlight {
+      animation: highlightPulse 0.3s ease-out;
+    }
+    @keyframes highlightPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+  </style>
+<!-- Connected @graph JSON-LD Schema -->
+  {% if jsonld_json %}
+  <script type="application/ld+json">
+{{ jsonld_json|safe }}
+  </script>
+  {% endif %}
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-surface flex flex-col min-h-screen">
+<!-- Global Navbar -->
+  {% include "components/navbar.html" %}
+
+  <!-- Main Viewport -->
+<main class="flex-grow pt-20">
+    {% block content %}{% endblock %}
+  </main>
+<!-- Global Footer -->
+  {% include "components/footer.html" %}
+
+  <!-- Global Quick Query Lead Modal & Trigger -->
+  {% include "components/query_popup.html" %}
+
+  <!-- Telemetry / Event Tracking Helper -->
+<script>
+    function trackEvent(name, params) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, params);
+      }
+    }
+  </script>
+
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>

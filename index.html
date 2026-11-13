@@ -326,7 +326,7 @@ function trackEvent(eventName, params = {}) {
         </a>
 <!-- Mobile Menu Icon -->
 <button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<span aria-hidden="true" class="material-symbols-outlined text-3xl" data-nosnippet="">menu</span>
 </button>
 </div>
 <!-- Mobile Navigation Overlay (Hidden by Default) -->
@@ -376,7 +376,7 @@ function trackEvent(eventName, params = {}) {
                     </p>
 <div class="flex flex-col sm:flex-row justify-start items-center gap-6">
 <a class="kinetic-gradient text-on-primary font-headline font-bold py-5 md:py-6 px-10 md:px-14 rounded-sm tracking-widest uppercase text-sm md:text-base hover:brightness-110 transition-all shadow-[0_15px_40px_rgba(151,253,255,0.3)] group flex items-center gap-3" href="contact/" onclick="trackEvent('preorder_click', {page_name: 'home'})">
-                            Pre-Order Now <span class="material-symbols-outlined group-hover:translate-x-1">arrow_forward</span>
+                            Pre-Order Now <span aria-hidden="true" class="material-symbols-outlined group-hover:translate-x-1" data-nosnippet="">arrow_forward</span>
 </a>
 <div class="flex gap-4">
 <a class="glass-panel border border-outline-variant/30 text-on-surface font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-xs md:text-sm hover:bg-surface-container-highest transition-all" href="products/">
@@ -420,7 +420,7 @@ function trackEvent(eventName, params = {}) {
                             </p>
 </div>
 <div class="inline-flex items-center gap-2 text-primary font-headline font-bold uppercase tracking-widest text-sm group-hover:brightness-125 transition-all">
-                            View Smart Ride Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            View Smart Ride Details <span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-nosnippet="">arrow_forward</span>
 </div>
 </div>
 </a>
@@ -441,7 +441,7 @@ function trackEvent(eventName, params = {}) {
                             </p>
 </div>
 <div class="inline-flex items-center gap-2 text-primary font-headline font-bold uppercase tracking-widest text-sm group-hover:brightness-125 transition-all">
-                            View Swiss Cargo Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            View Swiss Cargo Details <span aria-hidden="true" class="material-symbols-outlined text-[18px]" data-nosnippet="">arrow_forward</span>
 </div>
 </div>
 </a>
@@ -461,7 +461,7 @@ function trackEvent(eventName, params = {}) {
                             </p>
 </div>
 <a class="text-primary font-label text-[11px] font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1 w-fit group/link mt-2" href="vision/" onclick="trackEvent('homepage_connect_click', {page_name: 'home'})">
-                            Explore Vision <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            Explore Vision <span aria-hidden="true" class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform" data-nosnippet="">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -480,10 +480,10 @@ function trackEvent(eventName, params = {}) {
 </div>
 <div class="flex flex-wrap gap-4 mt-2">
 <a class="text-primary font-label text-[11px] font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1 w-fit group/link" href="contact/" onclick="trackEvent('homepage_dealer_click', {page_name: 'home', target: 'contact'})">
-                                Contact Saffire EV <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                                Contact Saffire EV <span aria-hidden="true" class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform" data-nosnippet="">arrow_forward</span>
 </a>
 <a class="text-on-surface-variant font-label text-[11px] font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1 w-fit group/link" href="ev-dealership-india/" onclick="trackEvent('homepage_dealer_click', {page_name: 'home', target: 'dealer_page'})">
-                                Dealer Opportunity <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                                Dealer Opportunity <span aria-hidden="true" class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform" data-nosnippet="">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -502,7 +502,7 @@ function trackEvent(eventName, params = {}) {
                             </p>
 </div>
 <a class="text-primary font-label text-[11px] font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1 w-fit group/link mt-2" href="vision/" onclick="trackEvent('homepage_vision_click', {page_name: 'home'})">
-                            Read Our Vision <span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                            Read Our Vision <span aria-hidden="true" class="material-symbols-outlined text-[14px] group-hover/link:translate-x-1 transition-transform" data-nosnippet="">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -531,7 +531,7 @@ function trackEvent(eventName, params = {}) {
 <!-- Inputs -->
 <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
 <h3 class="font-headline text-xl font-bold mb-8 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">tune</span> Setup Parameters
+<span aria-hidden="true" class="material-symbols-outlined text-primary" data-nosnippet="">tune</span> Setup Parameters
                     </h3>
 <div class="space-y-10">
 <!-- Daily Distance -->
@@ -576,8 +576,26 @@ function trackEvent(eventName, params = {}) {
 <p class="font-label text-[10px] tracking-widest uppercase text-primary/80 mb-2">Estimated Extra Profit with Saffire</p>
 <h4 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-primary" id="calc-extra-profit">₹ 0</h4>
 <p class="text-xs text-on-surface-variant mt-2 font-light" id="calc-percent">+65% more profitable than diesel</p>
+<div class="mt-4 pt-4 border-t border-primary/20">
+<button class="w-full py-2.5 px-4 bg-primary text-background font-headline font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer" data-calculator="true" data-open-query-popup="" data-query-intent="preorder" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">savings</span>
+    Lock In Your Savings — Get Custom Price &amp; EMI Quote
+  </button>
 </div>
-<span class="material-symbols-outlined absolute top-1/2 -right-4 -translate-y-1/2 text-9xl text-primary opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">trending_up</span>
+<div class="mt-4 pt-4 border-t border-primary/20">
+<button class="w-full py-2.5 px-4 bg-primary text-background font-headline font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer" data-calculator="true" data-open-query-popup="" data-query-intent="preorder" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">savings</span>
+    Lock In Your Savings — Get Custom Price &amp; EMI Quote
+  </button>
+</div>
+<div class="mt-4 pt-4 border-t border-primary/20">
+<button class="w-full py-2.5 px-4 bg-primary text-background font-headline font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer" data-calculator="true" data-open-query-popup="" data-query-intent="preorder" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">savings</span>
+    Lock In Your Savings — Get Custom Price &amp; EMI Quote
+  </button>
+</div>
+</div>
+<span aria-hidden="true" class="material-symbols-outlined absolute top-1/2 -right-4 -translate-y-1/2 text-9xl text-primary opacity-[0.03] group-hover:opacity-[0.07] transition-opacity" data-nosnippet="">trending_up</span>
 </div>
 <!-- Comparison Summary -->
 <div class="grid grid-cols-2 gap-4">
@@ -596,7 +614,7 @@ function trackEvent(eventName, params = {}) {
 <div class="bg-surface-container-highest rounded-xl p-8 border-t border-primary/10">
 <div class="flex items-center gap-4 mb-4">
 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">savings</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary" data-nosnippet="">savings</span>
 </div>
 <div>
 <p class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Lifetime Net Savings</p>
@@ -608,6 +626,92 @@ function trackEvent(eventName, params = {}) {
 </div>
 </div>
 </div>
+</div>
+<div class="mt-12 bg-surface-container-low p-6 md:p-8 rounded-xl border border-outline-variant/15 text-left">
+<details class="group cursor-pointer">
+<summary class="font-headline font-bold text-lg md:text-xl text-primary flex items-center justify-between list-none">
+<span class="flex items-center gap-3">
+<span aria-hidden="true" class="material-symbols-outlined text-primary" data-nosnippet="">table_chart</span>
+            View Verified Commercial TCO Comparison Matrix (Saffire EV vs Diesel vs CNG)
+          </span>
+<span aria-hidden="true" class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-on-surface-variant" data-nosnippet="">expand_more</span>
+</summary>
+<div class="mt-6 pt-6 border-t border-outline-variant/10 text-on-surface-variant text-sm space-y-4">
+<p class="font-body text-xs md:text-sm text-on-surface-variant">
+            Based on verified commercial operating costs in India: <strong>Saffire EV at ₹1.20/km</strong> (electricity + minimal powertrain servicing), 
+            <strong>CNG Auto at ₹3.50/km</strong>, and <strong>Diesel Auto at ₹5.50/km</strong> (fuel + mechanical maintenance). 
+            Calculated at 90% commercial fleet utilization (328.5 operating days per year).
+          </p>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs md:text-sm border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20 bg-surface-container-highest/40 text-on-surface font-headline">
+<th class="p-3">Daily Run</th>
+<th class="p-3">Commercial Duty Profile</th>
+<th class="p-3">Saffire EV / Month</th>
+<th class="p-3">Diesel Auto / Month</th>
+<th class="p-3 text-primary font-bold">Extra Monthly Profit</th>
+<th class="p-3">3-Year Cumulative Savings</th>
+<th class="p-3">5-Year Cumulative Savings</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 font-body">
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="p-3 font-bold text-on-surface">60 km/day</td>
+<td class="p-3 text-on-surface-variant">Urban Feeder Route</td>
+<td class="p-3 text-emerald-400 font-semibold">₹1,971</td>
+<td class="p-3 text-rose-400">₹9,034</td>
+<td class="p-3 text-primary font-bold">₹7,063/mo</td>
+<td class="p-3 text-on-surface">₹2,54,250</td>
+<td class="p-3 text-on-surface font-semibold">₹4,23,750</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="p-3 font-bold text-on-surface">100 km/day</td>
+<td class="p-3 text-on-surface-variant">Standard Commercial Auto</td>
+<td class="p-3 text-emerald-400 font-semibold">₹3,285</td>
+<td class="p-3 text-rose-400">₹15,056</td>
+<td class="p-3 text-primary font-bold">₹11,771/mo</td>
+<td class="p-3 text-on-surface">₹4,23,750</td>
+<td class="p-3 text-on-surface font-semibold">₹7,06,250</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="p-3 font-bold text-on-surface">120 km/day</td>
+<td class="p-3 text-on-surface-variant">High-Duty Urban Shift</td>
+<td class="p-3 text-emerald-400 font-semibold">₹3,942</td>
+<td class="p-3 text-rose-400">₹18,068</td>
+<td class="p-3 text-primary font-bold">₹14,126/mo</td>
+<td class="p-3 text-on-surface">₹5,08,500</td>
+<td class="p-3 text-on-surface font-semibold">₹8,47,530</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="p-3 font-bold text-on-surface">150 km/day</td>
+<td class="p-3 text-on-surface-variant">Dual-Shift Passenger Auto</td>
+<td class="p-3 text-emerald-400 font-semibold">₹4,928</td>
+<td class="p-3 text-rose-400">₹22,584</td>
+<td class="p-3 text-primary font-bold">₹17,656/mo</td>
+<td class="p-3 text-on-surface">₹6,35,625</td>
+<td class="p-3 text-on-surface font-semibold">₹10,59,375</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="p-3 font-bold text-on-surface">200 km/day</td>
+<td class="p-3 text-on-surface-variant">Intra-City Delivery Cargo</td>
+<td class="p-3 text-emerald-400 font-semibold">₹6,570</td>
+<td class="p-3 text-rose-400">₹30,113</td>
+<td class="p-3 text-primary font-bold">₹23,543/mo</td>
+<td class="p-3 text-on-surface">₹8,47,500</td>
+<td class="p-3 text-on-surface font-semibold">₹14,12,500</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 text-xs text-on-surface-variant border-t border-outline-variant/10">
+<span>* Figures based on commercial average electricity tariffs (₹7.50/unit) and current diesel prices (₹90+/litre). Individual savings vary with route topography.</span>
+<button class="px-4 py-2 bg-primary text-background font-bold rounded-lg text-xs hover:bg-primary/90 transition-colors shrink-0" data-open-query-popup="" data-query-intent="preorder" type="button">
+              Calculate Exact Savings For Your Fleet
+            </button>
+</div>
+</div>
+</details>
 </div>
 </div>
 </section>
@@ -712,6 +816,15 @@ function trackEvent(eventName, params = {}) {
             
             // Update cache
             prevValues.extraProfit = extraProfit;
+
+            // Cache settings for modal
+            window.currentCalcSettings = {
+                km: km,
+                years: years,
+                profit: formatINR(extraProfit),
+                fuel: currentFuel
+            };
+    
             prevValues.evTotal = evTotal;
             prevValues.traditionalTotal = traditionalTotal;
             prevValues.lifetimeSavings = lifetimeSavings;
@@ -739,7 +852,6 @@ function trackEvent(eventName, params = {}) {
             </p>
 </div>
 </section>
-
 <!-- KOYO <-> SAFFIRE EV Entity Reference & Regional Coverage -->
 <section class="py-16 md:py-20 bg-[#131315] border-b border-outline-variant/10">
 <div class="max-w-screen-xl mx-auto px-6 md:px-8">
@@ -797,7 +909,7 @@ Explore KOYO Electric Auto &amp; SAFFIRE EV coverage across <a class="text-prima
 <a class="text-primary hover:underline" href="/locations/patna/">Patna</a> ·
 <a class="text-primary hover:underline" href="/locations/ahmedabad/">Ahmedabad</a> ·
 <a class="text-primary hover:underline" href="/locations/indore/">Indore</a> ·
-<a class="text-primary font-bold hover:underline" href="/locations/">View All Locations &rarr;</a>
+<a class="text-primary font-bold hover:underline" href="/locations/">View All Locations →</a>
 </div>
 </div>
 </div>
@@ -853,5 +965,358 @@ Explore KOYO Electric Auto &amp; SAFFIRE EV coverage across <a class="text-prima
 </div>
 </footer>
 <script src="assets/js/motion.js"></script>
+<!-- Saffire EV - Global Quick Query & Lead Popup Modal -->
+<div aria-labelledby="query-modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" id="saffire-query-overlay" role="dialog">
+<div class="relative w-full max-w-lg bg-surface-container-low border border-outline-variant/30 rounded-2xl shadow-2xl p-6 md:p-8 max-h-[92vh] overflow-y-auto transform scale-95 transition-all duration-300" id="query-modal-card">
+<!-- Close Button -->
+<button aria-label="Close query modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high" id="close-query-modal" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-xl" data-nosnippet="">close</span>
+</button>
+<!-- Modal Header -->
+<div class="mb-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-3">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        Fast-Track Commercial Inquiry
+      </div>
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface" id="query-modal-title">
+        Get On-Road Price &amp; Commercial Quote
+      </h3>
+<p class="font-body text-xs md:text-sm text-on-surface-variant mt-1">
+        Official Saffire EV inquiry engine by Koyo Gears India Pvt. Ltd. Verified dealer quotes within 2 hours.
+      </p>
+</div>
+<!-- Main Inquiry Form -->
+<form class="space-y-4" id="saffire-query-form">
+<!-- 1-Tap Intent Selector -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-2">I am interested in</label>
+<div class="grid grid-cols-3 gap-2" id="intent-pills">
+<button class="intent-pill active py-2 px-2 text-center text-xs font-semibold rounded-lg border border-primary bg-primary text-background transition-all" data-intent="preorder" type="button">
+            Vehicle Price
+          </button>
+<button class="intent-pill py-2 px-2 text-center text-xs font-semibold rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface hover:border-primary/50 transition-all" data-intent="dealer" type="button">
+            Dealership
+          </button>
+<button class="intent-pill py-2 px-2 text-center text-xs font-semibold rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface hover:border-primary/50 transition-all" data-intent="fleet" type="button">
+            Fleet Order
+          </button>
+</div>
+<input id="inquiry_intent" name="inquiry_intent" type="hidden" value="preorder"/>
+</div>
+<!-- Full Name -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_name">Your Full Name *</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_name" name="name" placeholder="e.g. Ramesh Kumar" required="" type="text"/>
+</div>
+<!-- Phone / WhatsApp Number -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_phone">Phone / WhatsApp Number *</label>
+<div class="flex items-center">
+<span class="px-3 py-2.5 bg-surface-container-high border border-r-0 border-outline-variant/30 rounded-l-lg text-xs font-semibold text-on-surface-variant">+91</span>
+<input class="w-full px-4 py-2.5 rounded-r-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_phone" name="phone" pattern="^[6-9]\d{9}$" placeholder="9876543210" required="" type="tel"/>
+</div>
+<p class="text-[11px] text-on-surface-variant/60 mt-1">10-digit Indian mobile number for instant quote &amp; WhatsApp delivery.</p>
+</div>
+<!-- City & State -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_city">City *</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_city" name="city" placeholder="e.g. Meerut, Delhi, Lucknow" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_platform">Vehicle Platform</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface text-sm focus:outline-none focus:border-primary transition-colors" id="lead_platform" name="platform">
+<option value="Saffire Smart Ride (Passenger)">Saffire Smart Ride (Passenger Auto)</option>
+<option value="Saffire Swiss Cargo (Commercial Loader)">Saffire Swiss Cargo (Cargo Loader)</option>
+<option value="Both Platforms">Both Platforms (Fleet / Dealer)</option>
+</select>
+</div>
+</div>
+<!-- Requirement / Message -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_message">Requirements / Notes (Optional)</label>
+<textarea class="w-full px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-xs md:text-sm focus:outline-none focus:border-primary transition-colors" id="lead_message" name="message" placeholder="Tell us your daily run, delivery requirements, or dealership location..." rows="2"></textarea>
+</div>
+<!-- Hidden Context Fields -->
+<input id="lead_source_page" name="source_page" type="hidden" value=""/>
+<input id="lead_calc_km" name="calculator_km" type="hidden" value=""/>
+<input id="lead_calc_years" name="calculator_years" type="hidden" value=""/>
+<input id="lead_calc_profit" name="calculator_profit" type="hidden" value=""/>
+<!-- Submit & Action Buttons -->
+<div class="pt-2 space-y-3">
+<button class="w-full py-3 px-6 bg-primary text-background font-headline font-bold text-sm rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 cursor-pointer" id="submit-query-btn" type="submit">
+<span aria-hidden="true" class="material-symbols-outlined text-lg" data-nosnippet="">send</span>
+          Get Instant Quotation &amp; Savings Sheet
+        </button>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1 px-1">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="/contact/" id="open-detailed-contact">
+<span>Detailed Contact Page</span>
+<span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">arrow_forward</span>
+</a>
+<span class="flex items-center gap-1 text-[11px] text-emerald-400">
+<span aria-hidden="true" class="material-symbols-outlined text-sm" data-nosnippet="">lock</span>
+            100% Privacy Protected
+          </span>
+</div>
+</div>
+</form>
+<!-- Success Confirmation State (Hidden by default) -->
+<div class="hidden text-center py-6 space-y-4" id="query-success-card">
+<div class="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl" data-nosnippet="">check_circle</span>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface">Thank You! Inquiry Received</h4>
+<p class="font-body text-xs md:text-sm text-on-surface-variant max-w-sm mx-auto">
+        Our commercial EV sales team has received your details. For immediate assistance and live vehicle brochure sharing, connect on WhatsApp directly:
+      </p>
+<div class="pt-3 space-y-2">
+<a class="inline-flex items-center justify-center gap-2 w-full py-3 px-6 bg-[#25D366] text-white font-headline font-bold text-sm rounded-xl hover:bg-[#22bf5b] transition-all shadow-lg" href="https://wa.me/919258172967" id="query-whatsapp-direct" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="material-symbols-outlined text-lg" data-nosnippet="">chat</span>
+          Chat on WhatsApp Now (+91-92581-72967)
+        </a>
+<button class="w-full py-2.5 text-xs text-on-surface-variant hover:text-on-surface transition-colors" id="close-success-btn" type="button">
+          Close Window
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Bottom-Right Re-Open Pill -->
+<aside aria-label="Quick Query Floating Trigger" class="fixed bottom-6 right-6 z-40">
+<button aria-label="Open Quick Query and On-Road Price Form" class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-surface-container-high border border-primary/40 text-primary shadow-2xl hover:bg-primary hover:text-background hover:scale-105 transition-all duration-300 font-headline font-bold text-xs md:text-sm cursor-pointer" data-open-query-popup="" data-query-intent="preorder" id="floating-query-btn" type="button">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span aria-hidden="true" class="material-symbols-outlined text-base" data-nosnippet="">request_quote</span>
+<span>Quick Query / Price Quote</span>
+</button>
+</aside>
+<!-- Script Engine for Quick Query Modal -->
+<script>
+(function() {
+  const overlay = document.getElementById('saffire-query-overlay');
+  const card = document.getElementById('query-modal-card');
+  const closeBtn = document.getElementById('close-query-modal');
+  const form = document.getElementById('saffire-query-form');
+  const successCard = document.getElementById('query-success-card');
+  const closeSuccessBtn = document.getElementById('close-success-btn');
+  const floatingBtn = document.getElementById('floating-query-btn');
+  const intentPills = document.querySelectorAll('.intent-pill');
+  const intentInput = document.getElementById('inquiry_intent');
+  const platformSelect = document.getElementById('lead_platform');
+  const sourcePageInput = document.getElementById('lead_source_page');
+  const messageArea = document.getElementById('lead_message');
+  const detailedContactLink = document.getElementById('open-detailed-contact');
+  const whatsappDirectBtn = document.getElementById('query-whatsapp-direct');
+
+  const STORAGE_KEY = 'saffire_query_popup_closed_at';
+  const COOLDOWN_HOURS = 24;
+
+  // Track current page
+  if (sourcePageInput) {
+    sourcePageInput.value = window.location.href;
+  }
+
+  // Context auto-detection based on current route
+  function applyRouteContext() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('smart-ride') || path.includes('passenger')) {
+      if (platformSelect) platformSelect.value = 'Saffire Smart Ride (Passenger)';
+    } else if (path.includes('swiss-cargo') || path.includes('cargo') || path.includes('loader')) {
+      if (platformSelect) platformSelect.value = 'Saffire Swiss Cargo (Commercial Loader)';
+    } else if (path.includes('dealership')) {
+      setIntent('dealer');
+      if (platformSelect) platformSelect.value = 'Both Platforms';
+    }
+  }
+
+  function setIntent(intent) {
+    if (!intentInput) return;
+    intentInput.value = intent;
+    intentPills.forEach(pill => {
+      if (pill.dataset.intent === intent) {
+        pill.classList.add('active', 'border-primary', 'bg-primary', 'text-background');
+        pill.classList.remove('border-outline-variant/30', 'bg-surface-container', 'text-on-surface');
+      } else {
+        pill.classList.remove('active', 'border-primary', 'bg-primary', 'text-background');
+        pill.classList.add('border-outline-variant/30', 'bg-surface-container', 'text-on-surface');
+      }
+    });
+  }
+
+  intentPills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setIntent(btn.dataset.intent);
+    });
+  });
+
+  function openModal(intent = null, calcData = null) {
+    if (!overlay) return;
+    if (intent) setIntent(intent);
+
+    if (calcData) {
+      if (document.getElementById('lead_calc_km')) document.getElementById('lead_calc_km').value = calcData.km || '';
+      if (document.getElementById('lead_calc_years')) document.getElementById('lead_calc_years').value = calcData.years || '';
+      if (document.getElementById('lead_calc_profit')) document.getElementById('lead_calc_profit').value = calcData.profit || '';
+      
+      if (messageArea && calcData.km) {
+        messageArea.value = `Inquiring for fleet savings. Daily run: ${calcData.km} km/day over ${calcData.years || 5} years. Estimated extra profit: ${calcData.profit || ''}. Please send full price quotation.`;
+      }
+    }
+
+    applyRouteContext();
+
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    if (card) {
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!overlay) return;
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+    overlay.classList.remove('opacity-100');
+    if (card) {
+      card.classList.add('scale-95');
+      card.classList.remove('scale-100');
+    }
+    document.body.style.overflow = '';
+    // Record cooldown timestamp
+    try {
+      localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    } catch(e) {}
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
+
+  // Close upon backdrop click
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+  }
+
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('opacity-100')) {
+      closeModal();
+    }
+  });
+
+  // Bind all trigger buttons with [data-open-query-popup]
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-query-popup]');
+    if (trigger) {
+      e.preventDefault();
+      const intent = trigger.dataset.queryIntent || 'preorder';
+      let calcData = null;
+      if (trigger.dataset.calculator === 'true' || window.currentCalcSettings) {
+        calcData = window.currentCalcSettings || {
+          km: document.getElementById('dist-val') ? document.getElementById('dist-val').textContent : '',
+          years: document.getElementById('year-val') ? document.getElementById('year-val').textContent : '',
+          profit: document.getElementById('calc-extra-profit') ? document.getElementById('calc-extra-profit').textContent : ''
+        };
+      }
+      openModal(intent, calcData);
+    }
+  });
+
+  // Connect "Open Detailed Contact Page" link to pre-fill URL parameters
+  if (detailedContactLink) {
+    detailedContactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('lead_name').value || '');
+      const phone = encodeURIComponent(document.getElementById('lead_phone').value || '');
+      const city = encodeURIComponent(document.getElementById('lead_city').value || '');
+      const platform = encodeURIComponent(platformSelect ? platformSelect.value : '');
+      const intent = encodeURIComponent(intentInput ? intentInput.value : '');
+      const msg = encodeURIComponent(messageArea ? messageArea.value : '');
+      
+      const targetUrl = `/contact/?inquiry_type=${intent}&name=${name}&phone=${phone}&city=${city}&model=${platform}&notes=${msg}`;
+      window.location.href = targetUrl;
+    });
+  }
+
+  // Form submission handler
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('lead_name').value.trim();
+      const phone = document.getElementById('lead_phone').value.trim();
+      const city = document.getElementById('lead_city').value.trim();
+      const platform = platformSelect ? platformSelect.value : '';
+      const intent = intentInput ? intentInput.value : 'preorder';
+      const notes = messageArea ? messageArea.value.trim() : '';
+
+      const payload = {
+        name: name,
+        phone: phone,
+        city: city,
+        platform: platform,
+        intent: intent,
+        notes: notes,
+        source: window.location.href,
+        timestamp: new Date().toISOString()
+      };
+
+      // Store in sessionStorage for /contact/ sync
+      try {
+        sessionStorage.setItem('saffire_lead_query', JSON.stringify(payload));
+      } catch(err) {}
+
+      // If local FastAPI server is running, attempt submission
+      fetch('/api/v1/submit-query', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(() => {});
+
+      // Prepare WhatsApp message
+      const waMsg = encodeURIComponent(
+        `Hello Saffire EV Team,\n\nI would like an on-road price quotation and commercial details:\n- Name: ${name}\n- Phone: ${phone}\n- City: ${city}\n- Platform: ${platform}\n- Interest: ${intent}\n${notes ? '- Note: ' + notes : ''}`
+      );
+      if (whatsappDirectBtn) {
+        whatsappDirectBtn.href = `https://wa.me/919258172967?text=${waMsg}`;
+      }
+
+      // Show success card
+      form.classList.add('hidden');
+      if (successCard) successCard.classList.remove('hidden');
+    });
+  }
+
+  // Smart delayed auto-open (3.5 seconds)
+  function evaluateAutoOpen() {
+    const path = window.location.pathname.toLowerCase();
+    // Never auto-open on contact page
+    if (path.includes('/contact')) return;
+
+    try {
+      const closedAt = localStorage.getItem(STORAGE_KEY);
+      if (closedAt) {
+        const elapsedHours = (Date.now() - parseInt(closedAt, 10)) / (1000 * 60 * 60);
+        if (elapsedHours < COOLDOWN_HOURS) {
+          return; // Still in cooldown
+        }
+      }
+    } catch(e) {}
+
+    setTimeout(() => {
+      openModal();
+    }, 3500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', evaluateAutoOpen);
+  } else {
+    evaluateAutoOpen();
+  }
+})();
+</script>
 </body>
 </html>
