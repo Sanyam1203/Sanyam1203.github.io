@@ -252,21 +252,37 @@ def city_faqs(city):
 
     faqs = [
         {
-            "q": f"Are KOYO Auto, KOYO L5, and SAFFIRE EV the same brand in {name}?",
+            "q": f"What is the on-road price of Saffire Auto & Koyo L5 electric auto rickshaw in {name}?",
             "a": (
-                f"Yes. KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India) is the parent company and manufacturer "
-                f"that markets its L5 electric three-wheelers under the SAFFIRE EV brand. When customers in {name}, {state} "
-                f"search for KOYO, KOYO Auto, KOYO Electric Auto, or KOYO L5, the official vehicles are the SAFFIRE EV "
-                f"Smart Ride (passenger auto) and SAFFIRE EV Swiss Cargo (cargo loader)."
+                f"The on-road price of Saffire Auto (Saffire Smart Ride / Koyo L5) in {name}, {state} depends on "
+                f"applicable state EV subsidies, commercial RTO permit fees, and insurance coverage. "
+                f"Operating at just ₹1.20/km, Saffire Auto saves commercial drivers in {name} over ₹14,126 every month "
+                f"compared to traditional diesel auto rickshaws. Click 'Get Instant Quotation' or WhatsApp +91-92581-72967 for an exact {name} price quote."
             )
         },
         {
-            "q": f"What KOYO L5 / SAFFIRE EV vehicles are suitable for operators in {name}?",
+            "q": f"Are KOYO Auto, KOYO L5, Saffire Auto, and SAFFIRE EV the same brand in {name}?",
             "a": (
-                f"SAFFIRE EV by KOYO Gears India offers two KOYO L5 electric three-wheelers relevant to operators in {name}: "
-                f"the SAFFIRE Smart Ride (KOYO D+3 passenger electric auto) and the SAFFIRE Swiss Cargo (KOYO electric cargo loader). "
-                f"Both vehicles share a 14.61 kWh (63V 232Ah) battery platform, a 6.3 kW peak motor, "
-                f"a claimed range of up to 200 km per charge, and a top speed of 50 km/h."
+                f"Yes. KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India Pvt Ltd) is the parent engineering organization and manufacturer "
+                f"that markets its L5 electric three-wheelers under the SAFFIRE EV brand. When customers in {name}, {state} "
+                f"search for KOYO Auto, KOYO L5, KOYO Electric 3 Wheeler, Saffire Auto, or Saffire 3 Wheeler Auto, the official vehicles "
+                f"are the SAFFIRE Smart Ride (passenger auto rickshaw) and SAFFIRE Swiss Cargo (commercial cargo loader)."
+            )
+        },
+        {
+            "q": f"How can I apply for a Saffire Auto & Koyo L5 electric 3 wheeler dealership in {name}?",
+            "a": (
+                f"Automobile dealers, fleet managers, and commercial distributors in {name} or {state} can apply for an "
+                f"exclusive SAFFIRE EV (Koyo Gears India) dealership through saffireev.com/ev-dealership-india/ or by sending a WhatsApp "
+                f"to +91-92581-72967. Koyo Gears India provides territorial exclusivity across {name}, technician training, and marketing support."
+            )
+        },
+        {
+            "q": f"How much extra profit does a Saffire 3 wheeler auto earn compared to diesel autos in {name}?",
+            "a": (
+                f"A commercial auto driver covering 100 to 120 km daily in {name} spends approximately ₹120 to ₹144 per day on electricity "
+                f"with a Saffire 3 wheeler auto (₹1.20/km), compared to ₹550 to ₹660 per day with a diesel auto (₹5.50/km). "
+                f"This generates a net extra profit of over ₹14,126 every month or over ₹8.4 Lakhs in cumulative savings over 5 years."
             )
         },
         {
@@ -331,17 +347,17 @@ def generate_city_page(city, all_cities_by_slug):
     robots_meta = '<meta content="index, follow" name="robots"/>' if index_page else '<meta content="noindex, follow" name="robots"/>'
     noindex_comment = "" if index_page else "<!-- noindex: insufficient city-specific data to index -->\n    "
 
-    seo_title = f"KOYO Electric Auto in {name} | SAFFIRE EV (KOYO L5) by KOYO Gears India"
+    seo_title = f"Saffire Auto & Koyo L5 Electric 3 Wheeler in {name} | Best L5 Auto Rickshaw Price"
     seo_desc = (
-        f"Searching for KOYO, KOYO Auto, or KOYO L5 in {name}, {state}? "
-        f"SAFFIRE EV by KOYO Gears India Private Limited manufactures KOYO L5 electric passenger autos (Smart Ride) "
-        f"and electric cargo loaders (Swiss Cargo) for {name}. Enquire now."
+        f"Looking for Saffire Auto, Koyo Auto, or Koyo L5 in {name}, {state}? "
+        f"Saffire EV by Koyo Gears India manufactures ICAT certified L5 electric auto rickshaws & 3 wheeler loaders "
+        f"with 200 km range, 600 kg payload, and ₹1.20/km running cost in {name}."
     )
     seo_keywords = (
-        f"KOYO, KOYO {name}, KOYO Auto {name}, KOYO Electric Auto {name}, KOYO L5 {name}, "
-        f"KOYO Gears India {name}, SAFFIRE EV {name}, KOYO Electric Rickshaw {name}, "
-        f"SAFFIRE Smart Ride {name}, SAFFIRE Swiss Cargo {name}, L5 Electric Three Wheeler {state}, "
-        f"Electric Passenger Auto {name}, Electric Cargo Loader {name}"
+        f"Saffire Auto {name}, Saffire 3 Wheeler {name}, Saffire 3 Wheeler Auto {name}, "
+        f"KOYO Auto {name}, KOYO L5 {name}, KOYO Gears India {name}, L5 Auto {name}, "
+        f"L5 Auto Rickshaw {name}, Electric Auto Rickshaw {name}, Auto Rickshaw {name}, "
+        f"Electric 3 Wheeler {name}, SAFFIRE Smart Ride {name}, SAFFIRE Swiss Cargo {name}, {state}"
     )
     og_title = seo_title
     og_desc = seo_desc
@@ -494,10 +510,13 @@ def generate_city_page(city, all_cities_by_slug):
 
   <!-- Hero -->
   <section class="mb-16">
-    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-3">KOYO L5 Electric Three-Wheeler · KOYO Gears India · {region}</span>
-    <h1 class="font-headline font-bold text-4xl md:text-6xl tracking-tighter mb-4 text-[#E5E1E4]">
-      KOYO Electric Auto in {name} &mdash; SAFFIRE EV
+    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-3">Saffire Auto &amp; Koyo L5 Electric 3 Wheeler Dealership in {name} · {region}</span>
+    <h1 class="font-headline font-bold text-4xl md:text-6xl tracking-tighter mb-3 text-[#E5E1E4]">
+      Saffire Auto &amp; Koyo L5 Electric 3 Wheeler in {name}
     </h1>
+    <h2 class="font-headline text-lg md:text-2xl font-bold text-primary mb-4">
+      Best L5 Auto Rickshaw &amp; Electric 3 Wheeler Auto Price in {name}, {state}
+    </h2>
     {hindi_section}
     <p class="text-on-surface-variant text-base md:text-lg font-light leading-relaxed mt-6 max-w-3xl">
       {intro}

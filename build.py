@@ -20,7 +20,11 @@ from src.seo_geo_compiler import (
     BASE_URL,
     TODAY
 )
-from src.tco_engine import render_crawlable_tco_html, calculate_tco
+from src.tco_engine import (
+    render_crawlable_tco_html,
+    render_l5_vs_l3_vs_diesel_html,
+    calculate_tco
+)
 from src.html_sanitizer import sanitize_all_html_files, process_html_file
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -94,7 +98,18 @@ def build_homepage():
         if target_prev in content:
             content = content.replace(target_prev, target_prev + "\n" + calc_settings_script)
 
-    # 4. Inject global Quick Query popup
+    # 4. Inject L5 vs L3 vs Diesel Auto comparison block if missing
+    if "Why Choose a Saffire L5 Auto Rickshaw" not in content:
+        l5_block = render_l5_vs_l3_vs_diesel_html()
+        vision_anchor = "<!-- Vision Statement -->"
+        if vision_anchor in content:
+            content = content.replace(vision_anchor, l5_block + "\n" + vision_anchor)
+        else:
+            calc_end = content.find('</section>', content.find('id="calculator"'))
+            if calc_end != -1:
+                content = content[:calc_end+10] + "\n" + l5_block + "\n" + content[calc_end+10:]
+
+    # 5. Inject global Quick Query popup
     content = inject_popup_into_html(content)
 
     with open(index_path, "w", encoding="utf-8") as f:
@@ -150,9 +165,95 @@ def enhance_contact_page():
     print("✓ Enhanced contact/index.html with pre-fill sync and query popup")
 
 
+def render_state_city_directory_html() -> str:
+    """Renders a crawlable state-by-state directory linking to all 96 indexable city pages."""
+    data_path = os.path.join(ROOT_DIR, "_geo_seo", "city_data.json")
+    with open(data_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    from collections import defaultdict
+    states = defaultdict(list)
+    for c in data["cities"]:
+        if c.get("index"):
+            states[c["state"]].append(c)
+
+    html = """
+    <div class="mt-16 pt-12 border-t border-outline-variant/20" id="city-directory">
+      <div class="text-center mb-8">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-2">
+          <span class="material-symbols-outlined text-sm" aria-hidden="true" data-nosnippet>location_city</span>
+          Pan-India Territorial Coverage
+        </span>
+        <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface">
+          Explore Saffire Auto &amp; Koyo L5 Dealership Opportunities Across 96 Cities
+        </h2>
+        <p class="font-body text-xs md:text-sm text-on-surface-variant font-light mt-2 max-w-2xl mx-auto">
+          Select your city to view local electric auto demand, route profiles, and open territory exclusivity:
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    """
+    for state, clist in sorted(states.items()):
+        html += f"""
+        <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+          <h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
+            <span>{state}</span>
+            <span class="text-[10px] text-on-surface-variant font-normal">({len(clist)} Cities)</span>
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+        """
+        for c in sorted(clist, key=lambda x: x["name"]):
+            html += f'<a href="/locations/{c["slug"]}/" class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors">{c["name"]}</a>\n'
+        html += """
+          </div>
+        </div>
+        """
+    html += """
+      </div>
+    </div>
+    """
+    return html
+
+
+def enhance_dealership_page():
+    """Enhances ev-dealership-india/index.html with the state-by-state directory."""
+    path = os.path.join(ROOT_DIR, "ev-dealership-india", "index.html")
+    with open(path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    if 'id="city-directory"' not in content:
+        dir_html = render_state_city_directory_html()
+        idx = content.rfind("</main>")
+        if idx != -1:
+            content = content[:idx] + "\n" + dir_html + "\n" + content[idx:]
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(content)
+            print("✓ Injected 96-City State Directory into ev-dealership-india/index.html")
+
+
+def enhance_smart_ride_page():
+    """Enhances products/saffire-smart-ride/index.html with L5 vs L3 vs Diesel comparison block."""
+    path = os.path.join(ROOT_DIR, "products", "saffire-smart-ride", "index.html")
+    with open(path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    if "Why Choose a Saffire L5 Auto Rickshaw" not in content:
+        comp_block = render_l5_vs_l3_vs_diesel_html()
+        faq_anchor = '<section class="max-w-4xl mx-auto px-6 md:px-8 mb-24">'
+        if faq_anchor in content:
+            content = content.replace(faq_anchor, comp_block + "\n" + faq_anchor)
+        else:
+            idx = content.rfind("</main>")
+            if idx != -1:
+                content = content[:idx] + "\n" + comp_block + "\n" + content[idx:]
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(content)
+        print("✓ Injected L5 comparison table into products/saffire-smart-ride/index.html")
+
+
 def enhance_core_pages():
     """Injects popup and verifies canonicals across all core static pages."""
     core_pages = [
+        os.path.join(ROOT_DIR, "koyo-gears-india", "index.html"),
         os.path.join(ROOT_DIR, "about", "index.html"),
         os.path.join(ROOT_DIR, "vision", "index.html"),
         os.path.join(ROOT_DIR, "products", "index.html"),
@@ -197,21 +298,28 @@ def main():
     for name, path in assets.items():
         print(f"  + Generated {name} ({os.path.getsize(path)} bytes)")
 
-    # 2. Build homepage with TCO table and calculator CTA
-    print("\n[Step 2/5] Building Homepage & Profitability Engine...")
+    # 2. Build homepage, Smart Ride page, and Dealership page with comparison blocks
+    print("\n[Step 2/6] Building Homepage, Product & Dealership Enhancements...")
     build_homepage()
+    enhance_smart_ride_page()
+    enhance_dealership_page()
 
-    # 3. Enhance contact page with pre-fill sync
-    print("\n[Step 3/5] Enhancing Contact Page & Core Routes...")
+    # 3. Generate 96 localized regional city pages with keyword clusters
+    print("\n[Step 3/6] Compiling 96 Regional City Pages with Exact Keyword Clusters...")
+    import _geo_seo.generate_locations as gl
+    gl.main()
+
+    # 4. Enhance contact page with pre-fill sync and inject popup into core routes
+    print("\n[Step 4/6] Enhancing Contact Page & Core Routes...")
     enhance_contact_page()
     enhance_core_pages()
 
-    # 4. Regenerate sitemap.xml
-    print("\n[Step 4/5] Regenerating sitemap.xml...")
+    # 5. Regenerate sitemap.xml
+    print("\n[Step 5/6] Regenerating sitemap.xml (111 URLs)...")
     regenerate_sitemap()
 
-    # 5. Sanitize HTML across repository (protect icon snippets, enforce alt, loading=lazy)
-    print("\n[Step 5/5] Running BeautifulSoup4 HTML Sanitizer...")
+    # 6. Sanitize HTML across repository (protect icon snippets, enforce alt, loading=lazy)
+    print("\n[Step 6/6] Running BeautifulSoup4 HTML Sanitizer...")
     sanitizer_stats = sanitize_all_html_files(ROOT_DIR)
     print(f"  + Files Processed: {sanitizer_stats['files_processed']}")
     print(f"  + Icon Spans Protected: {sanitizer_stats['total_icons_sanitized']}")
@@ -220,7 +328,7 @@ def main():
     if sanitizer_stats["warnings"]:
         print(f"  ! Warnings: {len(sanitizer_stats['warnings'])}")
 
-    # 6. Verify CNAME preservation
+    # 7. Verify CNAME preservation
     cname_path = os.path.join(ROOT_DIR, "CNAME")
     if not os.path.isfile(cname_path):
         with open(cname_path, "w", encoding="utf-8") as f:
@@ -236,3 +344,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

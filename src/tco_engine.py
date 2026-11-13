@@ -167,3 +167,118 @@ def render_crawlable_tco_html() -> str:
     </div>
     """
     return html
+
+
+def render_l5_vs_l3_vs_diesel_html() -> str:
+    """
+    Renders an authoritative semantic comparison section & table:
+    'Why Choose a Saffire L5 Auto Rickshaw (Koyo L5 Electric 3 Wheeler) Over Diesel/CNG Autos & L3 E-Rickshaws?'
+    Targets generic commercial search queries: 'L5 auto', 'Auto rickshaw', 'Electric auto rickshaw', 'Koyo L5', 'Saffire auto'.
+    """
+    features = [
+        ("Top Governed Speed", "50 km/h (Fast Highway & City Arteries)", "25 km/h (Restricted Low Speed)", "55 km/h (Noisy & High Vibration)"),
+        ("Certified Driving Range", "200 km* per single charge", "80–100 km (Requires midday halt)", "160–180 km per fuel tank"),
+        ("Battery Pack & Energy", "14.61 kWh (63V 232Ah) Advanced Li-ion", "4.8–6.0 kWh (Lead Acid / Small Li)", "Diesel Fuel Tank (No Battery)"),
+        ("Peak Motor / Engine Power", "6.3 kW (6300W) High-Torque PMSM", "1.0–1.2 kW BLDC Motor", "6.5 kW (9 HP) Diesel Engine"),
+        ("Certified Commercial Payload", "600 kg Certified Heavy-Duty", "300–350 kg (Lightweight)", "400–500 kg Standard"),
+        ("Running Cost per KM", "₹1.20 / km (Lowest Operating Cost)", "₹0.85 / km (Very limited duty)", "₹5.50 / km (Extreme fuel expense)"),
+        ("Monthly Net Extra Profit", "+₹14,126 / month vs Diesel Auto", "Low revenue due to slow speed", "Baseline zero extra savings"),
+        ("Gradability (Flyovers & Ramps)", "15% Gradient (Effortless loaded start)", "5–7% (Struggles on bridges)", "12–15% Gradient"),
+        ("Chassis & Passenger Safety", "Heavy-Gauge Tubular Automotive Steel", "Thin pipe local e-rickshaw frame", "Traditional sheet metal"),
+        ("Regulatory Class & Compliance", "ICAT Manesar L5 (AIS-040/053/156)", "L3 E-Rickshaw (Zone-restricted)", "BS6 ICE Commercial Three Wheeler"),
+        ("Seating & Legroom Comfort", "Ergonomic D+3 with generous legroom", "Narrow cramped 4-passenger bench", "Traditional D+3 bench"),
+        ("Route Flexibility", "Full city, bypass & highway routes", "Short radius colony feeder only", "City-wide routes")
+    ]
+
+    table_rows = ""
+    for param, l5_val, l3_val, diesel_val in features:
+        table_rows += f"""
+        <tr class="hover:bg-surface-container-highest/20 transition-colors border-b border-outline-variant/10 text-xs md:text-sm">
+          <td class="p-3.5 font-bold text-on-surface">{param}</td>
+          <td class="p-3.5 text-primary font-semibold bg-primary/5">{l5_val}</td>
+          <td class="p-3.5 text-on-surface-variant">{l3_val}</td>
+          <td class="p-3.5 text-rose-300/80">{diesel_val}</td>
+        </tr>
+        """
+
+    html = f"""
+<section class="py-16 md:py-24 bg-surface-container-lowest border-t border-outline-variant/15" id="l5-comparison">
+  <div class="max-w-6xl mx-auto px-6 md:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-3">
+        <span class="material-symbols-outlined text-sm" aria-hidden="true" data-nosnippet>verified</span>
+        Definitive Commercial Three-Wheeler Comparison
+      </span>
+      <h2 class="font-headline text-2xl md:text-4xl font-bold tracking-tight text-on-surface">
+        Why Choose a Saffire L5 Auto Rickshaw (Koyo L5 Electric 3 Wheeler) Over Diesel/CNG Autos &amp; L3 E-Rickshaws?
+      </h2>
+      <p class="font-body text-xs md:text-base text-on-surface-variant font-light mt-4 leading-relaxed">
+        Commercial auto drivers and fleet operators in India frequently ask: <em>What makes an ICAT-certified L5 electric auto rickshaw superior to traditional diesel autos and local low-speed e-rickshaws?</em> Here is the verified technical and economic breakdown:
+      </p>
+    </div>
+
+    <!-- Crawlable Comparison Table -->
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/20 shadow-xl bg-surface-container-low mb-10">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-outline-variant/20 bg-surface-container-high text-on-surface font-headline text-xs md:text-sm">
+            <th class="p-3.5">Vehicle Specification Parameter</th>
+            <th class="p-3.5 text-primary font-bold bg-primary/10">Saffire Smart Ride (Koyo L5 Auto)</th>
+            <th class="p-3.5">Standard L3 E-Rickshaw</th>
+            <th class="p-3.5">Traditional Diesel Auto Rickshaw</th>
+          </tr>
+        </thead>
+        <tbody class="font-body divide-y divide-outline-variant/10">
+          {table_rows}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Quick Takeaways Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/15">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true" data-nosnippet>speed</span>
+        </div>
+        <h3 class="font-headline font-bold text-base text-on-surface mb-2">Double the Speed of L3</h3>
+        <p class="font-body text-xs text-on-surface-variant leading-relaxed">
+          At 50 km/h top speed, Saffire L5 auto rickshaws complete round-trips in half the time of 25 km/h L3 e-rickshaws, allowing drivers to take 2x passenger fares every working day.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/15">
+        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true" data-nosnippet>savings</span>
+        </div>
+        <h3 class="font-headline font-bold text-base text-on-surface mb-2">₹14,000+ Monthly Fuel Savings</h3>
+        <p class="font-body text-xs text-on-surface-variant leading-relaxed">
+          At ₹1.20/km versus ₹5.50/km for diesel autos, Saffire EV puts over ₹14,126 extra clean profit straight into the driver's pocket every month (over ₹8.4 Lakhs in 5 years).
+        </p>
+      </div>
+
+      <div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/15">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true" data-nosnippet>shield</span>
+        </div>
+        <h3 class="font-headline font-bold text-base text-on-surface mb-2">600 kg Payload &amp; ICAT Safety</h3>
+        <p class="font-body text-xs text-on-surface-variant leading-relaxed">
+          Built on heavy-duty tubular steel with AIS-156 fire-tested battery enclosure and dual hydraulic brakes for maximum safety on highways, flyovers, and elevated routes.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA Bar -->
+    <div class="mt-10 p-6 rounded-xl bg-primary/5 border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h4 class="font-headline font-bold text-base text-on-surface">Ready to upgrade from an L3 e-rickshaw or diesel auto?</h4>
+        <p class="font-body text-xs text-on-surface-variant">Get custom on-road price quotes, EMI calculator sheets, and dealer test drives.</p>
+      </div>
+      <button type="button" data-open-query-popup data-query-intent="preorder" class="px-6 py-3 bg-primary text-background font-headline font-bold rounded-lg text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shrink-0 cursor-pointer shadow-lg shadow-primary/20">
+        Get Saffire L5 Auto Price Quote
+      </button>
+    </div>
+  </div>
+</section>
+"""
+    return html
+

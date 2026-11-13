@@ -30,6 +30,39 @@ COMPANY_INFO = {
     "website_url": "https://saffireev.com",
     "compliance": "ICAT Manesar Certified (AIS-040, AIS-053, AIS-156 Norms)",
     "cin": "U29253UP2013PTC059344",
+    "alternate_names": [
+        "Saffire EV",
+        "Saffire Auto",
+        "Saffire 3 Wheeler",
+        "Saffire 3 Wheeler Auto",
+        "Koyo Auto",
+        "Koyo L5",
+        "Koyo Gears India",
+        "Koyo Gears India Private Limited",
+        "Koyo Gears India Pvt Ltd",
+        "Koyo Electric 3 Wheeler",
+        "Saffire Electric Auto Rickshaw",
+        "Saffire EV by Koyo Gears India"
+    ],
+    "knows_about": [
+        "L5 Auto",
+        "L5 Auto Rickshaw",
+        "Electric Auto Rickshaw",
+        "Auto Rickshaw",
+        "KOYO Auto",
+        "Koyo L5",
+        "KOYO Gears India",
+        "KOYO Electric 3 Wheeler",
+        "Koyo Gears India Pvt Ltd",
+        "Saffire Auto",
+        "Saffire 3 Wheeler",
+        "Saffire 3 Wheeler Auto",
+        "Saffire EV",
+        "Electric Cargo Loader",
+        "Commercial EV Manufacturing",
+        "ICAT Manesar Certified EVs"
+    ],
+    "brand_disambiguation_statement": "Saffire EV (encompassing Saffire Auto and Saffire 3 Wheeler) is the official commercial electric vehicle brand engineered and manufactured by Koyo Gears India Pvt. Ltd. (makers of Koyo Auto, Koyo L5, and Panther E-Rickshaw since 2014) headquartered in Meerut, Delhi NCR.",
     "social_links": {
         "linkedin": "https://www.linkedin.com/company/saffire-ev/",
         "facebook": "https://www.facebook.com/saffireev/",
@@ -107,14 +140,25 @@ VEHICLE_PLATFORMS: Dict[str, VehiclePlatform] = {
         ],
         specs=SMART_RIDE_SPECS,
         description=(
-            "The Saffire Smart Ride by Koyo Gears India Pvt. Ltd. is an ICAT-tested L5 passenger electric auto rickshaw "
-            "designed for urban transport, metro feeder routes, and inter-city passenger mobility. Powered by an advanced "
-            "14.61 kWh (63V 232Ah) lithium battery and a 6.3 kW peak powertrain, it delivers a certified 200 km range per charge, "
-            "allowing commercial operators to achieve ₹14,000+ extra monthly earnings versus traditional diesel and CNG autos."
+            "The Saffire Smart Ride (colloquially known as Saffire Auto or Koyo L5) by Koyo Gears India Pvt. Ltd. "
+            "is an ICAT-tested L5 passenger electric auto rickshaw engineered for urban transport, metro feeder routes, "
+            "and inter-city passenger mobility. Powered by an advanced 14.61 kWh (63V 232Ah) lithium battery and a 6.3 kW peak "
+            "powertrain, it delivers a certified 200 km range per charge, allowing commercial operators to achieve ₹14,000+ extra "
+            "monthly earnings versus traditional diesel and CNG autos."
         ),
-        meta_title="Saffire Smart Ride | L5 Electric Passenger Auto Rickshaw (200 km Range, ICAT Approved)",
-        meta_description="Discover Saffire Smart Ride by Koyo Gears India: L5 Electric Passenger Auto Rickshaw with 14.61 kWh battery, 200 km range, 6.3 kW peak motor, 600 kg payload, and ₹1.20/km running cost.",
-        h1_title="Saffire Smart Ride — L5 Electric Passenger Auto Rickshaw"
+        meta_title="Saffire Smart Ride — L5 Auto Rickshaw & Electric 3 Wheeler Auto (D+3) | Koyo L5 by Saffire EV",
+        meta_description="Official Saffire Smart Ride (Saffire Auto / Koyo L5) by Koyo Gears India: L5 Electric 3 Wheeler Auto Rickshaw (D+3). 200 km range, 14.61 kWh battery, 6.3 kW motor, 600 kg payload, ₹1.20/km cost.",
+        h1_title="Saffire Smart Ride — L5 Auto Rickshaw & Electric 3 Wheeler Auto",
+        alternate_names=[
+            "Saffire Auto",
+            "Saffire 3 Wheeler Auto",
+            "Koyo Auto L5",
+            "Koyo L5 Passenger Auto Rickshaw",
+            "Saffire Smart Ride L5 Auto",
+            "Koyo Electric 3 Wheeler",
+            "L5 Auto Rickshaw"
+        ],
+        vehicle_configuration="L5 Category D+3 Electric Auto Rickshaw (3 Wheeler)"
     ),
     "saffire-swiss-cargo": VehiclePlatform(
         id="saffire-swiss-cargo",
@@ -149,14 +193,23 @@ VEHICLE_PLATFORMS: Dict[str, VehiclePlatform] = {
         ],
         specs=SWISS_CARGO_SPECS,
         description=(
-            "The Saffire Swiss Cargo by Koyo Gears India Pvt. Ltd. is an engineered L5 commercial electric cargo loader "
-            "purpose-built for last-mile logistics, e-commerce distribution, industrial supply, and FMCG delivery. "
-            "Featuring a rated 600 kg commercial payload, extended 2413 mm wheelbase, 14.61 kWh lithium battery, "
-            "and 6.3 kW peak motor, it slashes delivery running costs to just ₹1.20/km."
+            "The Saffire Swiss Cargo (also recognized as Saffire 3 Wheeler Loader or Koyo L5 Cargo) by Koyo Gears India Pvt. Ltd. "
+            "is an engineered L5 commercial electric cargo loader purpose-built for last-mile logistics, e-commerce distribution, "
+            "industrial supply, and FMCG delivery. Featuring a rated 600 kg commercial payload, extended 2413 mm wheelbase, "
+            "14.61 kWh lithium battery, and 6.3 kW peak motor, it slashes delivery running costs to just ₹1.20/km."
         ),
-        meta_title="Saffire Swiss Cargo | 600 kg Payload L5 Electric Cargo Loader (200 km Range)",
-        meta_description="Explore Saffire Swiss Cargo by Koyo Gears India: Heavy-Duty L5 Electric Cargo Loader with 600 kg payload, 2413 mm wheelbase, 14.61 kWh battery, 200 km range, and 6.3 kW peak motor.",
-        h1_title="Saffire Swiss Cargo — L5 Commercial Electric Cargo Loader"
+        meta_title="Saffire Swiss Cargo — L5 Electric 3 Wheeler Cargo Loader (600 kg) | Koyo Gears India",
+        meta_description="Saffire Swiss Cargo by Koyo Gears India: Heavy-Duty L5 Electric 3 Wheeler Cargo Loader (Koyo L5 Cargo). 600 kg payload, 2413 mm wheelbase, 14.61 kWh battery, 200 km range, ₹1.20/km cost.",
+        h1_title="Saffire Swiss Cargo — L5 Electric 3 Wheeler Cargo Loader",
+        alternate_names=[
+            "Saffire 3 Wheeler Cargo",
+            "Koyo L5 Loader",
+            "Koyo Electric 3 Wheeler Cargo",
+            "Saffire Swiss Cargo L5",
+            "Saffire Auto Loader",
+            "L5 Cargo 3 Wheeler"
+        ],
+        vehicle_configuration="L5 Category Commercial Electric Cargo Loader (3 Wheeler)"
     )
 }
 
@@ -402,3 +455,4 @@ COMMERCIAL_FAQS: List[FAQItem] = [
         category="Purchase"
     )
 ]
+
