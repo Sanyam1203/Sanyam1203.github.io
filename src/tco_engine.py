@@ -282,3 +282,66 @@ def render_l5_vs_l3_vs_diesel_html() -> str:
 """
     return html
 
+
+def render_guide_tco_spec_table_html() -> str:
+    """
+    Renders a responsive static HTML TCO & specification comparison table
+    for commercial guide pages (AI citation & GEO density).
+    Baseline: 120 km daily run, 5 Years ownership period.
+    """
+    rows = [
+        ("Vehicle Category & Layout", "L5M Passenger Auto (D+3)", "L5N Commercial Cargo Loader", "ICE Diesel 3-Wheeler"),
+        ("Battery Capacity & Chemistry", "14.61 kWh (63V 232Ah)", "14.61 kWh (63V 232Ah)", "Fossil Fuel (Diesel Tank)"),
+        ("Claimed Range per Charge", "200 km*", "200 km*", "N/A"),
+        ("Payload Capacity", "600 kg", "600 kg", "450–500 kg"),
+        ("Motor Peak Power & Top Speed", "6.3 kW (6300 W) / 50 km/hr", "6.3 kW (6300 W) / 50 km/hr", "~50 km/hr"),
+        ("Wheelbase & Tyre Size", "1948 mm / 4.12-12", "2413 mm / 4.12-12", "Standard"),
+        ("Gradability & Charging Time", "15% / 5–6 hours (standard charger)", "15% / 5–6 hours (standard charger)", "N/A"),
+        ("5-Year Total Operating Cost (120 km/day)", "₹ 2,36,520", "₹ 2,36,520", "₹ 10,84,050"),
+        ("Estimated Extra Monthly Profit", "+₹ 14,126 (+358% vs. Diesel)", "+₹ 14,126 (+358% vs. Diesel)", "Baseline"),
+        ("5-Year Lifetime Net Savings", "₹ 8,47,530", "₹ 8,47,530", "₹ 0 (Baseline)"),
+    ]
+
+    row_html = ""
+    for metric, smart, swiss, diesel in rows:
+        row_html += f"""
+        <tr class="hover:bg-surface-container-highest/20 transition-colors border-b border-outline-variant/10 text-xs md:text-sm">
+          <td class="p-3.5 font-bold text-on-surface">{metric}</td>
+          <td class="p-3.5 text-primary font-semibold bg-primary/5">{smart}</td>
+          <td class="p-3.5 text-on-surface font-semibold">{swiss}</td>
+          <td class="p-3.5 text-rose-300/80">{diesel}</td>
+        </tr>"""
+
+    return f"""
+<section class="my-12 rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6 md:p-8" id="verified-tco-specs">
+  <div class="mb-6">
+    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-2">
+      <span class="material-symbols-outlined notranslate text-sm" translate="no" aria-hidden="true" data-nosnippet>analytics</span>
+      <span>Verified Commercial TCO &amp; Technical Benchmark</span>
+    </span>
+    <h2 class="font-headline text-xl md:text-2xl font-bold text-on-surface">
+      Saffire Smart Ride &amp; Swiss Cargo vs. Traditional Diesel Auto (120 km/day, 5-Year Baseline)
+    </h2>
+    <p class="font-body text-xs md:text-sm text-on-surface-variant font-light mt-2">
+      Standardized commercial fleet comparison at ₹1.20/km EV operating cost versus ₹5.50/km Diesel Auto baseline (90% annual fleet utilization).
+    </p>
+  </div>
+  <div class="overflow-x-auto rounded-xl border border-outline-variant/20 bg-surface-container">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="border-b border-outline-variant/20 bg-surface-container-high text-on-surface font-headline text-xs md:text-sm">
+          <th class="p-3.5">Metric / Parameter</th>
+          <th class="p-3.5 text-primary font-bold bg-primary/10">Saffire Smart Ride (L5 Passenger)</th>
+          <th class="p-3.5 font-bold">Saffire Swiss Cargo (L5 Loader)</th>
+          <th class="p-3.5">Traditional Diesel Auto Baseline</th>
+        </tr>
+      </thead>
+      <tbody class="font-body divide-y divide-outline-variant/10">
+        {row_html}
+      </tbody>
+    </table>
+  </div>
+</section>
+"""
+
+

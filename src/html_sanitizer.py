@@ -7,7 +7,26 @@ from __future__ import annotations
 
 import os
 from typing import Dict, List, Any, Optional
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
+
+
+def _ensure_icon_attributes(el) -> None:
+    """Enforces aria-hidden, translate='no', data-nosnippet, and notranslate class on icon elements."""
+    classes = list(el.get("class") or [])
+    if "notranslate" not in classes:
+        classes.append("notranslate")
+    el["class"] = classes
+    el["aria-hidden"] = "true"
+    el["translate"] = "no"
+    el["data-nosnippet"] = ""
+
+    # Ensure adjacent text inside <a> or <button> is wrapped in <span> or separated by whitespace
+    parent = el.parent
+    if parent and parent.name in ("a", "button"):
+        for sibling in list(parent.contents):
+            if isinstance(sibling, NavigableString) and sibling.strip():
+                span_wrap = BeautifulSoup(f"<span>{sibling.strip()}</span>", "html.parser").span
+                sibling.replace_with(span_wrap)
 
 
 def sanitize_html_content(html_str: str, file_path: str = "") -> Dict[str, Any]:
@@ -30,18 +49,18 @@ def sanitize_html_content(html_str: str, file_path: str = "") -> Dict[str, Any]:
         "warnings": []
     }
 
-    # 1. Sanitize Material Symbols icons
-    for span in soup.find_all("span", class_=lambda c: c and "material-symbols-outlined" in c):
-        span["aria-hidden"] = "true"
-        span["data-nosnippet"] = ""
-        stats["icons_sanitized"] += 1
-
-    # Also catch any <i> or <span> with material icon classes
-    for el in soup.find_all(["i", "span"], class_=lambda c: c and ("material-icons" in c or "material-symbols" in c)):
-        el["aria-hidden"] = "true"
-        el["data-nosnippet"] = ""
+    # 1. Sanitize Material Symbols & Material Icons
+    seen_icons = set()
+    for el in soup.find_all(["i", "span"], class_=lambda c: c and (
+        "material-symbols-outlined" in c or "material-icons" in c or "material-symbols" in c
+    )):
+        if id(el) not in seen_icons:
+            _ensure_icon_attributes(el)
+            seen_icons.add(id(el))
+            stats["icons_sanitized"] += 1
 
     # 2. Images audit & optimization
+    hero_lcp_assigned = False
     for idx, img in enumerate(soup.find_all("img")):
         src = img.get("src", "")
         alt = img.get("alt", "").strip()
@@ -58,9 +77,27 @@ def sanitize_html_content(html_str: str, file_path: str = "") -> Dict[str, Any]:
             img["alt"] = inferred_alt
             stats["images_alt_fixed"] += 1
 
-        # Add loading="lazy" for below-the-fold images (skip first 2 images or hero)
-        is_hero = "hero" in src.lower() or "banner" in src.lower() or "logo" in src.lower() or idx == 0
-        if not is_hero and not img.get("loading"):
+        # Add explicit width/height for Core Web Vitals (CLS prevention) if missing
+        is_logo = "logo" in src.lower()
+        if not img.get("width") or not img.get("height"):
+            if is_logo:
+                img["width"] = img.get("width") or "44"
+                img["height"] = img.get("height") or "44"
+            elif any(k in src.lower() for k in ("saffire-smart-ride", "saffire-swiss-cargo", "saffire-ev-meerut", "herobanner", "saffire_passanger", "saffire_loader", "showroomimage")):
+                img["width"] = img.get("width") or "1200"
+                img["height"] = img.get("height") or "675"
+            else:
+                img["width"] = img.get("width") or "1200"
+                img["height"] = img.get("height") or "800"
+
+        # Add fetchpriority="high" on the hero LCP image and loading="lazy" on below-the-fold images
+        is_hero = "hero" in src.lower() or "banner" in src.lower() or is_logo or idx == 0
+        if not is_logo and is_hero and not hero_lcp_assigned:
+            img["fetchpriority"] = "high"
+            if img.get("loading") == "lazy":
+                del img["loading"]
+            hero_lcp_assigned = True
+        elif not is_hero and not img.get("loading"):
             img["loading"] = "lazy"
             stats["images_lazy_fixed"] += 1
 

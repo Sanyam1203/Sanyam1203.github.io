@@ -104,7 +104,7 @@ NAVBAR = """
     </div>
     <a class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase" href="/contact/">PRE-ORDER</a>
     <button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
-      <span class="material-symbols-outlined text-3xl">menu</span>
+      <span class="material-symbols-outlined notranslate text-3xl" translate="no" aria-hidden="true" data-nosnippet>menu</span>
     </button>
   </div>
   <div class="absolute top-20 left-0 w-full bg-[#131315]/95 backdrop-blur-3xl border-b border-outline-variant/30 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)] origin-top transition-all duration-300 scale-y-0 opacity-0 pointer-events-none md:hidden p-6 z-40" id="mobile-menu">
@@ -135,50 +135,15 @@ menuBtn.addEventListener('click', () => {
 </script>
 """.strip()
 
-FOOTER = """
-<footer class="bg-[#0E0E10] border-t border-[#3B494C]/15 mt-auto">
-  <div class="max-w-screen-2xl mx-auto px-8 md:px-12 py-10 md:py-16">
-    <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 mb-10">
-      <div class="flex flex-col items-center md:items-start text-center md:text-left">
-        <span class="text-2xl font-bold tracking-tighter text-[#97FDFF] uppercase font-headline mb-1">SAFFIRE</span>
-        <span class="text-[8px] md:text-[9px] tracking-[0.3em] text-slate-500 font-label">BY KOYO GEARS INDIA PRIVATE LIMITED</span>
-      </div>
-      <div class="flex flex-col items-center md:items-start text-center md:text-left">
-        <span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Company</span>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/products/">Products</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/about/">About</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/vision/">Vision</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/locations/">Locations</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/contact/">Contact</a>
-      </div>
-      <div class="flex flex-col items-center md:items-start text-center md:text-left">
-        <span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">EV Guides</span>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/electric-cargo-loader/">Electric Cargo Loader</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/electric-passenger-auto/">Electric Passenger Auto</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/l5-electric-vehicle/">L5 Electric Vehicle</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white mb-2 transition-colors" href="/ev-dealership-india/">EV Dealership in India</a>
-        <a class="text-sm font-light text-slate-400 hover:text-white transition-colors" href="/electric-three-wheeler-running-cost/">Running Cost</a>
-      </div>
-      <div class="flex flex-col items-center md:items-start text-center md:text-left">
-        <span class="font-label text-xs tracking-widest uppercase text-on-surface mb-4">Connect With Us</span>
-        <a aria-label="Follow Saffire EV on Instagram" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors" href="https://www.instagram.com/saffire.ev/" rel="noopener noreferrer" target="_blank">Instagram</a>
-        <a aria-label="Follow Saffire EV on Facebook" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors" href="https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank">Facebook</a>
-        <a aria-label="Follow Saffire EV on LinkedIn" class="text-sm font-light text-slate-400 hover:text-primary mb-2 transition-colors" href="https://www.linkedin.com/in/saffire-ev-822009402" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-        <a aria-label="Chat with Saffire EV on WhatsApp" class="text-sm font-light text-slate-400 hover:text-primary transition-colors" href="https://wa.me/919258172967?text=Hello%20Saffire%20EV%2C%20I%20want%20to%20know%20more%20about%20your%20vehicles." rel="noopener noreferrer" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-    <div class="border-t border-[#3B494C]/15 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="text-slate-500 font-label text-[9px] md:text-[10px] tracking-[0.05em] uppercase text-center md:text-left">
-        &copy; 2026 KOYO GEARS INDIA PRIVATE LIMITED. ALL RIGHTS RESERVED.
-      </div>
-      <div class="flex flex-wrap justify-center gap-6">
-        <a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="/terms/">Privacy</a>
-        <a class="font-label text-[10px] md:text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-white transition-opacity" href="/terms/">Terms</a>
-      </div>
-    </div>
-  </div>
-</footer>
-""".strip()
+def _load_global_footer() -> str:
+    footer_path = os.path.join(ROOT, "templates", "components", "footer.html")
+    if os.path.isfile(footer_path):
+        with open(footer_path, "r", encoding="utf-8") as f:
+            return f.read().strip()
+    return ""
+
+
+FOOTER = _load_global_footer()
 
 HEAD_COMMON = """
 <meta charset="utf-8"/>
@@ -326,9 +291,27 @@ def city_faqs(city):
     return faqs
 
 # ── Nearby city links ──────────────────────────────────────────────────────
+def get_nearby_slugs(city, all_cities_by_slug):
+    slugs = [s for s in city.get("nearby", []) if s in all_cities_by_slug and s != city["slug"]]
+    if len(slugs) < 4:
+        # Fallback to same-state or same-region indexable cities for strong internal link graph
+        for c_slug, c_obj in all_cities_by_slug.items():
+            if c_slug != city["slug"] and c_slug not in slugs and c_obj.get("state") == city.get("state"):
+                slugs.append(c_slug)
+                if len(slugs) >= 5:
+                    break
+    if len(slugs) < 4:
+        for c_slug, c_obj in all_cities_by_slug.items():
+            if c_slug != city["slug"] and c_slug not in slugs and c_obj.get("region") == city.get("region"):
+                slugs.append(c_slug)
+                if len(slugs) >= 5:
+                    break
+    return slugs[:5]
+
+
 def nearby_links(city, all_cities_by_slug):
     links = []
-    for s in city.get("nearby", [])[:5]:
+    for s in get_nearby_slugs(city, all_cities_by_slug):
         c = all_cities_by_slug.get(s)
         if c:
             links.append(f'<a href="/locations/{s}/" class="text-primary hover:underline text-sm">{c["name"]}</a>')
@@ -375,6 +358,10 @@ def generate_city_page(city, all_cities_by_slug):
   "@id": "https://saffireev.com/#organization",
   "name": "SAFFIRE EV",
   "legalName": "KOYO GEARS INDIA PRIVATE LIMITED",
+  "taxID": "U28140UP2025PTC216042",
+  "identifier": "U28140UP2025PTC216042",
+  "telephone": "+91-92581-72967",
+  "email": "inquiry@saffireev.com",
   "alternateName": [
     "KOYO",
     "KOYO Auto",
@@ -386,8 +373,28 @@ def generate_city_page(city, all_cities_by_slug):
     "KOYO Gears India Private Limited",
     "Saffire EV by Koyo Gears India"
   ],
-  "url": "https://saffireev.com",
+  "url": "https://saffireev.com/",
   "logo": "https://saffireev.com/images/logo_final.png",
+  "address": [
+    {{
+      "@type": "PostalAddress",
+      "name": "Corporate HQ & Showroom",
+      "streetAddress": "Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road",
+      "addressLocality": "Meerut",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "250002",
+      "addressCountry": "IN"
+    }},
+    {{
+      "@type": "PostalAddress",
+      "name": "Registered Office (MCA)",
+      "streetAddress": "173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road)",
+      "addressLocality": "Meerut",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "250002",
+      "addressCountry": "IN"
+    }}
+  ],
   "areaServed": {{
     "@type": "City",
     "name": "{name}",
@@ -404,7 +411,8 @@ def generate_city_page(city, all_cities_by_slug):
   "sameAs": [
     "https://www.instagram.com/saffire.ev/",
     "https://www.facebook.com/share/1EWsS3CnwN/?mibextid=wwXIfr",
-    "https://www.linkedin.com/in/saffire-ev-822009402"
+    "https://www.linkedin.com/in/saffire-ev-822009402",
+    "https://wa.me/919258172967"
   ]
 }}"""
 
@@ -447,14 +455,16 @@ def generate_city_page(city, all_cities_by_slug):
     ])
     faq_jsonld = f"""{{\n  "@context": "https://schema.org",\n  "@type": "FAQPage",\n  "mainEntity": [\n    {faq_items}\n  ]\n}}"""
 
+    nearby_slugs = get_nearby_slugs(city, all_cities_by_slug)
     nearby_html = ""
-    if nearby:
+    if nearby_slugs:
         nearby_html = f"""
 <section class="mt-16 pt-10 border-t border-outline-variant/20">
-  <h2 class="font-headline text-2xl font-bold mb-6 text-[#E5E1E4]">Nearby Cities</h2>
-  <p class="text-on-surface-variant text-sm mb-4">Explore SAFFIRE EV information for cities near {name}:</p>
+  <h2 class="font-headline text-2xl font-bold mb-6 text-[#E5E1E4]">Nearby Dealership &amp; Service Territories</h2>
+  <p class="text-on-surface-variant text-sm mb-4">Explore Saffire EV (Koyo Gears India) L5 electric auto &amp; cargo dealership coverage near {name}:</p>
   <div class="flex flex-wrap gap-3">
-    {"".join(f'<a href="/locations/{s}/" class="glass-panel border border-outline-variant/20 px-4 py-2 rounded text-sm text-primary hover:border-primary/40 transition-colors">{all_cities_by_slug[s]["name"]}</a>' for s in city.get("nearby", [])[:5] if s in all_cities_by_slug)}
+    {"".join(f'<a href="/locations/{s}/" class="glass-panel border border-outline-variant/20 px-4 py-2 rounded text-sm text-primary hover:border-primary/40 transition-colors">{all_cities_by_slug[s]["name"]}</a>' for s in nearby_slugs)}
+    <a href="/koyo-gears-india/" class="glass-panel border border-primary/30 px-4 py-2 rounded text-sm text-primary hover:bg-primary/10 transition-colors">Koyo Gears India (OEM HQ)</a>
   </div>
 </section>""".strip()
 
