@@ -119,51 +119,63 @@ if (window.location.hostname.includes('github.io')) {
 <div class="flex justify-between items-center px-6 md:px-8 h-20 w-full max-w-screen-2xl mx-auto">
 <a class="flex items-center gap-3 group" href="/">
 <div class="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 shrink-0">
-<img alt="Saffire EV by Koyo Gears India Private Limited Logo" class="absolute inset-0 w-full h-full object-contain" height="44" src="/images/logo_final.png" width="44"/>
+<img alt="Saffire EV by Koyo Gears India Pvt. Ltd. Logo" class="absolute inset-0 w-full h-full object-contain" height="44" src="/images/logo_final.png" width="44"/>
 </div>
 <div class="flex flex-col justify-center">
 <span class="text-[20px] md:text-[22px] font-bold tracking-tighter text-[#97FDFF] uppercase font-headline leading-none hover:text-white transition-colors">SAFFIRE</span>
 <span class="text-[8px] md:text-[9px] font-label tracking-[0.2em] text-on-surface-variant leading-none mt-1 uppercase">BY KOYO GEARS INDIA</span>
 </div>
 </a>
-<div class="hidden md:flex items-center space-x-12">
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/">Home</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/products/">Products</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/about/">About</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/vision/">Vision</a>
-<a class="text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1 font-label text-xs tracking-widest uppercase" href="/locations/">Locations</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/">Home</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/products/">Products</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/ev-dealership-india/">Dealership</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/koyo-gears-india/">Koyo Gears India</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/about/">About</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/vision/">Vision</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1" href="/locations/">Locations</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
 </div>
-<a class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase" href="/contact/">PRE-ORDER</a>
-<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
-<span aria-hidden="true" class="material-symbols-outlined notranslate text-3xl" data-nosnippet="" translate="no">menu</span>
+<!-- CTA & Quick Query Button -->
+<div class="hidden md:flex items-center gap-3">
+<button class="kinetic-gradient text-on-primary px-5 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase cursor-pointer hover:shadow-[0_0_20px_rgba(151,253,255,0.4)]" data-open-query-popup="" data-query-intent="preorder" type="button">
+        PRE-ORDER
+      </button>
+</div>
+<!-- Mobile Hamburger Toggle -->
+<button aria-label="Toggle navigation menu" class="md:hidden flex items-center justify-center p-2 rounded text-on-surface hover:text-primary hover:bg-surface-container transition-colors" id="nav-toggle" onclick="toggleNav()">
+<span aria-hidden="true" class="material-symbols-outlined text-2xl notranslate" data-nosnippet="" id="nav-icon" translate="no">menu</span>
 </button>
 </div>
-<div class="absolute top-20 left-0 w-full bg-[#131315]/95 backdrop-blur-3xl border-b border-outline-variant/30 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)] origin-top transition-all duration-300 scale-y-0 opacity-0 pointer-events-none md:hidden p-6 z-40" id="mobile-menu">
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/">Home</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/products/">Products</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/about/">About</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/vision/">Vision</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#97FDFF]" href="/locations/">Locations</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 text-[#E5E1E4]/70" href="/contact/">Contact</a>
-<a class="kinetic-gradient text-on-primary px-8 py-4 w-full mt-2 text-sm font-label font-bold uppercase tracking-widest rounded-full text-center" href="/contact/">Pre-Order</a>
+<!-- Mobile Dropdown Menu -->
+<div class="hidden md:hidden bg-[#131315]/95 backdrop-blur-xl border-b border-[#3B494C]/20 px-6 py-6 transition-all duration-300" id="mobile-menu">
+<div class="flex flex-col space-y-4">
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/">Home</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/products/">Products</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/ev-dealership-india/">Dealership</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/koyo-gears-india/">Koyo Gears India</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/about/">About</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/vision/">Vision</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/locations/">Locations</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/contact/">Contact</a>
+<button class="kinetic-gradient text-on-primary py-3 text-center text-xs font-bold tracking-widest rounded-sm uppercase mt-2" data-open-query-popup="" data-query-intent="preorder" type="button">
+        GET ON-ROAD PRICE
+      </button>
+</div>
 </div>
 </nav>
 <script>
-const menuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', () => {
-    const isClosed = mobileMenu.classList.contains('opacity-0');
-    if (isClosed) {
-        mobileMenu.classList.remove('opacity-0','scale-y-0','pointer-events-none');
-        mobileMenu.classList.add('opacity-100','scale-y-100','pointer-events-auto');
-        menuBtn.querySelector('span').textContent = 'close';
-    } else {
-        mobileMenu.classList.add('opacity-0','scale-y-0','pointer-events-none');
-        mobileMenu.classList.remove('opacity-100','scale-y-100','pointer-events-auto');
-        menuBtn.querySelector('span').textContent = 'menu';
+function toggleNav() {
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('nav-icon');
+  if (menu) {
+    menu.classList.toggle('hidden');
+    if (icon) {
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
     }
-});
+  }
+}
 </script>
 <main class="flex-grow pt-28 pb-24 px-6 md:px-8 max-w-screen-xl mx-auto w-full">
 <!-- Hero -->
@@ -175,7 +187,7 @@ menuBtn.addEventListener('click', () => {
 <p class="text-on-surface-variant text-base md:text-lg font-light leading-relaxed max-w-3xl mb-6">
 <a class="text-primary hover:underline font-medium" href="/about/">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a> — the manufacturer behind the <a class="text-primary hover:underline font-medium" href="/">SAFFIRE EV</a> brand (widely known as <strong>KOYO</strong>, <strong>KOYO Auto</strong>, and <a class="text-primary hover:underline" href="/l5-electric-vehicle/">KOYO L5</a>) — builds heavy-duty
       L5 <a class="text-primary hover:underline" href="/electric-passenger-auto/">electric passenger autos</a> (<a class="text-primary hover:underline" href="/products/saffire-smart-ride/">SAFFIRE Smart Ride</a>) and <a class="text-primary hover:underline" href="/electric-cargo-loader/">electric cargo loaders</a> (<a class="text-primary hover:underline" href="/products/saffire-swiss-cargo/">SAFFIRE Swiss Cargo</a>) for operators,
-      fleet buyers, and dealers across India. Find city-specific KOYO Auto &amp; SAFFIRE EV information across 100 target Indian cities (96 live pages) below.
+      fleet buyers, and dealers across India. Find city-specific KOYO Auto &amp; SAFFIRE EV information across 100 target Indian cities (6 live pages) below.
     </p>
 <div class="flex flex-col sm:flex-row gap-4">
 <a class="kinetic-gradient text-on-primary font-headline font-bold py-4 px-8 rounded-sm tracking-widest uppercase text-sm hover:brightness-110 transition-all text-center" href="https://wa.me/919258172967?text=Hello%20Saffire%20EV%2C%20I%20want%20to%20know%20about%20your%20vehicles%20in%20my%20city." rel="noopener noreferrer" target="_blank">
@@ -236,28 +248,68 @@ menuBtn.addEventListener('click', () => {
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
 <a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/meerut/">
 <span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Meerut</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/noida/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Noida</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/greater-noida/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Greater Noida</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ghaziabad/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ghaziabad</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/lucknow/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Lucknow</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/kanpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Kanpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/agra/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Agra</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/varanasi/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Varanasi</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/prayagraj/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Prayagraj</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/gorakhpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Gorakhpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bareilly/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bareilly</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/aligarh/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Aligarh</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/moradabad/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Moradabad</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/saharanpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Saharanpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/muzaffarnagar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Muzaffarnagar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/mathura/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Mathura</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/jhansi/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Jhansi</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ayodhya/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ayodhya</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/firozabad/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Firozabad</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/hapur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Hapur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bulandshahr/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bulandshahr</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/shamli/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Shamli</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bijnor/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bijnor</span></a>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Noida</span></a><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Greater Noida<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ghaziabad/">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ghaziabad</span></a><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Lucknow<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Kanpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Agra<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Varanasi<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Prayagraj<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Gorakhpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bareilly<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Aligarh<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Moradabad<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Saharanpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Muzaffarnagar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Mathura<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Jhansi<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Ayodhya<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Firozabad<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Hapur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bulandshahr<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Shamli<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bijnor<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="delhi">
@@ -272,40 +324,82 @@ menuBtn.addEventListener('click', () => {
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
 <a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/gurugram/">
 <span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Gurugram</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/faridabad/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Faridabad</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/sonipat/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Sonipat</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/panipat/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Panipat</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/karnal/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Karnal</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/rohtak/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Rohtak</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/hisar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Hisar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ambala/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ambala</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/panchkula/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Panchkula</span></a>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Faridabad</span></a><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Sonipat<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Panipat<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Karnal<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Rohtak<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Hisar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Ambala<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Panchkula<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="rajasthan">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Rajasthan</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/jaipur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Jaipur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/jodhpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Jodhpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/udaipur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Udaipur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/kota/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Kota</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ajmer/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ajmer</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/alwar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Alwar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bikaner/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bikaner</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bharatpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bharatpur</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Jaipur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Jodhpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Udaipur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Kota<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Ajmer<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Alwar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bikaner<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bharatpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="bihar">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Bihar</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/patna/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Patna</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/gaya/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Gaya</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/muzaffarpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Muzaffarpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bhagalpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bhagalpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/darbhanga/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Darbhanga</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/purnia/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Purnia</span></a><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Patna<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Gaya<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Muzaffarpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bhagalpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Darbhanga<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Purnia<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
 <span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
                   Araria<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
 </div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
@@ -320,77 +414,145 @@ menuBtn.addEventListener('click', () => {
 <div class="mb-10" data-state="gujarat">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Gujarat</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ahmedabad/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ahmedabad</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/surat/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Surat</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/vadodara/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Vadodara</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/rajkot/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Rajkot</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/gandhinagar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Gandhinagar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bhavnagar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bhavnagar</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Ahmedabad<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Surat<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Vadodara<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Rajkot<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Gandhinagar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bhavnagar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="maharashtra">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Maharashtra</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/mumbai/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Mumbai</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/pune/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Pune</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/nagpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Nagpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/nashik/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Nashik</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/aurangabad-mh/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Chhatrapati Sambhajinagar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/thane/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Thane</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/kolhapur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Kolhapur</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Mumbai<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Pune<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Nagpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Nashik<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Chhatrapati Sambhajinagar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Thane<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Kolhapur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="madhya-pradesh">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Madhya Pradesh</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/indore/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Indore</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bhopal/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bhopal</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/gwalior/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Gwalior</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/jabalpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Jabalpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ujjain/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ujjain</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/sagar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Sagar</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Indore<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bhopal<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Gwalior<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Jabalpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Ujjain<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Sagar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="punjab">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Punjab</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ludhiana/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ludhiana</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/amritsar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Amritsar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/jalandhar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Jalandhar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/patiala/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Patiala</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/mohali/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Mohali</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Ludhiana<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Amritsar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Jalandhar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Patiala<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Mohali<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="chandigarh">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Chandigarh</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/chandigarh/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Chandigarh</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Chandigarh<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="uttarakhand">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Uttarakhand</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/dehradun/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Dehradun</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/haridwar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Haridwar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/roorkee/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Roorkee</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/haldwani/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Haldwani</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/rudrapur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Rudrapur</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Dehradun<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Haridwar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Roorkee<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Haldwani<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Rudrapur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="odisha">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Odisha</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bhubaneswar/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bhubaneswar</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/cuttack/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Cuttack</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/rourkela/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Rourkela</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/sambalpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Sambalpur</span></a><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bhubaneswar<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Cuttack<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Rourkela<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Sambalpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
 <span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
                   Baripada<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
 </div>
@@ -399,58 +561,88 @@ menuBtn.addEventListener('click', () => {
 <div class="mb-10" data-state="west-bengal">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">West Bengal</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/kolkata/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Kolkata</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/howrah/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Howrah</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/siliguri/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Siliguri</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/durgapur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Durgapur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/asansol/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Asansol</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Kolkata<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Howrah<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Siliguri<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Durgapur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Asansol<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="jharkhand">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Jharkhand</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/ranchi/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Ranchi</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/jamshedpur/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Jamshedpur</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/dhanbad/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Dhanbad</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bokaro/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bokaro</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Ranchi<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Jamshedpur<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Dhanbad<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bokaro<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="karnataka">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Karnataka</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/bengaluru/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Bengaluru</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Bengaluru<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="telangana">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Telangana</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/hyderabad/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Hyderabad</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Hyderabad<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="tamil-nadu">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Tamil Nadu</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/chennai/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Chennai</span></a><a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/coimbatore/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Coimbatore</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Chennai<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div><div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Coimbatore<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="kerala">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Kerala</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/kochi/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Kochi</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Kochi<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 <div class="mb-10" data-state="andhra-pradesh">
 <h2 class="font-headline text-xl font-bold mb-4 text-primary tracking-tight">Andhra Pradesh</h2>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-<a class="glass-panel border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface hover:border-primary/40 hover:text-primary transition-all flex items-center gap-2 group" href="/locations/visakhapatnam/">
-<span aria-hidden="true" class="material-symbols-outlined text-[14px] text-primary/60 group-hover:text-primary notranslate" data-nosnippet="" translate="no">location_on</span><span>Visakhapatnam</span></a>
+<div class="glass-panel border border-outline-variant/10 rounded-lg px-4 py-3 text-sm text-on-surface-variant/50 flex items-center gap-2 cursor-default">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px] notranslate" data-nosnippet="" translate="no">location_on</span>
+                  Visakhapatnam<span class="text-[9px] font-label text-on-surface-variant/50 ml-1">(coming soon)</span>
+</div>
 </div>
 </div>
 </div>
@@ -528,34 +720,17 @@ menuBtn.addEventListener('click', () => {
 <!-- Regional Service & Dealership Network Hub -->
 <div class="border-t border-[#3B494C]/15 pt-8 pb-8">
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-<span class="font-label text-xs tracking-widest uppercase text-on-surface">Regional Service &amp; Dealership Network</span>
-<a class="text-xs text-primary hover:underline" href="/ev-dealership-india/#city-directory">View Full 96-City Dealership Directory →</a>
+<span class="font-label text-xs tracking-widest uppercase text-on-surface">Active Hubs &amp; Expansion Network</span>
+<a class="text-xs text-primary hover:underline" href="/ev-dealership-india/#city-directory">Territory Dealership Directory →</a>
 </div>
-<div class="flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-400 font-light">
+<div class="flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400 font-light">
 <a class="hover:text-primary transition-colors" href="/locations/meerut/">Meerut (HQ)</a>
 <a class="hover:text-primary transition-colors" href="/locations/delhi/">Delhi NCR</a>
 <a class="hover:text-primary transition-colors" href="/locations/noida/">Noida</a>
 <a class="hover:text-primary transition-colors" href="/locations/ghaziabad/">Ghaziabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/lucknow/">Lucknow</a>
-<a class="hover:text-primary transition-colors" href="/locations/kanpur/">Kanpur</a>
-<a class="hover:text-primary transition-colors" href="/locations/agra/">Agra</a>
-<a class="hover:text-primary transition-colors" href="/locations/varanasi/">Varanasi</a>
 <a class="hover:text-primary transition-colors" href="/locations/gurugram/">Gurugram</a>
 <a class="hover:text-primary transition-colors" href="/locations/faridabad/">Faridabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/jaipur/">Jaipur</a>
-<a class="hover:text-primary transition-colors" href="/locations/dehradun/">Dehradun</a>
-<a class="hover:text-primary transition-colors" href="/locations/patna/">Patna</a>
-<a class="hover:text-primary transition-colors" href="/locations/chandigarh/">Chandigarh</a>
-<a class="hover:text-primary transition-colors" href="/locations/ludhiana/">Ludhiana</a>
-<a class="hover:text-primary transition-colors" href="/locations/ahmedabad/">Ahmedabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/mumbai/">Mumbai</a>
-<a class="hover:text-primary transition-colors" href="/locations/pune/">Pune</a>
-<a class="hover:text-primary transition-colors" href="/locations/indore/">Indore</a>
-<a class="hover:text-primary transition-colors" href="/locations/kolkata/">Kolkata</a>
-<a class="hover:text-primary transition-colors" href="/locations/bengaluru/">Bengaluru</a>
-<a class="hover:text-primary transition-colors" href="/locations/hyderabad/">Hyderabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/chennai/">Chennai</a>
-<a class="hover:text-primary transition-colors text-primary" href="/locations/">All 100 Cities</a>
+<a class="hover:text-primary transition-colors text-primary font-medium" href="/locations/">View All 100 Expansion Territories →</a>
 </div>
 </div>
 <!-- Bottom Copyright & Legal Links -->
@@ -572,6 +747,355 @@ menuBtn.addEventListener('click', () => {
 </div>
 </div>
 </footer>
+<!-- Saffire EV - Global Quick Query & Lead Popup Modal -->
+<div aria-labelledby="query-modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" id="saffire-query-overlay" role="dialog">
+<div class="relative w-full max-w-lg bg-surface-container-low border border-outline-variant/30 rounded-2xl shadow-2xl p-6 md:p-8 max-h-[92vh] overflow-y-auto transform scale-95 transition-all duration-300" id="query-modal-card">
+<!-- Close Button -->
+<button aria-label="Close query modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high" id="close-query-modal" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-xl notranslate" data-nosnippet="" translate="no">close</span>
+</button>
+<!-- Modal Header -->
+<div class="mb-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-3">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        Fast-Track Commercial Inquiry
+      </div>
+<h3 class="font-headline text-2xl font-bold tracking-tight text-on-surface" id="query-modal-title">
+        Get On-Road Price &amp; Commercial Quote
+      </h3>
+<p class="font-body text-xs md:text-sm text-on-surface-variant mt-1">
+        Official Saffire EV inquiry engine by Koyo Gears India Pvt. Ltd. Verified dealer quotes within 2 hours.
+      </p>
+</div>
+<!-- Main Inquiry Form -->
+<form class="space-y-4" id="saffire-query-form">
+<!-- 1-Tap Intent Selector -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-2">I am interested in</label>
+<div class="grid grid-cols-3 gap-2" id="intent-pills">
+<button class="intent-pill active py-2 px-2 text-center text-xs font-semibold rounded-lg border border-primary bg-primary text-background transition-all" data-intent="preorder" type="button">
+            Vehicle Price
+          </button>
+<button class="intent-pill py-2 px-2 text-center text-xs font-semibold rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface hover:border-primary/50 transition-all" data-intent="dealer" type="button">
+            Dealership
+          </button>
+<button class="intent-pill py-2 px-2 text-center text-xs font-semibold rounded-lg border border-outline-variant/30 bg-surface-container text-on-surface hover:border-primary/50 transition-all" data-intent="fleet" type="button">
+            Fleet Order
+          </button>
+</div>
+<input id="inquiry_intent" name="inquiry_intent" type="hidden" value="preorder"/>
+</div>
+<!-- Full Name -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_name">Your Full Name *</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_name" name="name" placeholder="e.g. Ramesh Kumar" required="" type="text"/>
+</div>
+<!-- Phone / WhatsApp Number -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_phone">Phone / WhatsApp Number *</label>
+<div class="flex items-center">
+<span class="px-3 py-2.5 bg-surface-container-high border border-r-0 border-outline-variant/30 rounded-l-lg text-xs font-semibold text-on-surface-variant">+91</span>
+<input class="w-full px-4 py-2.5 rounded-r-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_phone" name="phone" pattern="^[6-9]\d{9}$" placeholder="9876543210" required="" type="tel"/>
+</div>
+<p class="text-[11px] text-on-surface-variant/60 mt-1">10-digit Indian mobile number for instant quote &amp; WhatsApp delivery.</p>
+</div>
+<!-- City & State -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_city">City *</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-sm focus:outline-none focus:border-primary transition-colors" id="lead_city" name="city" placeholder="e.g. Meerut, Delhi, Lucknow" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_platform">Vehicle Platform</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface text-sm focus:outline-none focus:border-primary transition-colors" id="lead_platform" name="platform">
+<option value="Saffire Smart Ride (Passenger)">Saffire Smart Ride (Passenger Auto)</option>
+<option value="Saffire Swiss Cargo (Commercial Loader)">Saffire Swiss Cargo (Cargo Loader)</option>
+<option value="Both Platforms">Both Platforms (Fleet / Dealer)</option>
+</select>
+</div>
+</div>
+<!-- Requirement / Message -->
+<div>
+<label class="block font-label text-xs uppercase tracking-wider text-on-surface-variant mb-1" for="lead_message">Requirements / Notes (Optional)</label>
+<textarea class="w-full px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/40 text-xs md:text-sm focus:outline-none focus:border-primary transition-colors" id="lead_message" name="message" placeholder="Tell us your daily run, delivery requirements, or dealership location..." rows="2"></textarea>
+</div>
+<!-- Hidden Context Fields -->
+<input id="lead_source_page" name="source_page" type="hidden" value=""/>
+<input id="lead_calc_km" name="calculator_km" type="hidden" value=""/>
+<input id="lead_calc_years" name="calculator_years" type="hidden" value=""/>
+<input id="lead_calc_profit" name="calculator_profit" type="hidden" value=""/>
+<!-- Submit & Action Buttons -->
+<div class="pt-2 space-y-3">
+<button class="w-full py-3 px-6 bg-primary text-background font-headline font-bold text-sm rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 cursor-pointer" id="submit-query-btn" type="submit">
+<span aria-hidden="true" class="material-symbols-outlined text-lg notranslate" data-nosnippet="" translate="no">send</span><span>Get Instant Quotation &amp; Savings Sheet</span></button>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-1 px-1">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="/contact/" id="open-detailed-contact">
+<span>Detailed Contact Page</span>
+<span aria-hidden="true" class="material-symbols-outlined text-sm notranslate" data-nosnippet="" translate="no">arrow_forward</span>
+</a>
+<span class="flex items-center gap-1 text-[11px] text-emerald-400">
+<span aria-hidden="true" class="material-symbols-outlined text-sm notranslate" data-nosnippet="" translate="no">lock</span>
+            100% Privacy Protected
+          </span>
+</div>
+</div>
+</form>
+<!-- Success Confirmation State (Hidden by default) -->
+<div class="hidden text-center py-6 space-y-4" id="query-success-card">
+<div class="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl notranslate" data-nosnippet="" translate="no">check_circle</span>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface">Thank You! Inquiry Received</h4>
+<p class="font-body text-xs md:text-sm text-on-surface-variant max-w-sm mx-auto">
+        Our commercial EV sales team has received your details. For immediate assistance and live vehicle brochure sharing, connect on WhatsApp directly:
+      </p>
+<div class="pt-3 space-y-2">
+<a class="inline-flex items-center justify-center gap-2 w-full py-3 px-6 bg-[#25D366] text-white font-headline font-bold text-sm rounded-xl hover:bg-[#22bf5b] transition-all shadow-lg" href="https://wa.me/919258172967" id="query-whatsapp-direct" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="material-symbols-outlined text-lg notranslate" data-nosnippet="" translate="no">chat</span><span>Chat on WhatsApp Now (+91-92581-72967)</span></a>
+<button class="w-full py-2.5 text-xs text-on-surface-variant hover:text-on-surface transition-colors" id="close-success-btn" type="button">
+          Close Window
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Bottom-Right Re-Open Pill -->
+<aside aria-label="Quick Query Floating Trigger" class="fixed bottom-6 right-6 z-40">
+<button aria-label="Open Quick Query and On-Road Price Form" class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-surface-container-high border border-primary/40 text-primary shadow-2xl hover:bg-primary hover:text-background hover:scale-105 transition-all duration-300 font-headline font-bold text-xs md:text-sm cursor-pointer" data-open-query-popup="" data-query-intent="preorder" id="floating-query-btn" type="button">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span aria-hidden="true" class="material-symbols-outlined text-base notranslate" data-nosnippet="" translate="no">request_quote</span>
+<span>Quick Query / Price Quote</span>
+</button>
+</aside>
+<!-- Script Engine for Quick Query Modal -->
+<script>
+(function() {
+  const overlay = document.getElementById('saffire-query-overlay');
+  const card = document.getElementById('query-modal-card');
+  const closeBtn = document.getElementById('close-query-modal');
+  const form = document.getElementById('saffire-query-form');
+  const successCard = document.getElementById('query-success-card');
+  const closeSuccessBtn = document.getElementById('close-success-btn');
+  const floatingBtn = document.getElementById('floating-query-btn');
+  const intentPills = document.querySelectorAll('.intent-pill');
+  const intentInput = document.getElementById('inquiry_intent');
+  const platformSelect = document.getElementById('lead_platform');
+  const sourcePageInput = document.getElementById('lead_source_page');
+  const messageArea = document.getElementById('lead_message');
+  const detailedContactLink = document.getElementById('open-detailed-contact');
+  const whatsappDirectBtn = document.getElementById('query-whatsapp-direct');
+
+  const STORAGE_KEY = 'saffire_query_popup_closed_at';
+  const COOLDOWN_HOURS = 24;
+
+  // Track current page
+  if (sourcePageInput) {
+    sourcePageInput.value = window.location.href;
+  }
+
+  // Context auto-detection based on current route
+  function applyRouteContext() {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('smart-ride') || path.includes('passenger')) {
+      if (platformSelect) platformSelect.value = 'Saffire Smart Ride (Passenger)';
+    } else if (path.includes('swiss-cargo') || path.includes('cargo') || path.includes('loader')) {
+      if (platformSelect) platformSelect.value = 'Saffire Swiss Cargo (Commercial Loader)';
+    } else if (path.includes('dealership')) {
+      setIntent('dealer');
+      if (platformSelect) platformSelect.value = 'Both Platforms';
+    }
+  }
+
+  function setIntent(intent) {
+    if (!intentInput) return;
+    intentInput.value = intent;
+    intentPills.forEach(pill => {
+      if (pill.dataset.intent === intent) {
+        pill.classList.add('active', 'border-primary', 'bg-primary', 'text-background');
+        pill.classList.remove('border-outline-variant/30', 'bg-surface-container', 'text-on-surface');
+      } else {
+        pill.classList.remove('active', 'border-primary', 'bg-primary', 'text-background');
+        pill.classList.add('border-outline-variant/30', 'bg-surface-container', 'text-on-surface');
+      }
+    });
+  }
+
+  intentPills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setIntent(btn.dataset.intent);
+    });
+  });
+
+  function openModal(intent = null, calcData = null) {
+    if (!overlay) return;
+    if (intent) setIntent(intent);
+
+    if (calcData) {
+      if (document.getElementById('lead_calc_km')) document.getElementById('lead_calc_km').value = calcData.km || '';
+      if (document.getElementById('lead_calc_years')) document.getElementById('lead_calc_years').value = calcData.years || '';
+      if (document.getElementById('lead_calc_profit')) document.getElementById('lead_calc_profit').value = calcData.profit || '';
+      
+      if (messageArea && calcData.km) {
+        messageArea.value = `Inquiring for fleet savings. Daily run: ${calcData.km} km/day over ${calcData.years || 5} years. Estimated extra profit: ${calcData.profit || ''}. Please send full price quotation.`;
+      }
+    }
+
+    applyRouteContext();
+
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    if (card) {
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!overlay) return;
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+    overlay.classList.remove('opacity-100');
+    if (card) {
+      card.classList.add('scale-95');
+      card.classList.remove('scale-100');
+    }
+    document.body.style.overflow = '';
+    // Record cooldown timestamp
+    try {
+      localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    } catch(e) {}
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
+
+  // Close upon backdrop click
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+  }
+
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('opacity-100')) {
+      closeModal();
+    }
+  });
+
+  // Bind all trigger buttons with [data-open-query-popup]
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-query-popup]');
+    if (trigger) {
+      e.preventDefault();
+      const intent = trigger.dataset.queryIntent || 'preorder';
+      let calcData = null;
+      if (trigger.dataset.calculator === 'true' || window.currentCalcSettings) {
+        calcData = window.currentCalcSettings || {
+          km: document.getElementById('dist-val') ? document.getElementById('dist-val').textContent : '',
+          years: document.getElementById('year-val') ? document.getElementById('year-val').textContent : '',
+          profit: document.getElementById('calc-extra-profit') ? document.getElementById('calc-extra-profit').textContent : ''
+        };
+      }
+      openModal(intent, calcData);
+    }
+  });
+
+  // Connect "Open Detailed Contact Page" link to pre-fill URL parameters
+  if (detailedContactLink) {
+    detailedContactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('lead_name').value || '');
+      const phone = encodeURIComponent(document.getElementById('lead_phone').value || '');
+      const city = encodeURIComponent(document.getElementById('lead_city').value || '');
+      const platform = encodeURIComponent(platformSelect ? platformSelect.value : '');
+      const intent = encodeURIComponent(intentInput ? intentInput.value : '');
+      const msg = encodeURIComponent(messageArea ? messageArea.value : '');
+      
+      const targetUrl = `/contact/?inquiry_type=${intent}&name=${name}&phone=${phone}&city=${city}&model=${platform}&notes=${msg}`;
+      window.location.href = targetUrl;
+    });
+  }
+
+  // Form submission handler
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('lead_name').value.trim();
+      const phone = document.getElementById('lead_phone').value.trim();
+      const city = document.getElementById('lead_city').value.trim();
+      const platform = platformSelect ? platformSelect.value : '';
+      const intent = intentInput ? intentInput.value : 'preorder';
+      const notes = messageArea ? messageArea.value.trim() : '';
+
+      const payload = {
+        name: name,
+        phone: phone,
+        city: city,
+        platform: platform,
+        intent: intent,
+        notes: notes,
+        source: window.location.href,
+        timestamp: new Date().toISOString()
+      };
+
+      // Store in sessionStorage for /contact/ sync
+      try {
+        sessionStorage.setItem('saffire_lead_query', JSON.stringify(payload));
+      } catch(err) {}
+
+      // If local FastAPI server is running, attempt submission
+      fetch('/api/v1/submit-query', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(() => {});
+
+      // Prepare WhatsApp message
+      const waMsg = encodeURIComponent(
+        `Hello Saffire EV Team,\n\nI would like an on-road price quotation and commercial details:\n- Name: ${name}\n- Phone: ${phone}\n- City: ${city}\n- Platform: ${platform}\n- Interest: ${intent}\n${notes ? '- Note: ' + notes : ''}`
+      );
+      if (whatsappDirectBtn) {
+        whatsappDirectBtn.href = `https://wa.me/919258172967?text=${waMsg}`;
+      }
+
+      // Show success card
+      form.classList.add('hidden');
+      if (successCard) successCard.classList.remove('hidden');
+    });
+  }
+
+  // Smart delayed auto-open (3.5 seconds)
+  function evaluateAutoOpen() {
+    const path = window.location.pathname.toLowerCase();
+    // Never auto-open on contact page
+    if (path.includes('/contact')) return;
+
+    try {
+      const closedAt = localStorage.getItem(STORAGE_KEY);
+      if (closedAt) {
+        const elapsedHours = (Date.now() - parseInt(closedAt, 10)) / (1000 * 60 * 60);
+        if (elapsedHours < COOLDOWN_HOURS) {
+          return; // Still in cooldown
+        }
+      }
+    } catch(e) {}
+
+    setTimeout(() => {
+      openModal();
+    }, 3500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', evaluateAutoOpen);
+  } else {
+    evaluateAutoOpen();
+  }
+})();
+</script>
 <script>
 const searchInput = document.getElementById('city-search');
 const stateFilter = document.getElementById('state-filter');

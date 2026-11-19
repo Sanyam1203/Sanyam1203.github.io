@@ -67,7 +67,7 @@ def test_llms_txt_standard_and_disambiguation():
     """Verify llms.txt and llms-full.txt conform to llmstxt.org and contain company facts."""
     with open(os.path.join(ROOT_DIR, "llms.txt"), "r", encoding="utf-8") as f:
         txt = f.read()
-    assert "# Saffire EV by Koyo Gears India Pvt. Ltd." in txt
+    assert "# Saffire EV by Koyo Gears India Private Limited" in txt
     assert "Koyo Gears India Private Limited" in txt
     assert "Panther E-Rickshaw" in txt
     assert "14.61 kWh" in txt
@@ -245,6 +245,7 @@ def test_exact_keyword_clusters_and_pillar_page():
         dealership_html = f.read()
     assert 'id="city-directory"' in dealership_html
     assert "/locations/meerut/" in dealership_html
+    assert "Apply for This Territory" in dealership_html
 
 
 def test_zero_unhidden_icon_ligatures_all_pages():
@@ -281,7 +282,21 @@ def test_zero_orphaned_sitemap_urls():
     tree = ET.parse(sitemap_path)
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     urls = [el.text.strip() for el in tree.getroot().findall("sm:url/sm:loc", ns)]
-    assert len(urls) == 111, f"Expected 111 sitemap URLs, found {len(urls)}"
+    assert len(urls) == 21, f"Expected 21 indexable sitemap URLs (15 static + 6 active hubs), found {len(urls)}"
+
+    # Verify non-hub city pages are noindex and excluded from sitemap
+    active_hubs = {"meerut", "delhi", "noida", "ghaziabad", "gurugram", "faridabad"}
+    with open(os.path.join(ROOT_DIR, "_geo_seo", "city_data.json"), "r", encoding="utf-8") as f:
+        city_data = json.load(f)
+    for c in city_data["cities"]:
+        slug = c["slug"]
+        city_html = open(os.path.join(ROOT_DIR, "locations", slug, "index.html"), "r", encoding="utf-8").read()
+        if slug in active_hubs:
+            assert f"https://saffireev.com/locations/{slug}/" in urls
+            assert 'content="index, follow"' in city_html
+        else:
+            assert f"https://saffireev.com/locations/{slug}/" not in urls
+            assert 'content="noindex, follow"' in city_html
 
     def url_to_rel_path(url: str) -> str:
         path = url.replace("https://saffireev.com", "").split("#")[0].split("?")[0]
@@ -332,15 +347,21 @@ def test_zero_orphaned_sitemap_urls():
 
 
 def test_nap_and_cin_consistency():
-    """Verify dual Meerut NAP, phone, and CIN U28140UP2025PTC216042 across HTML and JSON-LD."""
-    for rel in ["contact/index.html", "about/index.html", "koyo-gears-india/index.html"]:
+    """Verify dual Meerut NAP, phone, and CIN U28140UP2025PTC216042 across HTML, JSON-LD, and LLM endpoints."""
+    stale_cin = "U29253UP" + "2013PTC059344"
+    for rel in ["contact/index.html", "about/index.html", "koyo-gears-india/index.html", "llms.txt", "llms-full.txt", "api/v1/catalog.json"]:
         with open(os.path.join(ROOT_DIR, rel), "r", encoding="utf-8") as f:
-            html = f.read()
-        assert "Plot 5, Om Tower, Mohkampur Phase 1" in html, f"Missing HQ address in {rel}"
-        assert "173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road)" in html, f"Missing Registered Office in {rel}"
-        assert "U28140UP2025PTC216042" in html, f"Missing CIN U28140UP2025PTC216042 in {rel}"
-        assert "+91-92581-72967" in html, f"Missing phone in {rel}"
-        assert "U29253UP2013PTC059344" not in html, f"Stale CIN found in {rel}"
+            content = f.read()
+        assert "Plot 5, Om Tower, Mohkampur Phase 1" in content, f"Missing HQ address in {rel}"
+        assert "173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road)" in content, f"Missing Registered Office in {rel}"
+        assert "U28140UP2025PTC216042" in content, f"Missing CIN U28140UP2025PTC216042 in {rel}"
+        assert "+91-92581-72967" in content, f"Missing phone in {rel}"
+        assert stale_cin not in content, f"Stale CIN found in {rel}"
+
+    # Verify Meerut location FAQ #8 explicitly lists the Meerut showroom address
+    meerut_html = open(os.path.join(ROOT_DIR, "locations", "meerut", "index.html"), "r", encoding="utf-8").read()
+    assert "Plot 5, Om Tower, Mohkampur Phase 1" in meerut_html
+    assert "has not published a confirmed showroom" not in meerut_html
 
 
 def test_guide_tco_tables_and_cro_ctas():
@@ -367,7 +388,16 @@ def test_guide_tco_tables_and_cro_ctas():
         assert "saffire-smart-ride-l5-passenger-auto.jpg" in f.read()
     with open(os.path.join(ROOT_DIR, "products", "saffire-swiss-cargo", "index.html"), "r", encoding="utf-8") as f:
         assert "saffire-swiss-cargo-l5-loader.jpg" in f.read()
-    with open(os.path.join(ROOT_DIR, "contact", "index.html"), "r", encoding="utf-8") as f:
-        assert "saffire-ev-meerut-showroom.jpg" in f.read()
+    with open(os.path.join(ROOT_DIR, "electric-three-wheeler-running-cost", "index.html"), "r", encoding="utf-8") as f:
+        rc_html = f.read()
+    assert 'id="calculator"' in rc_html
+    assert 'id="state-tariffs-cashflow"' in rc_html
+    assert 'id="saffire-query-overlay"' in rc_html
+
+    with open(os.path.join(ROOT_DIR, "ev-dealership-india", "index.html"), "r", encoding="utf-8") as f:
+        dl_html = f.read()
+    assert 'id="b2b-dealership-blueprint"' in dl_html
+    assert 'id="city-directory"' in dl_html
+    assert 'id="saffire-query-overlay"' in dl_html
 
 

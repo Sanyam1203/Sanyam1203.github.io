@@ -225,41 +225,63 @@ if (window.location.hostname.includes("github.io")) {
 <div class="flex justify-between items-center px-6 md:px-8 h-20 w-full max-w-screen-2xl mx-auto">
 <a class="flex items-center gap-3 group" href="/">
 <div class="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 shrink-0">
-<img alt="SAFFIRE EV by KOYO Gears India Logo" class="absolute inset-0 w-full h-full object-contain" height="44" src="/images/logo_final.png" width="44"/>
+<img alt="Saffire EV by Koyo Gears India Pvt. Ltd. Logo" class="absolute inset-0 w-full h-full object-contain" height="44" src="/images/logo_final.png" width="44"/>
 </div>
 <div class="flex flex-col justify-center">
 <span class="text-[20px] md:text-[22px] font-bold tracking-tighter text-[#97FDFF] uppercase font-headline leading-none hover:text-white transition-colors">SAFFIRE</span>
 <span class="text-[8px] md:text-[9px] font-label tracking-[0.2em] text-on-surface-variant leading-none mt-1 uppercase">BY KOYO GEARS INDIA</span>
 </div>
 </a>
-<!-- Desktop Nav -->
-<div class="hidden md:flex items-center space-x-12">
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/">Home</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/products/">Products</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/about/">About</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/vision/">Vision</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/locations/">Locations</a>
-<a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/">Home</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/products/">Products</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1" href="/ev-dealership-india/">Dealership</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/koyo-gears-india/">Koyo Gears India</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/about/">About</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/vision/">Vision</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/locations/">Locations</a>
+<a class="text-[#E5E1E4]/80 hover:text-[#97FDFF] transition-colors font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
 </div>
-<a class="hidden md:flex kinetic-gradient text-[#003738] px-6 py-2 text-xs font-bold tracking-widest rounded-sm transition-all duration-200 uppercase hover:brightness-110" href="/contact/">
-            PRE-ORDER
-        </a>
-<!-- Mobile Menu Icon -->
-<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
-<span aria-hidden="true" class="material-symbols-outlined text-3xl notranslate" data-nosnippet="" translate="no">menu</span>
+<!-- CTA & Quick Query Button -->
+<div class="hidden md:flex items-center gap-3">
+<button class="kinetic-gradient text-on-primary px-5 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase cursor-pointer hover:shadow-[0_0_20px_rgba(151,253,255,0.4)]" data-open-query-popup="" data-query-intent="preorder" type="button">
+        PRE-ORDER
+      </button>
+</div>
+<!-- Mobile Hamburger Toggle -->
+<button aria-label="Toggle navigation menu" class="md:hidden flex items-center justify-center p-2 rounded text-on-surface hover:text-primary hover:bg-surface-container transition-colors" id="nav-toggle" onclick="toggleNav()">
+<span aria-hidden="true" class="material-symbols-outlined text-2xl notranslate" data-nosnippet="" id="nav-icon" translate="no">menu</span>
 </button>
 </div>
-<!-- Mobile Navigation Overlay (Hidden by Default) -->
-<div class="absolute top-20 left-0 w-full bg-[#131315]/95 backdrop-blur-3xl border-b border-outline-variant/30 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)] origin-top transition-all duration-300 scale-y-0 opacity-0 pointer-events-none md:hidden p-6 z-40" id="mobile-menu">
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/">Home</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/products/">Products</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/about/">About</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/vision/">Vision</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/locations/">Locations</a>
-<a class="font-label text-lg uppercase tracking-wider pb-2 text-[#E5E1E4]/70" href="/contact/">Contact</a>
-<a class="kinetic-gradient text-[#003738] px-8 py-4 w-full mt-2 text-sm font-label font-bold uppercase tracking-widest rounded-full text-center" href="/contact/">Pre-Order</a>
+<!-- Mobile Dropdown Menu -->
+<div class="hidden md:hidden bg-[#131315]/95 backdrop-blur-xl border-b border-[#3B494C]/20 px-6 py-6 transition-all duration-300" id="mobile-menu">
+<div class="flex flex-col space-y-4">
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/">Home</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/products/">Products</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/ev-dealership-india/">Dealership</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/koyo-gears-india/">Koyo Gears India</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/about/">About</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/vision/">Vision</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/locations/">Locations</a>
+<a class="text-[#E5E1E4] hover:text-[#97FDFF] font-label text-sm tracking-widest uppercase py-2 border-b border-[#3B494C]/10" href="/contact/">Contact</a>
+<button class="kinetic-gradient text-on-primary py-3 text-center text-xs font-bold tracking-widest rounded-sm uppercase mt-2" data-open-query-popup="" data-query-intent="preorder" type="button">
+        GET ON-ROAD PRICE
+      </button>
 </div>
-</nav>
+</div>
+</nav><script>
+function toggleNav() {
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('nav-icon');
+  if (menu) {
+    menu.classList.toggle('hidden');
+    if (icon) {
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    }
+  }
+}
+</script>
 <script>
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -412,270 +434,1097 @@ if (window.location.hostname.includes("github.io")) {
 </table>
 </div>
 </section>
+<section class="my-12 space-y-10" id="b2b-dealership-blueprint">
+<!-- Dealership Model & Territorial Exclusivity -->
+<div class="rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6 md:p-8">
+<span class="font-label text-[10px] tracking-widest uppercase text-primary block mb-2">B2B Partnership Blueprint</span>
+<h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-4">Dealership Model &amp; Territorial Exclusivity</h2>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed mb-6">
+          Koyo Gears India Private Limited appoints one authorized Saffire EV dealership per designated commercial district or city cluster, protecting partner margins and preventing intra-brand cannibalization. Partners retail both the <strong>Saffire Smart Ride (L5M Passenger)</strong> and <strong>Saffire Swiss Cargo (L5N Loader)</strong> along with OEM spare parts.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-5 rounded-xl bg-surface-container border border-outline-variant/15">
+<h3 class="font-headline font-bold text-base text-primary mb-2">Infrastructure &amp; Space</h3>
+<ul class="text-xs text-on-surface-variant space-y-1.5 font-light">
+<li>• 800 – 1,500 sq. ft. commercial showroom frontage</li>
+<li>• 2-bay service &amp; PDI area with 16A charging points</li>
+<li>• Dedicated OEM spare-parts counter</li>
+</ul>
+</div>
+<div class="p-5 rounded-xl bg-surface-container border border-outline-variant/15">
+<h3 class="font-headline font-bold text-base text-primary mb-2">OEM Support Stack</h3>
+<ul class="text-xs text-on-surface-variant space-y-1.5 font-light">
+<li>• ICAT Manesar certified L5 vehicles (CMVR / AIS-156)</li>
+<li>• Factory technician training &amp; diagnostic tooling</li>
+<li>• Direct spare-parts supply chain &amp; digital lead routing</li>
+</ul>
+</div>
+<div class="p-5 rounded-xl bg-surface-container border border-outline-variant/15">
+<h3 class="font-headline font-bold text-base text-primary mb-2">5-Step Onboarding</h3>
+<ol class="text-xs text-on-surface-variant space-y-1.5 font-light list-decimal list-inside">
+<li>Submit territory application below</li>
+<li>Regional manager site &amp; market review</li>
+<li>LOI &amp; exclusive territory allocation</li>
+<li>Showroom branding &amp; technician training</li>
+<li>Initial demo/stock dispatch &amp; launch</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
 <div class="mt-16 pt-12 border-t border-outline-variant/20" id="city-directory">
 <div class="text-center mb-8">
 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-2">
-<span aria-hidden="true" class="material-symbols-outlined text-sm notranslate" data-nosnippet="" translate="no">location_city</span>
-          Pan-India Territorial Coverage
-        </span>
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-sm" data-nosnippet="" translate="no">location_city</span>
+<span>100 Target Expansion Territories</span>
+</span>
 <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface">
-          Explore Saffire Auto &amp; Koyo L5 Dealership Opportunities Across 96 Cities
+          Explore Saffire EV Dealership Territories Across 100 Indian Cities
         </h2>
 <p class="font-body text-xs md:text-sm text-on-surface-variant font-light mt-2 max-w-2xl mx-auto">
-          Select your city to view local electric auto demand, route profiles, and open territory exclusivity:
+          Filter by state or search your city to apply for exclusive regional dealership rights:
         </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Andhra Pradesh</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(1 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/visakhapatnam/">Visakhapatnam</a>
+<div class="flex flex-col sm:flex-row gap-3 mb-6">
+<input class="flex-1 bg-surface-container border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary" id="dir-city-search" placeholder="Search city (e.g. Meerut, Lucknow, Pune, Jaipur)..." type="text"/>
+<select class="bg-surface-container border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary" id="dir-state-filter">
+<option value="">All States (19)</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option><option value="Bihar">Bihar</option><option value="Chandigarh">Chandigarh</option><option value="Delhi">Delhi</option><option value="Gujarat">Gujarat</option><option value="Haryana">Haryana</option><option value="Jharkhand">Jharkhand</option><option value="Karnataka">Karnataka</option><option value="Kerala">Kerala</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Maharashtra">Maharashtra</option><option value="Odisha">Odisha</option><option value="Punjab">Punjab</option><option value="Rajasthan">Rajasthan</option><option value="Tamil Nadu">Tamil Nadu</option><option value="Telangana">Telangana</option><option value="Uttar Pradesh">Uttar Pradesh</option><option value="Uttarakhand">Uttarakhand</option><option value="West Bengal">West Bengal</option>
+</select>
+</div>
+<div class="overflow-x-auto rounded-xl border border-outline-variant/20 bg-surface-container-low max-h-[540px] overflow-y-auto">
+<table class="w-full text-left border-collapse">
+<thead class="sticky top-0 bg-surface-container-high z-10">
+<tr class="border-b border-outline-variant/20 text-on-surface font-headline text-xs md:text-sm">
+<th class="p-3.5">City</th>
+<th class="p-3.5">State / UT</th>
+<th class="p-3.5">Network Status</th>
+<th class="p-3.5 text-right">Territory Action</th>
+</tr>
+</thead>
+<tbody class="font-body divide-y divide-outline-variant/10">
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="visakhapatnam" data-state="Andhra Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Visakhapatnam</span></td>
+<td class="p-3.5 text-on-surface-variant">Andhra Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=visakhapatnam&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="araria" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Araria</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=araria&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="aurangabad" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Aurangabad</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=aurangabad-bihar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bhagalpur" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bhagalpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bhagalpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="darbhanga" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Darbhanga</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=darbhanga&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="forbesganj" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Forbesganj</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=forbesganj&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="gaya" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Gaya</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=gaya&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="muzaffarpur" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Muzaffarpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=muzaffarpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="patna" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Patna</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=patna&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="purnia" data-state="Bihar">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Purnia</span></td>
+<td class="p-3.5 text-on-surface-variant">Bihar</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=purnia&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="chandigarh" data-state="Chandigarh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Chandigarh</span></td>
+<td class="p-3.5 text-on-surface-variant">Chandigarh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=chandigarh&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="delhi" data-state="Delhi">
+<td class="p-3.5"><a class="font-bold text-primary hover:underline" href="/locations/delhi/">Delhi</a></td>
+<td class="p-3.5 text-on-surface-variant">Delhi</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">Active Hub</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=delhi&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ahmedabad" data-state="Gujarat">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Ahmedabad</span></td>
+<td class="p-3.5 text-on-surface-variant">Gujarat</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ahmedabad&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bhavnagar" data-state="Gujarat">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bhavnagar</span></td>
+<td class="p-3.5 text-on-surface-variant">Gujarat</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bhavnagar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="gandhinagar" data-state="Gujarat">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Gandhinagar</span></td>
+<td class="p-3.5 text-on-surface-variant">Gujarat</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=gandhinagar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="rajkot" data-state="Gujarat">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Rajkot</span></td>
+<td class="p-3.5 text-on-surface-variant">Gujarat</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=rajkot&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="surat" data-state="Gujarat">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Surat</span></td>
+<td class="p-3.5 text-on-surface-variant">Gujarat</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=surat&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="vadodara" data-state="Gujarat">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Vadodara</span></td>
+<td class="p-3.5 text-on-surface-variant">Gujarat</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=vadodara&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ambala" data-state="Haryana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Ambala</span></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ambala&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="faridabad" data-state="Haryana">
+<td class="p-3.5"><a class="font-bold text-primary hover:underline" href="/locations/faridabad/">Faridabad</a></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">Active Hub</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=faridabad&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="gurugram" data-state="Haryana">
+<td class="p-3.5"><a class="font-bold text-primary hover:underline" href="/locations/gurugram/">Gurugram</a></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">Active Hub</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=gurugram&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="hisar" data-state="Haryana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Hisar</span></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=hisar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="karnal" data-state="Haryana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Karnal</span></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=karnal&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="panchkula" data-state="Haryana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Panchkula</span></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=panchkula&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="panipat" data-state="Haryana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Panipat</span></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=panipat&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="rohtak" data-state="Haryana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Rohtak</span></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=rohtak&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="sonipat" data-state="Haryana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Sonipat</span></td>
+<td class="p-3.5 text-on-surface-variant">Haryana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=sonipat&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bokaro" data-state="Jharkhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bokaro</span></td>
+<td class="p-3.5 text-on-surface-variant">Jharkhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bokaro&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="dhanbad" data-state="Jharkhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Dhanbad</span></td>
+<td class="p-3.5 text-on-surface-variant">Jharkhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=dhanbad&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="jamshedpur" data-state="Jharkhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Jamshedpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Jharkhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=jamshedpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ranchi" data-state="Jharkhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Ranchi</span></td>
+<td class="p-3.5 text-on-surface-variant">Jharkhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ranchi&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bengaluru" data-state="Karnataka">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bengaluru</span></td>
+<td class="p-3.5 text-on-surface-variant">Karnataka</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bengaluru&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="kochi" data-state="Kerala">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Kochi</span></td>
+<td class="p-3.5 text-on-surface-variant">Kerala</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=kochi&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bhopal" data-state="Madhya Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bhopal</span></td>
+<td class="p-3.5 text-on-surface-variant">Madhya Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bhopal&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="gwalior" data-state="Madhya Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Gwalior</span></td>
+<td class="p-3.5 text-on-surface-variant">Madhya Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=gwalior&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="indore" data-state="Madhya Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Indore</span></td>
+<td class="p-3.5 text-on-surface-variant">Madhya Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=indore&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="jabalpur" data-state="Madhya Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Jabalpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Madhya Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=jabalpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="sagar" data-state="Madhya Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Sagar</span></td>
+<td class="p-3.5 text-on-surface-variant">Madhya Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=sagar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ujjain" data-state="Madhya Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Ujjain</span></td>
+<td class="p-3.5 text-on-surface-variant">Madhya Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ujjain&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="chhatrapati sambhajinagar" data-state="Maharashtra">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Chhatrapati Sambhajinagar</span></td>
+<td class="p-3.5 text-on-surface-variant">Maharashtra</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=aurangabad-mh&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="kolhapur" data-state="Maharashtra">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Kolhapur</span></td>
+<td class="p-3.5 text-on-surface-variant">Maharashtra</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=kolhapur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="mumbai" data-state="Maharashtra">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Mumbai</span></td>
+<td class="p-3.5 text-on-surface-variant">Maharashtra</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=mumbai&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="nagpur" data-state="Maharashtra">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Nagpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Maharashtra</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=nagpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="nashik" data-state="Maharashtra">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Nashik</span></td>
+<td class="p-3.5 text-on-surface-variant">Maharashtra</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=nashik&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="pune" data-state="Maharashtra">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Pune</span></td>
+<td class="p-3.5 text-on-surface-variant">Maharashtra</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=pune&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="thane" data-state="Maharashtra">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Thane</span></td>
+<td class="p-3.5 text-on-surface-variant">Maharashtra</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=thane&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="baripada" data-state="Odisha">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Baripada</span></td>
+<td class="p-3.5 text-on-surface-variant">Odisha</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=baripada&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bhubaneswar" data-state="Odisha">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bhubaneswar</span></td>
+<td class="p-3.5 text-on-surface-variant">Odisha</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bhubaneswar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="cuttack" data-state="Odisha">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Cuttack</span></td>
+<td class="p-3.5 text-on-surface-variant">Odisha</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=cuttack&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="rourkela" data-state="Odisha">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Rourkela</span></td>
+<td class="p-3.5 text-on-surface-variant">Odisha</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=rourkela&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="sambalpur" data-state="Odisha">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Sambalpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Odisha</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=sambalpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="amritsar" data-state="Punjab">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Amritsar</span></td>
+<td class="p-3.5 text-on-surface-variant">Punjab</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=amritsar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="jalandhar" data-state="Punjab">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Jalandhar</span></td>
+<td class="p-3.5 text-on-surface-variant">Punjab</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=jalandhar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ludhiana" data-state="Punjab">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Ludhiana</span></td>
+<td class="p-3.5 text-on-surface-variant">Punjab</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ludhiana&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="mohali" data-state="Punjab">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Mohali</span></td>
+<td class="p-3.5 text-on-surface-variant">Punjab</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=mohali&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="patiala" data-state="Punjab">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Patiala</span></td>
+<td class="p-3.5 text-on-surface-variant">Punjab</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=patiala&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ajmer" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Ajmer</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ajmer&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="alwar" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Alwar</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=alwar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bharatpur" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bharatpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bharatpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bikaner" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bikaner</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bikaner&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="jaipur" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Jaipur</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=jaipur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="jodhpur" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Jodhpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=jodhpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="kota" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Kota</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=kota&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="udaipur" data-state="Rajasthan">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Udaipur</span></td>
+<td class="p-3.5 text-on-surface-variant">Rajasthan</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=udaipur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="chennai" data-state="Tamil Nadu">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Chennai</span></td>
+<td class="p-3.5 text-on-surface-variant">Tamil Nadu</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=chennai&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="coimbatore" data-state="Tamil Nadu">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Coimbatore</span></td>
+<td class="p-3.5 text-on-surface-variant">Tamil Nadu</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=coimbatore&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="hyderabad" data-state="Telangana">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Hyderabad</span></td>
+<td class="p-3.5 text-on-surface-variant">Telangana</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=hyderabad&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="agra" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Agra</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=agra&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="aligarh" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Aligarh</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=aligarh&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ayodhya" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Ayodhya</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ayodhya&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bareilly" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bareilly</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bareilly&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bijnor" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bijnor</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bijnor&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="bulandshahr" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Bulandshahr</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=bulandshahr&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="firozabad" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Firozabad</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=firozabad&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="ghaziabad" data-state="Uttar Pradesh">
+<td class="p-3.5"><a class="font-bold text-primary hover:underline" href="/locations/ghaziabad/">Ghaziabad</a></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">Active Hub</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=ghaziabad&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="gorakhpur" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Gorakhpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=gorakhpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="greater noida" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Greater Noida</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=greater-noida&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="hapur" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Hapur</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=hapur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="jhansi" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Jhansi</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=jhansi&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="kanpur" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Kanpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=kanpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="lucknow" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Lucknow</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=lucknow&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="mathura" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Mathura</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=mathura&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="meerut" data-state="Uttar Pradesh">
+<td class="p-3.5"><a class="font-bold text-primary hover:underline" href="/locations/meerut/">Meerut</a></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">Active Hub</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=meerut&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="moradabad" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Moradabad</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=moradabad&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="muzaffarnagar" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Muzaffarnagar</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=muzaffarnagar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="noida" data-state="Uttar Pradesh">
+<td class="p-3.5"><a class="font-bold text-primary hover:underline" href="/locations/noida/">Noida</a></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">Active Hub</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=noida&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="prayagraj" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Prayagraj</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=prayagraj&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="saharanpur" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Saharanpur</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=saharanpur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="shamli" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Shamli</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=shamli&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="varanasi" data-state="Uttar Pradesh">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Varanasi</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttar Pradesh</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=varanasi&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="dehradun" data-state="Uttarakhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Dehradun</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttarakhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=dehradun&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="haldwani" data-state="Uttarakhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Haldwani</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttarakhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=haldwani&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="haridwar" data-state="Uttarakhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Haridwar</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttarakhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=haridwar&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="roorkee" data-state="Uttarakhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Roorkee</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttarakhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=roorkee&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="rudrapur" data-state="Uttarakhand">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Rudrapur</span></td>
+<td class="p-3.5 text-on-surface-variant">Uttarakhand</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=rudrapur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="asansol" data-state="West Bengal">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Asansol</span></td>
+<td class="p-3.5 text-on-surface-variant">West Bengal</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=asansol&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="durgapur" data-state="West Bengal">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Durgapur</span></td>
+<td class="p-3.5 text-on-surface-variant">West Bengal</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=durgapur&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="howrah" data-state="West Bengal">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Howrah</span></td>
+<td class="p-3.5 text-on-surface-variant">West Bengal</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=howrah&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="kolkata" data-state="West Bengal">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Kolkata</span></td>
+<td class="p-3.5 text-on-surface-variant">West Bengal</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=kolkata&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+<tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="siliguri" data-state="West Bengal">
+<td class="p-3.5"><span class="font-semibold text-on-surface">Siliguri</span></td>
+<td class="p-3.5 text-on-surface-variant">West Bengal</td>
+<td class="p-3.5"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span></td>
+<td class="p-3.5 text-right">
+<a class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors" href="/contact/?city=siliguri&amp;type=dealer">
+              Apply for This Territory
+            </a>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Bihar</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(6 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bhagalpur/">Bhagalpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/darbhanga/">Darbhanga</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/gaya/">Gaya</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/muzaffarpur/">Muzaffarpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/patna/">Patna</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/purnia/">Purnia</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Chandigarh</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(1 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/chandigarh/">Chandigarh</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Delhi</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(1 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/delhi/">Delhi</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Gujarat</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(6 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ahmedabad/">Ahmedabad</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bhavnagar/">Bhavnagar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/gandhinagar/">Gandhinagar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/rajkot/">Rajkot</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/surat/">Surat</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/vadodara/">Vadodara</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Haryana</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(9 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ambala/">Ambala</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/faridabad/">Faridabad</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/gurugram/">Gurugram</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/hisar/">Hisar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/karnal/">Karnal</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/panchkula/">Panchkula</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/panipat/">Panipat</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/rohtak/">Rohtak</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/sonipat/">Sonipat</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Jharkhand</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(4 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bokaro/">Bokaro</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/dhanbad/">Dhanbad</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/jamshedpur/">Jamshedpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ranchi/">Ranchi</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Karnataka</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(1 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bengaluru/">Bengaluru</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Kerala</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(1 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/kochi/">Kochi</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Madhya Pradesh</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(6 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bhopal/">Bhopal</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/gwalior/">Gwalior</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/indore/">Indore</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/jabalpur/">Jabalpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/sagar/">Sagar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ujjain/">Ujjain</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Maharashtra</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(7 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/aurangabad-mh/">Chhatrapati Sambhajinagar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/kolhapur/">Kolhapur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/mumbai/">Mumbai</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/nagpur/">Nagpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/nashik/">Nashik</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/pune/">Pune</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/thane/">Thane</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Odisha</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(4 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bhubaneswar/">Bhubaneswar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/cuttack/">Cuttack</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/rourkela/">Rourkela</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/sambalpur/">Sambalpur</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Punjab</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(5 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/amritsar/">Amritsar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/jalandhar/">Jalandhar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ludhiana/">Ludhiana</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/mohali/">Mohali</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/patiala/">Patiala</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Rajasthan</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(8 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ajmer/">Ajmer</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/alwar/">Alwar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bharatpur/">Bharatpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bikaner/">Bikaner</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/jaipur/">Jaipur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/jodhpur/">Jodhpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/kota/">Kota</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/udaipur/">Udaipur</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Tamil Nadu</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(2 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/chennai/">Chennai</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/coimbatore/">Coimbatore</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Telangana</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(1 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/hyderabad/">Hyderabad</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Uttar Pradesh</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(23 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/agra/">Agra</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/aligarh/">Aligarh</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ayodhya/">Ayodhya</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bareilly/">Bareilly</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bijnor/">Bijnor</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/bulandshahr/">Bulandshahr</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/firozabad/">Firozabad</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/ghaziabad/">Ghaziabad</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/gorakhpur/">Gorakhpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/greater-noida/">Greater Noida</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/hapur/">Hapur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/jhansi/">Jhansi</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/kanpur/">Kanpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/lucknow/">Lucknow</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/mathura/">Mathura</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/meerut/">Meerut</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/moradabad/">Moradabad</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/muzaffarnagar/">Muzaffarnagar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/noida/">Noida</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/prayagraj/">Prayagraj</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/saharanpur/">Saharanpur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/shamli/">Shamli</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/varanasi/">Varanasi</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>Uttarakhand</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(5 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/dehradun/">Dehradun</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/haldwani/">Haldwani</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/haridwar/">Haridwar</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/roorkee/">Roorkee</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/rudrapur/">Rudrapur</a>
-</div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-<h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-<span>West Bengal</span>
-<span class="text-[10px] text-on-surface-variant font-normal">(5 Cities)</span>
-</h3>
-<div class="flex flex-wrap gap-1.5">
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/asansol/">Asansol</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/durgapur/">Durgapur</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/howrah/">Howrah</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/kolkata/">Kolkata</a>
-<a class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors" href="/locations/siliguri/">Siliguri</a>
-</div>
-</div>
-</div>
-</div>
+<script>
+    (function() {
+      const sIn = document.getElementById('dir-city-search');
+      const sSel = document.getElementById('dir-state-filter');
+      if (!sIn || !sSel) return;
+      function filterDir() {
+        const q = sIn.value.toLowerCase().trim();
+        const st = sSel.value;
+        document.querySelectorAll('.city-dir-row').forEach(r => {
+          const okCity = !q || r.dataset.city.includes(q) || r.dataset.state.toLowerCase().includes(q);
+          const okState = !st || r.dataset.state === st;
+          r.style.display = (okCity && okState) ? '' : 'none';
+        });
+      }
+      sIn.addEventListener('input', filterDir);
+      sSel.addEventListener('change', filterDir);
+    })();
+    </script>
 </main>
 <footer class="bg-[#0E0E10] border-t border-[#3B494C]/15 mt-auto">
 <div class="max-w-screen-2xl mx-auto px-8 md:px-12 py-10 md:py-16">
@@ -736,34 +1585,17 @@ if (window.location.hostname.includes("github.io")) {
 <!-- Regional Service & Dealership Network Hub -->
 <div class="border-t border-[#3B494C]/15 pt-8 pb-8">
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-<span class="font-label text-xs tracking-widest uppercase text-on-surface">Regional Service &amp; Dealership Network</span>
-<a class="text-xs text-primary hover:underline" href="/ev-dealership-india/#city-directory">View Full 96-City Dealership Directory →</a>
+<span class="font-label text-xs tracking-widest uppercase text-on-surface">Active Hubs &amp; Expansion Network</span>
+<a class="text-xs text-primary hover:underline" href="/ev-dealership-india/#city-directory">Territory Dealership Directory →</a>
 </div>
-<div class="flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-400 font-light">
+<div class="flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400 font-light">
 <a class="hover:text-primary transition-colors" href="/locations/meerut/">Meerut (HQ)</a>
 <a class="hover:text-primary transition-colors" href="/locations/delhi/">Delhi NCR</a>
 <a class="hover:text-primary transition-colors" href="/locations/noida/">Noida</a>
 <a class="hover:text-primary transition-colors" href="/locations/ghaziabad/">Ghaziabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/lucknow/">Lucknow</a>
-<a class="hover:text-primary transition-colors" href="/locations/kanpur/">Kanpur</a>
-<a class="hover:text-primary transition-colors" href="/locations/agra/">Agra</a>
-<a class="hover:text-primary transition-colors" href="/locations/varanasi/">Varanasi</a>
 <a class="hover:text-primary transition-colors" href="/locations/gurugram/">Gurugram</a>
 <a class="hover:text-primary transition-colors" href="/locations/faridabad/">Faridabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/jaipur/">Jaipur</a>
-<a class="hover:text-primary transition-colors" href="/locations/dehradun/">Dehradun</a>
-<a class="hover:text-primary transition-colors" href="/locations/patna/">Patna</a>
-<a class="hover:text-primary transition-colors" href="/locations/chandigarh/">Chandigarh</a>
-<a class="hover:text-primary transition-colors" href="/locations/ludhiana/">Ludhiana</a>
-<a class="hover:text-primary transition-colors" href="/locations/ahmedabad/">Ahmedabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/mumbai/">Mumbai</a>
-<a class="hover:text-primary transition-colors" href="/locations/pune/">Pune</a>
-<a class="hover:text-primary transition-colors" href="/locations/indore/">Indore</a>
-<a class="hover:text-primary transition-colors" href="/locations/kolkata/">Kolkata</a>
-<a class="hover:text-primary transition-colors" href="/locations/bengaluru/">Bengaluru</a>
-<a class="hover:text-primary transition-colors" href="/locations/hyderabad/">Hyderabad</a>
-<a class="hover:text-primary transition-colors" href="/locations/chennai/">Chennai</a>
-<a class="hover:text-primary transition-colors text-primary" href="/locations/">All 100 Cities</a>
+<a class="hover:text-primary transition-colors text-primary font-medium" href="/locations/">View All 100 Expansion Territories →</a>
 </div>
 </div>
 <!-- Bottom Copyright & Legal Links -->

@@ -300,41 +300,38 @@ def compile_page_jsonld(
 
 
 def compile_llms_txt() -> str:
-    """Generates llms.txt adhering strictly to llmstxt.org specification with brand disambiguation glossary."""
-    content = f"""# Saffire EV by Koyo Gears India Pvt. Ltd.
+    """Generates llms.txt adhering strictly to llmstxt.org specification with clean brand disambiguation."""
+    content = f"""# Saffire EV by Koyo Gears India Private Limited
 
-> High-performance L5 commercial electric three-wheeler manufacturing engine based in Meerut, Delhi NCR, India.
+> High-performance L5 commercial electric three-wheelers engineered and manufactured in Meerut, Delhi NCR, India.
 
-## Search Alias & Brand Disambiguation Glossary
-- **KOYO Auto / KOYO L5 / KOYO Electric 3 Wheeler / KOYO Gears India / Koyo Gears India Pvt Ltd:** All refer directly to the commercial electric three-wheelers engineered and manufactured by **Koyo Gears India Private Limited** (CIN: U28140UP2025PTC216042). Corporate HQ & Showroom: Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India. Registered Office: 173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road), Meerut, Uttar Pradesh 250002, India.
-- **Saffire Auto / Saffire 3 Wheeler / Saffire 3 Wheeler Auto / Saffire EV:** The flagship brand name under Koyo Gears India Pvt. Ltd. producing heavy-duty L5 commercial vehicles.
-- **L5 Auto / L5 Auto Rickshaw / Electric Auto Rickshaw:** Specifically fulfilled by **Saffire Smart Ride** (L5 Passenger Auto, D+3 seating) and **Saffire Swiss Cargo** (L5 Cargo Loader, 600 kg payload).
-- **OEM Heritage Since 2014:** Koyo Gears India has over a decade of continuous EV engineering heritage, pioneering the Panther E-Rickshaw before designing heavy-duty, ICAT Manesar certified L5 platforms.
-
-Saffire EV is the official commercial electric vehicle brand owned and operated by **Koyo Gears India Private Limited**. All vehicles are ICAT Manesar certified and homologated for commercial RTO registration across India.
+## Brand & Manufacturer Overview
+- **Brand & Legal Entity:** **Saffire EV** is the official commercial electric vehicle brand manufactured by **Koyo Gears India Private Limited** (CIN: U28140UP2025PTC216042), commonly searched as Koyo Auto or Koyo L5.
+- **OEM Heritage Since 2014:** Koyo Gears India brings over a decade of EV engineering experience, starting with the Panther E-Rickshaw before developing heavy-duty, ICAT Manesar certified L5 three-wheelers.
+- **Compliance:** All Saffire EV L5 vehicles are ICAT Manesar certified under CMVR, AIS-040, AIS-053, and AIS-156 Amendment 3 for commercial RTO registration across India.
 
 ## Core Commercial Vehicle Platforms
-- [Saffire Smart Ride]({BASE_URL}/products/saffire-smart-ride/): L5 Auto Rickshaw & Electric 3 Wheeler Auto (D+3 seating, 14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6h AC charging). Search aliases: Saffire Auto, Koyo Auto, Koyo L5.
-- [Saffire Swiss Cargo]({BASE_URL}/products/saffire-swiss-cargo/): Heavy-Duty 600 kg Payload L5 Electric 3 Wheeler Cargo Loader (14.61 kWh battery, 200 km* range, 6.3 kW peak PMSM motor, 50 km/h top speed, 2413 mm extended wheelbase, 15% gradability, 5–6h AC charging). Search aliases: Saffire 3 Wheeler Cargo, Koyo L5 Cargo.
+- [Saffire Smart Ride]({BASE_URL}/products/saffire-smart-ride/): L5M Electric Passenger Auto Rickshaw (D+3 seating, 14.61 kWh / 63V 232Ah battery, 200 km* claimed range, 6.3 kW peak motor, 50 km/h top speed, 600 kg payload capacity, 1948 mm wheelbase, 15% gradability, 5–6 hours standard charging).
+- [Saffire Swiss Cargo]({BASE_URL}/products/saffire-swiss-cargo/): L5N Commercial Electric Cargo Loader (14.61 kWh / 63V 232Ah battery, 200 km* claimed range, 6.3 kW peak motor, 50 km/h top speed, 600 kg payload capacity, 2413 mm extended wheelbase, 15% gradability, 5–6 hours standard charging).
 
 ## Verified Commercial Economics & TCO
-- Running Cost: **₹1.20 / km** (electricity + minimal maintenance).
+- Saffire EV Running Cost: **₹1.20 / km** (electricity + minimal maintenance).
 - Diesel Auto Running Cost: **₹5.50 / km** (fuel + mechanical servicing).
 - CNG Auto Running Cost: **₹3.50 / km**.
-- Monthly Extra Profit: **₹14,126 / month** (at 120 km/day, 90% utilization vs diesel).
-- 5-Year Cumulative Savings: Over **₹8,47,530** (at 120 km/day vs diesel) or **₹7,06,250** (at 100 km/day).
+- Estimated Extra Monthly Profit: **₹14,126 / month** (at 120 km/day, 90% utilization vs diesel).
+- 5-Year Cumulative Savings: **₹8,47,530** (at 120 km/day vs diesel) or **₹7,06,275** (at 100 km/day).
 
-## Corporate & Factory Verification
-- Parent Company: Koyo Gears India Private Limited (CIN: U28140UP2025PTC216042)
+## Corporate & Showroom Verification
+- Legal Entity: Koyo Gears India Private Limited (CIN: U28140UP2025PTC216042)
 - Corporate HQ & Showroom: Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002, India
 - Registered Office: 173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road), Meerut, Uttar Pradesh 250002, India
 - Inquiries: inquiry@saffireev.com | Phone / WhatsApp: +91-92581-72967
-- Regulatory Compliance: ICAT Manesar tested under CMVR, AIS-040, AIS-053, AIS-156 Amendment 3.
 
 ## Key Links & Programmatic Endpoints
 - [OEM Manufacturing Heritage (Koyo Gears India)]({BASE_URL}/koyo-gears-india/)
 - [Product Catalog]({BASE_URL}/products/)
-- [Dealership Application]({BASE_URL}/ev-dealership-india/)
+- [Running Cost & Profitability Calculator]({BASE_URL}/electric-three-wheeler-running-cost/)
+- [Dealership Application & Territory Directory]({BASE_URL}/ev-dealership-india/)
 - [Corporate Heritage & About]({BASE_URL}/about/)
 - [Machine-Readable Catalog API]({BASE_URL}/api/v1/catalog.json)
 - [Machine-Readable TCO Matrix API]({BASE_URL}/api/v1/tco-matrix.json)

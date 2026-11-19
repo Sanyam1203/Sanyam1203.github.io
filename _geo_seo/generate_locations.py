@@ -82,58 +82,30 @@ body { font-family: 'Manrope', sans-serif; background-color: #131315; color: #E5
 .glass-panel { backdrop-filter: blur(20px); background: rgba(53, 52, 55, 0.6); }
 """.strip()
 
-NAVBAR = """
-<nav class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl border-b border-[#3B494C]/15 shadow-[0_0_40px_rgba(151,253,255,0.06)]">
-  <div class="flex justify-between items-center px-6 md:px-8 h-20 w-full max-w-screen-2xl mx-auto">
-    <a class="flex items-center gap-3 group" href="/">
-      <div class="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 shrink-0">
-        <img alt="Saffire EV by Koyo Gears India Private Limited Logo" class="absolute inset-0 w-full h-full object-contain" src="/images/logo_final.png"/>
-      </div>
-      <div class="flex flex-col justify-center">
-        <span class="text-[20px] md:text-[22px] font-bold tracking-tighter text-[#97FDFF] uppercase font-headline leading-none hover:text-white transition-colors">SAFFIRE</span>
-        <span class="text-[8px] md:text-[9px] font-label tracking-[0.2em] text-on-surface-variant leading-none mt-1 uppercase">BY KOYO GEARS INDIA</span>
-      </div>
-    </a>
-    <div class="hidden md:flex items-center space-x-12">
-      <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/">Home</a>
-      <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/products/">Products</a>
-      <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/about/">About</a>
-      <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/vision/">Vision</a>
-      <a class="text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1 font-label text-xs tracking-widest uppercase" href="/locations/">Locations</a>
-      <a class="text-[#E5E1E4]/70 hover:text-[#E5E1E4] transition-colors font-label text-xs tracking-widest uppercase" href="/contact/">Contact</a>
-    </div>
-    <a class="hidden md:flex kinetic-gradient text-on-primary px-6 py-2 text-xs font-bold tracking-widest rounded-sm duration-200 uppercase" href="/contact/">PRE-ORDER</a>
-    <button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-white flex items-center" id="mobile-menu-btn">
-      <span class="material-symbols-outlined notranslate text-3xl" translate="no" aria-hidden="true" data-nosnippet>menu</span>
-    </button>
-  </div>
-  <div class="absolute top-20 left-0 w-full bg-[#131315]/95 backdrop-blur-3xl border-b border-outline-variant/30 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)] origin-top transition-all duration-300 scale-y-0 opacity-0 pointer-events-none md:hidden p-6 z-40" id="mobile-menu">
-    <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/">Home</a>
-    <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/products/">Products</a>
-    <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/about/">About</a>
-    <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#E5E1E4]/70" href="/vision/">Vision</a>
-    <a class="font-label text-lg uppercase tracking-wider pb-2 border-b border-outline-variant/20 text-[#97FDFF]" href="/locations/">Locations</a>
-    <a class="font-label text-lg uppercase tracking-wider pb-2 text-[#E5E1E4]/70" href="/contact/">Contact</a>
-    <a class="kinetic-gradient text-on-primary px-8 py-4 w-full mt-2 text-sm font-label font-bold uppercase tracking-widest rounded-full text-center" href="/contact/">Pre-Order</a>
-  </div>
-</nav>
-<script>
-const menuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', () => {
-    const isClosed = mobileMenu.classList.contains('opacity-0');
-    if (isClosed) {
-        mobileMenu.classList.remove('opacity-0','scale-y-0','pointer-events-none');
-        mobileMenu.classList.add('opacity-100','scale-y-100','pointer-events-auto');
-        menuBtn.querySelector('span').textContent = 'close';
-    } else {
-        mobileMenu.classList.add('opacity-0','scale-y-0','pointer-events-none');
-        mobileMenu.classList.remove('opacity-100','scale-y-100','pointer-events-auto');
-        menuBtn.querySelector('span').textContent = 'menu';
-    }
-});
-</script>
-""".strip()
+def _load_global_navbar(active_page: str = "locations") -> str:
+    nav_path = os.path.join(ROOT, "templates", "components", "navbar.html")
+    if os.path.isfile(nav_path):
+        with open(nav_path, "r", encoding="utf-8") as f:
+            raw = f.read().strip()
+        # Render Jinja2 active_page conditionals cleanly
+        import re as _re
+        def _repl(m):
+            key = m.group(1)
+            return "text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1" if key == active_page else ""
+        return _re.sub(r"\{%\s*if active_page == '([^']+)'\s*%\}([^\{]+)\{%\s*endif\s*%\}", _repl, raw)
+    return ""
+
+
+def _load_query_popup() -> str:
+    popup_path = os.path.join(ROOT, "templates", "components", "query_popup.html")
+    if os.path.isfile(popup_path):
+        with open(popup_path, "r", encoding="utf-8") as f:
+            return f.read().strip()
+    return ""
+
+
+NAVBAR = _load_global_navbar("locations")
+QUERY_POPUP = _load_query_popup()
 
 def _load_global_footer() -> str:
     footer_path = os.path.join(ROOT, "templates", "components", "footer.html")
@@ -279,18 +251,139 @@ def city_faqs(city):
             )
         },
         {
-            "q": f"Does KOYO Gears India (SAFFIRE EV) have a service centre or showroom in {name}?",
+            "q": f"Does Koyo Gears India (Saffire EV) have a service centre or showroom in {name}?",
             "a": (
-                f"At the time of this page's last update, SAFFIRE EV by KOYO Gears India has not published a confirmed showroom or "
-                f"service centre address specifically in {name}. "
-                f"For the most current information on authorised KOYO Auto / SAFFIRE EV service and sales points near {name}, "
-                f"please contact the company directly at inquiry@saffireev.com or via WhatsApp at +91-92581-72967."
+                f"Yes — Meerut is the Corporate Headquarters & Flagship Showroom of Saffire EV by Koyo Gears India Private Limited. "
+                f"Visit our showroom at Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut, Uttar Pradesh 250002 (open Mon–Sat, 9:00 AM – 7:00 PM; "
+                f"Registered Office: 173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road), Meerut 250002). "
+                f"Call or WhatsApp +91-92581-72967 or visit saffireev.com/contact/?city=meerut&type=vehicle to book a test drive or fleet consultation."
+            ) if slug == "meerut" else (
+                f"Saffire EV serves {name} and the Delhi NCR region directly from our nearby Corporate HQ & Flagship Showroom at "
+                f"Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut (UP 250002), with dedicated regional fleet delivery and dealer onboarding support. "
+                f"Call +91-92581-72967 or email inquiry@saffireev.com to schedule a test drive or territory consultation for {name}."
+            ) if slug in {"delhi", "noida", "ghaziabad", "gurugram", "faridabad"} else (
+                f"At the time of this page's last update, Saffire EV by Koyo Gears India is expanding its authorized dealer and service network in {name}, {state}. "
+                f"For current sales, fleet bookings, or dealership territory inquiries in {name}, "
+                f"contact us directly at inquiry@saffireev.com or +91-92581-72967."
             )
         }
     ]
     return faqs
 
-# ── Nearby city links ──────────────────────────────────────────────────────
+HINDI_BELT_STATES = {
+    "Uttar Pradesh", "Delhi", "Haryana", "Rajasthan",
+    "Bihar", "Madhya Pradesh", "Uttarakhand", "Jharkhand"
+}
+
+HUB_LOCAL_CONTEXT = {
+    "meerut": {
+        "badge": "Corporate HQ & Flagship Showroom · UP-15 RTO Hub",
+        "title": "Meerut Manufacturing HQ, Showroom & UP EV Policy Advantage",
+        "body": (
+            "Meerut is the home of Koyo Gears India Private Limited. Our Corporate HQ & Flagship Showroom is located at "
+            "<strong>Plot 5, Om Tower, Mohkampur Phase 1, Delhi Road, Meerut 250002</strong> (open Monday–Saturday, 9:00 AM – 7:00 PM), "
+            "with our Registered Office at <strong>173/2, Delhi Road, Mohkampur (New Shambhu Nagar Road), Meerut 250002</strong>. "
+            "Commercial buyers registering L5 vehicles under the <strong>UP-15 Meerut RTO</strong> benefit from Uttar Pradesh EV Manufacturing & Mobility Policy "
+            "road-tax and registration exemptions, making Saffire Smart Ride and Swiss Cargo ideal for Delhi-Meerut RRTS feeder routes, "
+            "Partapur Industrial Area logistics, Begum Bridge, Hapur Road, and Garh Road passenger corridors."
+        ),
+        "highlights": [
+            ("RTO & Policy", "UP-15 Meerut RTO L5 commercial registration with UP EV Policy road-tax & fee incentives."),
+            ("Key Local Routes", "Delhi-Meerut Expressway / RRTS RapidX stations, Partapur Industrial Estate, Modipuram, and Garh Road."),
+            ("Direct Showroom Visit", "Walk in for live test drives, 14.61 kWh battery inspections, and fleet financing at Mohkampur Phase 1.")
+        ]
+    },
+    "delhi": {
+        "badge": "Delhi NCR Metro & Last-Mile Hub · DL Commercial EV Policy",
+        "title": "Delhi Electric 3-Wheeler Corridors & Zero Road-Tax Advantage",
+        "body": (
+            "Under the <strong>Delhi EV Policy</strong>, ICAT-certified L5 electric three-wheelers qualify for zero road tax, waived registration fees, "
+            "and unrestricted commercial permit access across NCR corridors. With a 200 km* single-charge range and 15% gradability for flyovers, "
+            "Saffire EV handles full double-shift duty across high-density passenger and cargo hubs—backed by direct OEM support just 65 km away at our Meerut HQ."
+        ),
+        "highlights": [
+            ("RTO & Policy", "Delhi Transport Dept L5 EV registration with zero road tax and clean-mobility commercial permits."),
+            ("Key Local Routes", "Anand Vihar ISBT, Kashmere Gate, Azadpur Mandi, Okhla Industrial Area, and DMRC Metro feeder loops."),
+            ("Fleet Turnaround", "200 km* range eliminates midday charging halts during peak morning and evening NCR shifts.")
+        ]
+    },
+    "noida": {
+        "badge": "UP-16 Noida & Expressway Hub · IT & E-Commerce Logistics",
+        "title": "Noida Commercial L5 Operations & Last-Mile Logistics",
+        "body": (
+            "Registered under <strong>UP-16 Noida RTO</strong>, Saffire EV L5 platforms are tailored for Noida's high-frequency metro feeder commuters and "
+            "600 kg e-commerce/FMCG cargo dispatches. With Uttar Pradesh EV registration incentives and ₹1.20/km operating economics, "
+            "fleet operators in Sector 62, Sector 63, and Greater Noida West maximize per-shift margins without diesel price volatility."
+        ),
+        "highlights": [
+            ("RTO & Policy", "UP-16 Noida RTO commercial L5 approval eligible for UP EV Policy registration and road-tax benefits."),
+            ("Key Local Routes", "Botanical Garden, Sector 18, Sector 62–63 IT hubs, Noida-Greater Noida Expressway, and Phase-2 Industrial Area."),
+            ("Cargo & Passenger Fit", "2413 mm wheelbase Swiss Cargo for B2B warehousing; D+3 Smart Ride for metro feeder shuttles.")
+        ]
+    },
+    "ghaziabad": {
+        "badge": "UP-14 Ghaziabad Industrial & Transit Hub · NH-58 Corridor",
+        "title": "Ghaziabad Industrial Freight & Metro Feeder Mobility",
+        "body": (
+            "Located just 45 minutes from Koyo Gears India's Meerut manufacturing headquarters along NH-58 and the Delhi-Meerut Expressway, "
+            "<strong>UP-14 Ghaziabad</strong> operators receive rapid OEM spare-parts dispatch and direct factory technical support. "
+            "Saffire Swiss Cargo's 600 kg payload and 6.3 kW motor excel in Sahibabad and Mohan Nagar industrial freight, while Smart Ride serves Vaishali–Kaushambi commuter loops."
+        ),
+        "highlights": [
+            ("RTO & Policy", "UP-14 Ghaziabad RTO commercial registration with UP EV Policy incentives for L5 three-wheelers."),
+            ("Key Local Routes", "Sahibabad Industrial Area, Vaishali & Kaushambi Metro stations, Mohan Nagar, and Indirapuram."),
+            ("45-Min OEM Proximity", "Direct factory access to Mohkampur Phase 1, Meerut for fleet servicing and dealer support.")
+        ]
+    },
+    "gurugram": {
+        "badge": "HR-26 Gurugram Corporate & Manesar Industrial Hub",
+        "title": "Gurugram & IMT Manesar L5 Commercial Mobility",
+        "body": (
+            "Operating under <strong>HR-26 Gurugram RTO</strong> and the Haryana EV Policy, Saffire EV is engineered for Gurugram's demanding flyovers, "
+            "corporate campus shuttles, and IMT Manesar auto-component logistics. All Saffire L5 platforms are homologated at <strong>ICAT Manesar</strong> "
+            "right in the Gurugram industrial belt, ensuring full CMVR and AIS-156 safety compliance."
+        ),
+        "highlights": [
+            ("RTO & Policy", "HR-26 Gurugram RTO L5 commercial registration backed by Haryana EV Policy incentives."),
+            ("Key Local Routes", "Cyber City, Udyog Vihar, MG Road Rapid Metro feeders, Sohna Road, and IMT Manesar."),
+            ("15% Flyover Gradability", "6.3 kW high-torque PMSM motor climbs NH-48 flyovers and ramps cleanly even at 600 kg payload.")
+        ]
+    },
+    "faridabad": {
+        "badge": "HR-38 Faridabad MSME & Violet Line Transit Hub",
+        "title": "Faridabad Manufacturing Belt & Commercial Fleet Economics",
+        "body": (
+            "Registered under <strong>HR-38 Faridabad RTO</strong>, Saffire EV helps MSME factories, hardware suppliers, and passenger auto operators "
+            "cut daily fuel expenditure by up to 78% compared to diesel autos. Its heavy-gauge tubular chassis and 4.12-12 commercial tyres "
+            "are built for heavy industrial loads across NIT Faridabad, Ballabgarh, and Badarpur border corridors."
+        ),
+        "highlights": [
+            ("RTO & Policy", "HR-38 Faridabad RTO L5 commercial permit eligibility under Haryana EV Policy guidelines."),
+            ("Key Local Routes", "NIT Faridabad, Ballabgarh Industrial Estate, Bata Chowk, and Violet Line Metro feeder routes."),
+            ("Heavy-Duty Chassis", "600 kg certified payload and multi-leaf suspension built for MSME goods transport.")
+        ]
+    }
+}
+
+
+def render_hub_local_context(city):
+    ctx = HUB_LOCAL_CONTEXT.get(city["slug"])
+    if not ctx:
+        return ""
+    cards = "".join([
+        f"""<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20">
+          <div class="font-label text-[10px] uppercase tracking-widest text-primary font-bold mb-1">{label}</div>
+          <p class="text-xs text-on-surface-variant font-light leading-relaxed">{desc}</p>
+        </div>"""
+        for label, desc in ctx["highlights"]
+    ])
+    return f"""
+  <section class="mb-12 bg-surface-container-low rounded-2xl border border-primary/25 p-6 md:p-8">
+    <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">{ctx["badge"]}</span>
+    <h2 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]">{ctx["title"]}</h2>
+    <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">{ctx["body"]}</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">{cards}</div>
+  </section>"""
 def get_nearby_slugs(city, all_cities_by_slug):
     slugs = [s for s in city.get("nearby", []) if s in all_cities_by_slug and s != city["slug"]]
     if len(slugs) < 4:
@@ -476,7 +569,11 @@ def generate_city_page(city, all_cities_by_slug):
         for f in faqs
     ])
 
-    hindi_section = f'<p class="text-on-surface-variant text-sm mt-2 font-light">{hindi} में KOYO इलेक्ट्रिक ऑटो — SAFFIRE EV के L5 इलेक्ट्रिक थ्री-व्हीलर वाहनों की जानकारी के लिए यहाँ संपर्क करें।</p>' if hindi else ""
+    hindi_section = (
+        f'<p class="text-on-surface-variant text-sm mt-2 font-light">{hindi} में Saffire EV (Koyo Gears India) के L5 इलेक्ट्रिक ऑटो और कार्गो लोडर की जानकारी के लिए संपर्क करें।</p>'
+        if (hindi and state in HINDI_BELT_STATES) else ""
+    )
+    hub_context_html = render_hub_local_context(city)
 
     html = f"""<!DOCTYPE html>
 <html class="dark" lang="en">
@@ -541,12 +638,14 @@ def generate_city_page(city, all_cities_by_slug):
     </div>
   </section>
 
+  {hub_context_html}
+
   <!-- Brand Entity Interlinking Box: KOYO <-> SAFFIRE EV -->
   <section class="mb-16 bg-surface-container-low rounded-2xl border border-primary/20 p-6 md:p-8">
     <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">Official Brand &amp; Manufacturer Reference</span>
-    <h2 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]">KOYO, KOYO Auto &amp; KOYO L5 in {name} — Powered by SAFFIRE EV &amp; KOYO Gears India</h2>
+    <h2 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]">Saffire EV in {name} — Manufactured by Koyo Gears India</h2>
     <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
-      When commercial drivers, fleet owners, and dealers in <strong>{name}, {state}</strong> search for <strong>KOYO</strong>, <strong>KOYO Auto</strong>, <strong>KOYO Electric Auto</strong>, or <strong>KOYO L5</strong>, they are looking for the electric three-wheelers manufactured by <a href="/about/" class="text-primary hover:underline font-medium">KOYO GEARS INDIA PRIVATE LIMITED (KOYO Gears India)</a> under the official brand <a href="/" class="text-primary hover:underline font-medium">SAFFIRE EV</a>. Explore our complete <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5 Electric Vehicle</a> lineup below, including the <a href="/electric-passenger-auto/" class="text-primary hover:underline">KOYO Electric Passenger Auto</a> (<a href="/products/saffire-smart-ride/" class="text-primary hover:underline">SAFFIRE Smart Ride</a>) and the <a href="/electric-cargo-loader/" class="text-primary hover:underline">KOYO Electric Cargo Loader</a> (<a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">SAFFIRE Swiss Cargo</a>).
+      <strong>Saffire EV</strong> is the official commercial electric three-wheeler brand manufactured by <a href="/koyo-gears-india/" class="text-primary hover:underline font-medium">Koyo Gears India Private Limited</a> (commonly searched as Koyo Auto or Koyo L5). For passenger and cargo operators in <strong>{name}, {state}</strong>, our ICAT Manesar certified L5 lineup includes the <a href="/products/saffire-smart-ride/" class="text-primary hover:underline">Saffire Smart Ride</a> (D+3 passenger auto) and the <a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">Saffire Swiss Cargo</a> (600 kg commercial loader).
     </p>
     <div class="flex flex-wrap gap-3 text-xs font-label uppercase tracking-wider">
       <a href="/" class="px-3 py-1.5 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors">SAFFIRE EV Home</a>
@@ -560,23 +659,23 @@ def generate_city_page(city, all_cities_by_slug):
 
   <!-- Products -->
   <section class="mb-16">
-    <h2 class="font-headline text-3xl md:text-4xl font-bold mb-10 text-[#E5E1E4]">SAFFIRE EV (KOYO L5) Products for {name}</h2>
+    <h2 class="font-headline text-3xl md:text-4xl font-bold mb-10 text-[#E5E1E4]">Saffire EV L5 Vehicles for {name}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
       <!-- Smart Ride -->
       <div class="bg-surface-container-low rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-colors overflow-hidden flex flex-col">
         <div class="relative aspect-[16/10] overflow-hidden bg-[#0E0E10] p-2">
           <div class="relative w-full h-full rounded-[14px] overflow-hidden">
-            <img alt="SAFFIRE Smart Ride — KOYO L5 electric passenger auto three-wheeler in {name}" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="/images/SAFFIRE_PASSANGER.png"/>
+            <img alt="Saffire Smart Ride — L5 electric passenger auto rickshaw in {name}" class="absolute inset-0 w-full h-full object-contain object-center opacity-90" loading="lazy" src="/images/SAFFIRE_PASSANGER.png"/>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e10] via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>
         <div class="p-8 pt-4 flex flex-col flex-grow justify-between">
           <div>
-            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">KOYO Auto · D+3 Passenger Electric Three-Wheeler · KOYO L5</span>
-            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]"><a href="/products/saffire-smart-ride/" class="hover:text-primary transition-colors">SAFFIRE Smart Ride (KOYO Passenger Auto)</a></h3>
+            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">L5M Passenger Auto · D+3 Seating</span>
+            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]"><a href="/products/saffire-smart-ride/" class="hover:text-primary transition-colors">Saffire Smart Ride</a></h3>
             <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
-              The <a href="/products/saffire-smart-ride/" class="text-primary hover:underline">SAFFIRE Smart Ride</a> is <a href="/" class="text-primary hover:underline">SAFFIRE EV</a>'s flagship <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5</a> <a href="/electric-passenger-auto/" class="text-primary hover:underline">electric passenger auto</a> by <a href="/about/" class="text-primary hover:underline">KOYO Gears India</a>, designed to carry a driver and three passengers (D+3 layout) in {name}.
+              Engineered for urban transit and metro feeder routes in {name}, the <a href="/products/saffire-smart-ride/" class="text-primary hover:underline">Saffire Smart Ride</a> is an ICAT-certified <a href="/l5-electric-vehicle/" class="text-primary hover:underline">L5 electric passenger auto</a> built for high-uptime commercial passenger transport.
             </p>
             <ul class="space-y-2 text-sm text-on-surface-variant mb-6">
               <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]">battery_charging_full</span> Battery: 14.61 kWh (63V 232Ah)</li>
@@ -608,10 +707,10 @@ def generate_city_page(city, all_cities_by_slug):
         </div>
         <div class="p-8 pt-4 flex flex-col flex-grow justify-between">
           <div>
-            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">KOYO Loader · Electric Cargo Loader · KOYO L5</span>
-            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]"><a href="/products/saffire-swiss-cargo/" class="hover:text-primary transition-colors">SAFFIRE Swiss Cargo (KOYO Cargo Loader)</a></h3>
+            <span class="inline-block text-primary font-label text-[10px] font-bold tracking-widest uppercase mb-2">L5N Commercial Loader · 600 kg Payload</span>
+            <h3 class="font-headline text-2xl font-bold mb-3 text-[#E5E1E4]"><a href="/products/saffire-swiss-cargo/" class="hover:text-primary transition-colors">Saffire Swiss Cargo</a></h3>
             <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-4">
-              The <a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">SAFFIRE Swiss Cargo</a> is <a href="/" class="text-primary hover:underline">SAFFIRE EV</a>'s heavy-duty <a href="/l5-electric-vehicle/" class="text-primary hover:underline">KOYO L5</a> <a href="/electric-cargo-loader/" class="text-primary hover:underline">electric cargo loader</a> by <a href="/about/" class="text-primary hover:underline">KOYO Gears India</a>, built for last-mile delivery and commercial goods transport in {name}.
+              Built for last-mile delivery, FMCG distribution, and industrial logistics in {name}, the <a href="/products/saffire-swiss-cargo/" class="text-primary hover:underline">Saffire Swiss Cargo</a> is a heavy-duty <a href="/electric-cargo-loader/" class="text-primary hover:underline">L5 electric cargo loader</a> with a 2413 mm extended wheelbase.
             </p>
             <ul class="space-y-2 text-sm text-on-surface-variant mb-6">
               <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]">battery_charging_full</span> Battery: 14.61 kWh (63V 232Ah)</li>
@@ -750,6 +849,8 @@ def generate_city_page(city, all_cities_by_slug):
 </main>
 
 {FOOTER}
+
+{QUERY_POPUP}
 
 </body>
 </html>"""
@@ -945,6 +1046,8 @@ def generate_directory_page(cities):
 </main>
 
 {FOOTER}
+
+{QUERY_POPUP}
 
 <script>
 const searchInput = document.getElementById('city-search');
