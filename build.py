@@ -26,6 +26,8 @@ from src.tco_engine import (
     render_crawlable_tco_html,
     render_l5_vs_l3_vs_diesel_html,
     render_guide_tco_spec_table_html,
+    render_interactive_calculator_html,
+    render_state_tariff_and_cashflow_html,
     calculate_tco
 )
 from src.html_sanitizer import sanitize_all_html_files, process_html_file
@@ -168,69 +170,205 @@ def enhance_contact_page():
     print("✓ Enhanced contact/index.html with pre-fill sync and query popup")
 
 
+def render_dealership_b2b_sections_html() -> str:
+    """Renders B2B dealership model, infrastructure, OEM support & onboarding sections."""
+    return """
+    <section class="my-12 space-y-10" id="b2b-dealership-blueprint">
+      <!-- Dealership Model & Territorial Exclusivity -->
+      <div class="rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6 md:p-8">
+        <span class="font-label text-[10px] tracking-widest uppercase text-primary block mb-2">B2B Partnership Blueprint</span>
+        <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-4">Dealership Model &amp; Territorial Exclusivity</h2>
+        <p class="text-sm text-on-surface-variant font-light leading-relaxed mb-6">
+          Koyo Gears India Private Limited appoints one authorized Saffire EV dealership per designated commercial district or city cluster, protecting partner margins and preventing intra-brand cannibalization. Partners retail both the <strong>Saffire Smart Ride (L5M Passenger)</strong> and <strong>Saffire Swiss Cargo (L5N Loader)</strong> along with OEM spare parts.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-5 rounded-xl bg-surface-container border border-outline-variant/15">
+            <h3 class="font-headline font-bold text-base text-primary mb-2">Infrastructure &amp; Space</h3>
+            <ul class="text-xs text-on-surface-variant space-y-1.5 font-light">
+              <li>• 800 – 1,500 sq. ft. commercial showroom frontage</li>
+              <li>• 2-bay service &amp; PDI area with 16A charging points</li>
+              <li>• Dedicated OEM spare-parts counter</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-xl bg-surface-container border border-outline-variant/15">
+            <h3 class="font-headline font-bold text-base text-primary mb-2">OEM Support Stack</h3>
+            <ul class="text-xs text-on-surface-variant space-y-1.5 font-light">
+              <li>• ICAT Manesar certified L5 vehicles (CMVR / AIS-156)</li>
+              <li>• Factory technician training &amp; diagnostic tooling</li>
+              <li>• Direct spare-parts supply chain &amp; digital lead routing</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-xl bg-surface-container border border-outline-variant/15">
+            <h3 class="font-headline font-bold text-base text-primary mb-2">5-Step Onboarding</h3>
+            <ol class="text-xs text-on-surface-variant space-y-1.5 font-light list-decimal list-inside">
+              <li>Submit territory application below</li>
+              <li>Regional manager site &amp; market review</li>
+              <li>LOI &amp; exclusive territory allocation</li>
+              <li>Showroom branding &amp; technician training</li>
+              <li>Initial demo/stock dispatch &amp; launch</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    """
+
+
 def render_state_city_directory_html() -> str:
-    """Renders a crawlable state-by-state directory linking to all 96 indexable city pages."""
+    """Renders a searchable, filterable state-by-state table of all 100 target expansion cities."""
     data_path = os.path.join(ROOT_DIR, "_geo_seo", "city_data.json")
     with open(data_path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    from collections import defaultdict
-    states = defaultdict(list)
-    for c in data["cities"]:
-        if c.get("index"):
-            states[c["state"]].append(c)
 
-    html = """
+    cities = sorted(data["cities"], key=lambda x: (x["state"], x["name"]))
+    states = sorted({c["state"] for c in cities})
+    state_options = "".join(f'<option value="{s}">{s}</option>' for s in states)
+
+    rows_html = ""
+    for c in cities:
+        is_hub = bool(c.get("index"))
+        status_badge = (
+            '<span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">Active Hub</span>'
+            if is_hub else
+            '<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] uppercase tracking-wider">Open Territory</span>'
+        )
+        city_cell = (
+            f'<a href="/locations/{c["slug"]}/" class="font-bold text-primary hover:underline">{c["name"]}</a>'
+            if is_hub else
+            f'<span class="font-semibold text-on-surface">{c["name"]}</span>'
+        )
+        rows_html += f"""
+        <tr class="city-dir-row border-b border-outline-variant/10 hover:bg-surface-container-highest/20 transition-colors text-xs md:text-sm" data-city="{c['name'].lower()}" data-state="{c['state']}">
+          <td class="p-3.5">{city_cell}</td>
+          <td class="p-3.5 text-on-surface-variant">{c['state']}</td>
+          <td class="p-3.5">{status_badge}</td>
+          <td class="p-3.5 text-right">
+            <a href="/contact/?city={c['slug']}&amp;type=dealer" class="inline-block px-3 py-1.5 rounded bg-primary text-background font-headline font-bold text-[11px] uppercase tracking-wider hover:bg-primary/90 transition-colors">
+              Apply for This Territory
+            </a>
+          </td>
+        </tr>"""
+
+    return f"""
     <div class="mt-16 pt-12 border-t border-outline-variant/20" id="city-directory">
       <div class="text-center mb-8">
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-label uppercase tracking-widest mb-2">
-          <span class="material-symbols-outlined text-sm" aria-hidden="true" data-nosnippet>location_city</span>
-          Pan-India Territorial Coverage
+          <span class="material-symbols-outlined notranslate text-sm" translate="no" aria-hidden="true" data-nosnippet>location_city</span>
+          <span>100 Target Expansion Territories</span>
         </span>
         <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface">
-          Explore Saffire Auto &amp; Koyo L5 Dealership Opportunities Across 96 Cities
+          Explore Saffire EV Dealership Territories Across 100 Indian Cities
         </h2>
         <p class="font-body text-xs md:text-sm text-on-surface-variant font-light mt-2 max-w-2xl mx-auto">
-          Select your city to view local electric auto demand, route profiles, and open territory exclusivity:
+          Filter by state or search your city to apply for exclusive regional dealership rights:
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    """
-    for state, clist in sorted(states.items()):
-        html += f"""
-        <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
-          <h3 class="font-headline font-bold text-sm text-primary mb-2 flex items-center justify-between">
-            <span>{state}</span>
-            <span class="text-[10px] text-on-surface-variant font-normal">({len(clist)} Cities)</span>
-          </h3>
-          <div class="flex flex-wrap gap-1.5">
-        """
-        for c in sorted(clist, key=lambda x: x["name"]):
-            html += f'<a href="/locations/{c["slug"]}/" class="text-xs px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-background text-on-surface transition-colors">{c["name"]}</a>\n'
-        html += """
-          </div>
-        </div>
-        """
-    html += """
+
+      <div class="flex flex-col sm:flex-row gap-3 mb-6">
+        <input id="dir-city-search" type="text" placeholder="Search city (e.g. Meerut, Lucknow, Pune, Jaipur)..." class="flex-1 bg-surface-container border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary"/>
+        <select id="dir-state-filter" class="bg-surface-container border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary">
+          <option value="">All States ({len(states)})</option>
+          {state_options}
+        </select>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-outline-variant/20 bg-surface-container-low max-h-[540px] overflow-y-auto">
+        <table class="w-full text-left border-collapse">
+          <thead class="sticky top-0 bg-surface-container-high z-10">
+            <tr class="border-b border-outline-variant/20 text-on-surface font-headline text-xs md:text-sm">
+              <th class="p-3.5">City</th>
+              <th class="p-3.5">State / UT</th>
+              <th class="p-3.5">Network Status</th>
+              <th class="p-3.5 text-right">Territory Action</th>
+            </tr>
+          </thead>
+          <tbody class="font-body divide-y divide-outline-variant/10">
+            {rows_html}
+          </tbody>
+        </table>
       </div>
     </div>
+    <script>
+    (function() {{
+      const sIn = document.getElementById('dir-city-search');
+      const sSel = document.getElementById('dir-state-filter');
+      if (!sIn || !sSel) return;
+      function filterDir() {{
+        const q = sIn.value.toLowerCase().trim();
+        const st = sSel.value;
+        document.querySelectorAll('.city-dir-row').forEach(r => {{
+          const okCity = !q || r.dataset.city.includes(q) || r.dataset.state.toLowerCase().includes(q);
+          const okState = !st || r.dataset.state === st;
+          r.style.display = (okCity && okState) ? '' : 'none';
+        }});
+      }}
+      sIn.addEventListener('input', filterDir);
+      sSel.addEventListener('change', filterDir);
+    }})();
+    </script>
     """
-    return html
 
 
 def enhance_dealership_page():
-    """Enhances ev-dealership-india/index.html with the state-by-state directory."""
+    """Enhances ev-dealership-india/index.html with B2B blueprint and searchable 100-city territory table."""
     path = os.path.join(ROOT_DIR, "ev-dealership-india", "index.html")
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if 'id="city-directory"' not in content:
-        dir_html = render_state_city_directory_html()
-        idx = content.rfind("</main>")
-        if idx != -1:
-            content = content[:idx] + "\n" + dir_html + "\n" + content[idx:]
-            with open(path, "w", encoding="utf-8") as f:
-                f.write(content)
-            print("✓ Injected 96-City State Directory into ev-dealership-india/index.html")
+    soup = BeautifulSoup(content, "html.parser")
+    main_el = soup.find("main")
+    if main_el:
+        # Remove old city-directory / b2b-dealership-blueprint if present to ensure clean idempotent rebuild
+        for old_id in ("city-directory", "b2b-dealership-blueprint"):
+            old_el = soup.find(id=old_id)
+            if old_el:
+                old_el.decompose()
+        # Also remove any old inline filter script for dir-city-search
+        for sc in main_el.find_all("script"):
+            if sc.string and "dir-city-search" in sc.string:
+                sc.decompose()
+
+        b2b_soup = BeautifulSoup(render_dealership_b2b_sections_html(), "html.parser")
+        dir_soup = BeautifulSoup(render_state_city_directory_html(), "html.parser")
+        for node in list(b2b_soup.contents):
+            main_el.append(node)
+        for node in list(dir_soup.contents):
+            main_el.append(node)
+
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(str(soup))
+        print("✓ Upgraded ev-dealership-india/index.html with B2B blueprint & 100-city territory table")
+
+
+def enhance_running_cost_page():
+    """Embeds interactive Profitability Calculator, state tariffs & 5-year cashflow on running-cost page."""
+    path = os.path.join(ROOT_DIR, "electric-three-wheeler-running-cost", "index.html")
+    if not os.path.isfile(path):
+        return
+    with open(path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    soup = BeautifulSoup(content, "html.parser")
+    main_el = soup.find("main")
+    if main_el:
+        for old_id in ("calculator", "state-tariffs-cashflow"):
+            old_el = soup.find(id=old_id)
+            if old_el:
+                old_el.decompose()
+        for sc in main_el.find_all("script"):
+            if sc.string and "dist-range" in sc.string:
+                sc.decompose()
+
+        calc_soup = BeautifulSoup(render_interactive_calculator_html(), "html.parser")
+        tariff_soup = BeautifulSoup(render_state_tariff_and_cashflow_html(), "html.parser")
+        for node in list(calc_soup.contents):
+            main_el.append(node)
+        for node in list(tariff_soup.contents):
+            main_el.append(node)
+
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(str(soup))
+        print("✓ Embedded Interactive Profitability Calculator & State Tariffs into electric-three-wheeler-running-cost/index.html")
 
 
 def enhance_smart_ride_page():
@@ -253,8 +391,20 @@ def enhance_smart_ride_page():
         print("✓ Injected L5 comparison table into products/saffire-smart-ride/index.html")
 
 
-def sync_global_footer_and_schema(html_str: str) -> str:
-    """Replaces <footer> with templates/components/footer.html and updates CIN/NAP in JSON-LD."""
+def sync_global_footer_and_schema(html_str: str, active_page: str = "") -> str:
+    """Replaces <nav> and <footer> with global components and updates CIN/NAP in JSON-LD."""
+    nav_path = os.path.join(ROOT_DIR, "templates", "components", "navbar.html")
+    if os.path.isfile(nav_path):
+        with open(nav_path, "r", encoding="utf-8") as f:
+            raw_nav = f.read().strip()
+        rendered_nav = re.sub(
+            r"\{%\s*if active_page == '([^']+)'\s*%\}([^\{]+)\{%\s*endif\s*%\}",
+            lambda m: "text-[#97FDFF] border-b-2 border-[#97FDFF] pb-1" if m.group(1) == active_page else "",
+            raw_nav,
+        )
+    else:
+        rendered_nav = ""
+
     footer_path = os.path.join(ROOT_DIR, "templates", "components", "footer.html")
     with open(footer_path, "r", encoding="utf-8") as f:
         global_footer = f.read().strip()
@@ -263,6 +413,19 @@ def sync_global_footer_and_schema(html_str: str) -> str:
     html_str = html_str.replace("U29253UP2013PTC059344", "U28140UP2025PTC216042")
 
     soup = BeautifulSoup(html_str, "html.parser")
+    if rendered_nav:
+        old_nav = soup.find("nav", class_=lambda c: c and "fixed" in c)
+        if old_nav:
+            nav_soup = BeautifulSoup(rendered_nav, "html.parser")
+            new_nav = nav_soup.find("nav")
+            if new_nav:
+                old_nav.replace_with(new_nav)
+                # Ensure toggleNav script exists once
+                if not any(sc.string and "function toggleNav" in sc.string for sc in soup.find_all("script")):
+                    nav_sc = nav_soup.find("script")
+                    if nav_sc:
+                        new_nav.insert_after(nav_sc)
+
     old_footer = soup.find("footer")
     if old_footer:
         new_footer = BeautifulSoup(global_footer, "html.parser").find("footer")
@@ -386,13 +549,24 @@ def enhance_core_pages():
         os.path.join(ROOT_DIR, "404.html"),
     ]
 
+    active_map = {
+        os.path.join(ROOT_DIR, "index.html"): "home",
+        os.path.join(ROOT_DIR, "products", "index.html"): "products",
+        os.path.join(ROOT_DIR, "products", "saffire-smart-ride", "index.html"): "products",
+        os.path.join(ROOT_DIR, "products", "saffire-swiss-cargo", "index.html"): "products",
+        os.path.join(ROOT_DIR, "ev-dealership-india", "index.html"): "dealership",
+        os.path.join(ROOT_DIR, "koyo-gears-india", "index.html"): "koyo",
+        os.path.join(ROOT_DIR, "about", "index.html"): "about",
+        os.path.join(ROOT_DIR, "vision", "index.html"): "vision",
+        os.path.join(ROOT_DIR, "contact", "index.html"): "contact",
+    }
     for p in core_pages:
         if os.path.isfile(p):
             with open(p, "r", encoding="utf-8") as f:
                 c = f.read()
             if os.path.basename(p) != "404.html":
                 c = inject_popup_into_html(c)
-            c = sync_global_footer_and_schema(c)
+            c = sync_global_footer_and_schema(c, active_page=active_map.get(p, ""))
             if p in og_map:
                 c = set_page_og_image(c, og_map[p])
             with open(p, "w", encoding="utf-8") as f:
@@ -421,11 +595,12 @@ def main():
     for name, path in assets.items():
         print(f"  + Generated {name} ({os.path.getsize(path)} bytes)")
 
-    # 2. Build homepage, Smart Ride page, Dealership page, and commercial guide pages
-    print("\n[Step 2/6] Building Homepage, Product, Dealership & Guide Enhancements...")
+    # 2. Build homepage, Smart Ride page, Dealership page, Running Cost page, and commercial guide pages
+    print("\n[Step 2/6] Building Homepage, Product, Dealership, Running Cost & Guide Enhancements...")
     build_homepage()
     enhance_smart_ride_page()
     enhance_dealership_page()
+    enhance_running_cost_page()
     enhance_guide_pages()
 
     # 3. Generate 96 localized regional city pages with keyword clusters

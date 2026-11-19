@@ -345,3 +345,258 @@ def render_guide_tco_spec_table_html() -> str:
 """
 
 
+def render_interactive_calculator_html() -> str:
+    """
+    Reusable interactive Profitability Calculator component + Verified Commercial TCO Matrix
+    for /electric-three-wheeler-running-cost/ (and compatible with homepage IDs).
+    """
+    tco_matrix = render_crawlable_tco_html()
+    return f"""
+<section class="my-12 rounded-2xl bg-surface-container border border-outline-variant/20 p-6 md:p-10" id="calculator">
+  <div class="text-center max-w-2xl mx-auto mb-10">
+    <span class="font-label text-[10px] tracking-[0.2em] uppercase text-primary block mb-2">Interactive Commercial ROI Engine</span>
+    <h2 class="font-headline text-2xl md:text-4xl font-bold tracking-tight text-on-surface">Saffire EV Profitability Calculator</h2>
+    <p class="font-body text-xs md:text-sm text-on-surface-variant font-light mt-2">
+      Adjust daily distance and ownership duration to compare Saffire EV (₹1.20/km) against Diesel (₹5.50/km), CNG (₹3.50/km), and Petrol (₹6.80/km).
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+    <!-- Controls -->
+    <div class="bg-surface-container-low p-6 md:p-8 rounded-xl border border-outline-variant/15 space-y-8">
+      <div>
+        <div class="flex justify-between items-center mb-3">
+          <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant" for="dist-range">Daily Running Distance</label>
+          <span class="font-headline text-xl font-bold text-primary" id="dist-val">120 km</span>
+        </div>
+        <input class="w-full accent-[#97FDFF] cursor-pointer" id="dist-range" max="250" min="40" step="10" type="range" value="120"/>
+        <div class="flex justify-between text-[10px] text-on-surface-variant/60 mt-1">
+          <span>40 km/day</span>
+          <span>120 km/day (Avg)</span>
+          <span>250 km/day</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between items-center mb-3">
+          <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant" for="year-range">Ownership Duration</label>
+          <span class="font-headline text-xl font-bold text-primary" id="year-val">5 Years</span>
+        </div>
+        <input class="w-full accent-[#97FDFF] cursor-pointer" id="year-range" max="10" min="1" step="1" type="range" value="5"/>
+        <div class="flex justify-between text-[10px] text-on-surface-variant/60 mt-1">
+          <span>1 Year</span>
+          <span>5 Years</span>
+          <span>10 Years</span>
+        </div>
+      </div>
+
+      <div>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant block mb-3">Compare Against Fuel Type</span>
+        <div class="grid grid-cols-3 gap-3">
+          <button class="fuel-btn py-3 px-4 rounded border border-outline-variant/20 font-label text-[10px] tracking-widest uppercase transition-all opacity-50" id="btn-cng" onclick="setFuel('cng')" type="button">CNG Auto</button>
+          <button class="fuel-btn active py-3 px-4 rounded border border-outline-variant/20 font-label text-[10px] tracking-widest uppercase transition-all bg-surface-container-highest text-primary" id="btn-diesel" onclick="setFuel('diesel')" type="button">Diesel Auto</button>
+          <button class="fuel-btn py-3 px-4 rounded border border-outline-variant/20 font-label text-[10px] tracking-widest uppercase transition-all opacity-50" id="btn-petrol" onclick="setFuel('petrol')" type="button">Petrol Auto</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outputs -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-primary/5 border border-primary/20 p-6 md:p-8 rounded-xl relative overflow-hidden">
+        <p class="font-label text-[10px] tracking-widest uppercase text-primary/80 mb-2">Estimated Extra Monthly Profit</p>
+        <div class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-primary" id="calc-extra-profit">₹ 14,126</div>
+        <p class="text-xs text-on-surface-variant mt-2 font-light" id="calc-percent">+358% more profitable than diesel</p>
+        <div class="mt-4 pt-4 border-t border-primary/20">
+          <button id="calc-lock-savings-btn" class="w-full py-3 px-4 bg-primary text-background font-headline font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer" data-calculator="true" data-open-query-popup="" data-query-intent="preorder" type="button">
+            <span aria-hidden="true" class="material-symbols-outlined notranslate text-sm" data-nosnippet="" translate="no">savings</span>
+            <span>Lock In Your <span id="calc-lock-savings-amount">₹ 8,47,530</span> Savings — Request Dealer / Fleet Quote</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 text-center">
+          <p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-1">Saffire (EV)</p>
+          <p class="font-headline text-xl font-bold text-emerald-400" id="ev-cost">₹ 2,36,520</p>
+          <p class="text-[10px] text-on-surface-variant mt-1">Total Operating Cost</p>
+        </div>
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 text-center">
+          <p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-1" id="fuel-label">Diesel</p>
+          <p class="font-headline text-xl font-bold text-rose-300" id="fuel-cost">₹ 10,84,050</p>
+          <p class="text-[10px] text-on-surface-variant mt-1">Total Operating Cost</p>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Total Cumulative Savings</span>
+          <span class="font-headline text-2xl font-bold text-primary" id="calc-lifetime">₹ 8,47,530</span>
+        </div>
+        <div class="w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden">
+          <div class="h-full bg-primary rounded-full" id="savings-bar" style="width: 78%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {tco_matrix}
+</section>
+<script>
+(function() {{
+  const distRange = document.getElementById('dist-range');
+  const yearRange = document.getElementById('year-range');
+  const dVal = document.getElementById('dist-val');
+  const yVal = document.getElementById('year-val');
+  if (!distRange || !yearRange) return;
+
+  let currentFuel = 'diesel';
+  const rates = {{ ev: 1.20, diesel: 5.50, cng: 3.50, petrol: 6.80 }};
+  const formatINR = val => '₹ ' + Math.round(val).toLocaleString('en-IN');
+
+  window.setFuel = function(type) {{
+    currentFuel = type;
+    document.querySelectorAll('.fuel-btn').forEach(b => {{
+      b.classList.remove('active', 'bg-surface-container-highest', 'text-primary');
+      b.style.opacity = '0.5';
+    }});
+    const activeBtn = document.getElementById('btn-' + type);
+    if (activeBtn) {{
+      activeBtn.classList.add('active', 'bg-surface-container-highest', 'text-primary');
+      activeBtn.style.opacity = '1';
+    }}
+    const fl = document.getElementById('fuel-label');
+    if (fl) fl.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    calculateTCO();
+  }};
+
+  function calculateTCO() {{
+    const km = parseInt(distRange.value, 10);
+    const years = parseInt(yearRange.value, 10);
+    const totalDays = years * 365 * 0.9;
+    const totalKm = totalDays * km;
+    const evTotal = totalKm * rates.ev;
+    const traditionalTotal = totalKm * rates[currentFuel];
+    const lifetimeSavings = traditionalTotal - evTotal;
+    const extraProfit = lifetimeSavings / (years * 12);
+    const pct = Math.round(((traditionalTotal / evTotal) - 1) * 100);
+
+    dVal.textContent = km + ' km';
+    yVal.textContent = years + (years === 1 ? ' Year' : ' Years');
+    document.getElementById('calc-extra-profit').textContent = formatINR(extraProfit);
+    document.getElementById('ev-cost').textContent = formatINR(evTotal);
+    document.getElementById('fuel-cost').textContent = formatINR(traditionalTotal);
+    document.getElementById('calc-lifetime').textContent = formatINR(lifetimeSavings);
+    document.getElementById('calc-percent').textContent = `+${{pct}}% more profitable than ${{currentFuel}}`;
+    const lockAmt = document.getElementById('calc-lock-savings-amount');
+    if (lockAmt) lockAmt.textContent = formatINR(lifetimeSavings);
+
+    const barPct = Math.min(95, (evTotal / traditionalTotal) * 100);
+    const savingsBar = document.getElementById('savings-bar');
+    if (savingsBar) savingsBar.style.width = (100 - barPct) + '%';
+
+    window.currentCalcSettings = {{
+      km: km,
+      years: years,
+      profit: formatINR(extraProfit),
+      lifetimeSavings: formatINR(lifetimeSavings),
+      fuel: currentFuel
+    }};
+  }}
+
+  distRange.addEventListener('input', calculateTCO);
+  yearRange.addEventListener('input', calculateTCO);
+  calculateTCO();
+}})();
+</script>
+"""
+
+
+def render_state_tariff_and_cashflow_html() -> str:
+    """Renders state-wise commercial electricity tariff examples and a 5-year cash-flow breakdown."""
+    tariffs = [
+        ("Uttar Pradesh (Meerut, Noida, Lucknow)", "₹7.50 – ₹8.50 / kWh", "₹110 – ₹124 / full charge", "₹0.55 – ₹0.62 / km (energy only)"),
+        ("Delhi NCR (BSES / TPDDL EV Tariff)", "₹4.50 – ₹5.50 / kWh", "₹66 – ₹80 / full charge", "₹0.33 – ₹0.40 / km (energy only)"),
+        ("Haryana (Gurugram, Faridabad)", "₹6.50 – ₹7.50 / kWh", "₹95 – ₹110 / full charge", "₹0.48 – ₹0.55 / km (energy only)"),
+        ("Rajasthan (Jaipur, Jodhpur)", "₹6.80 – ₹7.80 / kWh", "₹99 – ₹114 / full charge", "₹0.50 – ₹0.57 / km (energy only)"),
+        ("Maharashtra (Mumbai, Pune)", "₹5.50 – ₹7.50 / kWh", "₹80 – ₹110 / full charge", "₹0.40 – ₹0.55 / km (energy only)"),
+        ("Gujarat (Ahmedabad, Surat)", "₹5.00 – ₹6.50 / kWh", "₹73 – ₹95 / full charge", "₹0.37 – ₹0.48 / km (energy only)"),
+    ]
+    tariff_rows = "".join([
+        f"""<tr class="border-b border-outline-variant/10 text-xs md:text-sm">
+          <td class="p-3.5 font-semibold text-on-surface">{st}</td>
+          <td class="p-3.5 text-on-surface-variant">{rate}</td>
+          <td class="p-3.5 text-primary font-semibold">{full_chg}</td>
+          <td class="p-3.5 text-emerald-400 font-semibold">{per_km}</td>
+        </tr>"""
+        for st, rate, full_chg, per_km in tariffs
+    ])
+
+    cashflow_rows = [
+        ("Year 1", "39,420 km", "₹ 47,304", "₹ 2,16,810", "₹ 1,69,506"),
+        ("Year 2", "78,840 km", "₹ 94,608", "₹ 4,33,620", "₹ 3,39,012"),
+        ("Year 3", "1,18,260 km", "₹ 1,41,912", "₹ 6,50,430", "₹ 5,08,518"),
+        ("Year 4", "1,57,680 km", "₹ 1,89,216", "₹ 8,67,240", "₹ 6,78,024"),
+        ("Year 5", "1,97,100 km", "₹ 2,36,520", "₹ 10,84,050", "₹ 8,47,530"),
+    ]
+    cf_rows = "".join([
+        f"""<tr class="border-b border-outline-variant/10 text-xs md:text-sm">
+          <td class="p-3.5 font-bold text-on-surface">{yr}</td>
+          <td class="p-3.5 text-on-surface-variant">{km}</td>
+          <td class="p-3.5 text-emerald-400 font-semibold">{ev_c}</td>
+          <td class="p-3.5 text-rose-300/80">{ds_c}</td>
+          <td class="p-3.5 text-primary font-bold">{sav}</td>
+        </tr>"""
+        for yr, km, ev_c, ds_c, sav in cashflow_rows
+    ])
+
+    return f"""
+<section class="my-12 space-y-10" id="state-tariffs-cashflow">
+  <div class="rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6 md:p-8">
+    <h2 class="font-headline text-xl md:text-2xl font-bold text-on-surface mb-2">
+      State-Wise Commercial Electricity Tariffs &amp; Full-Charge Cost (14.61 kWh Battery)
+    </h2>
+    <p class="text-xs md:text-sm text-on-surface-variant font-light mb-6">
+      Dedicated EV charging tariffs across major Indian states keep Saffire EV energy costs under ₹0.62/km (plus minimal maintenance = ₹1.20/km all-in TCO).
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/20 bg-surface-container">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-outline-variant/20 bg-surface-container-high text-on-surface font-headline text-xs md:text-sm">
+            <th class="p-3.5">State / Region</th>
+            <th class="p-3.5">EV / Commercial Tariff</th>
+            <th class="p-3.5 text-primary">Full Charge Cost (14.61 kWh)</th>
+            <th class="p-3.5">Energy Cost per km (200 km*)</th>
+          </tr>
+        </thead>
+        <tbody class="font-body divide-y divide-outline-variant/10">{tariff_rows}</tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6 md:p-8">
+    <h2 class="font-headline text-xl md:text-2xl font-bold text-on-surface mb-2">
+      5-Year Cumulative Cash-Flow Breakdown (120 km/day @ 90% Utilization)
+    </h2>
+    <p class="text-xs md:text-sm text-on-surface-variant font-light mb-6">
+      Cumulative operating expense comparison between Saffire EV (₹1.20/km) and a traditional Diesel Auto (₹5.50/km) over 5 years.
+    </p>
+    <div class="overflow-x-auto rounded-xl border border-outline-variant/20 bg-surface-container">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-outline-variant/20 bg-surface-container-high text-on-surface font-headline text-xs md:text-sm">
+            <th class="p-3.5">Ownership Milestone</th>
+            <th class="p-3.5">Cumulative Distance</th>
+            <th class="p-3.5 text-emerald-400">Saffire EV Cumulative Cost</th>
+            <th class="p-3.5 text-rose-300/80">Diesel Auto Cumulative Cost</th>
+            <th class="p-3.5 text-primary font-bold">Net Cumulative Savings</th>
+          </tr>
+        </thead>
+        <tbody class="font-body divide-y divide-outline-variant/10">{cf_rows}</tbody>
+      </table>
+    </div>
+  </div>
+</section>
+"""
+
+
+
